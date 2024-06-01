@@ -1,0 +1,1 @@
+import {pool} from '../databases/BD_Connection.js';
