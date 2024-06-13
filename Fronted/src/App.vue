@@ -2,8 +2,7 @@
   <Router-view />
 </template>
 
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
+<script setup></script>
 
 <style scoped></style>
+12

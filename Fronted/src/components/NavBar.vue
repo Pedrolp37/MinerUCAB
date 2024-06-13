@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg" style="background-color: #50463c">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/proyectos/home">MINERUCAB</a>
+      <router-link :to="{ name: 'proyectos' }" class="navbar-brand">MINERUCAB</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -45,10 +45,29 @@
               Proyectos
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><p class="ddwProyectos-p">En curso</p></li>
+              <li v-for="(elm, index) in props.proyectos" :key="index">
+                <p class="dropdown-item" style="margin: 4px">{{ elm.name }}</p>
+              </li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-6 d-flex justify-content-start">
+                      <!--Este router link te manda a mostrar todos los proyecto-->
+                      <router-link :to="{ name: 'home' }" class="dropdown-item button btn"
+                        >Ver todos los proyectos</router-link
+                      >
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                      <!--Este router link te manda a crear proyecto-->
+                      <router-link :to="{ name: 'home' }" class="dropdown-item button btn"
+                        >+ Crear Nuevo Proyecto</router-link
+                      >
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -63,10 +82,16 @@
               Solicitudes
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-plus"></i> Crear solicitud cliente</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-plus"></i> Crear solicitud aliado</router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -81,10 +106,21 @@
               Empleados
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-person-add"></i> Agregar empleado</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-search"></i> Buscar empleado</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-inboxes"></i> Buscar empleado asignado a explotación</router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -99,17 +135,51 @@
               Más
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-folder"></i> Ver informes</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-person-arms-up"></i> Ver clientela</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-card-list"></i> Ver Aliados</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-file-earmark-arrow-down"></i> Actualizar procesos</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-archive"></i> Ver inventario</router-link
+                >
+              </li>
             </ul>
           </li>
-          <li class="nav-item usuario">
-            <button class="btn">
+          <div class="nav-item btn-group usuario">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               {{ usuario }}
-            </button>
-          </li>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <router-link :to="{}" class="dropdown-item"
+                  ><i class="bi bi-door-closed"></i> Cerrar Sesión</router-link
+                >
+              </li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
@@ -121,6 +191,12 @@ import { ref } from 'vue'
 
 let usuario = ref('')
 usuario.value = 'PL'
+
+const props = defineProps({
+  proyectos: {
+    required: true
+  }
+})
 </script>
 
 <style scoped>
@@ -145,7 +221,7 @@ usuario.value = 'PL'
   font-size: 14px;
   color: black;
   padding: 2px;
-  margin-left: 270px;
+  margin-left: 200px;
   text-align: center;
 }
 
@@ -155,5 +231,29 @@ usuario.value = 'PL'
 
 .divider {
   border-top: 6px solid #2ba4e1;
+}
+
+.ddwProyectos-p {
+  margin-left: 10px;
+  font-size: 15px;
+  color: #7a6247;
+}
+
+.dropdown-item.button {
+  height: 20px;
+  width: 300px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 8px;
+}
+
+.bi {
+  color: black;
+}
+.dropdown-item {
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #494744;
 }
 </style>
