@@ -1,15 +1,5 @@
-<template>
-  <div class="container">
-    <div class="row">
-      <h3>hey</h3>
-    </div>
-  </div>
-</template>
+<template></template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style scope>
-    
-</style>
+<style scope></style>

@@ -9,7 +9,7 @@
           </div>
           <div class="col-6 d-flex justify-content-end">
             <!--Este router link te manda a crear proyecto-->
-            <router-link  :to="{name: 'proyectos'}" class="btn" style="color: #fa8f14"
+            <router-link :to="{ name: 'proyectos' }" class="btn" style="color: #fa8f14"
               >Regresar a proyectos</router-link
             >
           </div>
@@ -33,18 +33,47 @@
     </section>
     <section>
       <!-- Manejo de estados -->
-      <FormInfProVue v-show="componentName == 'infPro'  "/>
-      <FormClienteVue v-show="componentName == 'cliente'"/>
+      <FormInfProVue v-show="componentName == 'infPro'" />
+      <FormClienteVue v-show="componentName == 'cliente'" />
       <!--  -->
     </section>
     <section>
       <!--Esto lo puedes poner dentro de los forms-->
       <div class="d-flex flex-row justify-content-end">
         <!--Manejo de estados -->
-        <button  v-show="componentName == 'infPro'" class="bP btn" style="margin-right: 20px; background-color:#A57844; color: white">Verificar capacidad</button>
-        <button  v-show="componentName == 'cliente'"  @click="handleClickBack" class="bP btn" style="margin-right: 20px; background-color:#A57844; color: white">Volver</button>
-        <button  v-show="componentName == 'infPro' "  @click="handleClickNext"  class="bp btn" role="button" style="margin-right:20px; background-color:#FA8F14; color: white">Continuar</button>
-        <button  v-show="componentName == 'cliente'"  @click="handleClickNext" class="bp btn" role="button" style="margin-right:20px; background-color:#FA8F14; color: white">Continuar</button>
+        <button
+          v-show="componentName == 'infPro'"
+          class="bP btn"
+          style="margin-right: 20px; background-color: #a57844; color: white"
+        >
+          Verificar capacidad
+        </button>
+        <button
+          v-show="componentName == 'cliente'"
+          @click="handleClickBack"
+          class="bP btn"
+          style="margin-right: 20px; background-color: #a57844; color: white"
+        >
+          Volver
+        </button>
+        <button
+          v-show="componentName == 'infPro'"
+          @click="handleClickNext"
+          class="bp btn"
+          role="button"
+          style="margin-right: 20px; background-color: #fa8f14; color: white"
+        >
+          Continuar
+        </button>
+        <button
+          v-show="componentName == 'cliente'"
+          @click="handleClickNext"
+          class="bp btn"
+          role="button"
+          style="margin-right: 20px; background-color: #fa8f14; color: white"
+        >
+          Continuar
+        </button>
         <!--  -->
       </div>
     </section>
@@ -53,7 +82,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import {useRoute} from 'vue-router'
+import { useRoute } from 'vue-router'
 import FormInfProVue from '../../components/FormInfPro.vue'
 import FormClienteVue from '../../components/FormCliente.vue'
 import NavBarVue from '../../components/NavBar.vue'
@@ -62,31 +91,26 @@ import NavBarVue from '../../components/NavBar.vue'
 let proyectos = ref([])
 let componentName = ref('')
 let style = ref('')
-componentName.value = "infPro"
-
+componentName.value = 'infPro'
 
 const handleClickBack = () => {
-  switch(componentName.value) {
-    case "cliente":
-      componentName.value = "infPro"
-    break;
+  switch (componentName.value) {
+    case 'cliente':
+      componentName.value = 'infPro'
+      break
   }
 }
 
 const handleClickNext = () => {
   switch (componentName.value) {
-    case "infPro":
-      componentName.value = "cliente"
-    break;
-    case "cliente":
-      componentName.value = ""
-    break;
+    case 'infPro':
+      componentName.value = 'cliente'
+      break
+    case 'cliente':
+      componentName.value = ''
+      break
   }
 }
-
-
-
-
 
 //ejemplo
 proyectos = [
@@ -128,5 +152,4 @@ hr {
   font-size: 12px;
   font-weight: bold;
 }
-
 </style>
