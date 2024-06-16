@@ -15,11 +15,16 @@
           </div>
         </div>
         <div class="row d-flex justify-content-start" style="margin-top: 40px">
-          <div class="pCrearP col-2" :style="{color: componentName == 'infPro' ? '#fa8f14' : 'black'}">
+          <div
+            class="pCrearP col-2"
+            :style="{ color: componentName == 'infPro' ? '#fa8f14' : 'black' }"
+          >
             <p class="pCrearP">Información proyecto</p>
           </div>
           <div class="pCrearP col-1">
-            <p class="pCrearP" :style="{color: componentName == 'cliente' ? '#fa8f14' : 'black'}">Cliente</p>
+            <p class="pCrearP" :style="{ color: componentName == 'cliente' ? '#fa8f14' : 'black' }">
+              Cliente
+            </p>
           </div>
           <div class="pCrearP col-1">
             <p class="pCrearP">Personal</p>
@@ -33,13 +38,13 @@
     </section>
     <section>
       <!-- Manejo de estados -->
-      <FormInfProVue v-show="componentName == 'infPro'" />
-      <FormClienteVue v-show="componentName == 'cliente'" />
+      <FormInfProVue v-if="componentName == 'infPro'" />
+      <FormClienteVue v-if="componentName == 'cliente'" />
       <!--  -->
     </section>
     <section>
       <!--Esto lo puedes poner dentro de los forms-->
-      <div class="d-flex flex-row justify-content-end" style="margin:20px">
+      <div class="d-flex flex-row justify-content-end" style="margin: 20px">
         <!--Manejo de estados -->
         <button
           v-show="componentName == 'cliente'"
