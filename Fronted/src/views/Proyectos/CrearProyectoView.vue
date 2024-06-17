@@ -27,10 +27,10 @@
             </p>
           </div>
           <div class="pCrearP col-1">
-            <p class="pCrearP">Personal</p>
+            <p class="pCrearP"  :style="{ color: componentName == 'personal' ? '#fa8f14' : 'black' }">Personal</p>
           </div>
           <div class="pCrearP col-2">
-            <p class="pCrearP">Equipo</p>
+            <p class="pCrearP" :style="{ color: componentName == 'recursos' ? '#fa8f14' : 'black' }">Recursos</p>
           </div>
         </div>
         <hr />
@@ -38,8 +38,14 @@
     </section>
     <section>
       <!-- Manejo de estados -->
+      <!-- Importante: hay que crear los props y emits necesarios para comprobar 
+      que se han introducido datos en cada una de las partes -->
       <FormInfProVue v-if="componentName == 'infPro'" />
+
+      <!--Revisar estos forms y agregar lo que haga falta-->
       <FormClienteVue v-if="componentName == 'cliente'" />
+      <FormPersonalVue v-if="componentName == 'personal'" />
+      <FormRecursos v-if="componentName == 'recursos'" />
       <!--  -->
     </section>
     <section>
@@ -47,7 +53,7 @@
       <div class="d-flex flex-row justify-content-end" style="margin: 20px">
         <!--Manejo de estados -->
         <button
-          v-show="componentName == 'cliente'"
+          v-show="componentName == 'cliente' || componentName == 'personal' || componentName == 'recursos'"
           @click="handleClickBack"
           class="bP btn"
           style="margin-right: 20px; background-color: #a57844; color: white"
@@ -55,7 +61,9 @@
           Volver
         </button>
         <button
-          v-show="componentName == 'infPro'"
+          v-show="
+            componentName == 'infPro' || componentName == 'cliente' || componentName == 'personal' 
+          "
           @click="handleClickNext"
           class="bp btn"
           role="button"
@@ -64,12 +72,15 @@
           Continuar
         </button>
         <button
-          v-show="componentName == 'cliente'"
+          v-show="
+           componentName == 'recursos'
+          "
           @click="handleClickNext"
           class="bp btn"
+          role="button"
           style="margin-right: 20px; background-color: #fa8f14; color: white"
         >
-          Continuar
+          CrearProyecto
         </button>
         <!--  -->
       </div>
@@ -82,6 +93,8 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import FormInfProVue from '../../components/FormInfPro.vue'
 import FormClienteVue from '../../components/FormCliente.vue'
+import FormPersonalVue from '../../components/FormPersonal.vue'
+import FormRecursos from '../../components/FormRecursos.vue'
 import NavBarVue from '../../components/NavBar.vue'
 
 //variables y constantes
@@ -95,6 +108,12 @@ const handleClickBack = () => {
     case 'cliente':
       componentName.value = 'infPro'
       break
+    case 'personal':
+      componentName.value = 'cliente'
+      break
+    case 'recursos':
+      componentName.value = 'personal'
+      break
   }
 }
 
@@ -104,7 +123,10 @@ const handleClickNext = () => {
       componentName.value = 'cliente'
       break
     case 'cliente':
-      componentName.value = ''
+      componentName.value = 'personal'
+      break
+    case 'personal':
+      componentName.value = 'recursos'
       break
   }
 }

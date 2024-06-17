@@ -1,5 +1,5 @@
 <template>
-  <div class="card" style="width: 20rem">
+  <div class="card" style="width: 20rem; margin-bottom: 20px">
     <div class="card-body">
       <h5 class="card-title">{{ props.nomProyecto }}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary" style="margin-left: 20px">
@@ -11,6 +11,12 @@
         <p class="contPro">Lider Mina: {{ props.nomLiderMin }}</p>
         <p class="contPro">Explotaciones: {{ props.numExplotaciones }}</p>
         <p class="contPro">Culminación: {{ props.culminacion }}</p>
+      </div>
+      <hr />
+      <div class="d-flex justify-content-center">
+        <router-link :to="{ name: 'detalle_proyecto' }" class="btn button"
+          >Ver Detalle Proyecto</router-link
+        >
       </div>
       <hr />
       <router-link :to="{}" class="btn badge">Informes</router-link>
@@ -78,5 +84,15 @@ hr {
 .contPro {
   margin: 3px;
   color: #7a6247;
+}
+
+.button {
+  background-color: #bcbc42;
+  color: black;
+}
+
+.button:hover {
+  background-color: #f3f37b;
+  color: black;
 }
 </style>

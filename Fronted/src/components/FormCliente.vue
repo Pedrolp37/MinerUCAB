@@ -112,7 +112,7 @@
       </div>
     </div>
     <div class="row" style="margin-top: 10px">
-      <div class="FormContainer col d-flex flex-column justify-content-startb">
+      <div class="FormContainer col d-flex flex-column justify-content-start">
         <div class="formCont d-flex justify-content-center">
           <label for="clientes" class="form-label">Clientes Registrados</label>
         </div>
@@ -181,9 +181,57 @@
             </table>
           </div>
         </div>
+        <hr style="margin-top: 50px" />
         <div class="container">
-          <div class="row"></div>
-          <div class="row"></div>
+          <div class="row">
+            <div class="col">
+              <div class="d-flex justify-content-start">
+                <h5>Monto total del proyecto = {{ 0 }}</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hay que crear la parte de agregar más métodos de pago -->
+          <div class="row">
+            <div class="d-flex justify-content-center" style="margin-top: 20px">
+              <div>
+                <h6>Formas de pago</h6>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-start">
+              <div class="input-group mb-3">
+                <span
+                  class="input-group-text"
+                  id="basic-addon1"
+                  style="background-color: #757570; color: white"
+                  >Monto</span
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Introducir Monto"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <div>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  style="background-color: #757570; color: white"
+                >
+                  <option selected>Método de pago</option>
+                  <option value="1">- Efectivo</option>
+                  <option value="2">- Cheque</option>
+                  <option value="3">- Transferencia</option>
+                  <option value="3">- Tarjeta de debito</option>
+                  <option value="3">- Tarjeta de crédito</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -298,15 +346,13 @@ clients.value = [
     lastName: 'Smith',
     address: 'Wuantanamo',
     phone: '0412654454'
-  },
-  
+  }
 ]
-
 
 //methods Revisados
 const getDataClients = (isNextInit, isBack) => {
   let auxList = []
-  if(isNextInit){
+  if (isNextInit) {
     if (lListClientAux.value == 0) {
       if (cantDataPag < clients.value.length) {
         lListClientAux.value += 10
@@ -314,33 +360,33 @@ const getDataClients = (isNextInit, isBack) => {
         posInicio.value += 10
         posFinal.value += 10
         return auxList
-      }else if(cantDataPag == clients.value.length){
+      } else if (cantDataPag == clients.value.length) {
         lListClientAux.value += 10
         auxList = clients.value.slice(posInicio.value, posFinal.value)
         posInicio.value += 10
         posFinal.value += 10
         isNextActive.value = false
         return auxList
-      } else  {
+      } else {
         auxList = clients.value.slice(posInicio.value)
         isNextActive.value = false
         return auxList
       }
-    }else if (cantDataPag <= (clients.value.length - lListClientAux.value) ) {
+    } else if (cantDataPag <= clients.value.length - lListClientAux.value) {
       lListClientAux.value += 10
       auxList = clients.value.slice(posInicio.value, posFinal.value)
       posInicio.value += 10
       posFinal.value += 10
       isBackActive.value = true
       return auxList
-    }else {
+    } else {
       auxList = clients.value.slice(posInicio.value)
       isBackActive.value = true
       isNextActive.value = false
       return auxList
     }
-  }else if(isBack){
-    if(lListClientAux.value > 10){
+  } else if (isBack) {
+    if (lListClientAux.value > 10) {
       lListClientAux.value -= 10
       posInicio.value -= 10
       posFinal.value -= 10
@@ -348,7 +394,7 @@ const getDataClients = (isNextInit, isBack) => {
       isNextActive.value = true
       auxList = clients.value.slice(posInicio.value, posFinal.value)
       return auxList
-    }else if (lListClientAux.value == 10){
+    } else if (lListClientAux.value == 10) {
       lListClientAux.value = 0
       posInicio.value = 0
       posFinal.value = 10
@@ -383,10 +429,7 @@ const addNewClient = () => {
   client.value.address = ''
   client.value.phone = ''
   incrementId.value += 1
-
-
 }
-
 
 const handleClickEliminarClient = (index) => {
   seletedClientList.value.splice(index)
@@ -403,16 +446,13 @@ const getClient = (elm) => {
 }
 
 const handleClickFilter = () => {
-  subListClients.value = clients.value
-    .filter((elm) => {
-      if (elm.name === filterName.value) {
-        return elm
-      }
-    })
+  subListClients.value = clients.value.filter((elm) => {
+    if (elm.name === filterName.value) {
+      return elm
+    }
+  })
   filterName.value = ''
 }
-
-
 </script>
 
 <style scoped>
@@ -423,6 +463,12 @@ label .form-label {
 
 div .formCont {
   margin: 8px;
+}
+
+td .btn {
+  background-color: #fa8f14;
+  color: white;
+  font-size: 10px;
 }
 
 .FormContainer {
