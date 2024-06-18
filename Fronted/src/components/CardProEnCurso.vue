@@ -1,6 +1,6 @@
 <template>
-  <div class="card" style="width: 20rem; margin-bottom: 20px">
-    <div class="card-body">
+  <div class="proCurso card" style="width: 20rem; margin-bottom: 20px">
+    <div class="proCurso card-body">
       <h5 class="card-title">{{ props.nomProyecto }}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary" style="margin-left: 20px">
         {{ tipoProyecto }}
@@ -68,7 +68,7 @@ hr {
   border-top: solid 2px black;
 }
 
-.card {
+.proCurso.card {
   margin-top: 20px;
   border: solid 1px #cf8633;
   border-radius: 25px;

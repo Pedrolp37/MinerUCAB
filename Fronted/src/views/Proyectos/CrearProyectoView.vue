@@ -10,7 +10,7 @@
           <div class="col-6 d-flex justify-content-end">
             <!--Este router link te manda a crear proyecto-->
             <router-link :to="{ name: 'proyectos' }" class="btn" style="color: #fa8f14"
-              >Regresar a proyectos</router-link
+              >Regresar ( proyectos en curso )</router-link
             >
           </div>
         </div>
@@ -27,10 +27,20 @@
             </p>
           </div>
           <div class="pCrearP col-1">
-            <p class="pCrearP"  :style="{ color: componentName == 'personal' ? '#fa8f14' : 'black' }">Personal</p>
+            <p
+              class="pCrearP"
+              :style="{ color: componentName == 'personal' ? '#fa8f14' : 'black' }"
+            >
+              Personal
+            </p>
           </div>
           <div class="pCrearP col-2">
-            <p class="pCrearP" :style="{ color: componentName == 'recursos' ? '#fa8f14' : 'black' }">Recursos</p>
+            <p
+              class="pCrearP"
+              :style="{ color: componentName == 'recursos' ? '#fa8f14' : 'black' }"
+            >
+              Recursos
+            </p>
           </div>
         </div>
         <hr />
@@ -53,7 +63,9 @@
       <div class="d-flex flex-row justify-content-end" style="margin: 20px">
         <!--Manejo de estados -->
         <button
-          v-show="componentName == 'cliente' || componentName == 'personal' || componentName == 'recursos'"
+          v-show="
+            componentName == 'cliente' || componentName == 'personal' || componentName == 'recursos'
+          "
           @click="handleClickBack"
           class="bP btn"
           style="margin-right: 20px; background-color: #a57844; color: white"
@@ -62,7 +74,7 @@
         </button>
         <button
           v-show="
-            componentName == 'infPro' || componentName == 'cliente' || componentName == 'personal' 
+            componentName == 'infPro' || componentName == 'cliente' || componentName == 'personal'
           "
           @click="handleClickNext"
           class="bp btn"
@@ -72,15 +84,13 @@
           Continuar
         </button>
         <button
-          v-show="
-           componentName == 'recursos'
-          "
-          @click="handleClickNext"
+          v-show="componentName == 'recursos'"
+          @click="crearProyecto"
           class="bp btn"
           role="button"
           style="margin-right: 20px; background-color: #fa8f14; color: white"
         >
-          CrearProyecto
+          Crear Proyecto
         </button>
         <!--  -->
       </div>

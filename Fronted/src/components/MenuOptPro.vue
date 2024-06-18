@@ -1,0 +1,94 @@
+<template>
+  <div class="container menu">
+    <div class="row">
+      <div class="col d-flex flex-column" style="margin-top: 50px">
+        <div class="d-flex justify-content-start">
+          <h6 class="titleProyecto">Proyecto:</h6>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h6 class="titleProyecto">{{ 'Proyecto x' }}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 80px">
+      <div class="col d-flex flex-column">
+        <div style="text-align: center">
+          <h6 style="color: white">Información</h6>
+        </div>
+        <hr class="sOptMenu" />
+      </div>
+    </div>
+    <div class="row" style="margin-top: 30px">
+      <div class="col d-flex flex-column">
+        <div style="text-align: start">
+          <button
+            class="optionMenu btn"
+            @click="handleClickOption('cronograma')"
+            :style="{ color: optionMenu == 'cronograma' ? '#fa8f14' : 'white' }"
+          >
+            Cronograma
+          </button>
+        </div>
+        <div style="text-align: start">
+          <button
+            class="optionMenu btn"
+            @click="handleClickOption('empleados')"
+            :style="{ color: optionMenu == 'empleados' ? '#fa8f14' : 'white' }"
+          >
+            Empleados
+          </button>
+        </div>
+        <div style="text-align: start">
+          <button
+            class="optionMenu btn"
+            @click="handleClickOption('cliente')"
+            :style="{ color: optionMenu == 'cliente' ? '#fa8f14' : 'white' }"
+          >
+            Cliente
+          </button>
+        </div>
+        <div style="text-align: start">
+          <button
+            class="optionMenu btn"
+            @click="handleClickOption('finanzas')"
+            :style="{ color: optionMenu == 'finanzas' ? '#fa8f14' : 'white' }"
+          >
+            Finanzas
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+let optionMenu = ref('')
+
+const handleClickOption = (option) => {
+  optionMenu.value = option
+}
+</script>
+
+<style scope>
+.container.menu {
+  width: 15%;
+  height: auto;
+  background-color: #7a6247;
+  display: inline-block;
+}
+
+.titleProyecto {
+  color: #fba746;
+}
+
+.optionMenu {
+  font-size: 15px;
+}
+
+.sOptMenu {
+  margin: 0px;
+  border-top: solid 2px white;
+}
+</style>

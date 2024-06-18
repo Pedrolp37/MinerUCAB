@@ -40,7 +40,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(elm, index) in recursosDisponible" :key="index" style="text-align: center">
+              <tr
+                v-for="(elm, index) in recursosDisponible"
+                :key="index"
+                style="text-align: center"
+              >
                 <td>{{ elm.name }}</td>
                 <td>{{ elm.lastName }}</td>
                 <td>{{ elm.dni }}</td>
@@ -53,7 +57,7 @@
         </div>
       </div>
     </div>
-        <div class="row">
+    <div class="row">
       <div class="formContainer col-8 d-flex flex-column justify-content-start">
         <div style="padding: 15px">
           <div class="d-flex justify-content-center">
@@ -69,7 +73,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(elm, index) in recursosSeleccionado" :key="index" style="text-align: center">
+              <tr
+                v-for="(elm, index) in recursosSeleccionado"
+                :key="index"
+                style="text-align: center"
+              >
                 <td>{{ elm.name }}</td>
                 <td>{{ elm.lastName }}</td>
                 <td>{{ elm.dni }}</td>
@@ -105,5 +113,4 @@ td .btn {
   color: white;
   font-size: 10px;
 }
-
 </style>

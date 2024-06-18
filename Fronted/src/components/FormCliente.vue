@@ -456,7 +456,7 @@ const handleClickFilter = () => {
 </script>
 
 <style scoped>
-label .form-label {
+.form-label {
   color: #86822f;
   font-size: 15px;
 }

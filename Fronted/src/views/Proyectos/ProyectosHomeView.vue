@@ -39,7 +39,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import CardVue from '../../components/Card.vue'
+import CardVue from '../../components/CardProEnCurso.vue'
 import NavBarVue from '../../components/NavBar.vue'
 
 let proyectos = ref([])
