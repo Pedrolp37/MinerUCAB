@@ -77,7 +77,7 @@
       </div>
     </div>
     <div class="d-flex flex-wrap justify-content-around" style="margin-top: 50px">
-      <CardActividadesVue v-for="(elm, index) in 5" :key="index" />
+      <CardActividadesVue v-for="(elm, index) in 5" :key="index" @detActividad="getActivity" />
     </div>
   </div>
 </template>
@@ -87,18 +87,22 @@ import { ref } from 'vue'
 import CardActividadesVue from './CardActividades.vue'
 
 let etapaOption = ref('')
+
 etapaOption.value = 'etapa1'
 const handleClickOption = (option) => {
   etapaOption.value = option
+}
+
+const emit = defineEmits(['getActivity'])
+
+const getActivity = (elm) => {
+  emit('getActivity', elm)
 }
 </script>
 
 <style scoped>
 hr {
   margin: auto;
-  width: 100%;
-  height: 2px;
-  justify-content: center;
 }
 
 .pCrearP {

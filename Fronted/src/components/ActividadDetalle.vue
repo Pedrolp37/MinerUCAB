@@ -3,28 +3,26 @@
     <div class="detalle container">
       <div class="row">
         <div class="col d-flex justify-content-end">
-          <router-link
-            :to="{ name: 'detalle_proyecto' }"
+          <button
+            @click="closeDActivity"
             type="button"
             class="btn-close"
             aria-label="Close"
             style="margin: 8px"
-          ></router-link>
+          ></button>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <h4 style="margin-left: 15px">{{ 'Title Actividad' }}</h4>
-          <h6 style="margin-left: 15px; color: #909090">Fecha: {{ 'xx/xx/xxxx' }}</h6>
+          <h4 style="margin-left: 15px">{{ props.activity.title }}</h4>
+          <h6 style="margin-left: 15px; color: #909090">Fecha: {{ props.activity.culmination }}</h6>
         </div>
       </div>
       <div class="row" style="margin-top: 50px">
         <div class="col d-flex flex-column justify-content-start">
           <h6 style="margin-left: 15px; font-weight: bold">Description:</h6>
           <p style="margin-left: 15px; font-size: 14px; color: #6a6363; font-weight: bold">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar vel erat posuere
-            ullamcorper. Quisque sollicitudin sem bibendum sem eleifend, in rutrum ex accumsan. Nunc
-            auctor massa nec commodo sodales. Quisque egestas congue purus eu fermentum.
+            {{ props.activity.description }}
           </p>
         </div>
         <div class="col d-flex justify-content-end">
@@ -49,26 +47,30 @@
                     </thead>
                     <tbody>
                       <tr
-                        v-for="(elm, index) in [
-                          {
-                            name: 'arturo',
-                            lastName: 'perez',
-                            horario: 'desde 14/04/15 hasta 15/12/15'
-                          }
-                        ]"
+                        v-for="(elm, index) in props.activity.employees"
                         :key="index"
                         style="text-align: center"
                       >
                         <td class="td">{{ elm.name }}</td>
                         <td class="td">{{ elm.lastName }}</td>
-                        <td class="td">{{ elm.horario }}</td>
+                        <td class="td">{{ elm.horary }}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <div>
                   <h6 style="font-size: 15px; color: #2f2d2d">Prioridad:</h6>
-                  <p style="border-radius: 5px; background-color: red; color: white;text-align: center ;width: 60px">{{'Alta'}}</p>
+                  <p
+                    style="
+                      border-radius: 5px;
+                      background-color: red;
+                      color: white;
+                      text-align: center;
+                      width: 60px;
+                    "
+                  >
+                    {{ props.activity.priority }}
+                  </p>
                 </div>
               </div>
             </div>
@@ -78,7 +80,20 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+const props = defineProps({
+  activity: {
+    required: true
+  }
+})
+
+const emit = defineEmits(['closeDAct'])
+const closeDActivity = () => {
+  emit('closeDAct', 'etapas')
+}
+
+console.log(props.activity)
+</script>
 
 <style scoped>
 .detalle.container {

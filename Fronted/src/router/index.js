@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ProyectosHomeView from '../views/Proyectos/ProyectosHomeView.vue'
 import CrearProyectoView from '../views/Proyectos/CrearProyectoView.vue'
 import ProyectosDetalleView from '../views/Proyectos/ProyectosDetalleView.vue'
-import ActiProDetalleView from '../views/Proyectos/ActiProDetalleView.vue'
+import empleadosProView from '../views/Proyectos/EmpleadosProView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,14 +25,14 @@ const router = createRouter({
       component: ProyectosDetalleView
     },
     {
-      path: '/proyectos/detalle/actividad/:id',
-      name: 'actividad_detalle',
-      component: ActiProDetalleView
-    },
-    {
       path: '/proyectos/crear',
       name: 'crear_proyecto',
       component: CrearProyectoView
+    },
+    {
+      path: '/proyectos/detalle/empleados',
+      name: 'proyecto_empleados',
+      component: empleadosProView
     }
   ]
 })

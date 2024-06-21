@@ -3,10 +3,12 @@
     <div class="row">
       <div class="col d-flex flex-column" style="margin-top: 50px">
         <div class="d-flex justify-content-start">
-          <h6 class="titleProyecto">Proyecto:</h6>
+          <h6 class="titleProyecto title">Proyecto:</h6>
         </div>
         <div class="d-flex justify-content-center">
-          <h6 class="titleProyecto">{{ 'Proyecto x' }}</h6>
+          <button class="titleProyecto btn" @click="handleClickOption('etapas')">
+            {{ 'Proyecto x' }}
+          </button>
         </div>
       </div>
     </div>
@@ -66,9 +68,15 @@ import { ref } from 'vue'
 
 let optionMenu = ref('')
 
+// const handleClickOption = (option) => {
+//   optionMenu.value = option
+// }
+
 const handleClickOption = (option) => {
   optionMenu.value = option
+  emit('changeView', optionMenu.value)
 }
+const emit = defineEmits(['changeView'])
 </script>
 
 <style scope>
@@ -79,8 +87,9 @@ const handleClickOption = (option) => {
   display: inline-block;
 }
 
-.titleProyecto {
+.titleProyecto.btn {
   color: #fba746;
+  border: solid 1px #9d9c9a;
 }
 
 .optionMenu {
