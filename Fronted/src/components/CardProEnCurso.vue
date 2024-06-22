@@ -14,6 +14,8 @@
       </div>
       <hr />
       <div class="d-flex justify-content-center">
+        <!-- Esto está mal hay que arreglarlo para que sea un detalle
+        por proyecto específico no un para todos -->
         <router-link :to="{ name: 'detalle_proyecto' }" class="btn button"
           >Ver Detalle Proyecto</router-link
         >

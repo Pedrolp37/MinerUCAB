@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBarVue :proyectos="proyectos" />
+    <NavBarVue />
     <hr class="sNavMenu" />
     <div class="d-flex flex-row">
       <MenuOptProVue @changeView="changeView" />

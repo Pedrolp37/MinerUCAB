@@ -1,6 +1,11 @@
 <template>
   <div>
-    <table v-if="props.filteredMinerals.length == 0" class="table table-striped" id="table" style="width: 60vw">
+    <table
+      v-if="props.filteredMinerals.length == 0"
+      class="table table-striped"
+      id="table"
+      style="width: 60vw"
+    >
       <thead>
         <tr style="text-align: center">
           <th>Mineral</th>
@@ -14,12 +19,23 @@
           <td>{{ elm.stages }}</td>
           <td>{{ elm.activities.length }}</td>
           <td>
-            <button style="background-color: #fa8f14; color: white" class="btn">Detalle</button>
+            <button
+              class="btn"
+              @click="sendResponseSDM(elm.id)"
+              style="background-color: #fa8f14; color: white"
+            >
+              Detalle
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
-    <table v-if="props.filteredMinerals.length != 0" class="table table-striped" id="table" style="width: 60vw">
+    <table
+      v-if="props.filteredMinerals.length != 0"
+      class="table table-striped"
+      id="table"
+      style="width: 60vw"
+    >
       <thead>
         <tr style="text-align: center">
           <th>Mineral</th>
@@ -33,7 +49,13 @@
           <td>{{ elm.stages }}</td>
           <td>{{ elm.activities.length }}</td>
           <td>
-            <button style="background-color: #fa8f14; color: white" class="btn">Detalle</button>
+            <button
+              class="btn"
+              @click="sendResponseSDM(elm.id)"
+              style="background-color: #fa8f14; color: white"
+            >
+              Detalle
+            </button>
           </td>
         </tr>
       </tbody>
@@ -44,17 +66,19 @@
 <script setup>
 import { ref } from 'vue'
 
-
 const props = defineProps({
   minerals: {
     required: true
   },
-  filteredMinerals : {
+  filteredMinerals: {
     required: false
   }
 })
 
-
+const emit = defineEmits(['showDetailMineral'])
+const sendResponseSDM = (id) => {
+  emit('showDetailMineral', id)
+}
 </script>
 
 <style scope></style>

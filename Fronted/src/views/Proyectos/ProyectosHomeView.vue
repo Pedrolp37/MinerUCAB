@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBarVue :proyectos="proyectos" />
+    <NavBarVue />
     <section style="margin-top: 70px">
       <div class="container">
         <div class="row">

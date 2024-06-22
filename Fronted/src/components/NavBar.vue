@@ -46,7 +46,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><p class="ddwProyectos-p">En curso</p></li>
-              <li v-for="(elm, index) in props.proyectos" :key="index">
+              <li v-for="(elm, index) in proyectos" :key="index">
                 <p class="dropdown-item" style="margin: 4px">{{ elm.name }}</p>
               </li>
               <li><hr class="dropdown-divider" /></li>
@@ -190,13 +190,38 @@
 import { ref } from 'vue'
 
 let usuario = ref('')
+let proyectos = ref([])
+
 usuario.value = 'PL'
 
-const props = defineProps({
-  proyectos: {
-    required: true
+proyectos = [
+  {
+    name: '% Andrómeda',
+    tipo: 'Gestionado con aliados',
+    nameLPro: 'Arturo',
+    nameLMin: 'Pedro',
+    Exp: 2,
+    fC: '01/02/24'
+  },
+
+  {
+    name: '% Lactea',
+    tipo: 'Gestionado con aliados',
+    nameLPro: 'Arturo',
+    nameLMin: 'Pedro',
+    Exp: 2,
+    fC: '01/02/24'
+  },
+
+  {
+    name: '% Gemini',
+    tipo: 'Gestionado con aliados',
+    nameLPro: 'Arturo',
+    nameLMin: 'Pedro',
+    Exp: 2,
+    fC: '01/02/24'
   }
-})
+]
 </script>
 
 <style scoped>

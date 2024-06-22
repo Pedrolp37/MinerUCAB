@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBarVue :proyectos="proyectos" />
+    <NavBarVue />
     <div class="container">
       <div class="row" style="margin-top: 70px">
         <div class="col d-flex justify-content-start">
@@ -22,17 +22,30 @@
                 aria-describedby="basic-addon1"
                 v-model="findMineral"
               />
-              <button class="buscar btn" @click="filterMineral">Filtrar Mineral <i class="bi bi-search"></i></button>
+              <button class="buscar btn" @click="filterMineral">
+                Filtrar Mineral <i class="bi bi-search"></i>
+              </button>
             </div>
           </div>
           <div>
-            <button v-show="filteredMineralsList.length != 0" class="buscar btn" @click="showAllMinerals" style="margin-top: 30px">Volver</button>
+            <button
+              v-show="filteredMineralsList.length != 0"
+              class="buscar btn"
+              @click="showAllMinerals"
+              style="margin-top: 30px"
+            >
+              Volver
+            </button>
           </div>
         </div>
       </div>
-      <div class="row" style="margin-top:80px">
+      <div class="row" style="margin-top: 80px">
         <div class="col d-flex justify-content-center">
-          <TablaMinerales :minerals="mineralsList" :filteredMinerals="filteredMineralsList"/>
+          <TablaMinerales
+            :minerals="mineralsList"
+            :filteredMinerals="filteredMineralsList"
+            @showDetailMineral="getResponseSDM"
+          />
         </div>
       </div>
     </div>
@@ -43,36 +56,40 @@
 import { ref } from 'vue'
 import TablaMinerales from '../../components/TablaMinerales.vue'
 import NavBarVue from '../../components/NavBar.vue'
+import { useRouter } from 'vue-router'
 
-
+let router = useRouter()
 let mineralsList = ref([])
 let filteredMineralsList = ref([])
 let findMineral = ref('')
 
 mineralsList.value = [
   {
+    id: 1,
     name: 'Oro',
     stages: '5',
-    activities: ['Explotar','Explotarse']
+    activities: ['Explotar', 'Explotarse']
   },
   {
+    id: 2,
     name: 'plata',
     stages: '5',
-    activities: ['Explotar','Explotarse']
+    activities: ['Explotar', 'Explotarse']
   },
   {
+    id: 3,
     name: 'carbon',
     stages: '5',
-    activities: ['Explotar','Explotarse']
+    activities: ['Explotar', 'Explotarse']
   },
   {
+    id: 4,
     name: 'diamante',
     stages: '5',
-    activities: ['Explotar','Explotarse']
+    activities: ['Explotar', 'Explotarse']
   }
 ]
 
- 
 const filterMineral = () => {
   filteredMineralsList.value = mineralsList.value.filter((elm) => elm.name === findMineral.value)
   findMineral.value = ''
@@ -82,6 +99,9 @@ const showAllMinerals = () => {
   filteredMineralsList.value = []
 }
 
+const getResponseSDM = (id) => {
+  router.push({ name: 'procesos_detalle', params: { id: id } })
+}
 </script>
 
 <style scope>
