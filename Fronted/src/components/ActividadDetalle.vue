@@ -91,8 +91,6 @@ const emit = defineEmits(['closeDAct'])
 const closeDActivity = () => {
   emit('closeDAct', 'etapas')
 }
-
-console.log(props.activity)
 </script>
 
 <style scoped>

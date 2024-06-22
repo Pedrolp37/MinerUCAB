@@ -151,7 +151,7 @@
                 >
               </li>
               <li>
-                <router-link :to="{}" class="dropdown-item"
+                <router-link :to="{ name: 'procesos' }" class="dropdown-item"
                   ><i class="bi bi-file-earmark-arrow-down"></i> Actualizar procesos</router-link
                 >
               </li>

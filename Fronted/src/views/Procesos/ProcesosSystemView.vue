@@ -1,0 +1,112 @@
+<template>
+  <div>
+    <NavBarVue :proyectos="proyectos" />
+    <div class="container">
+      <div class="row" style="margin-top: 70px">
+        <div class="col d-flex justify-content-start">
+          <h3 style="color: #a57844">Procesos</h3>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <button class="addMin btn">Agregar Mineral <i class="bi bi-plus-circle"></i></button>
+        </div>
+      </div>
+      <hr />
+      <div class="row" style="margin-top: 30px">
+        <div class="col-4 d-flex flex-column justify-content-start">
+          <div>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                v-model="findMineral"
+              />
+              <button class="buscar btn" @click="filterMineral">Filtrar Mineral <i class="bi bi-search"></i></button>
+            </div>
+          </div>
+          <div>
+            <button v-show="filteredMineralsList.length != 0" class="buscar btn" @click="showAllMinerals" style="margin-top: 30px">Volver</button>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:80px">
+        <div class="col d-flex justify-content-center">
+          <TablaMinerales :minerals="mineralsList" :filteredMinerals="filteredMineralsList"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import TablaMinerales from '../../components/TablaMinerales.vue'
+import NavBarVue from '../../components/NavBar.vue'
+
+
+let mineralsList = ref([])
+let filteredMineralsList = ref([])
+let findMineral = ref('')
+
+mineralsList.value = [
+  {
+    name: 'Oro',
+    stages: '5',
+    activities: ['Explotar','Explotarse']
+  },
+  {
+    name: 'plata',
+    stages: '5',
+    activities: ['Explotar','Explotarse']
+  },
+  {
+    name: 'carbon',
+    stages: '5',
+    activities: ['Explotar','Explotarse']
+  },
+  {
+    name: 'diamante',
+    stages: '5',
+    activities: ['Explotar','Explotarse']
+  }
+]
+
+ 
+const filterMineral = () => {
+  filteredMineralsList.value = mineralsList.value.filter((elm) => elm.name === findMineral.value)
+  findMineral.value = ''
+}
+
+const showAllMinerals = () => {
+  filteredMineralsList.value = []
+}
+
+</script>
+
+<style scope>
+.addMin.btn {
+  background-color: #fa8f14;
+  color: white;
+}
+
+.buscar.btn {
+  background-color: #999981;
+  color: white;
+}
+
+.form-control {
+  border: solid 1px #859a9c;
+  border-radius: 10px;
+}
+
+.form-select {
+  background-color: #999981;
+  color: white;
+  border-radius: 10px;
+}
+
+hr {
+  margin: auto;
+}
+</style>

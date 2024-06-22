@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ProyectosHomeView from '../views/Proyectos/ProyectosHomeView.vue'
 import CrearProyectoView from '../views/Proyectos/CrearProyectoView.vue'
 import ProyectosDetalleView from '../views/Proyectos/ProyectosDetalleView.vue'
-import empleadosProView from '../views/Proyectos/EmpleadosProView.vue'
+import ProcesosSystemView from '../views/Procesos/ProcesosSystemView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,9 +30,9 @@ const router = createRouter({
       component: CrearProyectoView
     },
     {
-      path: '/proyectos/detalle/empleados',
-      name: 'proyecto_empleados',
-      component: empleadosProView
+      path: '/procesos/home',
+      name: 'procesos',
+      component: ProcesosSystemView
     }
   ]
 })

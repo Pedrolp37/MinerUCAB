@@ -14,7 +14,8 @@
         :activity="activitySelect"
         @closeDAct="changeView"
       />
-      <EmpleadosProView v-show="optionSelect == 'empleados'" />
+      <EmpleadosProView v-show="optionSelect == 'empleados'" :empAsigPro="empAsigPro" />
+      <ClienteProViewVue v-show="optionSelect == 'cliente'" />
     </div>
   </div>
 </template>
@@ -26,11 +27,42 @@ import EtapasActividadesVue from '../../components/NavEActividades.vue'
 import ActividadDetalleVue from '../../components/ActividadDetalle.vue'
 import EmpleadosProView from './EmpleadosProView.vue'
 import NavBarVue from '../../components/NavBar.vue'
+import ClienteProViewVue from './ClienteProView.vue'
 
 //varibles
 let proyectos = ref([])
 let optionSelect = ref('')
 let activitySelect = ref({})
+
+/*
+ * Variable que se manda como props a empleadosProView contiene:
+ * nombre, apellido, dni, cargo, actividades asociadas
+ * la estrutura es un array de objetos
+ */
+let empAsigPro = ref([])
+empAsigPro.value = [
+  {
+    name: 'Arturo',
+    lastName: 'perez',
+    dni: '28680741',
+    job: 'Asesino',
+    activity: ['Vender Droga']
+  },
+  {
+    name: 'Angel',
+    lastName: 'perez',
+    dni: '28680742',
+    job: 'Programador',
+    activity: ['MinerUcab']
+  },
+  {
+    name: 'Wilmer',
+    lastName: 'perez',
+    dni: '25420700',
+    job: 'Programador',
+    activity: ['Ucab']
+  }
+]
 
 optionSelect.value = 'etapas'
 proyectos = [

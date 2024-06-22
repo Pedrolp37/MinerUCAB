@@ -18,11 +18,6 @@
           >Ver Detalle Proyecto</router-link
         >
       </div>
-      <hr />
-      <router-link :to="{}" class="btn badge">Informes</router-link>
-      <router-link :to="{}" class="btn badge">Empleados</router-link>
-      <router-link :to="{}" class="btn badge">Actividades</router-link>
-      <router-link :to="{}" class="btn badge">Cronograma</router-link>
     </div>
   </div>
 </template>
