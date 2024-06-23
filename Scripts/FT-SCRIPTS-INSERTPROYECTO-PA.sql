@@ -202,51 +202,43 @@ VALUES ('Explotación Minera de Oro', 'Explotación del yacimiento de oro con al
 
  ('Cal Patanemo', 'Producción de cal industrial a partir de piedra caliza', '2024-10-01', '2025-09-30', 30, 90),
 
-('Caliza Tumeremo', 'Explotación de piedra caliza para la producción de cal', '2023-09-01', '2024-08-31', 31, 91),
 
-('Caliza Clarines', 'Explotación de piedra caliza en Venezuela', '2021-08-01', '2023-07-31', 31, 92),
+('Granito San Carlos', 'Explotación de granito para la construcción en yacimientos de granito en San CARLOS', '2024-06-01', '2030-05-31', 31, 91),
 
-('Caliza Proyecto', 'Explotación de piedra caliza', '2021-07-01', '2024-06-30', 31, 93),
+('Granito Proyecto en Cojedes', 'Explotación de granito', '2026-05-01', '2030-04-30', 31, 92),
 
-
-('Granito San Carlos', 'Explotación de granito para la construcción en yacimientos de granito en San CARLOS', '2024-06-01', '2030-05-31', 32,106 ),
-
-('Granito Proyecto en Cojedes', 'Explotación de granito', '2026-05-01', '2030-04-30', 32, 107),
-
-('Granito Ucab', 'Explotación de granito en Venezuela', '2021-04-01', '2023-03-31', 32, 108),
+('Granito Ucab', 'Explotación de granito en Venezuela', '2021-04-01', '2023-03-31', 31, 93),
 
 
-('Yeso Venezuela', 'Explotación de yeso en toda Venezuela', '2023-12-21', '2027-01-31', 33, 94),
+('Yeso Venezuela', 'Explotación de yeso en toda Venezuela', '2023-12-21', '2027-01-31', 32, 94),
 
-('Yeso Miner Taracoa', 'Explotación de yeso en Taracoa', '2024-05-29', '2026-05-31', 33, 95),
+('Yeso Miner Taracoa', 'Explotación de yeso en Taracoa', '2024-05-29', '2026-05-31', 32, 95);
 
-('Yeso Proyecto Quebrada Grande', 'Explotación de yeso en Quebrada Grande', '2023-12-11', '2025-11-30', 33, 96),
-
-
- ('Arcilla Cubagua', 'Explotación de arcilla roja para la fabricación de ladrillos', '2022-11-22', '2024-10-31', 34, 97),
-
-('Arcilla Isla Coche', 'Explotación de arcilla de forma responsable', '2021-10-01', '2025-09-30', 34, 98),
-
-('Arcilla Proyecto Venezuela', 'Explotación de arcilla en Venezuela', '2024-09-11', '2032-08-31', 34, 99),
+('Yeso Proyecto Quebrada Grande', 'Explotación de yeso en Quebrada Grande', '2023-12-11', '2025-11-30', 32, 96),
 
 
+ ('Arcilla Cubagua', 'Explotación de arcilla roja para la fabricación de ladrillos', '2022-11-22', '2024-10-31', 33, 97),
+
+('Arcilla Isla Coche', 'Explotación de arcilla de forma responsable', '2021-10-01', '2025-09-30', 33,98),
+
+('Arcilla Proyecto Venezuela', 'Explotación de arcilla en Venezuela', '2024-09-11', '2032-08-31', 33, 99),
 
 
+('Explorando Baritina ', 'Exploración y Explotación de baritina ', '2022-08-17', '2023-02-31', 34, 100),
 
-('Explorando Baritina ', 'Exploración y Explotación de baritina ', '2022-08-17', '2023-02-20', 35, 100),
+ ('Baritina Extracción', ' explotación de baritina de forma responsable', '2021-07-19', '2024-06-30', 34, 101),
 
- ('Baritina Extracción', ' explotación de baritina de forma responsable', '2021-07-19', '2024-06-30', 35, 101),
+('Baritina Minervenezuela', 'Explotación de baritina en Venezuela', '2025-06-01', '2029-05-31', 34, 102),
 
-('Baritina Minervenezuela', 'Explotación de baritina en Venezuela', '2025-06-01', '2029-05-31', 35, 102),
+('Bentonita Matorral', 'Explotación de bentonita en el yacimiento Matorral, Estado Monagas', '2024-01-01', '2028-12-31', 35, 103),
 
-('Bentonita Matorral', 'Explotación de bentonita en el yacimiento Matorral Estado Monagas', '2024-01-01', '2028-12-31', 36, 103),
+('Bentonita Barinas', 'Explotación de bentonita en el yacimiento Barinas, Estado Barinas', '2023-12-01', '2027-11-30', 35, 104),
 
-('Bentonita Barinas', 'Explotación de bentonita en el yacimiento Barinas Estado Barinas', '2023-12-01', '2027-11-30', 36, 104),
+('Bentonita Zulia', 'Explotación de bentonita en el yacimiento Zulia, Estado Zulia', '2022-11-01', '2026-10-31', 35, 105),
 
-('Bentonita Zulia', 'Explotación de bentonita en el yacimiento Zulia Estado Zulia', '2022-11-01', '2026-10-31', 36, 105),
+('Azufre Morichal', 'Explotación de azufre en el yacimiento Morichal, Estado Monagas', '2021-10-01', '2025-09-30', 36, 106),
 
-('Azufre Morichal', 'Explotación de azufre en el yacimiento Morichal Estado Monagas', '2021-10-01', '2025-09-30', 37, 109),
+('Azufre Cerro Amarillo', 'Explotación de azufre en el yacimiento Cerro Amarillo, Estado Bolívar', '2020-09-01', '2024-08-31', 36, 107),
 
-('Azufre Cerro Amarillo', 'Explotación de azufre en el yacimiento Cerro Amarillo Estado Bolívar', '2020-09-01', '2024-08-31', 37, 110),
+('Azufre Mérida', 'Explotación de azufre en el yacimiento Mérida, Estado Mérida', '2019-08-01', '2023-07-31', 36, 108);
 
-('Azufre Mérida', 'Explotación de azufre en el yacimiento Mérida Estado Mérida', '2019-08-01', '2023-07-31', 37, 111);
