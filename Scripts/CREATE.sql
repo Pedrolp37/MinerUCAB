@@ -63,7 +63,7 @@ CREATE TABLE YACIMIENTO (
 	-- llave foranea de yacimiento con respecto a lugar
 	CONSTRAINT fk_encuentra FOREIGN KEY (fk_lu_id) REFERENCES LUGAR (lu_id),
 	-- expresion regular para descripcion de yacimiento
-	CONSTRAINT ck_yac_descripcion CHECK (yac_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$'),
+	CONSTRAINT ck_yac_descripcion CHECK (yac_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. ]+$'),
 	CONSTRAINT ck_aut_origen CHECK (aut_origen IN ('Terrestre','Acuatico')),
 	CONSTRAINT ck_aloc_tipo_transporte CHECK (aloc_tipo_transporte IN ('Viento','Agua','Desborde','Deslizamiento')),
 	CONSTRAINT ck_yac_tipo CHECK (yac_tipo IN ('AUTOCTONO','ALOCTONO'))
@@ -80,7 +80,7 @@ CREATE TABLE ESTATUS (
 	-- expresion regular para el nombre del estatus
 	CONSTRAINT ck_est_nombre CHECK (est_nombre ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
 	-- forma que se divide los tipos de estatus
-	CONSTRAINT ck_est_tipo CHECK (est_tipo IN ('Actividad','Empleado','Recurso','Proyecto','Pozo'))
+	CONSTRAINT ck_est_tipo CHECK (est_tipo IN ('Actividad','Empleado','Recurso','Proyecto','Pozo','Solicitud'))
 );
 
 DROP TABLE IF EXISTS HORARIO CASCADE;
@@ -94,9 +94,9 @@ CREATE TABLE HORARIO (
 	--Se comprende en los dias de la semana
 	CONSTRAINT ck_hor_dia CHECK (hor_dia IN ('Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo')),
 	--Usa el formato militar de hora
-	CONSTRAINT ck_hor_entrada CHECK (CAST(hor_entrada AS text) ~'^(?:[0-1]?[0-9]|2[0-3]):[0-5][0-9]$'),
+	CONSTRAINT ck_hor_entrada CHECK (CAST(hor_entrada AS text) ~'^(?:[0-1]?[0-9]|2[0-3]):[0-5][0-9]:00$'),
 	--Usa el formato militar de hora
-	CONSTRAINT ck_hor_salida CHECK (CAST(hor_salida AS text) ~'^(?:[0-1]?[0-9]|2[0-3]):[0-5][0-9]$'),
+	CONSTRAINT ck_hor_salida CHECK (CAST(hor_salida AS text) ~'^(?:[0-1]?[0-9]|2[0-3]):[0-5][0-9]:00$'),
 	--La hora de salida siempre tiene que ser mayor a la de entrada por cada registro
 	CONSTRAINT ck_horario CHECK (hor_salida > hor_entrada)
 );
@@ -152,11 +152,11 @@ CREATE TABLE ETAPA(
 	et_id SERIAL PRIMARY KEY,
 	et_num_etapa INT NOT NULL,
 	et_nombre VARCHAR(40) NOT NULL,
-	et_total_dias INT NOT NULL,
+	et_total_dias INT,
 	fk_min_id INT NOT NULL,
 
 	CONSTRAINT fk_contiene FOREIGN KEY (fk_min_id) REFERENCES MINERAL (min_id),
-	CONSTRAINT ck_et_nombre CHECK (et_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$)'),
+	CONSTRAINT ck_et_nombre CHECK (et_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
 	CONSTRAINT ck_et_total_dias CHECK (et_total_dias > 0)
 );
 
@@ -167,14 +167,14 @@ CREATE TABLE ACTIVIDAD (
 	act_nombre VARCHAR(40) NOT NULL,
 	act_descripcion TEXT NOT NULL,
 	act_prioridad VARCHAR(8),
-	act_total_dias INT NOT NULL,
+	act_total_dias INT,
 	fk_et_id INT NOT NULL, --CLAVE FORANEA TOTAL
 	fk_act_id INT, --CLAVE FORANEA PARCIAL
 
 	-- expresion regular para los nombres de las actividades
-	CONSTRAINT ck_act_nombre CHECK (act_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_act_nombre CHECK (act_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
 	-- expresion regular para la descripcion de las actividades
-	CONSTRAINT ck_act_descripcion CHECK (act_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_act_descripcion CHECK (act_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ, ]+$'),
 	-- valores posibles para la prioridad de la actividad
 	CONSTRAINT ck_act_prioridaad CHECK (act_prioridad IN('Alta','Media','Baja')),
 	-- valor minimo de dias para actividad
@@ -267,13 +267,11 @@ CREATE TABLE PROYECTO(
 
 	CONSTRAINT fk_explora FOREIGN KEY (pro_fk_po_id, pro_fk_min_id) REFERENCES MINERAL_POZO(po_id,min_id),
 
-	CONSTRAINT ck_pro_fecha_ini CHECK (pro_fecha_ini <= CURRENT_DATE),
-
-	CONSTRAINT ck_pro_fecha_fin CHECK (pro_fecha_fin <= CURRENT_DATE),
+	CONSTRAINT ck_pro_fecha_fin CHECK (pro_fecha_fin > pro_fecha_ini),
 
 	CONSTRAINT ck_pro_fecha_diff CHECK (pro_fecha_fin > pro_fecha_ini),
 
-	CONSTRAINT ck_pro_nombre CHECK (pro_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$'),
+	CONSTRAINT ck_pro_nombre CHECK (pro_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
 
 	CONSTRAINT ck_pro_descripcion CHECK (pro_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$')
 );
@@ -305,7 +303,7 @@ CREATE TABLE CLIENTE (
 	cl_s_nombre VARCHAR(30),
 	cl_p_apellido VARCHAR(30) NOT NULL,
 	cl_s_apellido VARCHAR(30),
-	cl_telefono VARCHAR(8) NOT NULL,
+	cl_telefono VARCHAR(12) NOT NULL,
 	cl_direccion VARCHAR(180) NOT NULL,
 	fk_lu_id INT NOT NULL,
 
@@ -318,13 +316,13 @@ CREATE TABLE CLIENTE (
 
 	CONSTRAINT ck_cl_s_nombre CHECK (cl_s_nombre ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
 
-	CONSTRAINT ck_cl_p_apellido CHECK (cl_p_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_cl_p_apellido CHECK (cl_p_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$'),
 
-	CONSTRAINT ck_cl_s_apellido CHECK (cl_s_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_cl_s_apellido CHECK (cl_s_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$'),
 
 	CONSTRAINT ck_cl_telefono CHECK (cl_telefono ~ '^\d{4}-\d{7}$'),
 
-	CONSTRAINT ck_cl_direccion CHECK (cl_direccion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$'),
+	CONSTRAINT ck_cl_direccion CHECK (cl_direccion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. ]+$'),
 
 	CONSTRAINT fk_reside FOREIGN KEY (fk_lu_id) REFERENCES LUGAR (lu_id)
 );
@@ -333,20 +331,19 @@ DROP TABLE IF EXISTS ALIADO_COMERCIAL CASCADE;
 
 CREATE TABLE ALIADO_COMERCIAL(
 	ali_RIF VARCHAR(11) PRIMARY KEY,
-	ali_fk_tid_id INT NOT NULL,
 	ali_nombre VARCHAR(50) NOT NULL,
 	ali_direccion VARCHAR(180) NOT NULL,
 	ali_fecha_creacion DATE NOT NULL,
 	ali_capital NUMERIC(30,2) NOT NULL,
-	ali_num_telefono VARCHAR(8) NOT NULL,
+	ali_num_telefono VARCHAR(12) NOT NULL,
 	ali_descripcion VARCHAR(200),
 	fk_lu_id INT NOT NULL,
 
 	CONSTRAINT ck_ali_RIF CHECK (ali_RIF ~ '^[J]{1}[0-9]{9,10}$'),
 
-	CONSTRAINT ck_ali_nombre CHECK (ali_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_ali_nombre CHECK (ali_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ -]+$'),
 
-	CONSTRAINT ck_ali_direccion CHECK (ali_direccion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$'),
+	CONSTRAINT ck_ali_direccion CHECK (ali_direccion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. -]+$'),
 
 	CONSTRAINT ck_ali_fecha_creacion CHECK (ali_fecha_creacion < CURRENT_DATE),
 
@@ -354,7 +351,7 @@ CREATE TABLE ALIADO_COMERCIAL(
 
 	CONSTRAINT ck_ali_num_telefono CHECK (ali_num_telefono ~ '^\d{4}-\d{7}$'),
 
-	CONSTRAINT ck_ali_descripcion CHECK (ali_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$'),
+	CONSTRAINT ck_ali_descripcion CHECK (ali_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. ]+$'),
 
 	CONSTRAINT fk_radicado FOREIGN KEY (fk_lu_id) REFERENCES LUGAR (lu_id)
 );
@@ -379,8 +376,6 @@ CREATE TABLE CONCESION(
 
 	CONSTRAINT ck_conce_fecha_ini CHECK (conce_fecha_ini <= CURRENT_DATE),
 
-	CONSTRAINT ck_conce_fecha_fin CHECK (conce_fecha_fin <= CURRENT_DATE),
-
 	CONSTRAINT ck_conce_fecha_diff CHECK (conce_fecha_fin > conce_fecha_ini)
 );
 
@@ -389,12 +384,11 @@ DROP TABLE IF EXISTS ESTATUS_EMPLEADO;
 
 CREATE TABLE EMPLEADO (
 	emp_identificacion VARCHAR(11) NOT NULL,
-	emp_fk_tid_id INT NOT NULL,
 	emp_p_nombre VARCHAR(30) NOT NULL,
 	emp_s_nombre VARCHAR(30),
 	emp_p_apellido VARCHAR(30) NOT NULL,
 	emp_s_apellido VARCHAR(30),
-	emp_telefono VARCHAR(8) NOT NULL,
+	emp_telefono VARCHAR(12) NOT NULL,
 	emp_direccion VARCHAR(180) NOT NULL,
 	emp_fk_lu_id INT NOT NULL,
 
@@ -406,13 +400,13 @@ CREATE TABLE EMPLEADO (
 
 	CONSTRAINT ck_emp_s_nombre CHECK (emp_s_nombre ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
 
-	CONSTRAINT ck_emp_p_apellido CHECK (emp_p_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_emp_p_apellido CHECK (emp_p_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$'),
 
-	CONSTRAINT ck_emp_s_apellido CHECK (emp_s_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_emp_s_apellido CHECK (emp_s_apellido ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$'),
 
 	CONSTRAINT ck_emp_telefono CHECK (emp_telefono ~ '^\d{4}-\d{7}$'),
 
-	CONSTRAINT ck_emp_direccion CHECK (emp_direccion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$'),
+	CONSTRAINT ck_emp_direccion CHECK (emp_direccion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. ]+$'),
 
 	CONSTRAINT fk_vive FOREIGN KEY (emp_fk_lu_id) REFERENCES LUGAR (lu_id)
 );
@@ -446,9 +440,9 @@ CREATE TABLE CARGO (
 	carg_nombre VARCHAR(30) NOT NULL,
 	carg_descripcion VARCHAR(180) NOT NULL,
 
-	CONSTRAINT ck_carg_nombre CHECK (carg_nombre ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_carg_nombre CHECK (carg_nombre ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$'),
 
-	CONSTRAINT ck_carg_descripcion CHECK (carg_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$')
+	CONSTRAINT ck_carg_descripcion CHECK (carg_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. ]+$')
 );
 
 CREATE TABLE CARGO_EMPLEADO (
@@ -528,9 +522,9 @@ CREATE TABLE RECURSO_MATERIAL(
 
 	CONSTRAINT fk_fracciona FOREIGN KEY (re_fk_tire_id) REFERENCES RECURSO (tire_id),
 
-	CONSTRAINT ck_re_nombre CHECK (re_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_re_nombre CHECK (re_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
 
-	CONSTRAINT ck_re_descripcion CHECK (re_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$')
+	CONSTRAINT ck_re_descripcion CHECK (re_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,./ ]+$')
 );
 
 DROP TABLE IF EXISTS RECURSO_ESTATUS;
@@ -627,7 +621,7 @@ CREATE TABLE SOLICITUD_CLIENTE(
 
 	CONSTRAINT ck_factura_cli_total CHECK (factura_cli_total > 0),
 
-	CONSTRAINT ck_factura_cli_observacion CHECK (factura_cli_observacion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$')
+	CONSTRAINT ck_factura_cli_observacion CHECK (factura_cli_observacion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. ]+$')
 );
 
 DROP TABLE IF EXISTS EST_SOL_CLIENTE;
@@ -785,7 +779,7 @@ CREATE TABLE ACTIVIDAD_EJ (
 	actej_fecha_fin DATE,
 
 	-- expresion regular para los nombres de las actividades
-	CONSTRAINT ck_actej_nombre CHECK (actej_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_actej_nombre CHECK (actej_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
 	-- llave foranea con etapa
 	CONSTRAINT fk_involucra FOREIGN KEY (fk_etej_id) REFERENCES ETAPA_EJ (etej_id),
 	-- llave foranea recursiva
