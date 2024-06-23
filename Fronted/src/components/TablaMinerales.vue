@@ -19,13 +19,7 @@
           <td>{{ elm.stages }}</td>
           <td>{{ elm.activities.length }}</td>
           <td>
-            <button
-              class="btn"
-              @click="sendResponseSDM(elm.id)"
-              style="background-color: #fa8f14; color: white"
-            >
-              Detalle
-            </button>
+            <button class="detalle btn" @click="sendResponseSDM(elm.id)">Detalle</button>
           </td>
         </tr>
       </tbody>
@@ -49,13 +43,7 @@
           <td>{{ elm.stages }}</td>
           <td>{{ elm.activities.length }}</td>
           <td>
-            <button
-              class="btn"
-              @click="sendResponseSDM(elm.id)"
-              style="background-color: #fa8f14; color: white"
-            >
-              Detalle
-            </button>
+            <button class="detalle btn" @click="sendResponseSDM(elm.id)">Detalle</button>
           </td>
         </tr>
       </tbody>
@@ -81,4 +69,13 @@ const sendResponseSDM = (id) => {
 }
 </script>
 
-<style scope></style>
+<style scope>
+.detalle.btn {
+  background-color: #fa8f14;
+  color: white;
+}
+.detalle.btn:hover {
+  background-color: #7d6850;
+  color: white;
+}
+</style>

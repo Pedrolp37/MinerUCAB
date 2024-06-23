@@ -1,75 +1,114 @@
 <template>
-<table
-      class="table table-striped"
-      id="table"
-      style="width: 60vw"
-    >
+  <div>
+    <table class="table table-striped" id="table" style="width: 60vw">
       <thead>
         <tr style="text-align: center">
           <th>Etapa</th>
-          <th>Actividades</th>
-          <th>SubActividades</th>
-          <th>Prioridad</th>
+          <th>N-Actividades</th>
+          <th>Opciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(elm, index) in mineral" :key="index" style="text-align: center">
-          <td class="tdContainer">{{ elm.stages.name }}</td>
-          <td class="tdContainer"><li v-for="(act, index) in elm.stages.activities" :key="index">{{act}}</li></td>
-          <td class="tdContainer"><li v-for="(subAct, index) in elm.stages.subActivities" :key="index">{{subAct}}</li></td>
-          <td class="tdContainer">{{ elm.stages.priority }}</td>
+        <tr v-for="(stage, index) in props.stages" :key="index" style="text-align: center">
+          <td class="tdContainer">{{ stage.id }}</td>
+          <td class="tdContainer">{{ stage.acts.length }}</td>
           <td class="tdContainer">
             <button
-              class="btn"
-              style="background-color: #fa8f14; color: white"
+              class="option btn"
+              @click="getDetalleEtapa(stage.id)"
+              data-bs-toggle="modal"
+              data-bs-target="#detalleEmpleado"
             >
-              Modificar Etapa
+              Ver Detalle
             </button>
+            |
+            <button class="option btn">Modificar Etapa</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <div
+      class="modal fade"
+      id="detalleEmpleado"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Detalle (Etapa)</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div>
+                <table class="table table-striped" id="table">
+                  <thead>
+                    <tr style="text-align: center">
+                      <th>Actividades</th>
+                      <th>SubActividades</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(act, index) in activities" :key="index" style="text-align: center">
+                      <td class="tdContainer">{{ act.name }}</td>
+                      <td class="tdContainer">
+                        <div>
+                          <p v-for="(subAct, index) in act.subActs" :key="index">{{ subAct }}</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 
-let route = useRoute()
-let minerals = ref([])
-let mineral = ref({})
+let activities = ref([])
 
-minerals.value = [
-  {
-    id: 1,
-    name: 'Oro',
-    stages: {
-      name: 'etapa 1',
-      activities: ['Limpiar', 'Cocinar'],
-      subActivities: ['lavar coleto', 'cortar verduras'],
-      priority: 'alta'
-    }
-  },
-  {
-    id: 2,
-    name: 'Oro',
-    stages: {
-      name: 'etapa 2',
-      activities: ['Limpiar', 'Cocinar'],
-      subActivities: ['lavar coleto', 'cortar verduras'],
-      priority: 'alta'
-
-    }
+const props = defineProps({
+  stages: {
+    required: true
   }
-]
+})
 
-mineral.value = minerals.value.filter((elm) => elm.id == route.params.id)
-console.log(mineral.value)
-
+const getDetalleEtapa = (id) => {
+  props.stages.forEach((elm) => {
+    if (elm.id === id) {
+      console.log('hola')
+      activities.value = elm.acts
+    }
+  })
+}
 </script>
 
 <style scoped>
-.tdContainer{
- align-content: center;
+.tdContainer {
+  align-content: center;
+}
+
+.option.btn {
+  background-color: #fa8f14;
+  color: white;
+}
+
+.option.btn:hover {
+  background-color: #7d6850;
+  color: white;
 }
 </style>

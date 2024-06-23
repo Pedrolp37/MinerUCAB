@@ -8,7 +8,6 @@
             <h3 style="color: #a57844">Proyectos En Curso</h3>
           </div>
           <div class="col-6 d-flex justify-content-end">
-            <!--Este router link te manda a crear proyecto-->
             <router-link :to="{ name: 'crear_proyecto' }" class="button btn"
               >+ Crear Nuevo Proyecto</router-link
             >
@@ -17,7 +16,9 @@
         <hr />
         <div class="row">
           <div class="col d-flex justify-content-end">
-            <a href="" role="button" class="btn" style="color: #fa8f14">Ver todos los proyectos</a>
+            <router-link :to="{ name: 'proyectos_todos' }" class="btn" style="color: #fa8f14"
+              >Ver todos los proyectos</router-link
+            >
           </div>
         </div>
         <div class="d-flex flex-wrap flex-row justify-content-around">
