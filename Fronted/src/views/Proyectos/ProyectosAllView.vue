@@ -13,21 +13,29 @@
         </div>
       </div>
       <hr />
-      <div class="row" style="margin: 40px">
-        <div class="col-4 d-flex">
-          <select class="form-select" aria-label="Default select example" v-model="statusOption">
-            <option selected>Seleccionar Estatus:</option>
-            <option value="nombre">Nombre</option>
-            <option value="dni">DNI</option>
-            <option value="cargo">Cargo</option>
-          </select>
-          <button class="filtrar btn">Filtrar</button>
+      <div class="row" style="margin-top: 40px">
+        <div class="col-3">
+          <div>
+            <select class="form-select" aria-label="Default select example" v-model="statusOption">
+              <option selected>Seleccionar Estatus:</option>
+              <option value="Pendiente">Pendiente</option>
+              <option value="Proceso">Proceso</option>
+              <option value="Terminado">Terminado</option>
+              <option value="Atrasado">Atrasado</option>
+            </select>
+          </div>
+          <div>
+            <button class="filtrar btn" @click="getProFiltered">Filtrar</button>
+            <button v-if="proFiltered.length != 0" class="back btn" @click="showAllPro">
+              volver
+            </button>
+          </div>
         </div>
       </div>
       <div class="row" style="margin: 80px">
         <TablaProyectos
           :proyectos="proyectos"
-          :proFiltered="getProFiltered()"
+          :proFiltered="proFiltered"
           @dltPro="deleteProyecto"
           @mDPro="modifyProyecto"
         />
@@ -43,6 +51,7 @@ import TablaProyectos from '../../components/TablaProyectos.vue'
 
 let statusOption = ref('Seleccionar Estatus:')
 let proyectos = ref([])
+let proFiltered = ref([])
 
 //Esto es un ejemplo
 proyectos.value = [
@@ -54,29 +63,49 @@ proyectos.value = [
   {
     id: 2,
     name: 'Konoha',
-    status: 'Pendiente'
+    status: 'Atrasado'
   }
 ]
 
 const getProFiltered = () => {
-  let proFiltered = []
-  return proFiltered
-
-  //Esto realmente es un switch para poder filtrar y retornar el array nuevo con los datos filtrados
+  switch (statusOption.value) {
+    case 'Pendiente':
+      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      statusOption.value = 'Seleccionar Estatus:'
+      break
+    case 'Proceso':
+      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      statusOption.value = 'Seleccionar Estatus:'
+      break
+    case 'Terminado':
+      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      statusOption.value = 'Seleccionar Estatus:'
+      break
+    case 'Atrasado':
+      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      statusOption.value = 'Seleccionar Estatus:'
+      break
+  }
 }
 
 const deleteProyecto = (id) => {
-  
-  proyectos.value.splice(proyectos.value.findIndex(elm => elm.id == id))
+  proyectos.value.splice(
+    proyectos.value.findIndex((elm) => elm.id == id),
+    1
+  )
 }
 
 const modifyProyecto = (data) => {
-  proyectos.value.forEach(elm => {
-    if(elm.id == data.id){
+  proyectos.value.forEach((elm) => {
+    if (elm.id == data.id) {
       elm.name = data.name
       elm.status = data.status
     }
-  });
+  })
+}
+
+const showAllPro = () => {
+  proFiltered.value = []
 }
 </script>
 
@@ -96,12 +125,26 @@ const modifyProyecto = (data) => {
 }
 
 .filtrar.btn {
+  margin-top: 10px;
   background-color: #a07e4c;
   color: white;
   border-radius: 10px;
 }
 
 .filtrar.btn:hover {
+  background-color: #a07e4c00;
+  color: black;
+}
+
+.back.btn {
+  background-color: #a07e4c;
+  color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.back.btn:hover {
   background-color: #a07e4c00;
   color: black;
 }

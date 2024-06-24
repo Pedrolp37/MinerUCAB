@@ -46,22 +46,31 @@
             </a>
             <ul class="dropdown-menu">
               <li><p class="ddwProyectos-p">En curso</p></li>
+
               <li v-for="(elm, index) in proyectos" :key="index">
-                <p class="dropdown-item" style="margin: 4px">{{ elm.name }}</p>
+                <router-link
+                  :to="{ name: 'detalle_proyecto', params: { id: elm.id } }"
+                  class="dropdown-item"
+                  style="margin: 4px"
+                  >{{ elm.name }}</router-link
+                >
               </li>
+
               <li><hr class="dropdown-divider" /></li>
               <li>
                 <div class="container">
                   <div class="row">
                     <div class="col-6 d-flex justify-content-start">
                       <!--Este router link te manda a mostrar todos los proyecto-->
-                      <router-link :to="{ name: 'home' }" class="dropdown-item button btn"
+                      <router-link
+                        :to="{ name: 'proyectos_todos' }"
+                        class="dropdown-item button btn"
                         >Ver todos los proyectos</router-link
                       >
                     </div>
                     <div class="col-6 d-flex justify-content-end">
                       <!--Este router link te manda a crear proyecto-->
-                      <router-link :to="{ name: 'home' }" class="dropdown-item button btn"
+                      <router-link :to="{ name: 'crear_proyecto' }" class="dropdown-item button btn"
                         >+ Crear Nuevo Proyecto</router-link
                       >
                     </div>
@@ -196,6 +205,7 @@ usuario.value = 'PL'
 
 proyectos = [
   {
+    id: 1,
     name: '% Andrómeda',
     tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
@@ -205,6 +215,7 @@ proyectos = [
   },
 
   {
+    id: 2,
     name: '% Lactea',
     tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
@@ -214,6 +225,7 @@ proyectos = [
   },
 
   {
+    id: 3,
     name: '% Gemini',
     tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',

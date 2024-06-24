@@ -25,7 +25,7 @@
         <div style="text-align: start">
           <button
             class="optionMenu btn"
-            @click="handleClickOption('cronograma')"
+            @click="showAlert"
             :style="{ color: optionMenu == 'cronograma' ? '#fa8f14' : 'white' }"
           >
             Cronograma
@@ -52,7 +52,7 @@
         <div style="text-align: start">
           <button
             class="optionMenu btn"
-            @click="handleClickOption('finanzas')"
+            @click="showAlert"
             :style="{ color: optionMenu == 'finanzas' ? '#fa8f14' : 'white' }"
           >
             Finanzas
@@ -68,14 +68,15 @@ import { ref } from 'vue'
 
 let optionMenu = ref('')
 
-// const handleClickOption = (option) => {
-//   optionMenu.value = option
-// }
-
 const handleClickOption = (option) => {
   optionMenu.value = option
   emit('changeView', optionMenu.value)
 }
+
+const showAlert = () => {
+  alert('Disponible en próximas versiones')
+}
+
 const emit = defineEmits(['changeView'])
 </script>
 

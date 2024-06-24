@@ -25,12 +25,14 @@
           <CardVue
             v-for="(elm, index) in proyectos"
             :key="index"
+            :idPro="elm.id"
             :nomProyecto="elm.name"
             :tipoProyecto="elm.tipo"
             :nomLiderPro="elm.nameLPro"
             :nomLiderMin="elm.nameLMin"
             :numExplotaciones="elm.Exp"
             :culminacion="elm.fC"
+            @dltPro="deletePro"
           />
         </div>
       </div>
@@ -46,8 +48,9 @@ import NavBarVue from '../../components/NavBar.vue'
 let proyectos = ref([])
 
 //ejemplo
-proyectos = [
+proyectos.value = [
   {
+    id: 1,
     name: '% Andrómeda',
     tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
@@ -57,6 +60,7 @@ proyectos = [
   },
 
   {
+    id: 2,
     name: '% Lactea',
     tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
@@ -66,6 +70,7 @@ proyectos = [
   },
 
   {
+    id: 3,
     name: '% Gemini',
     tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
@@ -74,6 +79,13 @@ proyectos = [
     fC: '01/02/24'
   }
 ]
+
+const deletePro = (id) => {
+  proyectos.value.splice(
+    proyectos.value.findIndex((elm) => elm.id == id),
+    1
+  )
+}
 </script>
 
 <style scoped>

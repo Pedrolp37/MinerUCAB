@@ -27,7 +27,7 @@ const router = createRouter({
       component: ProyectosAllView
     },
     {
-      path: '/proyectos/detalle',
+      path: '/proyectos/detalle/:id',
       name: 'detalle_proyecto',
       component: ProyectosDetalleView
     },

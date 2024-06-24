@@ -77,28 +77,29 @@
               <div class="row">
                 <div class="col">
                   <label for="nombre" class="form-label">Nombre Proyecto:</label>
-                  <input type="text" class="form-control" id="nombre" v-model="newNamePro"/>
+                  <input type="text" class="form-control" id="nombre" v-model="newNamePro" />
                 </div>
               </div>
               <div class="row" style="margin-top: 20px; margin-bottom: 8rem">
                 <div class="col-8">
                   <label for="nombre" class="form-label">Estatus Proyecto:</label>
-                  <select class="form-select" aria-label="Default select example" v-model="newStatusPro">
-                    <option selected>pendiente</option>
-                    <option value="otros">otros</option>
-                    <option value="otros">otros</option>
-                    <option value="otros">otros</option>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    v-model="newStatusPro"
+                  >
+                    <option selected>Elegir Estatus:</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Proceso">Proceso</option>
+                    <option value="Terminado">Terminado</option>
+                    <option value="Atrasado">Atrasado</option>
                   </select>
                 </div>
               </div>
               <hr />
               <div class="row">
                 <div class="col d-flex justify-content-end">
-                  <button
-                    class="guardar btn"
-                    data-bs-dismiss="modal"
-                    @click="saveChangesPro"
-                  >
+                  <button class="guardar btn" data-bs-dismiss="modal" @click="saveChangesPro">
                     Guardar Cambios
                   </button>
                 </div>
@@ -112,12 +113,11 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 let newNamePro = ref('')
-let newStatusPro = ref('pendiente')
+let newStatusPro = ref('Elegir Estatus:')
 let idProM = ref(0)
-
 
 const props = defineProps({
   proyectos: {
@@ -146,9 +146,8 @@ const saveChangesPro = () => {
 
   idProM.value = 0
   newNamePro.value = ''
-  newStatusPro.value = 'pendiente'
+  newStatusPro.value = 'Elegir Estatus:'
 }
-
 </script>
 
 <style scoped>
@@ -167,12 +166,12 @@ const saveChangesPro = () => {
   color: black;
 }
 
-.guardar.btn{
+.guardar.btn {
   background-color: #695844;
   color: white;
 }
 
-.guardar.btn:hover{
+.guardar.btn:hover {
   background-color: #fa8f1400;
   color: black;
 }
