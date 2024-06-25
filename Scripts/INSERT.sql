@@ -4316,1147 +4316,2786 @@ INSERT INTO ACTIVIDAD (act_nombre, act_descripcion, act_prioridad, act_total_dia
 VALUES
 	-- ORO
 --ETAPA 1
-('Estudio Geofisico','Análisis de las características geológicas para identificar posibles yacimientos','Alta',NULL,1,NULL),
-('Mapear geologia','Creación de mapas detallados de la zona','Media',NULL,1,NULL),
-('Perforacion Exploratoria','Implica la perforación de la corteza terrestre para obtener muestras de roca y evaluar la presencia de minerales','Alta',NULL,1,2),
-('Analisis datos historicos','estudio de registros y datos anteriores relacionados con la geología y la minería en la zona','Media',NULL,1,NULL),
-('Estudios topografia y cartografia','Involucra la creación de mapas detallados del área minera','Alta',NULL,1,4),
+('Estudio Geofisico','Análisis de las características geológicas para identificar posibles yacimientos','Alta',10,1,NULL),
+('Mapear geologia','Creación de mapas detallados de la zona','Media',7,1,NULL),
+('Perforacion Exploratoria','Implica la perforación de la corteza terrestre para obtener muestras de roca y evaluar la presencia de minerales','Alta',14,1,2),
+('Analisis datos historicos','estudio de registros y datos anteriores relacionados con la geología y la minería en la zona','Media',5,1,NULL),
+('Estudios topografia y cartografia','Involucra la creación de mapas detallados del área minera','Alta',8,1,4),
 --ETAPA 2
-('Mapeo','trazar y registrar la ubicación precisa de características geológicas, como vetas, fallas y estructuras','Alta',NULL,2,NULL),
-('Mineralogía','estudio de minerales y sus propiedades','Media',NULL,2,6),
-('Muestreo de suelo','toman muestras de suelo para analizar su contenido mineral','Alta', NULL, 2, NULL),
-('Mapeo de vetas','Similar al mapeo general, pero se enfoca específicamente en las vetas de minerales','Media', NULL, 2, NULL),
-('Teledeteccion','Utiliza imágenes satelitales y sensores remotos para recopilar datos sobre la superficie terrestre','Alta', NULL, 2, NULL),
+('Mapeo','trazar y registrar la ubicación precisa de características geológicas, como vetas, fallas y estructuras','Alta',12,2,NULL),
+('Mineralogía','estudio de minerales y sus propiedades','Media',9,2,6),
+('Muestreo de suelo','toman muestras de suelo para analizar su contenido mineral','Alta', 6, 2, NULL),
+('Mapeo de vetas','Similar al mapeo general, pero se enfoca específicamente en las vetas de minerales','Media', 10, 2, NULL),
+('Teledeteccion','Utiliza imágenes satelitales y sensores remotos para recopilar datos sobre la superficie terrestre','Alta', 7, 2, NULL),
 --ETAPA 3
-('Excavacion','Implica la remoción de tierra, roca u otros materiales para crear espacios subterráneos o superficiales','Media', NULL, 3, NULL),
-('Reforzar excavaciones','Se trata de fortalecer las paredes y techos de las excavaciones para evitar derrumbes','Media', NULL, 3, NULL),
-('Construir infraestructura','Involucra la creación de instalaciones necesarias para la operación minera','Media', NULL, 3, NULL),
-('Establecer area de trabajo','delimita la zona donde se llevarán a cabo las actividades mineras','Media', NULL, 3, NULL),
-('Estudios geotécnicos','Se realizan para evaluar la estabilidad del terreno y prevenir riesgos geotécnicos','Media', NULL, 3, NULL),
+('Excavacion','Implica la remoción de tierra, roca u otros materiales para crear espacios subterráneos o superficiales','Media', 15, 3, NULL),
+('Reforzar excavaciones','Se trata de fortalecer las paredes y techos de las excavaciones para evitar derrumbes','Media', 8, 3, NULL),
+('Construir infraestructura','Involucra la creación de instalaciones necesarias para la operación minera','Media', 12, 3, NULL),
+('Establecer area de trabajo','delimita la zona donde se llevarán a cabo las actividades mineras','Media', 7, 3, NULL),
+('Estudios geotécnicos','Se realizan para evaluar la estabilidad del terreno y prevenir riesgos geotécnicos','Media', 6, 3, NULL),
 --ETAPA 4
-('Extraer mineral','Consiste en la extracción física del mineral de la mina','Media', NULL, 4, NULL),
-('Cargar y transportar mineral','Después de la extracción, el mineral se carga en camiones, cintas transportadoras o equipos similares','Media', NULL, 4, NULL),
-('Realizar voladuras controladas','En la minería a cielo abierto, se utilizan explosivos para fragmentar la roca y facilitar la extracción','Alta', NULL, 4, NULL),
-('Monitorear la calidad del mineral','Se analiza la composición y calidad del mineral extraído','Media', NULL, 4, NULL),
-('Practicas de seguridad','Se implementan medidas para proteger a los trabajadores y prevenir accidentes','Alta', NULL, 4, NULL),
+('Extraer mineral','Consiste en la extracción física del mineral de la mina','Media', 20, 4, NULL),
+('Cargar y transportar mineral','Después de la extracción, el mineral se carga en camiones, cintas transportadoras o equipos similares','Media', 10, 4, NULL),
+('Realizar voladuras controladas','En la minería a cielo abierto, se utilizan explosivos para fragmentar la roca y facilitar la extracción','Alta', 15, 4, NULL),
+('Monitorear la calidad del mineral','Se analiza la composición y calidad del mineral extraído','Media', 8, 4, NULL),
+('Practicas de seguridad','Se implementan medidas para proteger a los trabajadores y prevenir accidentes','Alta', 7, 4, NULL),
 --ETAPA 5
-('Triturar y moler',' el mineral extraído se tritura y muele en partículas más pequeñas','Media', NULL, 5, NULL),
-('Separacion','separación de los componentes del mineral','Media', NULL, 5, NULL),
-('Refinar concentrado de oro',' se eliminan impurezas y se purifica el concentrado para obtener un producto más valioso','Media', NULL, 5, NULL),
-('Fundir el oro','El concentrado de oro se funde a altas temperaturas para separar el metal precioso de otros materiales','Media', NULL, 5, NULL),
-('Analisis de calidad','Se realizan pruebas y análisis para evaluar la calidad del producto final','Media', NULL, 5, NULL),
+('Triturar y moler',' el mineral extraído se tritura y muele en partículas más pequeñas','Media', 10, 5, NULL),
+('Separacion','separación de los componentes del mineral','Media', 7, 5, NULL),
+('Refinar concentrado de oro',' se eliminan impurezas y se purifica el concentrado para obtener un producto más valioso','Media', 6, 5, NULL),
+('Fundir el oro','El concentrado de oro se funde a altas temperaturas para separar el metal precioso de otros materiales','Media', 5, 5, NULL),
+('Analisis de calidad','Se realizan pruebas y análisis para evaluar la calidad del producto final','Media', 5, 5, NULL),
 -- DIAMANTE
 --ETAPA 1
-  ('Prospectar y Muestrear', 'Búsqueda y recolección de información sobre el diamante', 'Media', NULL, 6, NULL),
-  ('Estudios Geológicos', 'Análisis de características geológicas para identificar depósitos', 'Alta', NULL, 6, NULL),
-  ('Análisis de Suelo y Roca', 'Evaluación de la composición del suelo y las rocas', 'Media', NULL, 6, NULL),
-  ('Estudios de Topografía', 'Medición y mapeo del terreno para planificar la explotación', 'Baja', NULL, 6, NULL),
-  ('Estudios Ambientales', 'Evaluación del impacto ambiental potencial', 'Alta', NULL, 6, NULL),
+	('Prospectar y Muestrear', 'Búsqueda y recolección de información sobre el diamante', 'Media', 6, 6, NULL),
+	('Estudios Geológicos', 'Análisis de características geológicas para identificar depósitos', 'Alta', 10, 6, NULL),
+	('Análisis de Suelo y Roca', 'Evaluación de la composición del suelo y las rocas', 'Media', 7, 6, NULL),
+	('Estudios de Topografía', 'Medición y mapeo del terreno para planificar la explotación', 'Baja', 5, 6, NULL),
+	('Estudios Ambientales', 'Evaluación del impacto ambiental potencial', 'Alta', 8, 6, NULL),
 -- Geología de Superficie
-  ('Mapeo Geológico', 'Creación de un mapa detallado de las formaciones geológicas', 'Media', NULL, 7, NULL),
-  ('Estudios de Sedimentos', 'Análisis de los sedimentos superficiales en busca de diamantes', 'Baja', NULL, 7, NULL),
-  ('Estudios de Vegetación', 'Observación de la vegetación para identificar áreas prometedoras', 'Media', NULL, 7, NULL),
-  ('Estudios Hidrogeológicos', 'Investigación de la presencia de agua subterránea', 'Alta', NULL, 7, NULL),
-  ('Estudios de Suelo', 'Evaluación de la calidad del suelo', 'Baja', NULL, 7, NULL),
+	('Mapeo Geológico', 'Creación de un mapa detallado de las formaciones geológicas', 'Media', 7, 7, NULL),
+	('Estudios de Sedimentos', 'Análisis de los sedimentos superficiales en busca de diamantes', 'Baja', 6, 7, NULL),
+	('Estudios de Vegetación', 'Observación de la vegetación para identificar áreas prometedoras', 'Media', 7, 7, NULL),
+	('Estudios Hidrogeológicos', 'Investigación de la presencia de agua subterránea', 'Alta', 10, 7, NULL),
+	('Estudios de Suelo', 'Evaluación de la calidad del suelo', 'Baja', 6, 7, NULL),
   -- Perforación
-  ('Perforación de Exploración', 'Realización de perforaciones para obtener muestras de roca y suelo', 'Alta', NULL, 8, NULL),
-  ('Perforación de Diamantina', 'Perforación para extraer núcleos de diamante', 'Media', NULL, 8, NULL),
-  ('Pruebas de Permeabilidad', 'Evaluación de la permeabilidad del suelo', 'Baja', NULL, 8, NULL),
-  ('Pruebas de Resistencia', 'Medición de la resistencia de la roca', 'Alta', NULL, 8, NULL),
-  ('Estudios de Estratigrafía', 'Análisis de la disposición de las capas geológicas', 'Media', NULL, 8, NULL),
+	('Perforación de Exploración', 'Realización de perforaciones para obtener muestras de roca y suelo', 'Alta', 14, 8, NULL),
+	('Perforación de Diamantina', 'Perforación para extraer núcleos de diamante', 'Media', 9, 8, NULL),
+	('Pruebas de Permeabilidad', 'Evaluación de la permeabilidad del suelo', 'Baja', 6, 8, NULL),
+	('Pruebas de Resistencia', 'Medición de la resistencia de la roca', 'Alta', 10, 8, NULL),
+	('Estudios de Estratigrafía', 'Análisis de la disposición de las capas geológicas', 'Media', 8, 8, NULL),
   -- Extracción
-  ('Minado a Cielo Abierto', 'Extracción del diamante de depósitos superficiales', 'Alta', NULL, 9, NULL),
-  ('Minado Subterráneo', 'Extracción del diamante de depósitos más profundos', 'Media', NULL, 9, NULL),
-  ('Carga y Transporte', 'Llevar el material extraído a la superficie', 'Baja', NULL, 9, NULL),
-  ('Clasificación Preliminar', 'Separación del diamante de otros minerales', 'Alta', NULL, 9, NULL),
-  ('Almacenamiento Temporal', 'Almacenamiento del diamante antes del procesamiento', 'Media', NULL, 9, NULL),
+	('Minado a Cielo Abierto', 'Extracción del diamante de depósitos superficiales', 'Alta', 18, 9, NULL),
+	('Minado Subterráneo', 'Extracción del diamante de depósitos más profundos', 'Media', 12, 9, NULL),
+	('Carga y Transporte', 'Llevar el material extraído a la superficie', 'Baja', 8, 9, NULL),
+	('Clasificación Preliminar', 'Separación del diamante de otros minerales', 'Alta', 12, 9, NULL),
+	('Almacenamiento Temporal', 'Almacenamiento del diamante antes del procesamiento', 'Media', 10, 9, NULL),
  -- Procesamiento
-  ('Trituración y Molienda', 'Reducción del tamaño del material extraído', 'Baja', NULL, 10, NULL),
-  ('Separación por Densidad', 'Separación de los diamantes según su densidad', 'Alta', NULL, 10, NULL),
-  ('Lavado y Tamizado', 'Limpieza y clasificación de los diamantes', 'Media', NULL, 10, NULL),
-  ('Separación por Rayos X', 'Detección de diamantes ocultos', 'Baja', NULL, 10, NULL),
-  ('Pulido y Corte', 'Dar forma y pulir el diamante', 'Alta', NULL, 10, NULL),
+	('Trituración y Molienda', 'Reducción del tamaño del material extraído', 'Baja', 10, 10, NULL),
+('Separación por Densidad', 'Separación de los diamantes según su densidad', 'Alta', 14, 10, NULL),
+('Lavado y Tamizado', 'Limpieza y clasificación de los diamantes', 'Media', 12, 10, NULL),
+('Separación por Rayos X', 'Detección de diamantes ocultos', 'Baja', 8, 10, NULL),
+('Pulido y Corte', 'Dar forma y pulir el diamante', 'Alta', 14, 10, NULL),
 
 -- HIERRO
-	-- Exploración e Información
-  ('Prospectar y Muestrear', 'Búsqueda y recolección de información sobre los depósitos de mineral de hierro', 'Media', NULL, 11, NULL),
-  ('Estudios Geológicos', 'Análisis de las características geológicas para identificar posibles yacimientos', 'Alta', NULL, 11, NULL),
-  ('Exploración Geoquímica', 'Evaluación de la composición química de las rocas y sedimentos', 'Media', NULL, 11, NULL),
-  ('Exploración Geofísica', 'Uso de técnicas físicas para detectar anomalías en el subsuelo', 'Baja', NULL, 11, NULL),
-  ('Mapeo Geológico Regional', 'Creación de mapas detallados de la zona', 'Alta', NULL, 11, NULL),
-  -- Geología
-  ('Mapeo con Drones', 'Uso de drones para obtener imágenes detalladas del terreno', 'Media', NULL, 12, NULL),
-  ('Exploración Geoquímica Local', 'Muestreo de suelos, rocas y sedimentos en áreas específicas', 'Baja', NULL, 12, NULL),
-  ('Mapeo Geológico Detallado', 'Estudio minucioso de las formaciones geológicas', 'Alta', NULL, 12, NULL),
-  ('Exploración Geofísica Local', 'Aplicación de métodos geofísicos para detectar estructuras subterráneas', 'Media', NULL, 12, NULL),
-  ('Perforación Minera', 'Extracción de muestras del subsuelo mediante perforación', 'Baja', NULL, 12, NULL),
-  -- Extracción
-  ('Minado a Cielo Abierto', 'Extracción del mineral de hierro de depósitos superficiales', 'Alta', NULL, 13, NULL),
-  ('Minado Subterráneo', 'Extracción de depósitos más profundos', 'Media', NULL, 13, NULL),
-  ('Carga y Transporte', 'Movimiento del mineral extraído', 'Baja', NULL, 13, NULL),
-  ('Clasificación Preliminar', 'Separación del mineral de hierro de otros materiales', 'Alta', NULL, 13, NULL),
-  ('Almacenamiento Temporal', 'Reserva temporal antes del procesamiento', 'Media', NULL, 13, NULL),
-  -- Procesamiento
-  ('Trituración y Molienda', 'Reducción del tamaño del mineral', 'Baja', NULL, 14, NULL),
-  ('Separación Magnética', 'Separación del hierro de otros minerales mediante campos magnéticos', 'Alta', NULL, 14, NULL),
-  ('Lavado y Tamizado', 'Limpieza y clasificación del mineral', 'Media', NULL, 14, NULL),
-  ('Secado y Aglomeración', 'Preparación para la siguiente etapa', 'Baja', NULL, 14, NULL),
-  ('Pulido y Conformado', 'Acondicionamiento final del mineral', 'Alta', NULL, 14, NULL),
-  -- Refinado y Conformado
-  ('Fundición', 'Conversión del mineral en hierro fundido', 'Alta', NULL, 15, NULL),
-  ('Conformado y Forjado', 'Modelado del hierro en productos específicos', 'Media', NULL, 15, NULL),
-  ('Tratamientos Térmicos', 'Mejora de las propiedades físicas del hierro', 'Baja', NULL, 15, NULL),
-  ('Galvanización', 'Recubrimiento con zinc para protección contra la corrosión', 'Alta', NULL, 15, NULL),
-  ('Inspección de Calidad', 'Verificación de la calidad del producto final', 'Media', NULL, 15, NULL),
+-- Exploración e Información
+('Prospectar y Muestrear', 'Búsqueda y recolección de información sobre los depósitos de mineral de hierro', 'Media', 10, 11, NULL),
+('Estudios Geológicos', 'Análisis de las características geológicas para identificar posibles yacimientos', 'Alta', 14, 11, NULL),
+('Exploración Geoquímica', 'Evaluación de la composición química de las rocas y sedimentos', 'Media', 8, 11, NULL),
+('Exploración Geofísica', 'Uso de técnicas físicas para detectar anomalías en el subsuelo', 'Baja', 6, 11, NULL),
+('Mapeo Geológico Regional', 'Creación de mapas detallados de la zona', 'Alta', 12, 11, NULL),
+-- Geología
+('Mapeo con Drones', 'Uso de drones para obtener imágenes detalladas del terreno', 'Media', 9, 12, NULL),
+('Exploración Geoquímica Local', 'Muestreo de suelos, rocas y sedimentos en áreas específicas', 'Baja', 7, 12, NULL),
+('Mapeo Geológico Detallado', 'Estudio minucioso de las formaciones geológicas', 'Alta', 13, 12, NULL),
+('Exploración Geofísica Local', 'Aplicación de métodos geofísicos para detectar estructuras subterráneas', 'Media', 10, 12, NULL),
+('Perforación Minera', 'Extracción de muestras del subsuelo mediante perforación', 'Baja', 6, 12, NULL),
+-- Extracción
+('Minado a Cielo Abierto', 'Extracción del mineral de hierro de depósitos superficiales', 'Alta', 18, 13, NULL),
+('Minado Subterráneo', 'Extracción de depósitos más profundos', 'Media', 12, 13, NULL),
+('Carga y Transporte', 'Movimiento del mineral extraído', 'Baja', 8, 13, NULL),
+('Clasificación Preliminar', 'Separación del mineral de hierro de otros materiales', 'Alta', 14, 13, NULL),
+('Almacenamiento Temporal', 'Reserva temporal antes del procesamiento', 'Media', 10, 13, NULL),
+-- Procesamiento
+('Trituración y Molienda', 'Reducción del tamaño del mineral', 'Baja', 10, 14, NULL),
+('Separación Magnética', 'Separación del hierro de otros minerales mediante campos magnéticos', 'Alta', 14, 14, NULL),
+('Lavado y Tamizado', 'Limpieza y clasificación del mineral', 'Media', 12, 14, NULL),
+('Secado y Aglomeración', 'Preparación para la siguiente etapa', 'Baja', 8, 14, NULL),
+('Pulido y Conformado', 'Acondicionamiento final del mineral', 'Alta', 16, 14, NULL),
+-- Refinado y Conformado
+('Fundición', 'Conversión del mineral en hierro fundido', 'Alta', 15, 15, NULL),
+('Conformado y Forjado', 'Modelado del hierro en productos específicos', 'Media', 11, 15, NULL),
+('Tratamientos Térmicos', 'Mejora de las propiedades físicas del hierro', 'Baja', 7, 15, NULL),
+('Galvanización', 'Recubrimiento con zinc para protección contra la corrosión', 'Alta', 14, 15, NULL),
+('Inspección de Calidad', 'Verificación de la calidad del producto final', 'Media', 10, 15, NULL),
+
 
 -- BAUXITA
-
 -- Exploración
-  ('Prospectar y Muestrear', 'Búsqueda y recolección de información sobre los depósitos de bauxita', 'Media', NULL, 16, NULL),
-  ('Estudios Geológicos', 'Análisis de las características geológicas para identificar posibles yacimientos', 'Alta', NULL, 16, NULL),
-  ('Exploración Geoquímica', 'Evaluación de la composición química de las rocas y sedimentos', 'Media', NULL, 16, NULL),
-  ('Exploración Geofísica', 'Uso de técnicas físicas para detectar anomalías en el subsuelo', 'Baja', NULL, 16, NULL),
-  ('Mapeo Geológico Regional', 'Creación de mapas detallados de la zona', 'Alta', NULL, 16, NULL),
-  -- Geología
-  ('Mapeo con Drones', 'Uso de drones para obtener imágenes detalladas del terreno', 'Media', NULL, 17, NULL),
-  ('Exploración Geoquímica Local', 'Muestreo de suelos, rocas y sedimentos en áreas específicas', 'Baja', NULL, 17, NULL),
-  ('Mapeo Geológico Detallado', 'Estudio minucioso de las formaciones geológicas', 'Alta', NULL, 17, NULL),
-  ('Exploración Geofísica Local', 'Aplicación de métodos geofísicos para detectar estructuras subterráneas', 'Media', NULL, 17, NULL),
-  ('Perforación Minera', 'Extracción de muestras del subsuelo mediante perforación', 'Baja', NULL, 17, NULL),
-  -- Extracción de la bauxita
-  ('Voladura y Extracción', 'Perforación y voladura para extraer la bauxita', 'Alta', NULL, 18, NULL),
-  ('Carga y Transporte', 'Movimiento del mineral extraído', 'Baja', NULL, 18, NULL),
-  ('Clasificación Preliminar', 'Separación de la bauxita de otros materiales', 'Alta', NULL, 18, NULL),
-  ('Almacenamiento Temporal', 'Reserva temporal antes del procesamiento', 'Media', NULL, 18, NULL),
-  ('Preparación del Sitio', 'Acondicionamiento del área de extracción', 'Baja', NULL, 18, NULL),
-  -- Procesamiento aluminio
-  ('Trituración y Molienda', 'Reducción del tamaño de la bauxita', 'Baja', NULL, 19, NULL),
-  ('Lavado y Tamizado', 'Limpieza y clasificación del mineral', 'Media', NULL, 19, NULL),
-  ('Digestión y Precipitación', 'Extracción de la alúmina', 'Alta', NULL, 19, NULL),
-  ('Electrólisis', 'Obtención del aluminio metálico', 'Baja', NULL, 19, NULL),
-  ('Fundición y Moldeo', 'Formación de lingotes de aluminio', 'Alta', NULL, 19, NULL),
-  -- Envío de Material
-  ('Embalaje y Almacenamiento', 'Preparación para el transporte', 'Media', NULL, 20, NULL),
-  ('Transporte Terrestre o Marítimo', 'Envío de la bauxita a las plantas de aluminio', 'Baja', NULL, 20, NULL),
-  ('Descarga y Almacenamiento Final', 'Recepción y almacenamiento en destino', 'Alta', NULL, 20, NULL),
-  ('Inspección de Calidad', 'Verificación de la calidad del material', 'Media', NULL, 20, NULL),
-  ('Distribución a Clientes', 'Entrega a los compradores', 'Baja', NULL, 20, NULL),
+('Prospectar y Muestrear', 'Búsqueda y recolección de información sobre los depósitos de bauxita', 'Media', 10, 16, NULL),
+('Estudios Geológicos', 'Análisis de las características geológicas para identificar posibles yacimientos', 'Alta', 14, 16, NULL),
+('Exploración Geoquímica', 'Evaluación de la composición química de las rocas y sedimentos', 'Media', 8, 16, NULL),
+('Exploración Geofísica', 'Uso de técnicas físicas para detectar anomalías en el subsuelo', 'Baja', 6, 16, NULL),
+('Mapeo Geológico Regional', 'Creación de mapas detallados de la zona', 'Alta', 12, 16, NULL),
+-- Geología
+('Mapeo con Drones', 'Uso de drones para obtener imágenes detalladas del terreno', 'Media', 9, 17, NULL),
+('Exploración Geoquímica Local', 'Muestreo de suelos, rocas y sedimentos en áreas específicas', 'Baja', 7, 17, NULL),
+('Mapeo Geológico Detallado', 'Estudio minucioso de las formaciones geológicas', 'Alta', 13, 17, NULL),
+('Exploración Geofísica Local', 'Aplicación de métodos geofísicos para detectar estructuras subterráneas', 'Media', 10, 17, NULL),
+('Perforación Minera', 'Extracción de muestras del subsuelo mediante perforación', 'Baja', 6, 17, NULL),
+-- Extracción de la bauxita
+('Voladura y Extracción', 'Perforación y voladura para extraer la bauxita', 'Alta', 18, 18, NULL),
+('Carga y Transporte', 'Movimiento del mineral extraído', 'Baja', 8, 18, NULL),
+('Clasificación Preliminar', 'Separación de la bauxita de otros materiales', 'Alta', 14, 18, NULL),
+('Almacenamiento Temporal', 'Reserva temporal antes del procesamiento', 'Media', 10, 18, NULL),
+('Preparación del Sitio', 'Acondicionamiento del área de extracción', 'Baja', 6, 18, NULL),
+-- Procesamiento aluminio
+('Trituración y Molienda', 'Reducción del tamaño de la bauxita', 'Baja', 10, 19, NULL),
+('Lavado y Tamizado', 'Limpieza y clasificación del mineral', 'Media', 12, 19, NULL),
+('Digestión y Precipitación', 'Extracción de la alúmina', 'Alta', 14, 19, NULL),
+('Electrólisis', 'Obtención del aluminio metálico', 'Baja', 8, 19, NULL),
+('Fundición y Moldeo', 'Formación de lingotes de aluminio', 'Alta', 16, 19, NULL),
+-- Envío de Material
+('Embalaje y Almacenamiento', 'Preparación para el transporte', 'Media', 10, 20, NULL),
+('Transporte Terrestre o Marítimo', 'Envío de la bauxita a las plantas de aluminio', 'Baja', 8, 20, NULL),
+('Descarga y Almacenamiento Final', 'Recepción y almacenamiento en destino', 'Alta', 14, 20, NULL),
+('Inspección de Calidad', 'Verificación de la calidad del material', 'Media', 10, 20, NULL),
+('Distribución a Clientes', 'Entrega a los compradores', 'Baja', 8, 20, NULL),
+
 
 -- CARBON
+('Prospección y muestreo', 'Identificación de áreas con potencial de yacimientos de carbón', 'Alta', 14, 21, NULL),
+('Análisis geofísico y geoquímico', 'Evaluación de calidad y cantidad del carbón', 'Media', 10, 21, NULL),
+('Estudios de viabilidad', 'Análisis económico y ambiental', 'Alta', 16, 21, NULL),
+('Elaboración de informes', 'Presentación de resultados', 'Baja', 8, 21, NULL),
+('Obtención de permisos', 'Licencias para la exploración', 'Alta', 14, 21, NULL),
 
-('Prospección y muestreo', 'Identificación de áreas con potencial de yacimientos de carbón', 'Alta', NULL, 21, NULL),
-('Análisis geofísico y geoquímico', 'Evaluación de calidad y cantidad del carbón', 'Media', NULL, 21, NULL),
-('Estudios de viabilidad', 'Análisis económico y ambiental', 'Alta', NULL, 21, NULL),
-('Elaboración de informes', 'Presentación de resultados', 'Baja', NULL, 21, NULL),
-('Obtención de permisos', 'Licencias para la exploración', 'Alta', NULL, 21, NULL),
+('Diseño de infraestructura', 'Galerías, túneles y accesos', 'Alta', 18, 22, NULL),
+('Planificación de extracción', 'Secuencia de extracción y transporte', 'Media', 12, 22, NULL),
+('Evaluación de riesgos', 'Seguridad en la mina', 'Alta', 16, 22, NULL),
+('Selección de maquinaria', 'Equipos necesarios', 'Media', 10, 22, NULL),
+('Cronogramas y presupuestos', 'Establecimiento de plazos y costos', 'Baja', 8, 22, NULL),
 
-('Diseño de infraestructura', 'Galerías, túneles y accesos', 'Alta', NULL, 22, NULL),
-('Planificación de extracción', 'Secuencia de extracción y transporte', 'Media', NULL, 22, NULL),
-('Evaluación de riesgos', 'Seguridad en la mina', 'Alta', NULL, 22, NULL),
-('Selección de maquinaria', 'Equipos necesarios', 'Media', NULL, 22, NULL),
-('Cronogramas y presupuestos', 'Establecimiento de plazos y costos', 'Baja', NULL, 22, NULL),
+('Excavación de galerías', 'Creación de espacios subterráneos', 'Alta', 20, 23, NULL),
+('Sistemas de ventilación', 'Asegurar aire fresco en la mina', 'Media', 12, 23, NULL),
+('Construcción de accesos', 'Vías de entrada y salida', 'Alta', 18, 23, NULL),
+('Montaje de equipos', 'Instalación de maquinaria', 'Media', 10, 23, NULL),
+('Medidas de seguridad', 'Protección de los trabajadores', 'Baja', 8, 23, NULL),
 
-('Excavación de galerías', 'Creación de espacios subterráneos', 'Alta', NULL, 23, NULL),
-('Sistemas de ventilación', 'Asegurar aire fresco en la mina', 'Media', NULL, 23, NULL),
-('Construcción de accesos', 'Vías de entrada y salida', 'Alta', NULL, 23, NULL),
-('Montaje de equipos', 'Instalación de maquinaria', 'Media', NULL, 23, NULL),
-('Medidas de seguridad', 'Protección de los trabajadores', 'Baja', NULL, 23, NULL),
+('Extracción de carbón', 'Mediante palas, cargadores o cintas transportadoras', 'Alta', 22, 24, NULL),
+('Trituración y clasificación', 'Según tamaño y calidad', 'Media', 14, 24, NULL),
+('Carga y transporte', 'Hacia la superficie o puntos de procesamiento', 'Alta', 20, 24, NULL),
+('Limpieza y lavado', 'Eliminación de impurezas', 'Media', 12, 24, NULL),
+('Almacenamiento temporal', 'Previo a la comercialización', 'Baja', 8, 24, NULL),
 
-('Extracción de carbón', 'Mediante palas, cargadores o cintas transportadoras', 'Alta', NULL, 24, NULL),
-('Trituración y clasificación', 'Según tamaño y calidad', 'Media', NULL,24 , NULL),
-('Carga y transporte', 'Hacia la superficie o puntos de procesamiento', 'Alta', NULL, 24, NULL),
-('Limpieza y lavado', 'Eliminación de impurezas', 'Media', NULL, 24, NULL),
-('Almacenamiento temporal', 'Previo a la comercialización', 'Baja', NULL, 24, NULL),
-
-('Retiro de equipos', 'Desmantelamiento de maquinaria', 'Alta', NULL, 25, NULL),
-('Relleno y sellado', 'Cierre seguro de galerías y túneles', 'Media', NULL, 25, NULL),
-('Rehabilitación del terreno', 'Restauración del entorno afectado', 'Alta', NULL, 25, NULL),
-('Monitoreo ambiental', 'Seguimiento a largo plazo', 'Media', NULL, 25, NULL),
-('Informes finales', 'Cierre administrativo', 'Baja', NULL, 25, NULL),
+('Retiro de equipos', 'Desmantelamiento de maquinaria', 'Alta', 18, 25, NULL),
+('Relleno y sellado', 'Cierre seguro de galerías y túneles', 'Media', 12, 25, NULL),
+('Rehabilitación del terreno', 'Restauración del entorno afectado', 'Alta', 16, 25, NULL),
+('Monitoreo ambiental', 'Seguimiento a largo plazo', 'Media', 12, 25, NULL),
+('Informes finales', 'Cierre administrativo', 'Baja', 8, 25, NULL),
 
 -- MANGANESO
+('Prospección geológica', 'Identificación de áreas con mineral', 'Alta', 14, 26, NULL),
+('Análisis de calidad', 'Evaluación del mineral detectado', 'Media', 10, 26, NULL),
+('Evaluación económica', 'Viabilidad del proyecto', 'Alta', 16, 26, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 26, NULL),
+('Informes técnicos', 'Presentación de resultados', 'Media', 10, 26, NULL),
 
-('Prospección geológica', 'Identificación de áreas con mineral', 'Alta', NULL, 26, NULL),
-('Análisis de calidad', 'Evaluación del mineral detectado', 'Media', NULL, 26, NULL),
-('Evaluación económica', 'Viabilidad del proyecto', 'Alta', NULL, 26, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 26, NULL),
-('Informes técnicos', 'Presentación de resultados', 'Media', NULL, 26, NULL),
+('Construcción de obras', 'Tiros, frentes, rampas', 'Alta', 18, 27, NULL),
+('Preparación para explotación', 'Acondicionamiento del área', 'Media', 12, 27, NULL),
+('Diseño de la mina', 'Planificación de operaciones', 'Alta', 16, 27, NULL),
+('Evaluación de riesgos', 'Seguridad en la mina', 'Media', 10, 27, NULL),
+('Selección de equipos', 'Maquinaria necesaria', 'Baja', 8, 27, NULL),
 
-('Construcción de obras', 'Tiros, frentes, rampas', 'Alta', NULL, 27, NULL),
-('Preparación para explotación', 'Acondicionamiento del área', 'Media', NULL, 27, NULL),
-('Diseño de la mina', 'Planificación de operaciones', 'Alta', NULL, 27, NULL),
-('Evaluación de riesgos', 'Seguridad en la mina', 'Media', NULL, 27, NULL),
-('Selección de equipos', 'Maquinaria necesaria', 'Baja', NULL, 27, NULL),
+('Extracción racional', 'Sistemas sostenibles', 'Alta', 20, 28, NULL),
+('Uso de sistemas', 'Tecnología de extracción', 'Media', 12, 28, NULL),
+('Minas subterráneas', 'Unidad Molango', 'Alta', 18, 28, NULL),
+('Transporte del mineral', 'Hacia planta de procesamiento', 'Media', 12, 28, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', 8, 28, NULL),
 
-('Extracción racional', 'Sistemas sostenibles', 'Alta', NULL, 28, NULL),
-('Uso de sistemas', 'Tecnología de extracción', 'Media', NULL, 28, NULL),
-('Minas subterráneas', 'Unidad Molango', 'Alta', NULL, 28, NULL),
-('Transporte del mineral', 'Hacia planta de procesamiento', 'Media', NULL, 28, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', NULL, 28, NULL),
+('Calcinar y reducir', 'Carbonatos de manganeso', 'Alta', 22, 29, NULL),
+('Horno de nodulización', 'Formación de nódulos de manganeso', 'Media', 14, 29, NULL),
+('Enfriamiento y endurecimiento', 'Proceso posterior al horno', 'Alta', 18, 29, NULL),
+('Almacenamiento temporal', 'Previo a la siguiente etapa', 'Media', 12, 29, NULL),
+('Transporte', 'Traslado de nódulos', 'Baja', 8, 29, NULL),
 
-('Calcinar y reducir', 'Carbonatos de manganeso', 'Alta', NULL, 29, NULL),
-('Horno de nodulización', 'Formación de nódulos de manganeso', 'Media', NULL, 29, NULL),
-('Enfriamiento y endurecimiento', 'Proceso posterior al horno', 'Alta', NULL, 29, NULL),
-('Almacenamiento temporal', 'Previo a la siguiente etapa', 'Media', NULL, 29, NULL),
-('Transporte', 'Traslado de nódulos', 'Baja', NULL, 29, NULL),
-
-('Trituración y molienda', 'Nódulos de manganeso', 'Alta', NULL, 30, NULL),
-('Separación magnética', 'Obtención de concentrados', 'Media', NULL, 30, NULL),
-('Fundición y refinamiento', 'Procesamiento del concentrado', 'Alta', NULL, 30, NULL),
-('Moldeo y fabricación', 'Productos de manganeso', 'Media', NULL, 30, NULL),
-('Almacenamiento y distribución', 'Listos para su uso', 'Baja', NULL, 30, NULL),
+('Trituración y molienda', 'Nódulos de manganeso', 'Alta', 20, 30, NULL),
+('Separación magnética', 'Obtención de concentrados', 'Media', 14, 30, NULL),
+('Fundición y refinamiento', 'Procesamiento del concentrado', 'Alta', 18, 30, NULL),
+('Moldeo y fabricación', 'Productos de manganeso', 'Media', 12, 30, NULL),
+('Almacenamiento y distribución', 'Listos para su uso', 'Baja', 8, 30, NULL),
 
 -- NIQUEL
+('Prospección geológica', 'Identificación de áreas con níquel', 'Alta', 14, 31, NULL),
+('Análisis de muestras', 'Evaluación de presencia de níquel', 'Media', 10, 31, NULL),
+('Estudios geofísicos', 'Definición de posibles yacimientos', 'Alta', 16, 31, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 31, NULL),
+('Informes técnicos', 'Resultados de la exploración', 'Media', 10, 31, NULL),
 
-('Prospección geológica', 'Identificación de áreas con níquel', 'Alta', NULL, 31, NULL),
-('Análisis de muestras', 'Evaluación de presencia de níquel', 'Media', NULL, 31, NULL),
-('Estudios geofísicos', 'Definición de posibles yacimientos', 'Alta', NULL, 31, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 31, NULL),
-('Informes técnicos', 'Resultados de la exploración', 'Media', NULL, 31, NULL),
+('Perforaciones', 'Obtención de muestras', 'Alta', 18, 32, NULL),
+('Análisis de muestras', 'Evaluación de contenido de níquel', 'Media', 12, 32, NULL),
+('Calidad y cantidad', 'Determinación de recursos', 'Alta', 16, 32, NULL),
+('Diseño de futuras perforaciones', 'Planificación de exploración', 'Media', 10, 32, NULL),
+('Registro y documentación', 'Datos para futuras etapas', 'Baja', 8, 32, NULL),
 
-('Perforaciones', 'Obtención de muestras', 'Alta', NULL, 32, NULL),
-('Análisis de muestras', 'Evaluación de contenido de níquel', 'Media', NULL, 32, NULL),
-('Calidad y cantidad', 'Determinación de recursos', 'Alta', NULL, 32, NULL),
-('Diseño de futuras perforaciones', 'Planificación de exploración', 'Media', NULL, 32, NULL),
-('Registro y documentación', 'Datos para futuras etapas', 'Baja', NULL, 32, NULL),
+('Extracción de mineral', 'Minas a cielo abierto o subterráneas', 'Alta', 20, 33, NULL),
+('Carga y transporte', 'Hacia planta de procesamiento', 'Media', 12, 33, NULL),
+('Trituración y clasificación', 'Preparación del mineral', 'Alta', 18, 33, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 12, 33, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', 8, 33, NULL),
 
-('Extracción de mineral', 'Minas a cielo abierto o subterráneas', 'Alta', NULL, 33, NULL),
-('Carga y transporte', 'Hacia planta de procesamiento', 'Media', NULL, 33, NULL),
-('Trituración y clasificación', 'Preparación del mineral', 'Alta', NULL, 33, NULL),
-('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 33, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', NULL, 33, NULL),
+('Reducción a NiO', 'Proceso de tostación al aire', 'Alta', 22, 34, NULL),
+('Obtención de ferroníquel', 'Aleaciones de níquel y hierro', 'Media', 14, 34, NULL),
+('Separación de elementos', 'Otros componentes presentes', 'Alta', 18, 34, NULL),
+('Refinamiento y purificación', 'Mejora de la calidad del níquel', 'Media', 12, 34, NULL),
+('Almacenamiento', 'Previo a la siguiente etapa', 'Baja', 8, 34, NULL),
 
-('Reducción a NiO', 'Proceso de tostación al aire', 'Alta', NULL, 34, NULL),
-('Obtención de ferroníquel', 'Aleaciones de níquel y hierro', 'Media', NULL, 34, NULL),
-('Separación de elementos', 'Otros componentes presentes', 'Alta', NULL, 34, NULL),
-('Refinamiento y purificación', 'Mejora de la calidad del níquel', 'Media', NULL, 34, NULL),
-('Almacenamiento', 'Previo a la siguiente etapa', 'Baja', NULL, 34, NULL),
-
-('Refinamiento', 'Refinmiento para su proceso de fundicion', 'Alta',NULL,35, NULL),
-('Fundición de níquel', 'Obtención de lingotes', 'Alta', NULL, 35, NULL),
-('Ajuste de composición', 'Adaptación a requerimientos', 'Media', NULL, 35, NULL),
-('Verificación de calidad', 'Control de pureza', 'Alta', NULL, 35, NULL),
-('Almacenamiento', 'Productos finales listos para uso', 'Media', NULL, 35, NULL),
+('Refinamiento', 'Refinmiento para su proceso de fundición', 'Alta', 20, 35, NULL),
+('Fundición de níquel', 'Obtención de lingotes', 'Alta', 18, 35, NULL),
+('Ajuste de composición', 'Adaptación a requerimientos', 'Media', 12, 35, NULL),
+('Verificación de calidad', 'Control de pureza', 'Alta', 16, 35, NULL),
+('Almacenamiento', 'Productos finales listos para uso', 'Media', 10, 35, NULL),
 
 -- COBRE
-('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', NULL, 36, NULL),
-('Análisis de muestras', 'Evaluación de presencia de cobre', 'Media', NULL, 36, NULL),
-('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', NULL, 36, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 36, NULL),
-('Informes técnicos', 'Resultados de la exploración', 'Media', NULL, 36,NULL),
+('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', 14, 36, NULL),
+('Análisis de muestras', 'Evaluación de presencia de cobre', 'Media', 10, 36, NULL),
+('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', 16, 36, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 36, NULL),
+('Informes técnicos', 'Resultados de la exploración', 'Media', 10, 36,NULL),
 
-('Extracción de mineral', 'Minería a cielo abierto o subterránea', 'Alta', NULL, 37, NULL),
-('Carga y transporte', 'Hacia planta de procesamiento', 'Media', NULL, 37, NULL),
-('Trituración y clasificación', 'Preparación del mineral', 'Alta', NULL, 37, NULL),
-('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 37, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', NULL, 37, NULL),
+('Extracción de mineral', 'Minería a cielo abierto o subterránea', 'Alta', 20, 37, NULL),
+('Carga y transporte', 'Hacia planta de procesamiento', 'Media', 12, 37, NULL),
+('Trituración y clasificación', 'Preparación del mineral', 'Alta', 18, 37, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 12, 37, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', 8, 37, NULL),
 
-('Trituración y molienda', 'Preparación del mineral', 'Alta', NULL, 38, NULL),
-('Concentración por flotación', 'Separación de minerales', 'Media', NULL, 38, NULL),
-('Separación de elementos', 'Otros componentes presentes', 'Alta', NULL, 38, NULL),
-('Preparación del concentrado', 'Producto listo para fundición', 'Media', NULL, 38, NULL),
-('Almacenamiento temporal', 'Previo a fundición', 'Baja', NULL, 38, NULL),
+('Trituración y molienda', 'Preparación del mineral', 'Alta', 20, 38, NULL),
+('Concentración por flotación', 'Separación de minerales', 'Media', 14, 38, NULL),
+('Separación de elementos', 'Otros componentes presentes', 'Alta', 18, 38, NULL),
+('Preparación del concentrado', 'Producto listo para fundición', 'Media', 12, 38, NULL),
+('Almacenamiento temporal', 'Previo a fundición', 'Baja', 8, 38, NULL),
 
 -- Etapa de Fundición
-('Fusión de concentrado', 'Obtención de ánodo de cobre', 'Alta', NULL, 39, NULL),
-('Separación de impurezas', 'Proceso de purificación', 'Media', NULL, 39, NULL),
-('Ánodo de cobre impuro', 'Resultado de la fundición', 'Alta', NULL, 39, NULL),
-('Almacenamiento temporal', 'Previo a la refinación', 'Media', NULL, 39, NULL),
-('Recuperación de metales valiosos', 'Extracción de otros metales presentes', 'Baja', NULL, 39, NULL),
+('Fusión de concentrado', 'Obtención de ánodo de cobre', 'Alta', 22, 39, NULL),
+('Separación de impurezas', 'Proceso de purificación', 'Media', 14, 39, NULL),
+('Ánodo de cobre impuro', 'Resultado de la fundición', 'Alta', 18, 39, NULL),
+('Almacenamiento temporal', 'Previo a la refinación', 'Media', 12, 39, NULL),
+('Recuperación de metales valiosos', 'Extracción de otros metales presentes', 'Baja', 8, 39, NULL),
 -- Etapa de Refinación
-('Electrorrefinación', 'Purificación del ánodo', 'Alta', NULL, 40, NULL),
-('Electrodo de cobre puro', 'Resultado final', 'Media', NULL, 40, NULL),
-('Separación de elementos', 'Ajuste de composición química', 'Alta', NULL, 40, NULL),
-('Verificación de calidad', 'Control de pureza', 'Baja', NULL, 40, NULL),
-('Almacenamiento', 'Cobre listo para uso', 'Media', NULL, 40, NULL),
+('Electrorrefinación', 'Purificación del ánodo', 'Alta', 20, 40, NULL),
+('Electrodo de cobre puro', 'Resultado final', 'Media', 14, 40, NULL),
+('Separación de elementos', 'Ajuste de composición química', 'Alta', 18, 40, NULL),
+('Verificación de calidad', 'Control de pureza', 'Baja', 8, 40, NULL),
+('Almacenamiento', 'Cobre listo para uso', 'Media', 10, 40, NULL),
 
--- MERCURIO
-('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', NULL, 41, NULL),
-('Análisis de muestras', 'Evaluación de presencia de mercurio', 'Media', NULL, 41, NULL),
-('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', NULL, 41, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 41, NULL),
-('Informes técnicos', 'Resultados de la exploración', 'Media', NULL, 41, NULL),
+-- ############# MERCURIO
+('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', 14, 41, NULL),
+('Análisis de muestras', 'Evaluación de presencia de mercurio', 'Media', 10, 41, NULL),
+('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', 16, 41, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 41, NULL),
+('Informes técnicos', 'Resultados de la exploración', 'Media', 10, 41, NULL),
 
-('Recolección de muestras', 'Representativas de suelo y roca', 'Alta', NULL, 42, NULL),
-('Análisis químico', 'Determinación de concentración de mercurio', 'Media', NULL, 42, NULL),
-('Calidad y cantidad', 'Evaluación de recursos', 'Alta', NULL, 42, NULL),
-('Diseño de futuras campañas', 'Planificación de muestreo', 'Media', NULL, 42, NULL),
-('Registro y documentación', 'Datos para futuras etapas', 'Baja', NULL, 42, NULL),
+('Recolección de muestras', 'Representativas de suelo y roca', 'Alta', 18, 42, NULL),
+('Análisis químico', 'Determinación de concentración de mercurio', 'Media', 12, 42, NULL),
+('Calidad y cantidad', 'Evaluación de recursos', 'Alta', 16, 42, NULL),
+('Diseño de futuras campañas', 'Planificación de muestreo', 'Media', 10, 42, NULL),
+('Registro y documentación', 'Datos para futuras etapas', 'Baja', 8, 42, NULL),
 
-('Métodos geofísicos', 'Detección de anomalías', 'Alta', NULL, 43, NULL),
-('Interpretación de datos', 'Identificación de yacimientos', 'Media', NULL, 43, NULL),
-('Evaluación de riesgos', 'Seguridad en la exploración', 'Alta', NULL, 43, NULL),
-('Informes técnicos', 'Resultados geofísicos', 'Media', NULL, 43, NULL),
-('Integración de datos', 'Complemento con otros estudios', 'Baja', NULL, 43, NULL),
+('Métodos geofísicos', 'Detección de anomalías', 'Alta', 20, 43, NULL),
+('Interpretación de datos', 'Identificación de yacimientos', 'Media', 14, 43, NULL),
+('Evaluación de riesgos', 'Seguridad en la exploración', 'Alta', 18, 43, NULL),
+('Informes técnicos', 'Resultados geofísicos', 'Media', 12, 43, NULL),
+('Integración de datos', 'Complemento con otros estudios', 'Baja', 8, 43, NULL),
 
-('Perforaciones en subsuelo', 'Obtención de muestras', 'Alta', NULL, 44, NULL),
-('Análisis de muestras', 'Evaluación de contenido de mercurio', 'Media', NULL, 44, NULL),
-('Calidad y cantidad', 'Determinación de recursos', 'Alta', NULL, 44, NULL),
-('Diseño de futuras campañas', 'Planificación de muestreo', 'Media', NULL, 44, NULL),
-('Registro y documentación', 'Datos para futuras etapas', 'Baja', NULL, 44, NULL),
+('Perforaciones en subsuelo', 'Obtención de muestras', 'Alta', 22, 44, NULL),
+('Análisis de muestras', 'Evaluación de contenido de mercurio', 'Media', 14, 44, NULL),
+('Calidad y cantidad', 'Determinación de recursos', 'Alta', 18, 44, NULL),
+('Diseño de futuras campañas', 'Planificación de muestreo', 'Media', 12, 44, NULL),
+('Registro y documentación', 'Datos para futuras etapas', 'Baja', 8, 44, NULL),
 
-('Tecnologías libres de mercurio', 'Separación del mineral', 'Alta', NULL, 45, NULL),
-('Recuperación de mercurio', 'Uso de retortas', 'Media', NULL, 45, NULL),
-('Almacenamiento seguro', 'Mercurio recuperado', 'Alta', NULL, 45, NULL),
-('Evaluación ambiental', 'Cumplimiento de normativas', 'Media', NULL, 45, NULL),
-('Prácticas sostenibles', 'Seguridad en la extracción', 'Baja', NULL, 45, NULL),
+('Tecnologías libres de mercurio', 'Separación del mineral', 'Alta', 20, 45, NULL),
+('Recuperación de mercurio', 'Uso de retortas', 'Media', 14, 45, NULL),
+('Almacenamiento seguro', 'Mercurio recuperado', 'Alta', 18, 45, NULL),
+('Evaluación ambiental', 'Cumplimiento de normativas', 'Media', 12, 45, NULL),
+('Prácticas sostenibles', 'Seguridad en la extracción', 'Baja', 8, 45, NULL),
 
 -- ######################## PLOMO #####################################
+('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', 14, 46, NULL),
+('Análisis de muestras', 'Evaluación de presencia de plomo', 'Media', 10, 46, NULL),
+('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', 16, 46, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 46, NULL),
+('Informes técnicos', 'Resultados de la exploración', 'Media', 10, 46, NULL),
 
-('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', NULL, 46, NULL),
-('Análisis de muestras', 'Evaluación de presencia de plomo', 'Media', NULL, 46, NULL),
-('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', NULL, 46, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 46, NULL),
-('Informes técnicos', 'Resultados de la exploración', 'Media', NULL, 46, NULL),
+('Extracción de mineral', 'Minería a cielo abierto o subterránea', 'Alta', 20, 47, NULL),
+('Carga y transporte', 'Hacia planta de procesamiento', 'Media', 12, 47, NULL),
+('Trituración y clasificación', 'Preparación del mineral', 'Alta', 18, 47, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 12, 47, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', 8, 47, NULL),
 
-('Extracción de mineral', 'Minería a cielo abierto o subterránea', 'Alta', NULL, 47, NULL),
-('Carga y transporte', 'Hacia planta de procesamiento', 'Media', NULL, 47, NULL),
-('Trituración y clasificación', 'Preparación del mineral', 'Alta', NULL, 47, NULL),
-('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 47, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', NULL, 47, NULL),
+('Trituración y molienda', 'Preparación del mineral', 'Alta', 20, 48, NULL),
+('Concentración por flotación', 'Separación de minerales', 'Media', 14, 48, NULL),
+('Separación de elementos', 'Otros componentes presentes', 'Alta', 18, 48, NULL),
+('Preparación del concentrado', 'Producto listo para fundición', 'Media', 12, 48, NULL),
+('Almacenamiento temporal', 'Previo a fundición', 'Baja', 8, 48, NULL),
 
-('Trituración y molienda', 'Preparación del mineral', 'Alta', NULL, 48, NULL),
-('Concentración por flotación', 'Separación de minerales', 'Media', NULL, 48, NULL),
-('Separación de elementos', 'Otros componentes presentes', 'Alta', NULL, 48, NULL),
-('Preparación del concentrado', 'Producto listo para fundición', 'Media', NULL, 48, NULL),
-('Almacenamiento temporal', 'Previo a fundición', 'Baja', NULL, 48, NULL),
+('Fusión de concentrado', 'Obtención de plomo bruto', 'Alta', 22, 49, NULL),
+('Separación de impurezas', 'Proceso de purificación', 'Media', 14, 49, NULL),
+('Plomo bruto impuro', 'Resultado de la fundición', 'Alta', 18, 49, NULL),
+('Almacenamiento temporal', 'Previo a la refinación', 'Media', 12, 49, NULL),
+('Recuperación de metales valiosos', 'Extracción de otros metales presentes', 'Baja', 8, 49, NULL),
 
-('Fusión de concentrado', 'Obtención de plomo bruto', 'Alta', NULL, 49, NULL),
-('Separación de impurezas', 'Proceso de purificación', 'Media', NULL, 49, NULL),
-('Plomo bruto impuro', 'Resultado de la fundición', 'Alta', NULL, 49, NULL),
-('Almacenamiento temporal', 'Previo a la refinación', 'Media', NULL, 49, NULL),
-('Recuperación de metales valiosos', 'Extracción de otros metales presentes', 'Baja', NULL, 49, NULL),
+('Electrorrefinación', 'Purificación del plomo bruto', 'Alta', 20, 50, NULL),
+('Electrodo de plomo puro', 'Resultado final', 'Media', 14, 50, NULL),
+('Separación de otros elementos', 'Ajuste de composición química', 'Alta', 18, 50, NULL),
+('Verificación de calidad', 'Control de pureza', 'Baja', 8, 50, NULL),
+('Almacenamiento', 'Plomo listo para uso', 'Media', 10, 50, NULL),
 
-('Electrorrefinación', 'Purificación del plomo bruto', 'Alta', NULL, 50, NULL),
-('Electrodo de plomo puro', 'Resultado final', 'Media', NULL, 50, NULL),
-('Separacion de otros elementos', 'Se separa el plomo de otros elementos','Alta' ,NULL, 50, NULL),
-('Ajuste composicion quimica','Ajuste composicion segun las necesidades del mercado','Alta', NULL, 50, NULL),
-('Almacenamiento', 'Plomo listo para uso', 'Alta', NULL, 50, NULL),
+-- ################## PLATA ###############################
+('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', 14, 51, NULL),
+('Análisis de muestras', 'Evaluación de presencia de plata', 'Media', 10, 51, NULL),
+('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', 16, 51, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 51, NULL),
+('Informes técnicos', 'Resultados de la exploración', 'Media', 10, 51, NULL),
 
--- PLATA
+('Construcción de infraestructura', 'Preparación para la explotación', 'Alta', 18, 52, NULL),
+('Preparación de accesos', 'Galerías y túneles', 'Media', 12, 52, NULL),
+('Sistemas de ventilación', 'Seguridad en la mina', 'Alta', 16, 52, NULL),
+('Áreas de trabajo y almacenamiento', 'Organización del espacio', 'Media', 10, 52, NULL),
+('Evaluación continua', 'Seguridad y rendimiento', 'Baja', 8, 52, NULL),
 
-('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', NULL, 51, NULL),
-('Análisis de muestras', 'Evaluación de presencia de plata', 'Media', NULL, 51, NULL),
-('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', NULL, 51, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 51, NULL),
-('Informes técnicos', 'Resultados de la exploración', 'Media', NULL, 51, NULL),
+('Extracción de mineral', 'Minería subterránea o a cielo abierto', 'Alta', 20, 53, NULL),
+('Carga y transporte', 'Hacia planta de procesamiento', 'Media', 12, 53, NULL),
+('Trituración y clasificación', 'Preparación del mineral', 'Alta', 18, 53, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 12, 53, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', 8, 53, NULL),
 
-('Construcción de infraestructura', 'Preparación para la explotación', 'Alta', NULL, 52, NULL),
-('Preparación de accesos', 'Galerías y túneles', 'Media', NULL, 52,NULL),
-('Sistemas de ventilación', 'Seguridad en la mina', 'Alta', NULL, 52, NULL),
-('Áreas de trabajo y almacenamiento', 'Organización del espacio', 'Media', NULL, 52, NULL),
-('Evaluación continua', 'Seguridad y rendimiento', 'Baja', NULL, 52, NULL),
+('Trituración y molienda', 'Preparación del mineral', 'Alta', 20, 54, NULL),
+('Concentración por flotación', 'Separación de minerales', 'Media', 14, 54, NULL),
+('Separación de elementos', 'Otros componentes presentes', 'Alta', 18, 54, NULL),
+('Preparación de plata pura', 'Producto listo para fundición', 'Media', 12, 54, NULL),
+('Almacenamiento temporal', 'Previo a función y refinado', 'Baja', 8, 54, NULL),
 
-('Extracción de mineral', 'Minería subterránea o a cielo abierto', 'Alta', NULL, 53, NULL),
-('Carga y transporte', 'Hacia planta de procesamiento', 'Media', NULL, 53, NULL),
-('Trituración y clasificación', 'Preparación del mineral', 'Alta', NULL, 53, NULL),
-('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 53, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', NULL, 53, NULL),
-
-('Trituración y molienda', 'Preparación del mineral', 'Alta', NULL, 54, NULL),
-('Concentración por flotación', 'Separación de minerales', 'Media', NULL, 54, NULL),
-('Separación de elementos', 'Otros componentes presentes', 'Alta', NULL, 54, NULL),
-('Preparación de plata pura', 'Producto listo para fundición', 'Media', NULL, 54, NULL),
-('Almacenamiento temporal', 'Previo a función y refinado', 'Baja', NULL, 54, NULL),
-
-('Electrorrefinación', 'Purificación de plata pura', 'Alta', NULL, 55, NULL),
-('Eliminación de impurezas', 'Proceso de refinado', 'Media', NULL, 55, NULL),
-('Plata de alta pureza', 'Resultado final', 'Alta', NULL, 55, NULL),
-('Almacenamiento seguro', 'Producto listo para uso', 'Media', NULL, 55, NULL),
-('Evaluación de calidad', 'Cumplimiento de estándares', 'Baja', NULL, 55, NULL),
+('Electrorrefinación', 'Purificación de plata pura', 'Alta', 20, 55, NULL),
+('Eliminación de impurezas', 'Proceso de refinado', 'Media', 14, 55, NULL),
+('Plata de alta pureza', 'Resultado final', 'Alta', 18, 55, NULL),
+('Almacenamiento seguro', 'Producto listo para uso', 'Media', 12, 55, NULL),
+('Evaluación de calidad', 'Cumplimiento de estándares', 'Baja', 8, 55, NULL),
 
 -- BARIO
-('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', NULL, 56, NULL),
-('Análisis de muestras', 'Evaluación de presencia de bario', 'Media', NULL, 56, NULL),
-('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', NULL, 56, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 56, NULL),
-('Informes técnicos', 'Resultados de la exploración', 'Media', NULL, 56, NULL),
+-- BARIO
+('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', 14, 56, NULL),
+('Análisis de muestras', 'Evaluación de presencia de bario', 'Media', 10, 56, NULL),
+('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', 16, 56, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 56, NULL),
+('Informes técnicos', 'Resultados de la exploración', 'Media', 10, 56, NULL),
 
-('Construcción de infraestructura', 'Preparación para la explotación', 'Alta', NULL, 57, NULL),
-('Preparación de accesos', 'Galerías y túneles', 'Media', NULL, 57, NULL),
-('Sistemas de ventilación', 'Seguridad en la mina', 'Alta', NULL, 57, NULL),
-('Áreas de trabajo y almacenamiento', 'Organización del espacio', 'Media', NULL, 57, NULL),
-('Evaluación continua', 'Seguridad y rendimiento', 'Baja', NULL, 57, NULL),
+('Construcción de infraestructura', 'Preparación para la explotación', 'Alta', 18, 57, NULL),
+('Preparación de accesos', 'Galerías y túneles', 'Media', 12, 57, NULL),
+('Sistemas de ventilación', 'Seguridad en la mina', 'Alta', 16, 57, NULL),
+('Áreas de trabajo y almacenamiento', 'Organización del espacio', 'Media', 10, 57, NULL),
+('Evaluación continua', 'Seguridad y rendimiento', 'Baja', 8, 57, NULL),
 
-('Extracción de mineral', 'Minería subterránea o a cielo abierto', 'Alta', NULL, 58, NULL),
-('Carga y transporte', 'Hacia planta de procesamiento', 'Media', NULL, 58, NULL),
-('Trituración y clasificación', 'Preparación del mineral', 'Alta', NULL, 58, NULL),
-('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 58, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', NULL, 58, NULL),
+('Extracción de mineral', 'Minería subterránea o a cielo abierto', 'Alta', 20, 58, NULL),
+('Carga y transporte', 'Hacia planta de procesamiento', 'Media', 12, 58, NULL),
+('Trituración y clasificación', 'Preparación del mineral', 'Alta', 18, 58, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 12, 58, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', 8, 58, NULL),
 	
-('Trituración y molienda', 'Preparación del mineral', 'Alta', NULL, 59, NULL),
-('Concentración por flotación', 'Separación de minerales', 'Media', NULL, 59, NULL),
-('Separación de elementos', 'Otros componentes presentes', 'Alta', NULL, 59, NULL),
-('Preparación de bario', 'Producto listo para refinado', 'Media', NULL, 59, NULL),
-('Almacenamiento temporal', 'Previo a la refinación', 'Baja', NULL, 59, NULL),
+('Trituración y molienda', 'Preparación del mineral', 'Alta', 20, 59, NULL),
+('Concentración por flotación', 'Separación de minerales', 'Media', 14, 59, NULL),
+('Separación de elementos', 'Otros componentes presentes', 'Alta', 18, 59, NULL),
+('Preparación de bario', 'Producto listo para refinado', 'Media', 12, 59, NULL),
+('Almacenamiento temporal', 'Previo a la refinación', 'Baja', 8, 59, NULL),
 	
-('Refinado químico', 'Purificación del bario', 'Alta', NULL, 60, NULL),
-('Eliminación de impurezas', 'Proceso de refinado', 'Media', NULL, 60, NULL),
-('Bario de alta pureza', 'Resultado final', 'Alta', NULL, 60, NULL),
-('Almacenamiento seguro', 'Producto listo para uso', 'Media', NULL, 60, NULL),
-('Evaluación de calidad', 'Cumplimiento de estándares', 'Baja', NULL, 60, NULL),
+('Refinado químico', 'Purificación del bario', 'Alta', 20, 60, NULL),
+('Eliminación de impurezas', 'Proceso de refinado', 'Media', 14, 60, NULL),
+('Bario de alta pureza', 'Resultado final', 'Alta', 18, 60, NULL),
+('Almacenamiento seguro', 'Producto listo para uso', 'Media', 12, 60, NULL),
+('Evaluación de calidad', 'Cumplimiento de estándares', 'Baja', 8, 60, NULL),
 
 -- CALCIO
-
-('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', NULL, 61, NULL),
-('Análisis de muestras', 'Evaluación de presencia de calcio', 'Media', NULL, 61, NULL),
-('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', NULL, 61, NULL),
-('Obtención de permisos', 'Licencias para exploración', 'Baja', NULL, 61, NULL),
-('Informes técnicos', 'Resultados de la exploración', 'Media', NULL, 61, NULL),
+-- CALCIO
+('Estudios geológicos', 'Identificación de áreas con potencial', 'Alta', 14, 61, NULL),
+('Análisis de muestras', 'Evaluación de presencia de calcio', 'Media', 10, 61, NULL),
+('Evaluación económica', 'Viabilidad del yacimiento', 'Alta', 16, 61, NULL),
+('Obtención de permisos', 'Licencias para exploración', 'Baja', 8, 61, NULL),
+('Informes técnicos', 'Resultados de la exploración', 'Media', 10, 61, NULL),
 	
-('Extracción de mineral', 'Minería subterránea o a cielo abierto', 'Alta', NULL, 62, NULL),
-('Carga y transporte', 'Hacia planta de procesamiento', 'Media', NULL, 62, NULL),
-('Preparación del mineral', 'Clasificación y trituración', 'Alta', NULL, 62, NULL),
-('Evaluación continua', 'Seguridad y rendimiento', 'Media', NULL, 62, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', NULL, 62, NULL),
+('Extracción de mineral', 'Minería subterránea o a cielo abierto', 'Alta', 20, 62, NULL),
+('Carga y transporte', 'Hacia planta de procesamiento', 'Media', 12, 62, NULL),
+('Preparación del mineral', 'Clasificación y trituración', 'Alta', 18, 62, NULL),
+('Evaluación continua', 'Seguridad y rendimiento', 'Media', 12, 62, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento', 'Baja', 8, 62, NULL),
 	
-('Trituración', 'Reducción del tamaño del mineral', 'Alta', NULL, 63, NULL),
-('Molienda', 'Obtención de partículas finas', 'Media', NULL, 63, NULL),
-('Clasificación', 'Separación por tamaño', 'Alta', NULL, 63, NULL),
-('Almacenamiento temporal', 'Material triturado y molido', 'Media', NULL, 63, NULL),
-('Preparación para procesamiento', 'Siguiente etapa', 'Baja', NULL, 63, NULL),
+('Trituración', 'Reducción del tamaño del mineral', 'Alta', 20, 63, NULL),
+('Molienda', 'Obtención de partículas finas', 'Media', 14, 63, NULL),
+('Clasificación', 'Separación por tamaño', 'Alta', 18, 63, NULL),
+('Almacenamiento temporal', 'Material triturado y molido', 'Media', 12, 63, NULL),
+('Preparación para procesamiento', 'Siguiente etapa', 'Baja', 8, 63, NULL),
 
-('Separación de impurezas', 'Proceso de purificación', 'Alta', NULL, 64, NULL),
-('Eliminación de elementos no deseados', 'Refinado del material', 'Media', NULL, 64, NULL),
-('Concentrado de calcio puro', 'Resultado final', 'Alta', NULL, 64, NULL),
-('Almacenamiento temporal', 'Previo a procesamiento final', 'Media', NULL, 64, NULL),
-('Preparación para procesamiento', 'Siguiente etapa', 'Baja', NULL, 64, NULL),
+('Separación de impurezas', 'Proceso de purificación', 'Alta', 20, 64, NULL),
+('Eliminación de elementos no deseados', 'Refinado del material', 'Media', 14, 64, NULL),
+('Concentrado de calcio puro', 'Resultado final', 'Alta', 18, 64, NULL),
+('Almacenamiento temporal', 'Previo a procesamiento final', 'Media', 12, 64, NULL),
+('Preparación para procesamiento', 'Siguiente etapa', 'Baja', 8, 64, NULL),
 
-('Calcifiacion','se transforma el mineral de calcio en productos como la cal o el carbonato de calcio','Alta',NULL, 65,NULL),
-('Control calidad','Se realizan pruebas y análisis para garantizar que el producto cumpla con los estándares requeridos','Media',NULL,65, NULL),
-('Empaquetado','Se prepara el producto final para su distribución y uso, asegurando su calidad y presentación','Alta',NULL,65,NULL),
-('Almacenamiento',' El producto se almacena adecuadamente para su posterior comercialización','Alta',NULL,65,NULL),
-('Cierre','Rehabilitación del sitio minero','Media',NULL,65,NULL),
+('Calcifiación', 'Transformación del mineral de calcio en productos como la cal o el carbonato de calcio', 'Alta', 22, 65, NULL),
+('Control de calidad', 'Pruebas y análisis para garantizar que el producto cumpla con los estándares requeridos', 'Media', 14, 65, NULL),
+('Empaquetado', 'Preparación del producto final para su distribución y uso, asegurando su calidad y presentación', 'Alta', 18, 65, NULL),
+('Almacenamiento', 'Producto almacenado adecuadamente para su posterior comercialización', 'Alta', 16, 65, NULL),
+('Cierre', 'Rehabilitación del sitio minero', 'Media', 10, 65, NULL),
 
--- CAOLIN
-
+-- ############## CAOLIN
 -- Exploración
-    ('Estudios geológicos', 'Identificación de áreas de caolín', 'Alta', NULL, 66, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 66, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 66, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 66, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL,66, NULL),
+('Estudios geológicos', 'Identificación de áreas de caolín', 'Alta', 14, 66, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 66, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 66, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 66, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 66, NULL),
 -- Extracción
-    ('Excavación', 'Remoción del caolín de la mina', 'Alta', NULL, 67, NULL),
-    ('Carga y transporte', 'Envío a planta de procesamiento', 'Media', NULL, 67, NULL),
-    ('Medidas de seguridad', 'Prevención de accidentes', 'Baja', NULL, 67, NULL),
-    ('Monitoreo de calidad', 'Verificación del caolín extraído', 'Media', NULL, 67, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Alta', NULL, 67, NULL),
+('Excavación', 'Remoción del caolín de la mina', 'Alta', 20, 67, NULL),
+('Carga y transporte', 'Envío a planta de procesamiento', 'Media', 12, 67, NULL),
+('Medidas de seguridad', 'Prevención de accidentes', 'Baja', 8, 67, NULL),
+('Monitoreo de calidad', 'Verificación del caolín extraído', 'Media', 10, 67, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Alta', 16, 67, NULL),
 -- Procesamiento
-    ('Trituración y molienda', 'Reducción del tamaño del caolín', 'Alta', NULL, 68, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 68, NULL),
-    ('Secado del caolín', 'Eliminación de humedad', 'Baja', NULL, 68, NULL),
-    ('Mezcla y homogeneización', 'Preparación para clasificación', 'Media', NULL, 68, NULL),
-    ('Control de calidad', 'Verificación durante el procesamiento', 'Alta', NULL, 68, NULL),
+('Trituración y molienda', 'Reducción del tamaño del caolín', 'Alta', 20, 68, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 14, 68, NULL),
+('Secado del caolín', 'Eliminación de humedad', 'Baja', 8, 68, NULL),
+('Mezcla y homogeneización', 'Preparación para clasificación', 'Media', 10, 68, NULL),
+('Control de calidad', 'Verificación durante el procesamiento', 'Alta', 16, 68, NULL),
 -- Secado
-    ('Secado industrial', 'Reducción de humedad del caolín', 'Alta', NULL, 69, NULL),
-    ('Control de temperatura', 'Ajuste para consistencia deseada', 'Media', NULL, 69, NULL),
-    ('Almacenamiento temporal', 'Caolín seco antes de clasificación', 'Baja', NULL, 69, NULL),
-    ('Verificación de humedad', 'Antes de la clasificación', 'Media', NULL, 69, NULL),
-    ('Registro de datos', 'Seguimiento del proceso de secado', 'Alta', NULL, 69, NULL),
+('Secado industrial', 'Reducción de humedad del caolín', 'Alta', 20, 69, NULL),
+('Control de temperatura', 'Ajuste para consistencia deseada', 'Media', 14, 69, NULL),
+('Almacenamiento temporal', 'Caolín seco antes de clasificación', 'Baja', 8, 69, NULL),
+('Verificación de humedad', 'Antes de la clasificación', 'Media', 10, 69, NULL),
+('Registro de datos', 'Seguimiento del proceso de secado', 'Alta', 16, 69, NULL),
 -- Clasificación
-    ('Separación por pureza', 'Clasificación del caolín según su calidad', 'Alta', NULL, 70, NULL),
-    ('Etiquetado', 'Identificación de lotes de caolín', 'Media', NULL, 70, NULL),
-    ('Empaque para envío', 'Preparación para clientes', 'Baja', NULL, 70, NULL),
-    ('Documentación de lotes', 'Registro de datos de clasificación', 'Media', NULL, 70, NULL),
-    ('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', NULL, 70, NULL),
+('Separación por pureza', 'Clasificación del caolín según su calidad', 'Alta', 20, 70, NULL),
+('Etiquetado', 'Identificación de lotes de caolín', 'Media', 14, 70, NULL),
+('Empaque para envío', 'Preparación para clientes', 'Baja', 8, 70, NULL),
+('Documentación de lotes', 'Registro de datos de clasificación', 'Media', 10, 70, NULL),
+('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', 16, 70, NULL),
 
 -- #################### CALIZA ##########################
-
 -- Exploración y prospección
-    ('Estudios geológicos', 'Identificación de áreas de caliza', 'Alta', NULL, 71, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 71, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 71, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 71, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 71, NULL),
+('Estudios geológicos', 'Identificación de áreas de caliza', 'Alta', 14, 71, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 71, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 71, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 71, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 71, NULL),
 -- Extracción de caliza
-    ('Excavación', 'Remoción de la caliza de la mina', 'Alta', NULL, 72, NULL),
-    ('Carga y transporte', 'Envío a planta de procesamiento', 'Media', NULL, 72, NULL),
-    ('Medidas de seguridad', 'Prevención de accidentes', 'Baja', NULL, 72, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Media', NULL, 72, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Alta', NULL, 72, NULL),
+('Excavación', 'Remoción de la caliza de la mina', 'Alta', 20, 72, NULL),
+('Carga y transporte', 'Envío a planta de procesamiento', 'Media', 12, 72, NULL),
+('Medidas de seguridad', 'Prevención de accidentes','Alta', 8, 72, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Media', 10, 72, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Alta', 16, 72, NULL),
 -- Trituración y Molienda
-    ('Trituración', 'Reducción del tamaño de la caliza', 'Alta', NULL, 73, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL,73, NULL),
-    ('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', NULL, 73, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 73, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 73, NULL),
+('Trituración', 'Reducción del tamaño de la caliza', 'Alta', 20, 73, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 14, 73, NULL),
+('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', 8, 73, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 73, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 73, NULL),
 -- Calcinación
-    ('Calcinación', 'Proceso de alta temperatura', 'Alta', NULL, 74, NULL),
-    ('Control de temperatura', 'Ajuste preciso durante la calcinación', 'Media', NULL, 74, NULL),
-    ('Enfriamiento y almacenamiento', 'Tratamiento posterior a la calcinación', 'Baja', NULL, 74, NULL),
-    ('Verificación de calidad', 'Evaluación del producto calcinado', 'Media', NULL, 74, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Alta', NULL, 74, NULL),
+('Calcinación', 'Proceso de alta temperatura', 'Alta', 20, 74, NULL),
+('Control de temperatura', 'Ajuste preciso durante la calcinación', 'Media', 14, 74, NULL),
+('Enfriamiento y almacenamiento', 'Tratamiento posterior a la calcinación', 'Baja', 8, 74, NULL),
+('Verificación de calidad', 'Evaluación del producto calcinado', 'Media', 10, 74, NULL),
+('Registro de datos', 'Documentación del proceso', 'Alta', 16, 74, NULL),
 -- Hidratación
-    ('Hidratación', 'Mezcla con agua para cal apagada', 'Alta', NULL, 75, NULL),
-    ('Control de proporción', 'Adecuado mezclado', 'Media', NULL, 75, NULL),
-    ('Almacenamiento y envasado', 'Preparación del producto final', 'Baja', NULL, 75, NULL),
-    ('Verificación de calidad', 'Consistencia del producto', 'Media', NULL, 75, NULL),
-    ('Documentación de lotes', 'Registro de cal apagada', 'Alta', NULL, 75, NULL),
+('Hidratación', 'Mezcla con agua para cal apagada', 'Alta', 20, 75, NULL),
+('Control de proporción', 'Adecuado mezclado', 'Media', 14, 75, NULL),
+('Almacenamiento y envasado', 'Preparación del producto final', 'Baja', 8, 75, NULL),
+('Verificación de calidad', 'Consistencia del producto', 'Media', 10, 75, NULL),
+('Documentación de lotes', 'Registro de cal apagada', 'Alta', 16, 75, NULL),
 
 -- ########################### PIRITA #######################################
-    ('Estudios geológicos', 'Identificación de áreas de pirita', 'Alta', NULL, 76, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 76, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 76, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 76, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 76, NULL),
-
-    ('Diseño de infraestructura', 'Planificación de accesos y túneles', 'Alta', NULL, 77, NULL),
-    ('Construcción de caminos', 'Preparación de vías de acceso', 'Media', NULL, 77, NULL),
-    ('Instalación de ventilación', 'Sistemas para la mina', 'Baja', NULL, 77, NULL),
-    ('Medidas de seguridad', 'Prevención de riesgos', 'Media', NULL, 77, NULL),
-    ('Preparación para extracción', 'Acondicionamiento de la mina', 'Alta', NULL, 77, NULL),
-
-    ('Excavación', 'Remoción de la pirita de la mina', 'Alta', NULL, 78, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 78, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 78, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 78, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 78, NULL),
-
-    ('Trituración y molienda', 'Reducción del tamaño de la pirita', 'Alta', NULL, 79, NULL),
-    ('Separación de impurezas', 'Concentración del mineral', 'Media', NULL, 79, NULL),
-    ('Flotación', 'Obtención de concentrado de pirita', 'Baja', NULL, 79, NULL),
-    ('Secado y almacenamiento', 'Guardado temporal del concentrado', 'Media', NULL, 79, NULL),
-    ('Control de calidad', 'Verificación durante el procesamiento', 'Alta', NULL, 79, NULL),
-
-    ('Fundición', 'Obtención de sulfuro de hierro', 'Alta', NULL, 80, NULL),
-    ('Refinado', 'Producción de pirita pura', 'Media', NULL, 80, NULL),
-    ('Moldeado y enfriamiento', 'Formación del producto fundido', 'Baja', NULL, 80, NULL),
-    ('Verificación de calidad', 'Evaluación del producto final', 'Media', NULL, 80, NULL),
-    ('Documentación de lotes', 'Registro de pirita refinada', 'Alta', NULL, 80, NULL),
+-- Exploración y prospección
+('Estudios geológicos', 'Identificación de áreas de pirita', 'Alta', 14, 76, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 76, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 76, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 76, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 76, NULL),
+-- Diseño de infraestructura
+('Diseño de infraestructura', 'Planificación de accesos y túneles', 'Alta', 20, 77, NULL),
+('Construcción de caminos', 'Preparación de vías de acceso', 'Media', 12, 77, NULL),
+('Instalación de ventilación', 'Sistemas para la mina', 'Baja', 8, 77, NULL),
+('Medidas de seguridad', 'Prevención de riesgos', 'Media', 10, 77, NULL),
+('Preparación para extracción', 'Acondicionamiento de la mina', 'Alta', 16, 77, NULL),
+-- Extracción de pirita
+('Excavación', 'Remoción de la pirita de la mina', 'Alta', 20, 78, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 78, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 78, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 78, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 78, NULL),
+-- Trituración y Molienda
+('Trituración', 'Reducción del tamaño de la pirita', 'Alta', 20, 79, NULL),
+('Separación de impurezas', 'Concentración del mineral', 'Media', 14, 79, NULL),
+('Flotación', 'Obtención de concentrado de pirita', 'Baja', 8, 79, NULL),
+('Secado y almacenamiento', 'Guardado temporal del concentrado', 'Media', 10, 79, NULL),
+('Control de calidad', 'Verificación durante el procesamiento', 'Alta', 16, 79, NULL),
+-- Fundición
+('Fundición', 'Obtención de sulfuro de hierro', 'Alta', 20, 80, NULL),
+('Refinado', 'Producción de pirita pura', 'Media', 14, 80, NULL),
+('Moldeado y enfriamiento', 'Formación del producto fundido', 'Baja', 8, 80, NULL),
+('Verificación de calidad', 'Evaluación del producto final', 'Media', 10, 80, NULL),
+('Documentación de lotes', 'Registro de pirita refinada', 'Alta', 16, 80, NULL),
 
 -- ########### TALCO #######################
+('Estudios geológicos', 'Identificación de áreas de talco', 'Alta', 14, 81, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 81, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 81, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 81, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 81, NULL),
 
-    ('Estudios geológicos', 'Identificación de áreas de talco', 'Alta', NULL, 81, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 81, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 81, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 81, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 81, NULL),
+('Excavación', 'Remoción de talco de la mina', 'Alta', 20, 82, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 82, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 82, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 82, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 82, NULL),
 
-    ('Excavación', 'Remoción de talco de la mina', 'Alta', NULL, 82, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 82, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 82, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 82, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 82, NULL),
-	
-    ('Separación por calidad', 'Clasificación del talco', 'Alta', NULL, 83, NULL),
-    ('Etiquetado', 'Identificación de lotes de talco', 'Media', NULL, 83, NULL),
-    ('Empaque para envío', 'Preparación para clientes', 'Baja', NULL, 83, NULL),
-    ('Documentación de lotes', 'Registro de datos de clasificación', 'Media', NULL, 83, NULL),
-    ('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', NULL, 83, NULL),
+('Separación por calidad', 'Clasificación del talco', 'Alta', 20, 83, NULL),
+('Etiquetado', 'Identificación de lotes de talco', 'Media', 14, 83, NULL),
+('Empaque para envío', 'Preparación para clientes', 'Baja', 8, 83, NULL),
+('Documentación de lotes', 'Registro de datos de clasificación', 'Media', 10, 83, NULL),
+('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', 16, 83, NULL),
 
-    ('Inspección visual', 'Verificación de calidad', 'Alta', NULL, 84, NULL),
-    ('Selección manual', 'Separación de impurezas', 'Media', NULL, 84, NULL),
-    ('Control de tamaño', 'Ajuste según especificaciones', 'Baja', NULL, 84, NULL),
-    ('Registro de datos', 'Documentación de selección', 'Media', NULL, 84, NULL),
-    ('Empaque y almacenamiento', 'Preparación para su uso', 'Alta', NULL, 84, NULL),
+('Inspección visual', 'Verificación de calidad', 'Alta', 20, 84, NULL),
+('Selección manual', 'Separación de impurezas', 'Media', 14, 84, NULL),
+('Control de tamaño', 'Ajuste según especificaciones', 'Baja', 8, 84, NULL),
+('Registro de datos', 'Documentación de selección', 'Media', 10, 84, NULL),
+('Empaque y almacenamiento', 'Preparación para su uso', 'Alta', 16, 84, NULL),
 
-    ('Trituración y molienda', 'Reducción del tamaño del talco', 'Alta', NULL, 85, NULL),
-    ('Separación de impurezas', 'Limpieza y concentración', 'Media', NULL, 85, NULL),
-    ('Secado y almacenamiento', 'Guardado temporal del talco procesado', 'Baja', NULL, 85, NULL),
-    ('Control de calidad', 'Verificación durante el procesamiento', 'Media', NULL, 85, NULL),
-    ('Documentación de lotes', 'Registro de datos del producto final', 'Alta', NULL, 85, NULL),
+('Trituración y molienda', 'Reducción del tamaño del talco', 'Alta', 20, 85, NULL),
+('Separación de impurezas', 'Limpieza y concentración', 'Media', 14, 85, NULL),
+('Secado y almacenamiento', 'Guardado temporal del talco procesado', 'Baja', 8, 85, NULL),
+('Control de calidad', 'Verificación durante el procesamiento', 'Media', 10, 85, NULL),
+('Documentación de lotes', 'Registro de datos del producto final', 'Alta', 16, 85, NULL),
 
 -- ################################## ZINC ###################
-    ('Estudios geológicos', 'Identificación de áreas de zinc', 'Alta', NULL, 86, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 86, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 86, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 86, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 86, NULL),
+('Estudios geológicos', 'Identificación de áreas de zinc', 'Alta', 14, 86, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 86, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 86, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 86, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 86, NULL),
 
-    ('Excavación', 'Remoción de zinc de la mina', 'Alta', NULL, 87, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 87, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 87, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 87, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 87, NULL),
+('Excavación', 'Remoción de zinc de la mina', 'Alta', 20, 87, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 87, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 87, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 87, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 87, NULL),
 
-    ('Calcinación', 'Oxidación del zinc y sulfuro', 'Alta', NULL, 88, NULL),
-    ('Reducción a polvo', 'Obtención de óxido de zinc', 'Media', NULL, 88, NULL),
-    ('Lixiviación con ácido sulfúrico', 'Extracción del zinc', 'Baja', NULL, 88, NULL),
-    ('Neutralización', 'Ajuste del pH', 'Media', NULL, 88, NULL),
-    ('Filtración de contaminantes', 'Eliminación de impurezas', 'Alta', NULL, 88, NULL),
+('Calcinación', 'Oxidación del zinc y sulfuro', 'Alta', 20, 88, NULL),
+('Reducción a polvo', 'Obtención de óxido de zinc', 'Media', 14, 88, NULL),
+('Lixiviación con ácido sulfúrico', 'Extracción del zinc', 'Baja', 8, 88, NULL),
+('Neutralización', 'Ajuste del pH', 'Media', 10, 88, NULL),
+('Filtración de contaminantes', 'Eliminación de impurezas', 'Alta', 16, 88, NULL),
 
-    ('Lixiviación con ácido', 'Extracción de zinc disuelto', 'Alta', NULL, 89, NULL),
-    ('Filtración', 'Separación de sólidos', 'Media', NULL, 89, NULL),
-    ('Ajuste de pH', 'Control de la solución', 'Baja', NULL, 89, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 89, NULL),
-    ('Preparación para neutralización', 'Tratamiento posterior', 'Alta', NULL, 89, NULL),
+('Lixiviación con ácido', 'Extracción de zinc disuelto', 'Alta', 20, 89, NULL),
+('Filtración', 'Separación de sólidos', 'Media', 14, 89, NULL),
+('Ajuste de pH', 'Control de la solución', 'Baja', 8, 89, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 89, NULL),
+('Preparación para neutralización', 'Tratamiento posterior', 'Alta', 16, 89, NULL),
 
-    ('Ajuste de pH', 'Equilibrio de la solución', 'Alta', NULL, 90, NULL),
-    ('Neutralización con cal', 'Estabilización del pH', 'Media', NULL, 90, NULL),
-    ('Almacenamiento temporal', 'Guardado del zinc procesado', 'Baja', NULL, 90, NULL),
-    ('Verificación de calidad', 'Evaluación del producto final', 'Media', NULL, 90, NULL),
-    ('Documentación de lotes', 'Registro de datos', 'Alta', NULL, 90, NULL),
+('Ajuste de pH', 'Equilibrio de la solución', 'Alta', 20, 90, NULL),
+('Neutralización con cal', 'Estabilización del pH', 'Media', 14, 90, NULL),
+('Almacenamiento temporal', 'Guardado del zinc procesado', 'Baja', 8, 90, NULL),
+('Verificación de calidad', 'Evaluación del producto final', 'Media', 10, 90, NULL),
+('Documentación de lotes', 'Registro de datos', 'Alta', 16, 90, NULL),
 
 -- ################# CIANITA ########################
-    ('Estudios geológicos', 'Identificación de áreas de cianita', 'Alta', NULL, 91, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 91, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 91, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 91, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 91, NULL),
+('Estudios geológicos', 'Identificación de áreas de cianita', 'Alta', 14, 91, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 91, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 91, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 91, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 91, NULL),
 
-    ('Excavación', 'Remoción de cianita de la mina', 'Alta', NULL, 92, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 92, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 92, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 92, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 92, NULL),
+('Excavación', 'Remoción de cianita de la mina', 'Alta', 20, 92, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 92, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 92, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 92, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 92, NULL),
 
-    ('Separación por calidad', 'Clasificación de la cianita', 'Alta', NULL, 93, NULL),
-    ('Etiquetado', 'Identificación de lotes de cianita', 'Media', NULL, 93, NULL),
-    ('Empaque para envío', 'Preparación para clientes', 'Baja', NULL, 93, NULL),
-    ('Documentación de lotes', 'Registro de datos de clasificación', 'Media', NULL, 93, NULL),
-    ('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', NULL, 93, NULL),
+('Separación por calidad', 'Clasificación de la cianita', 'Alta', 20, 93, NULL),
+('Etiquetado', 'Identificación de lotes de cianita', 'Media', 14, 93, NULL),
+('Empaque para envío', 'Preparación para clientes', 'Baja', 8, 93, NULL),
+('Documentación de lotes', 'Registro de datos de clasificación', 'Media', 10, 93, NULL),
+('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', 16, 93, NULL),
 
-    ('Trituración', 'Reducción del tamaño de la cianita', 'Alta', NULL, 94, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 94, NULL),
-    ('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', NULL, 94, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 94, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 94, NULL),
+('Trituración', 'Reducción del tamaño de la cianita', 'Alta', 20, 94, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 14, 94, NULL),
+('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', 8, 94, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 94, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 94, NULL),
 
-    ('Secado y almacenamiento', 'Guardado temporal de la cianita', 'Alta', NULL, 95, NULL),
-    ('Control de calidad', 'Verificación durante el procesamiento', 'Media', NULL, 95, NULL),
-    ('Documentación de lotes', 'Registro de datos del producto final', 'Baja', NULL, 95, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Media', NULL, 95, NULL),
-    ('Verificación de pureza', 'Evaluación de la calidad', 'Alta', NULL, 95, NULL),
+('Secado y almacenamiento', 'Guardado temporal de la cianita', 'Alta', 20, 95, NULL),
+('Control de calidad', 'Verificación durante el procesamiento', 'Media', 14, 95, NULL),
+('Documentación de lotes', 'Registro de datos del producto final', 'Baja', 8, 95, NULL),
+('Empaque y preparación', 'Listo para su uso o envío', 'Media', 10, 95, NULL),
+('Verificación de pureza', 'Evaluación de la calidad', 'Alta', 16, 95, NULL),
 
--- ##################  DOLOMITA
+-- ##################  DOLOMITA ################
+('Estudios geológicos', 'Identificación de áreas de dolomita', 'Alta', 14, 96, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 96, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 96, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 96, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 96, NULL),
 
-    ('Estudios geológicos', 'Identificación de áreas de dolomita', 'Alta', NULL, 96, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 96, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 96, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 96, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 96, NULL),
+('Planificación de perforación', 'Diseño de la estrategia de perforación', 'Alta', 20, 97, NULL),
+('Perforación de testigos', 'Obtención de muestras de dolomita', 'Media', 14, 97, NULL),
+('Control geológico', 'Verificación de la información obtenida', 'Baja', 8, 97, NULL),
+('Registro de datos', 'Documentación de los testigos', 'Media', 10, 97, NULL),
+('Análisis de muestras', 'Determinación de la calidad de la dolomita', 'Alta', 16, 97, NULL),
 
-    ('Planificación de perforación', 'Diseño de la estrategia de perforación', 'Alta', NULL, 97, NULL),
-    ('Perforación de testigos', 'Obtención de muestras de dolomita', 'Media', NULL, 97, NULL),
-    ('Control geológico', 'Verificación de la información obtenida', 'Baja', NULL,97, NULL),
-    ('Registro de datos', 'Documentación de los testigos', 'Media', NULL, 97, NULL),
-    ('Análisis de muestras', 'Determinación de la calidad de la dolomita', 'Alta', NULL, 97, NULL),
+('Diseño de voladura', 'Planificación de explosiones controladas', 'Alta', 20, 98, NULL),
+('Perforación de barrenos', 'Preparación para la voladura', 'Media', 14, 98, NULL),
+('Carga de explosivos', 'Introducción de material explosivo', 'Baja', 8, 98, NULL),
+('Voladura controlada', 'Obtención de fragmentos de dolomita', 'Media', 10, 98, NULL),
+('Seguridad en la voladura', 'Prevención de riesgos', 'Alta', 16, 98, NULL),
 
-    ('Diseño de voladura', 'Planificación de explosiones controladas', 'Alta', NULL, 98, NULL),
-    ('Perforación de barrenos', 'Preparación para la voladura', 'Media', NULL, 98, NULL),
-    ('Carga de explosivos', 'Introducción de material explosivo', 'Baja', NULL, 98, NULL),
-    ('Voladura controlada', 'Obtención de fragmentos de dolomita', 'Media', NULL, 98, NULL),
-    ('Seguridad en la voladura', 'Prevención de riesgos', 'Alta', NULL, 98, NULL),
+('Trituración', 'Reducción del tamaño de la dolomita', 'Alta', 20, 99, NULL),
+('Clasificación por tamaño', 'Separación de fragmentos', 'Media', 14, 99, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 8, 99, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 99, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 99, NULL),
 
-    ('Trituración', 'Reducción del tamaño de la dolomita', 'Alta', NULL, 99, NULL),
-    ('Clasificación por tamaño', 'Separación de fragmentos', 'Media', NULL, 99, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 99, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 99, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 99, NULL),
+('Secado y almacenamiento', 'Guardado temporal de la dolomita procesada', 'Alta', 20, 100, NULL),
+('Control de calidad', 'Verificación durante el procesamiento', 'Media', 14, 100, NULL),
+('Documentación de lotes', 'Registro de datos del producto final', 'Baja', 8, 100, NULL),
+('Empaque y preparación', 'Listo para su uso o envío', 'Media', 10, 100, NULL),
+('Verificación de pureza', 'Evaluación de la calidad', 'Alta', 16, 100, NULL),
 
-    ('Secado y almacenamiento', 'Guardado temporal de la dolomita procesada', 'Alta', NULL, 100, NULL),
-    ('Control de calidad', 'Verificación durante el procesamiento', 'Media', NULL, 100, NULL),
-    ('Documentación de lotes', 'Registro de datos del producto final', 'Baja', NULL, 100, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Media', NULL, 100, NULL),
-    ('Verificación de pureza', 'Evaluación de la calidad', 'Alta', NULL, 100, NULL),
+-- #################### TITANIO ################
+('Estudios geológicos', 'Identificación de áreas de titanio', 'Alta', 14, 101, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 101, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 101, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 101, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 101, NULL),
 
--- #################### titanio
+('Excavación', 'Remoción de titanio de la mina', 'Alta', 20, 102, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 102, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 102, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 102, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 102, NULL),
 
-    ('Estudios geológicos', 'Identificación de áreas de titanio', 'Alta', NULL, 101, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 101, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 101, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 101, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL,101, NULL),
+('Trituración', 'Reducción del tamaño del titanio', 'Alta', 20, 103, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 14, 103, NULL),
+('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', 8, 103, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 103, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 103, NULL),
 
-    ('Excavación', 'Remoción de titanio de la mina', 'Alta', NULL, 102, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 102, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 102, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 102, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 102, NULL),
+('Molienda', 'Reducción adicional del tamaño del titanio', 'Alta', 20, 104, NULL),
+('Clasificación por tamaño', 'Separación de partículas', 'Media', 14, 104, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 8, 104, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 104, NULL),
+('Almacenamiento temporal', 'Guardado del material molido', 'Alta', 16, 104, NULL),
+
+('Separación magnética', 'Extracción de titanio mediante imanes', 'Alta', 20, 105, NULL),
+('Flotación', 'Separación de titanio de otros minerales', 'Media', 14, 105, NULL),
+('Filtración', 'Eliminación de partículas no deseadas', 'Baja', 8, 105, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 105, NULL),
+('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 16, 105, NULL),
+
+-- ################ TUNGSTENO ##############
+('Estudios geológicos', 'Identificación de áreas de tungsteno', 'Alta', 14, 106, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 106, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 106, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 106, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 106, NULL),
+
+('Excavación', 'Remoción de tungsteno de la mina', 'Alta', 20, 107, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 107, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 107, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 107, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 107, NULL),
+
+('Trituración', 'Reducción del tamaño del tungsteno', 'Alta', 20, 108, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 14, 108, NULL),
+('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', 8, 108, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 108, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 108, NULL),
+
+('Molienda', 'Reducción adicional del tamaño del tungsteno', 'Alta', 20, 109, NULL),
+('Clasificación por tamaño', 'Separación de partículas', 'Media', 14, 109, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 8, 109, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 109, NULL),
+('Almacenamiento temporal', 'Guardado del material molido', 'Alta', 16, 109, NULL),
+
+('Flotación', 'Separación de tungsteno de otros minerales', 'Alta', 20, 110, NULL),
+('Control de pH', 'Ajuste de la solución', 'Media', 14, 110, NULL),
+('Filtración', 'Eliminación de partículas no deseadas', 'Baja', 8, 110, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 110, NULL),
+('Empaque', 'Listo para su uso o envío', 'Alta', 16, 110, NULL),
+
+--  ########### MAGNESIO #############
+('Estudios geológicos', 'Identificación de áreas de magnesio', 'Alta', 14, 111, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 111, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 111, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 111, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 111, NULL),
+
+('Excavación', 'Remoción de magnesio de la mina', 'Alta', 20, 112, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 112, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 112, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 112, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 112, NULL),
+
+('Trituración', 'Reducción del tamaño del magnesio', 'Alta', 20, 113, NULL),
+('Clasificación por tamaño', 'Separación de fragmentos', 'Media', 14, 113, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 8, 113, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 113, NULL),
+('Almacenamiento temporal', 'Guardado del material preparado', 'Alta', 16, 113, NULL),
+
+('Calcinación', 'Proceso de calentamiento controlado', 'Alta', 20, 114, NULL),
+('Reducción de carbonato de magnesio', 'Obtención de óxido de magnesio', 'Media', 14, 114, NULL),
+('Control de temperatura', 'Ajuste para la calcinación', 'Baja', 8, 114, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 114, NULL),
+('Almacenamiento temporal', 'Guardado del material calcinado', 'Alta', 16, 114, NULL),
+
+('Separación magnética', 'Extracción de magnesio mediante imanes', 'Alta', 20, 115, NULL),
+('Flotación', 'Separación de magnesio de otros minerales', 'Media', 14, 115, NULL),
+('Filtración', 'Eliminación de partículas no deseadas', 'Baja', 8, 115, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 115, NULL),
+('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 16, 115, NULL),
+
+--  ################### ANDALUCITA ####################
+('Estudios geológicos', 'Identificación de áreas de andalucita', 'Alta', 14, 116, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 116, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 116, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 116, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 116, NULL),
+
+('Planificación de infraestructura', 'Diseño y preparación', 'Alta', 20, 117, NULL),
+('Construcción de accesos', 'Vías de acceso a la mina', 'Media', 14, 117, NULL),
+('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', 8, 117, NULL),
+('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', 10, 117, NULL),
+('Seguridad y señalización', 'Medidas para la operación', 'Alta', 16, 117, NULL),
+
+('Excavación', 'Remoción de andalucita de la mina', 'Alta', 20, 118, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 118, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 118, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 118, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 118, NULL),
+
+('Trituración', 'Reducción del tamaño de la andalucita', 'Alta', 20, 119, NULL),
+('Clasificación por tamaño', 'Separación de fragmentos', 'Media', 14, 119, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 8, 119, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 119, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 119, NULL),
+
+('Separación por calidad', 'Clasificación de la andalucita', 'Alta', 20, 120, NULL),
+('Etiquetado', 'Identificación de lotes de andalucita', 'Media', 14, 120, NULL),
+('Empaque para envío', 'Preparación para clientes', 'Baja', 8, 120, NULL),
+('Documentación de lotes', 'Registro de datos de clasificación', 'Media', 10, 120, NULL),
+('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', 16, 120, NULL),
+
+--  ################# ANTIMONIO #############
+ -- ANTIMONIO
+('Estudios geológicos', 'Identificación de áreas de antimonio', 'Alta', 14, 121, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 121, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 121, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 121, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 121, NULL),
+
+('Excavación', 'Remoción de antimonio de la mina', 'Alta', 20, 122, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 122, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 122, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 122, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 122, NULL),
+
+('Trituración', 'Reducción del tamaño del antimonio', 'Alta', 20, 123, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 14, 123, NULL),
+('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', 8, 123, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 123, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 123, NULL),
+
+('Molienda', 'Reducción adicional del tamaño del antimonio', 'Alta', 20, 124, NULL),
+('Clasificación por tamaño', 'Separación de partículas', 'Media', 14, 124, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 8, 124, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 124, NULL),
+('Almacenamiento temporal', 'Guardado del material molido', 'Alta', 16, 124, NULL),
+
+('Flotación', 'Separación de antimonio de otros minerales', 'Alta', 20, 125, NULL),
+('Control de pH', 'Ajuste de la solución', 'Media', 14, 125, NULL),
+('Filtración', 'Eliminación de partículas no deseadas', 'Baja', 8, 125, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 125, NULL),
+('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 16, 125, NULL),
+
+-- ############################# CROMO ####################
+('Estudios geológicos', 'Identificación de áreas de cromo', 'Alta', 14, 126, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 126, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 126, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 126, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 126, NULL),
+
+('Planificación de infraestructura', 'Diseño y preparación', 'Alta', 20, 127, NULL),
+('Construcción de accesos', 'Vías de acceso a la mina', 'Media', 14, 127, NULL),
+('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', 8, 127, NULL),
+('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', 10, 127, NULL),
+('Seguridad y señalización', 'Medidas para la operación', 'Alta', 16, 127, NULL),
+
+('Excavación', 'Remoción de cromo de la mina', 'Alta', 20, 128, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 128, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 128, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 128, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 128, NULL),
+
+('Trituración', 'Reducción del tamaño del cromo', 'Alta', 20, 129, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Media', 14, 129, NULL),
+('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', 8, 129, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 129, NULL),
+('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', 16, 129, NULL),
+
+('Separación magnética', 'Extracción de cromo mediante imanes', 'Alta', 20, 130, NULL),
+('Flotación', 'Separación de cromo de otros minerales', 'Media', 14, 130, NULL),
+('Filtración', 'Eliminación de partículas no deseadas', 'Baja', 8, 130, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 130, NULL),
+('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 16, 130, NULL),
+
+-- ################# ASBESTO ############
+('Estudios geológicos', 'Identificación de áreas de asbesto', 'Alta', 14, 131, NULL),
+('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 10, 131, NULL),
+('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 8, 131, NULL),
+('Investigación de permisos', 'Obtención de licencias', 'Media', 10, 131, NULL),
+('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 16, 131, NULL),
+
+('Planificación de infraestructura', 'Diseño y preparación', 'Alta', 20, 132, NULL),
+('Construcción de accesos', 'Vías de acceso a la mina', 'Media', 14, 132, NULL),
+('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', 8, 132, NULL),
+('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', 10, 132, NULL),
+('Seguridad y señalización', 'Medidas para la operación', 'Alta', 16, 132, NULL),
+
+('Excavación', 'Remoción de asbesto de la mina', 'Alta', 20, 133, NULL),
+('Transporte', 'Envío a planta de procesamiento', 'Media', 12, 133, NULL),
+('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 8, 133, NULL),
+('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 10, 133, NULL),
+('Seguridad en la mina', 'Control durante la extracción', 'Alta', 16, 133, NULL),
+
+('Trituración', 'Reducción del tamaño del asbesto', 'Alta', 20, 134, NULL),
+('Clasificación por tamaño', 'Separación de fibras', 'Media', 14, 134, NULL),
+('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 8, 134, NULL),
+('Control de calidad', 'Verificación durante el proceso', 'Media', 10, 134, NULL),
+('Almacenamiento temporal', 'Guardado del material procesado', 'Alta', 16, 134, NULL),
+
+('Separación magnética', 'Extracción de fibras de asbesto mediante imanes', 'Alta', 20, 135, NULL),
+('Flotación', 'Separación de asbesto de otros minerales', 'Media', 14, 135, NULL),
+('Filtración', 'Eliminación de partículas no deseadas', 'Baja', 8, 135, NULL),
+('Registro de datos', 'Documentación del proceso', 'Media', 10, 135, NULL),
+('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 16, 135, NULL),
+
+-- ############### FELDESTAPO #############
+    ('Estudios geológicos', 'Identificación de áreas de feldespato', 'Alta', 5, 136, NULL),
+    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', 3, 136, NULL),
+    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 2, 136, NULL),
+    ('Investigación de permisos', 'Obtención de licencias', 'Media', 3, 136, NULL),
+    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 5, 136, NULL),
+
+    ('Planificación de infraestructura', 'Diseño y preparación', 'Alta', 6, 137, NULL),
+    ('Construcción de accesos', 'Vías de acceso a la mina', 'Media', 4, 137, NULL),
+    ('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', 2, 137, NULL),
+    ('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', 3, 137, NULL),
+    ('Seguridad y señalización', 'Medidas para la operación', 'Alta', 5, 137, NULL),
+
+    ('Excavación', 'Remoción de feldespato de la mina', 'Alta', 7, 138, NULL),
+    ('Transporte', 'Envío a planta de procesamiento', 'Media', 4, 138, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 2, 138, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 3, 138, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', 5, 138, NULL),
+
+    ('Trituración', 'Reducción del tamaño del feldespato', 'Alta', 6, 139, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas', 'Media', 4, 139, NULL),
+    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 2, 139, NULL),
+    ('Control de calidad', 'Verificación durante el proceso', 'Media', 3, 139, NULL),
+    ('Almacenamiento temporal', 'Guardado del material procesado', 'Alta', 5, 139, NULL),
+
+    ('Separación magnética', 'Extracción de feldespato mediante imanes', 'Alta', 7, 140, NULL),
+    ('Flotación', 'Separación de feldespato de otros minerales', 'Media', 4, 140, NULL),
+    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', 2, 140, NULL),
+    ('Registro de datos', 'Documentación del proceso', 'Media', 3, 140, NULL),
+    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 5, 140, NULL),
+
+-- ################## ARENA ##############
+    ('Estudios geológicos', 'Identificación de áreas de arena', 'Alta', 5, 141, NULL),
+    ('Muestreo del suelo', 'Análisis para determinar calidad y cantidad', 'Media', 3, 141, NULL),
+    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', 2, 141, NULL),
+    ('Investigación de permisos', 'Obtención de licencias', 'Media', 3, 141, NULL),
+    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', 5, 141, NULL),
+
+    ('Excavación', 'Remoción de arena de la mina', 'Alta', 7, 142, NULL),
+    ('Transporte', 'Envío a planta de procesamiento', 'Media', 4, 142, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 2, 142, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 3, 142, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', 5, 142, NULL),
+
+    ('Separación por tamaño', 'Clasificación de partículas de arena', 'Alta', 6, 143, NULL),
+    ('Eliminación de impurezas', 'Limpieza y separación', 'Media', 4, 143, NULL),
+    ('Control de calidad', 'Verificación durante el proceso', 'Baja', 2, 143, NULL),
+    ('Almacenamiento temporal', 'Guardado del material clasificado', 'Media', 3, 143, NULL),
+    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 5, 143, NULL),
+
+    ('Lavado de arena', 'Eliminación de impurezas mediante agua', 'Alta', 6, 144, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas lavadas', 'Media', 4, 144, NULL),
+    ('Control de calidad', 'Verificación durante el proceso', 'Baja', 2, 144, NULL),
+    ('Almacenamiento temporal', 'Guardado del material lavado', 'Media', 3, 144, NULL),
+    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 5, 144, NULL),
+
+    ('Secado de arena', 'Eliminación de humedad', 'Alta', 6, 145, NULL),
+    ('Clasificación final', 'Última separación por tamaño', 'Media', 4, 145, NULL),
+    ('Control de calidad', 'Verificación antes del almacenamiento', 'Baja', 2, 145, NULL),
+    ('Almacenamiento final', 'Guardado del material seco', 'Media', 3, 145, NULL),
+    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 5, 145, NULL),
+
+-- ################## CAL ######################
+    ('Excavación de caliza', 'Remoción de caliza de la mina', 'Alta', 7, 146, NULL),
+    ('Transporte', 'Envío a planta de procesamiento', 'Media', 4, 146, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', 2, 146, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', 3, 146, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', 5, 146, NULL),
+
+    ('Cocción de caliza', 'Calentamiento para obtener cal viva', 'Alta', 6, 147, NULL),
+    ('Control de temperatura', 'Ajuste para la cocción', 'Media', 4, 147, NULL),
+    ('Registro de datos', 'Documentación del proceso', 'Baja', 2, 147, NULL),
+    ('Almacenamiento temporal', 'Guardado del material cocido', 'Media', 3, 147, NULL),
+    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 5, 147, NULL),
+
+    ('Apagado de cal viva', 'Reacción con agua para obtener cal hidratada', 'Alta', 6, 148, NULL),
+    ('Control de pH', 'Ajuste para la reacción', 'Media', 4, 148, NULL),
+    ('Filtración', 'Eliminación de impurezas', 'Baja', 2, 148, NULL),
+    ('Registro de datos', 'Documentación del proceso', 'Media', 3, 148, NULL),
+    ('Almacenamiento temporal', 'Guardado del material apagado', 'Alta', 5, 148, NULL),
+
+    ('Molienda de cal hidratada', 'Reducción del tamaño del material', 'Alta', 6, 149, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas molidas', 'Media', 4, 149, NULL),
+    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', 2, 149, NULL),
+    ('Control de calidad', 'Verificación durante el proceso', 'Media', 3, 149, NULL),
+    ('Almacenamiento temporal', 'Guardado del material molido', 'Alta', 5, 149, NULL),
+
+    ('Envasado de cal', 'Preparación para su comercialización', 'Alta', 6, 150, NULL),
+    ('Etiquetado', 'Identificación de lotes de cal', 'Media', 4, 150, NULL),
+    ('Empaque para envío', 'Listo para distribución', 'Baja', 2, 150, NULL),
+    ('Registro de datos', 'Documentación del proceso', 'Media', 3, 150, NULL),
+    ('Almacenamiento final', 'Guardado del material envasado', 'Alta', 5, 150, NULL),
+
+-- ################## GRANITO ##############
+    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de granito', 'Alta', 5, 151, NULL),
+    ('Prospectiva de recursos', 'Determinación de la cantidad y calidad del granito', 'Media', 3, 151, NULL),
+    ('Planificación de la explotación', 'Definición de estrategias y métodos', 'Baja', 2, 151, NULL),
+    ('Permisos y licencias', 'Trámites legales y autorizaciones', 'Media', 3, 151, NULL),
+    ('Establecimiento de campamentos', 'Logística para el equipo de estudio', 'Alta', 5, 151, NULL),
+
+    ('Planificación de rutas', 'Diseño de caminos y accesos', 'Alta', 6, 152, NULL),
+    ('Infraestructura de transporte', 'Construcción de vías y puentes', 'Media', 4, 152, NULL),
+    ('Equipamiento de transporte', 'Adquisición de maquinaria', 'Baja', 2, 152, NULL),
+    ('Seguridad vial', 'Medidas para el transporte seguro', 'Media', 3, 152, NULL),
+    ('Logística de carga', 'Optimización del transporte de bloques', 'Alta', 5, 152, NULL),
+
+    ('Remoción de capa superficial', 'Eliminación de suelo y roca no mineral', 'Alta', 7, 153, NULL),
+    ('Excavación de granito', 'Extracción de la capa de granito', 'Media', 4, 153, NULL),
+    ('Carga y transporte', 'Envío a planta de procesamiento', 'Baja', 2, 153, NULL),
+    ('Control de calidad', 'Verificación del material extraído', 'Media', 3, 153, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', 5, 153, NULL),
+
+    ('División de bloques', 'Separación de grandes masas de granito', 'Alta', 6, 154, NULL),
+    ('Corte con hilo diamantado', 'Precisión en la extracción', 'Media', 4, 154, NULL),
+    ('Control de calidad', 'Verificación de la calidad del granito', 'Baja', 2, 154, NULL),
+    ('Almacenamiento temporal', 'Guardado de bloques extraídos', 'Media', 3, 154, NULL),
+    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 5, 154, NULL),
+
+    ('Corte de bloques', 'Precisión en la conformación', 'Alta', 6, 155, NULL),
+    ('Elevación de bloques', 'Levantamiento y transporte vertical', 'Media', 4, 155, NULL),
+    ('Control de calidad', 'Verificación antes del almacenamiento', 'Baja', 2, 155, NULL),
+    ('Almacenamiento final', 'Guardado de bloques listos', 'Media', 3, 155, NULL),
+    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', 5, 155, NULL),
+
+-- ############# YESO #############
+    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de yeso', 'Alta', 5, 156, NULL),
+    ('Prospectiva de recursos', 'Determinación de las reservas de yeso', 'Media', 3, 156, NULL),
+    ('Planificación de la explotación', 'Definición de método y ritmo de explotación','Alta', 2, 156, NULL),
+    ('Ubicación de escombreras', 'Determinación de áreas para desechos','Media', 3, 156, NULL),
+    ('Instalaciones de acceso', 'Planificación de caminos y accesos','Alta', 5, 156, NULL),
+
+    ('Perforación de yeso', 'Creación de perforaciones para voladuras','Alta', 6, 157, NULL),
+    ('Control de calidad', 'Verificación de la calidad del material perforado','Alta', 4, 157, NULL),
+    ('Registro de datos', 'Documentación de la perforación','Media', 2, 157, NULL),
+    ('Seguridad en perforación', 'Medidas para la seguridad del personal','Media', 3, 157, NULL),
+    ('Equipamiento de perforación', 'Selección y uso de maquinaria','Alta', 5, 157, NULL),
+
+    ('Voladura de yeso', 'Uso de explosivos para fragmentar el material','Alta', 6, 158, NULL),
+    ('Diseño de voladuras', 'Parámetros y planificación de explosiones','Alta', 4, 158, NULL),
+    ('Control de seguridad', 'Medidas para la seguridad en voladuras','Media', 2, 158, NULL),
+    ('Registro de datos', 'Documentación de las voladuras','Alta', 3, 158, NULL),
+    ('Seguimiento de resultados', 'Verificación de la eficacia de las voladuras','Media', 5, 158, NULL),
+
+    ('Carga de yeso', 'Transporte del material volado','Alta', 6, 159, NULL),
+    ('Transporte a planta', 'Envío del yeso a la planta de procesamiento','Alta', 4, 159, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído','Alta', 2, 159, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos','Media', 3, 159, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción','Alta', 5, 159, NULL),
+
+    ('Trituración de yeso', 'Reducción del tamaño del material','Alta', 6, 160, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas trituradas','Media', 4, 160, NULL),
+    ('Limpieza y separación', 'Eliminación de impurezas','Alta', 2, 160, NULL),
+    ('Control de calidad', 'Verificación durante el proceso','Alta', 3, 160, NULL),
+    ('Almacenamiento temporal', 'Guardado del yeso procesado','Alta', 5, 160, NULL),
+
+-- ########### ARCILLA ###########
+    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de arcilla', 'Alta', 5, 161, NULL),
+    ('Prospectiva de recursos', 'Determinación de las reservas de arcilla', 'Media', 3, 161, NULL),
+    ('Planificación de la explotación', 'Definición de método y ritmo de explotación','Alta', 2, 161, NULL),
+    ('Ubicación de escombreras', 'Determinación de áreas para desechos','Alta', 3, 161, NULL),
+    ('Instalaciones de acceso', 'Planificación de caminos y accesos','Alta', 5, 161, NULL),
+
+    ('Mapeo con drones', 'Captura de datos detallados del terreno','Media', 6, 162, NULL),
+    ('Exploración geoquímica local', 'Muestreo de suelos y rocas','Alta',4, 162, NULL),
+    ('Mapeo geológico a detalle', 'Descripción precisa de la geología','Alta', 2, 162, NULL),
+    ('Exploración geofísica local', 'Métodos geofísicos para caracterizar el subsuelo','Alta', 3, 162, NULL),
+    ('Perforación minera', 'Obtención de muestras del subsuelo','Alta', 5, 162, NULL),
+
+    ('Perforación de arcilla', 'Creación de perforaciones para muestreo','Alta', 6, 163, NULL),
+    ('Control de calidad', 'Verificación de la calidad del material perforado','Alta', 4, 163, NULL),
+    ('Registro de datos', 'Documentación de la perforación','Alta', 2, 163, NULL),
+    ('Seguridad en perforación', 'Medidas para la seguridad del personal','Alta', 3, 163, NULL),
+    ('Equipamiento de perforación', 'Selección y uso de maquinaria','Alta', 5, 163, NULL),
+
+    ('Carga de arcilla', 'Transporte del material extraído','Alta', 6, 164, NULL),
+    ('Transporte a planta', 'Envío de arcilla a la planta de procesamiento','Alta', 4, 164, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído','Alta', 2, 164, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos','Alta', 3, 164, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción','Alta', 5, 164, NULL),
+
+    ('Trituración de arcilla', 'Reducción del tamaño del material','Alta', 6, 165, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas trituradas','Alta', 4, 165, NULL),
+    ('Limpieza y separación', 'Eliminación de impurezas','Alta', 2, 165, NULL),
+    ('Control de calidad', 'Verificación durante el proceso','Alta', 3, 165, NULL),
+    ('Almacenamiento temporal', 'Guardado de arcilla procesada','Alta', 5, 165, NULL),
+
+-- ############# BARITINA #############
+    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de baritina', 'Alta', 5, 166, NULL),
+    ('Prospectiva de recursos', 'Determinación de las reservas de baritina', 'Media', 3, 166, NULL),
+    ('Planificación de la explotación', 'Definición de método y ritmo de explotación','Alta', 2, 166, NULL),
+    ('Ubicación de escombreras', 'Determinación de áreas para desechos','Alta', 3, 166, NULL),
+    ('Instalaciones de acceso', 'Planificación de caminos y accesos','Alta', 5, 166, NULL),
+
+    ('Perforación de baritina', 'Creación de perforaciones para muestreo','Alta', 6, 167, NULL),
+    ('Control de calidad', 'Verificación de la calidad del material perforado','Alta', 4, 167, NULL),
+    ('Registro de datos', 'Documentación de la perforación','Alta', 2, 167, NULL),
+    ('Seguridad en perforación', 'Medidas para la seguridad del personal','Alta', 3, 167, NULL),
+    ('Equipamiento de perforación', 'Selección y uso de maquinaria','Alta',5, 167, NULL),
+
+    ('Voladura de baritina', 'Uso de explosivos para fragmentar el material','Alta', 6, 168, NULL),
+    ('Diseño de voladuras', 'Parámetros y planificación de explosiones','Alta', 4, 168, NULL),
+    ('Control de seguridad', 'Medidas para la seguridad en voladuras','Alta', 2, 168, NULL),
+    ('Registro de datos', 'Documentación de las voladuras','Alta', 3, 168, NULL),
+    ('Seguimiento de resultados', 'Verificación de la eficacia de las voladuras','Alta', 5, 168, NULL),
+
+    ('Carga de baritina', 'Transporte del material extraído','Alta', 6, 169, NULL),
+    ('Transporte a planta', 'Envío de baritina a la planta de procesamiento','Alta', 4, 169, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído','Alta', 2, 169, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos','Media', 3, 169, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción','Alta', 5, 169, NULL),
+
+    ('Trituración de baritina', 'Reducción del tamaño del material','Alta', 6, 170, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas trituradas','Alta', 4, 170, NULL),
+    ('Limpieza y separación', 'Eliminación de impurezas','Alta', 2, 170, NULL),
+    ('Control de calidad', 'Verificación durante el proceso', 'Alta',3, 170, NULL),
+    ('Almacenamiento temporal', 'Guardado de baritina procesada','Alta', 5, 170, NULL),
+
+-- ############# BENTONITA #############
+    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de bentonita', 'Alta', 5, 171, NULL),
+    ('Prospectiva de recursos', 'Determinación de las reservas de bentonita', 'Media', 3, 171, NULL),
+    ('Planificación de la explotación', 'Definición de método y ritmo de explotación','Alta', 2, 171, NULL),
+    ('Ubicación de escombreras', 'Determinación de áreas para desechos','Alta', 3, 171, NULL),
+    ('Instalaciones de acceso', 'Planificación de caminos y accesos','Alta', 5, 171, NULL),
+
+    ('Diseño de mina', 'Planificación detallada de la explotación','Alta' ,6, 172, NULL),
+    ('Estudio de viabilidad económica', 'Análisis de costos y beneficios','Alta', 4, 172, NULL),
+    ('Selección de maquinaria', 'Equipamiento necesario para la extracción','Alta', 2, 172, NULL),
+    ('Seguridad en diseño', 'Medidas para la seguridad en la mina','Alta', 3, 172, NULL),
+    ('Planificación ambiental', 'Consideraciones ecológicas y de restauración','Alta' ,5, 172, NULL),
+
+    ('Preparación del terreno', 'Acondicionamiento del área de explotación','Alta', 6, 173, NULL),
+    ('Infraestructura de la mina', 'Construcción de caminos, instalaciones, u otros','Alta', 4, 173, NULL),
+    ('Equipamiento de seguridad', 'Implementación de medidas de prevención','Alta', 2, 173, NULL),
+    ('Control de calidad inicial', 'Verificación de los primeros materiales extraídos','Alta', 3, 173, NULL),
+    ('Capacitación del personal', 'Formación para el trabajo en la mina','Alta', 5, 173, NULL),
+
+    ('Carga de bentonita', 'Transporte del material extraído','Alta', 6, 174, NULL),
+    ('Transporte a planta', 'Envío de bentonita a la planta de procesamiento','Alta', 4, 174, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído','Alta', 2, 174, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos','Alta', 3, 174, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción','Alta', 5, 174, NULL),
+
+    ('Trituración de bentonita', 'Reducción del tamaño del material','Alta', 6, 175, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas trituradas','Alta', 4, 175, NULL),
+    ('Limpieza y separación', 'Eliminación de impurezas','Alta', 2, 175, NULL),
+    ('Control de calidad', 'Verificación durante el proceso','Alta', 3, 175, NULL),
+    ('Almacenamiento final', 'Guardado de bentonita procesada','Alta', 5, 175, NULL),
+
+-- ############# AZUFRE #############
+    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de azufre', 'Alta', 5, 176, NULL),
+    ('Prospectiva de recursos', 'Determinación de las reservas de azufre', 'Media', 3, 176, NULL),
+    ('Planificación de la explotación', 'Definición de método y ritmo de explotación','Alta', 2, 176, NULL),
+    ('Ubicación de escombreras', 'Determinación de áreas para desechos','Alta', 3, 176, NULL),
+    ('Instalaciones de acceso', 'Planificación de caminos y accesos','Alta', 5, 176, NULL),
+
+    ('Diseño de mina', 'Planificación detallada de la explotación','Alta', 6, 177, NULL),
+    ('Estudio de viabilidad económica', 'Análisis de costos y beneficios','Alta', 4, 177, NULL),
+    ('Selección de maquinaria', 'Equipamiento necesario para la extracción','Alta', 2, 177, NULL),
+    ('Seguridad en diseño', 'Medidas para la seguridad en la mina','Alta', 3, 177, NULL),
+    ('Planificación ambiental', 'Consideraciones ecológicas y de restauración','Alta', 5, 177, NULL),
+
+    ('Preparación del terreno', 'Acondicionamiento del área de explotación', 'Alta',6, 178, NULL),
+    ('Infraestructura de la mina', 'Construcción de caminos, instalaciones, u otros','Alta', 4, 178, NULL),
+    ('Equipamiento de seguridad', 'Implementación de medidas de prevención','Alta', 2, 178, NULL),
+    ('Control de calidad inicial', 'Verificación de los primeros materiales extraídos','Alta', 3, 178, NULL),
+    ('Capacitación del personal', 'Formación para el trabajo en la mina', 'Alta',5, 178, NULL),
+
+    ('Carga de azufre', 'Transporte del material extraído','Alta', 6, 179, NULL),
+    ('Transporte a planta', 'Envío de azufre a la planta de procesamiento', 'Alta',4, 179, NULL),
+    ('Monitoreo de calidad', 'Verificación del material extraído','Alta', 2, 179, NULL),
+    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos','Alta', 3, 179, NULL),
+    ('Seguridad en la mina', 'Control durante la extracción', 'Alta',5, 179, NULL),
+
+    ('Trituración de azufre', 'Reducción del tamaño del material','Alta', 6, 180, NULL),
+    ('Clasificación por tamaño', 'Separación de partículas trituradas','Alta', 4, 180, NULL),
+    ('Limpieza y separación', 'Eliminación de impurezas','Alta', 2, 180, NULL),
+    ('Control de calidad', 'Verificación durante el proceso','Alta', 3, 180, NULL),
+    ('Almacenamiento final', 'Guardado de azufre procesado','Media' ,5, 180, NULL);
+
+-- CONSESIONES
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+
+VALUES ('J0000005897', 1, 624567, '2020-01-01', '2034-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 2, 249620, '2022-01-01', '2028-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 3, 129741, '2024-01-01', '2027-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 4, 850354, '2023-01-01', '2029-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 5, 641250, '2022-01-01', '2030-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 6, 856954, '2021-01-01', '2025-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 7, 691205, '2019-01-01', '2026-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 8, 369874, '2024-01-01', '2032-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000005897', 9, 541454, '2020-01-01', '2026-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 10, 981540, '2024-01-01', '2034-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000005897', 11, 785214, '2018-01-01', '2025-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 12, 362015, '2023-01-01', '2030-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 13, 983021, '2022-01-01', '2032-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 14, 556985, '2024-01-01', '2029-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J0000005897', 15, 158250, '2021-01-01', '2030-01-01'); 
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 16, 873210, '2021-02-02', '2035-02-02');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 17, 435678, '2022-03-03', '2036-03-03');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 18, 987456, '2023-04-04', '2037-04-04');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 19, 434567, '2020-05-05', '2034-05-05');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 20, 765432, '2021-06-06', '2035-06-06');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 21, 823456, '2022-07-07', '2036-07-07');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 22, 543210, '2023-08-08', '2037-08-08');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 23, 987654, '2020-09-09', '2034-09-09');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 25, 321456, '2021-10-10', '2035-10-10');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1000002992', 24, 765111, '2022-01-01', '2032-01-01');
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 1, 567890, '2022-01-01', '2036-01-01');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 2, 234567, '2023-02-02', '2037-02-02');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 15, 876543, '2024-03-03', '2038-03-03');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 4, 123456, '2022-04-04', '2036-04-04');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 5, 543210, '2023-05-05', '2037-05-05');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598',12 , 987654, '2024-06-06', '2038-06-06');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 7, 321456, '2022-07-07', '2036-07-07');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 20, 562015 , '2023-08-08', '2037-08-08');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1590004598', 9, 888541, '2023-09-09', '2038-09-09');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+
+VALUES ('J1590004598', 22, 585441, '2022-09-29', '2030-09-09');
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 1, 345678, '2021-01-01', '2035-01-01');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 2, 987654, '2022-02-02', '2036-02-02');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 30, 897567, '2023-03-25', '2037-03-25');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 4, 771901, '2021-04-04', '2035-04-04');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 12, 652456, '2022-05-05', '2036-05-05');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 6, 765432, '2023-06-06', '2037-06-06');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 27, 226985, '2021-07-07', '2035-07-07');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 18, 631890, '2022-08-08', '2036-08-08');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 9, 987111, '2023-09-09', '2037-09-09');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+VALUES ('J1100001240', 15, 998890, '2024-06-08', '2030-06-08');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 1, 500000, '2021-05-15', '2035-05-15');
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 2, 420000, '2022-03-01', '2036-03-01');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 3, 650000, '2021-09-20', '2035-09-20');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 4, 480000, '2022-11-01', '2036-11-01');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J5890001288', 5, 570000, '2021-04-30', '2035-04-30');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 6, 400000, '2022-07-15', '2036-07-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 7, 600000, '2021-12-01', '2035-12-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 8, 530000, '2022-02-28', '2036-02-28');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 9, 450000, '2021-08-10', '2035-08-10');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 10, 580000, '2022-06-01', '2036-06-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 11, 490000, '2021-11-15', '2035-11-15');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J5890001288', 12, 560660, '2022-09-01', '2036-09-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J5890001288', 13, 540740, '2021-07-20', '2035-07-20');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J5890001288', 14, 610320, '2022-04-15', '2036-04-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J5890001288', 15, 460890, '2021-10-01', '2035-10-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 1, 480000, '2022-01-01', '2036-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 20, 520000, '2021-07-15', '2035-07-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 34, 590000, '2022-05-01', '2036-05-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 4, 450000, '2021-11-20', '2035-11-20');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 15, 610000, '2022-03-01', '2036-03-01');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 10, 500000, '2021-09-01', '2035-09-01');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 7, 560000, '2022-08-15', '2036-08-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 12, 470000, '2021-04-01', '2035-04-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 9, 540000, '2022-12-01', '2036-12-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 10, 630000, '2021-06-15', '2035-06-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 11, 490000, '2022-10-01', '2036-10-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 22, 580000, '2021-02-28', '2035-02-28');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 13, 510000, '2022-06-01', '2036-06-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 14, 600000, '2021-12-15', '2035-12-15');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J0000001243', 15, 540000, '2022-09-01', '2036-09-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1320001268', 1, 436800, '2022-01-01', '2036-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 2, 460000, '2021-07-15', '2035-07-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 3, 500000, '2022-05-01', '2036-05-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 4, 380000, '2021-11-20', '2035-11-20');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 5, 550000, '2022-03-01', '2036-03-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 6, 440000, '2021-09-01', '2035-09-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 7, 480000, '2022-08-15', '2036-08-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 8, 410000, '2021-04-01', '2035-04-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 9, 470000, '2022-12-01', '2036-12-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 10, 560000, '2021-06-15', '2035-06-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 11, 430000, '2022-10-01', '2036-10-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 12, 500000, '2021-02-28', '2035-02-28');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 13, 450000, '2022-06-01', '2036-06-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 14, 540000, '2021-12-15', '2035-12-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 15, 470000, '2022-09-01', '2036-09-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 16, 400000, '2021-05-01', '2035-05-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 17, 490000, '2022-11-01', '2036-11-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 18, 530000, '2021-08-15', '2035-08-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 19, 420000, '2022-03-15', '2036-03-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1320001268', 20, 480000, '2021-10-01', '2035-10-01');
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 1, 600000, '2022-01-01', '2036-01-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 2, 650000, '2021-07-15', '2035-07-15');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 3, 580000, '2022-05-01', '2036-05-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 4, 670000, '2021-11-20', '2035-11-20');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 5, 620000, '2022-03-01', '2036-03-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 6, 690000, '2021-09-01', '2035-09-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 7, 600000, '2022-08-15', '2036-08-15');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 8, 640000, '2021-04-01', '2035-04-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 9, 660000, '2022-12-01', '2036-12-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 10, 590000, '2021-06-15', '2035-06-15');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 11, 630000, '2022-10-01', '2036-10-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 12, 680000, '2021-02-28', '2035-02-28');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 13, 610000, '2022-06-01', '2036-06-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 14, 650000, '2021-12-15', '2035-12-15');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 15, 590000, '2022-09-01', '2036-09-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 16, 630000, '2021-05-01', '2035-05-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 17, 670000, '2022-11-01', '2036-11-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 18, 600000, '2021-08-15', '2035-08-15');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 19, 640000, '2022-03-15', '2036-03-15');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1353641286', 20, 660000, '2021-10-01', '2035-10-01');
+
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 1, 784000, '2022-01-01', '2036-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 2, 859000, '2021-07-15', '2035-07-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 3, 750000, '2022-05-01', '2036-05-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 4, 820000, '2021-11-20', '2035-11-20');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1110005252', 5, 770000, '2022-03-01', '2036-03-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1110005252', 6, 536900, '2021-09-01', '2035-09-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1110005252', 7, 780000, '2022-08-15', '2036-08-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 8, 790000, '2021-04-01', '2035-04-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 9, 813000, '2022-12-01', '2036-12-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 10, 764020, '2021-06-15', '2035-06-15');
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 11, 790000, '2022-10-01', '2036-10-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 12, 830000, '2021-02-28', '2035-02-28');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 13, 770000, '2022-06-01', '2036-06-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 14, 800000, '2021-12-15', '2035-12-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 15, 760000, '2022-09-01', '2036-09-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1110005252', 16, 790000, '2021-05-01', '2035-05-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1110005252', 17, 820000, '2022-11-01', '2036-11-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 18, 780000, '2021-08-15', '2035-08-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 19, 125000, '2022-03-15', '2036-03-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 20, 810000, '2021-10-01', '2035-10-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 21, 770000, '2022-07-01', '2036-07-01');
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 22, 400000, '2021-01-15', '2035-01-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 23, 760000, '2022-11-15', '2036-11-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1110005252', 24, 790000, '2021-03-01', '2035-03-01');
+
+
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1690001244', 1, 650000, '2022-01-01', '2036-01-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1690001244', 2, 680000, '2021-07-15', '2035-07-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1690001244', 3, 620000, '2022-05-01', '2036-05-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1690001244', 4, 690000, '2021-11-20', '2035-11-20');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin)
+ VALUES ('J1690001244', 5, 640000, '2022-03-01', '2036-03-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) 
+VALUES ('J1690001244', 6, 700000, '2021-09-01', '2035-09-01');
+
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 7, 670000, '2022-08-15', '2036-08-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 8, 660000, '2021-04-01', '2035-04-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 9, 680000, '2022-12-01', '2036-12-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 10, 630000, '2021-06-15', '2035-06-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 11, 660000, '2022-10-01', '2036-10-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 12, 700000, '2021-02-28', '2035-02-28');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 13, 640000, '2022-06-01', '2036-06-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 14, 680000, '2021-12-15', '2035-12-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 15, 630000, '2022-09-01', '2036-09-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 16, 660000, '2021-05-01', '2035-05-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 17, 690000, '2022-11-01', '2036-11-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 18, 670000, '2021-08-15', '2035-08-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 19, 660000, '2022-03-15', '2036-03-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 20, 680000, '2021-10-01', '2035-10-01');
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 21, 640000, '2022-07-01', '2036-07-01');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 22, 680000, '2021-01-15', '2035-01-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 23, 630000, '2022-11-15', '2036-11-15');
+
+INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 24, 660000, '2021-03-01', '2035-03-01');
+
+--SOLICITUDES
+
+INSERT INTO SOLICITUD_CLIENTE (factura_cli_fecha, factura_cli_total, factura_cli_observacion, factura_fk_cl_identificacion)
+VALUES
+('2024-04-02', 12345.67, 'Factura para cliente V115345678', 'V115345678'),
+('2024-04-07', 98765.43, 'Factura para cliente V134567890', 'V134567890'),
+('2024-04-15', 54321.09, 'Factura para cliente J154321098', 'J154321098'),
+('2024-04-22', 67890.12, 'Factura para cliente J121098765', 'J121098765'),
+('2024-04-28', 32109.87, 'Factura para cliente V192203835', 'V192203835'),
+('2024-05-04', 87654.32, 'Factura para cliente J121098765', 'J121098765'),
+('2024-05-11', 21098.76, 'Factura para cliente V241789632', 'V241789632'),
+('2024-05-19', 76543.21, 'Factura para cliente V172741236', 'V172741236'),
+('2024-05-25', 43210.98, 'Factura para cliente V112345678', 'V112345678'),
+('2024-06-01', 09876.54, 'Factura para cliente J187650321', 'J187650321'),
+('2024-06-09', 65432.10, 'Factura para cliente V242680135', 'V242680135'),
+('2024-06-16', 98765.43, 'Factura para cliente V197531486', 'V197531486'),
+('2024-06-02', 54321.09, 'Factura para cliente V178965412', 'V178965412'),
+('2024-06-17', 32109.87, 'Factura para cliente V287654323', 'V287654323'),
+('2024-06-10', 87654.32, 'Factura para cliente V178965412', 'V178965412');
+
+INSERT INTO METODO_PAGO (met_cl_identificacion)
+VALUES ('V187654321'), ('V145632187'), ('V242680135'), ('V197531486'), ('J154321098'),
+ ('E876545321'), ('V224680136'), ('V212345680'), ('V247859612'), ('V184612957'),
+('V158951236'), ('V239162857'), ('V278921345'), ('E863214789'), ('V245632187'),
+('V165874123'), ('V174125896'), ('V178965412'), ('V192203835'), ('J174125896');
+
+--EFECTIVO
+
+INSERT INTO EFECTIVO (efectivo_met_id, efectivo_denominacion)
+ VALUES (1, 'BOLIVARES'), (2, 'DOLARES'), (3, 'EUROS'),(4, 'BOLIVARES'), (5, 'DOLARES'), (6, 'EUROS'),(7, 'BOLIVARES'), (8, 'DOLARES'), (9, 'EUROS'), (10, 'DOLARES');
+
+INSERT INTO TRANSFERENCIA (trans_met_id, trans_num_transferencia)
+ VALUES 
+ (1, '123456789012345678'), 
+ (2, '987654321098765432'),
+ (3, '010236985201480036'),
+ (4, '543210987654321098'),
+ (5, '210987654321098765'),
+ (6, '876543210987654321'),
+ (7, '198765432101234567'),
+ (8, '321098765432109876'), 
+ (9, '456789012345678901'), 
+ (10, '689012345678901234');
+
+INSERT INTO CHEQUE (cheque_met_id, cheque_num_cheque) 
+
+VALUES (1, '0236985'), (2, '8765432'), (3, '9877543'), (4, '4853456'), (5, '5678901'), (6, '2345678'), (7, '7891356'), (8, '2992890'), (9, '1012345'), (10, '6782912');
+
+INSERT INTO TARJETA_DEBITO (tdd_met_id, tdd_numero_tarjeta, tdd_vencimiento)
+	VALUES
+ 	(1, '1234567890123456', '2025-12-31'),
+	(2, '9876543210987654', '2027-06-17'),
+	(3, '1254032189712358', '2024-08-14'), 
+	(4, '5678901234567890', '2028-02-29'),  
+	(5, '1122334455667788', '2026-10-31'),
+	(6, '2233445566778899', '2029-05-31'), 
+	(7, '3344556677889012', '2030-01-01'), 
+	(8, '4455667788901234', '2029-09-22'),  
+	(9, '5566778890123456', '2031-03-20'), 
+	(10, '6677889012345678', '2032-07-15');
+
+
+INSERT INTO TARJETA_CREDITO (tdc_met_id, tdc_numero_tarjeta, tdc_vencimiento)
+VALUES 
+  (1, '2698741250123456', '2027-06-17'),
+  (2, '0426254210987654', '2030-02-24'),
+  (3, '2036598710236502', '2026-04-30'),
+  (4, '0325416985123654', '2030-12-31'),
+  (5, '0102365987412360', '2029-09-09'),
+  (6, '2145987412306589', '2031-03-15'),
+  (7, '0105698741203652', '2032-07-04'),
+  (8, '4256987410236598', '2025-10-24'),
+  (9, '7895412890123456', '2033-01-01'),
+  (10, '0413658923012546', '2034-05-20');
+
+--############# PROYECTO Y ESTATUS PROYECTO ##############
+
+INSERT INTO PROYECTO (pro_nombre, pro_descripcion, pro_fecha_ini, pro_fecha_fin, pro_fk_min_id,pro_fk_po_id)
+VALUES 
+	('Explotación Minera de Oro', 'Explotación del yacimiento de oro con alta concentración', '2024-05-30', '2024-12-31', 1, 1),
+  ('Exploración de Oro', 'Exploración de un yacimiento de Oro',   '2024-05-30', '2025-01-31', 1, 2),
+  ('MinerOro', 'Exploración perforación y explotación de un yacimiento de Oro', '2024-05-30', '2025-02-21', 1, 3),
+  ('Exploración Minera de Diamante', 'Exploración de una fuente de Diamante', '2024-05-30', '2025-03-31', 2, 4),
+  ('DiamantesUcab', 'Explotación de la fuente rica en Diamante de calidad gemológica', '2024-05-30', '2025-04-30', 2, 5),
+  ('Extracción de Diamantes', 'Extracción de la fuente rica en Diamantes', '2024-05-30', '2025-05-31', 2, 6),
+  ('Exploración Minera de Hierro', 'Exploración de un depósito extenso de Hierro utilizado en siderurgia', '2024-05-30', '2025-06-30', 3, 7),
+  ('Extracción Minera de Hierro', 'Extracción de un yacimiento de hierro', '2024-05-30', '2025-07-31', 3, 8),
+  ('Hierro Ucab', 'Proyecto para extracción de hierro en el país', '2024-05-30', '2025-08-31', 3, 9),
+  ('Exploración Minera de Bauxita', 'Exploración de un yacimiento de bauxita', '2024-05-30', '2025-09-30', 4, 10),
+  ('MinerBauxita', 'Proyecto dedicado a la Bauxita', '2024-05-30', '2025-07-15', 4, 11),
+  ('Extracción de Bauxita ', 'Extracción de un yacimiento de bauxita', '2024-05-30', '2025-08-30', 4, 12),
+('Minera de Carbón', 'Explotación de carbón mineral', '2024-05-30', '2025-12-31', 5, 13),
+('Exploración de Carbón', 'Exploración de carbón en Zulia', '2024-05-30', '2026-12-20', 5, 14),
+('Minera de Carbón', 'Explotación de carbón mineral', '2024-05-30', '2025-12-15', 5, 15),
+('Manganeso Upata', 'Explotación de mineral de manganeso en el yacimiento de Upata', '2024-05-30', '2026-01-31', 6, 16),
+('Explotación Manganeso', 'Explotación de mineral de manganeso en Venezuela', '2024-05-30', '2026-10-01', 6, 17),
+('Extracción del Manganeso', 'Explorando y extrayendo manganeso', '2024-05-30', '2027-12-01', 6, 18),
+ ('Níquel Ucab', 'Explotación mineral de níquel en el yacimiento la Loma', '2024-05-30', '2027-02-28', 7, 19),
+ (' Exploración Níquel Loma', 'Exploración de mineral de níquel en el yacimiento Loma', '2024-05-30', '2030-06-30', 7, 20),
+ ('Extrayendo Níquel', 'Extracción del Níquel en Venezuela', '2024-05-30', '2027-10-21', 7, 21),
+('Proyecto Explotación de Cobre', 'Explotación de mineral de cobre en el yacimiento Las Breñas', '2024-05-30', '2028-03-31', 8, 22),
+('Explorando Cobre ', 'Exploración de mineral de cobre en los yacimientos Brisas y Cristinas', '2024-05-30', '2027-04-30', 8, 23),
+('Cobre Loma Larga', 'Extracción de cobre en el yacimiento Loma Larga', '2024-05-30', '2026-05-31', 8, 24),
+('Mercurio Mundo Minero', 'Explotación de mineral de mercurio en en Venezuela', '2024-05-30', '2029-06-30', 9, 25),
+('Mercurio Mineral', 'Exploración  y explotación de mineral de mercurio en Venezuela', '2024-05-30', '2029-07-31', 9, 26),
+('Mercurio Minero Venezolano', 'Explotación de mineral de mercurio en Venezuela', '2024-05-30', '2029-08-31', 9, 27),
+('Plomo Yacimiento Minero', 'Explotación de mineral de plomo en Venezuela', '2024-05-30', '2029-09-30', 10, 28),
+('Plomo Minero', 'Extracción de mineral de plomo ', '2024-05-30', '2029-10-31', 10, 29),
+('Plomo Minería UCAB', 'Explotación de mineral de plomo con alta responsabilidad', '2024-04-27', '2029-11-30', 10, 30),
+
 	
-    ('Trituración', 'Reducción del tamaño del titanio', 'Alta', NULL, 103, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 103, NULL),
-    ('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', NULL, 103, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 103, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 103, NULL),
-
-    ('Molienda', 'Reducción adicional del tamaño del titanio', 'Alta', NULL, 104, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas', 'Media', NULL, 104, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 104, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 104, NULL),
-    ('Almacenamiento temporal', 'Guardado del material molido', 'Alta', NULL, 104, NULL),
-
-    ('Separación magnética', 'Extracción de titanio mediante imanes', 'Alta', NULL, 105, NULL),
-    ('Flotación', 'Separación de titanio de otros minerales', 'Media', NULL, 105, NULL),
-    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', NULL, 105, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 105, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 105, NULL),
-
--- ################ TUNGSTENO
-
-    ('Estudios geológicos', 'Identificación de áreas de tungsteno', 'Alta', NULL, 106, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 106, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 106, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 106, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 106, NULL),
-
-    ('Excavación', 'Remoción de tungsteno de la mina', 'Alta', NULL, 107, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 107, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 107, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 107, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 107, NULL),
-
-    ('Trituración', 'Reducción del tamaño del tungsteno', 'Alta', NULL, 108, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 108, NULL),
-    ('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', NULL, 108, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 108, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 108, NULL),
-
-    ('Molienda', 'Reducción adicional del tamaño del tungsteno', 'Alta', NULL, 109, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas', 'Media', NULL, 109, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 109, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 109, NULL),
-    ('Almacenamiento temporal', 'Guardado del material molido', 'Alta', NULL, 109, NULL),
-
-    ('Flotación', 'Separación de tungsteno de otros minerales', 'Alta', NULL, 110, NULL),
-    ('Control de pH', 'Ajuste de la solución', 'Media', NULL, 110, NULL),
-    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', NULL, 110, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 110, NULL),
-    ('Empaque', 'Listo para su uso o envío', 'Alta', NULL,110, NULL),
-
---  ########### magnesio
-
-    ('Estudios geológicos', 'Identificación de áreas de magnesio', 'Alta', NULL, 111, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 111, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 111, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 111, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 111, NULL),
-
-    ('Excavación', 'Remoción de magnesio de la mina', 'Alta', NULL, 112, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 112, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 112, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 112, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 112, NULL),
-
-    ('Trituración', 'Reducción del tamaño del magnesio', 'Alta', NULL, 113, NULL),
-    ('Clasificación por tamaño', 'Separación de fragmentos', 'Media', NULL, 113, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 113, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 113, NULL),
-    ('Almacenamiento temporal', 'Guardado del material preparado', 'Alta', NULL, 113, NULL),
-
-    ('Calcinación', 'Proceso de calentamiento controlado', 'Alta', NULL, 114, NULL),
-    ('Reducción de carbonato de magnesio', 'Obtención de óxido de magnesio', 'Media', NULL, 114, NULL),
-    ('Control de temperatura', 'Ajuste para la calcinación', 'Baja', NULL, 114, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 114, NULL),
-    ('Almacenamiento temporal', 'Guardado del material calcinado', 'Alta', NULL, 114, NULL),
-
-    ('Separación magnética', 'Extracción de magnesio mediante imanes', 'Alta', NULL, 115, NULL),
-    ('Flotación', 'Separación de magnesio de otros minerales', 'Media', NULL, 115, NULL),
-    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', NULL, 115, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 115, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 115, NULL),
-
---  ################### ANDALUCITA 
-
-    ('Estudios geológicos', 'Identificación de áreas de andalucita', 'Alta', NULL, 116, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 116, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 116, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 116, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 116, NULL),
-
-    ('Planificación de infraestructura', 'Diseño y preparación', 'Alta', NULL, 117, NULL),
-    ('Construcción de accesos', 'Vías de acceso a la mina', 'Media', NULL, 117, NULL),
-    ('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', NULL, 117, NULL),
-    ('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', NULL, 117, NULL),
-    ('Seguridad y señalización', 'Medidas para la operación', 'Alta', NULL, 117, NULL),
-
-    ('Excavación', 'Remoción de andalucita de la mina', 'Alta', NULL, 118, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 118, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 118, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 118, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 118, NULL),
-
-    ('Trituración', 'Reducción del tamaño de la andalucita', 'Alta', NULL, 119, NULL),
-    ('Clasificación por tamaño', 'Separación de fragmentos', 'Media', NULL, 119, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 119, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 119, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 119, NULL),
-
-    ('Separación por calidad', 'Clasificación de la andalucita', 'Alta', NULL, 120, NULL),
-    ('Etiquetado', 'Identificación de lotes de andalucita', 'Media', NULL, 120, NULL),
-    ('Empaque para envío', 'Preparación para clientes', 'Baja', NULL, 120, NULL),
-    ('Documentación de lotes', 'Registro de datos de clasificación', 'Media', NULL, 120, NULL),
-    ('Monitoreo de demanda', 'Ajuste de producción según mercado', 'Alta', NULL, 120, NULL),
-
---  antmonio
-
-    ('Estudios geológicos', 'Identificación de áreas de antimonio', 'Alta', NULL, 121, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 121, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 121, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 121, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 121, NULL),
-
-    ('Excavación', 'Remoción de antimonio de la mina', 'Alta', NULL, 122, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 122, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 122, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 122, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 122, NULL),
-
-    ('Trituración', 'Reducción del tamaño del antimonio', 'Alta', NULL, 123, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 123, NULL),
-    ('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', NULL, 123, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 123, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 123, NULL),
-
-    ('Molienda', 'Reducción adicional del tamaño del antimonio', 'Alta', NULL, 124, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas', 'Media', NULL, 124, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 124, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 124, NULL),
-    ('Almacenamiento temporal', 'Guardado del material molido', 'Alta', NULL, 124, NULL),
-
-    ('Flotación', 'Separación de antimonio de otros minerales', 'Alta', NULL, 125, NULL),
-    ('Control de pH', 'Ajuste de la solución', 'Media', NULL, 125, NULL),
-    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', NULL, 125, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 125, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 125, NULL),
-
--- ############################# cromo
-
-    ('Estudios geológicos', 'Identificación de áreas de cromo', 'Alta', NULL, 126, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 126, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 126, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 126, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 126, NULL),
-
-    ('Planificación de infraestructura', 'Diseño y preparación', 'Alta', NULL, 127, NULL),
-    ('Construcción de accesos', 'Vías de acceso a la mina', 'Media', NULL, 127, NULL),
-    ('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', NULL, 127, NULL),
-    ('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', NULL, 127, NULL),
-    ('Seguridad y señalización', 'Medidas para la operación', 'Alta', NULL, 127, NULL),
-
-    ('Excavación', 'Remoción de cromo de la mina', 'Alta', NULL, 128, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 128, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 128, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 128, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 128, NULL),
-
-    ('Trituración', 'Reducción del tamaño del cromo', 'Alta', NULL, 129, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Media', NULL, 129, NULL),
-    ('Mezcla y homogeneización', 'Preparación para procesamiento', 'Baja', NULL, 129, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 129, NULL),
-    ('Almacenamiento temporal', 'Guardado del material triturado', 'Alta', NULL, 129, NULL),
-
-    ('Separación magnética', 'Extracción de cromo mediante imanes', 'Alta', NULL, 130, NULL),
-    ('Flotación', 'Separación de cromo de otros minerales', 'Media', NULL, 130, NULL),
-    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', NULL, 130, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 130, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 130, NULL),
-
--- ######### asbesto
-
-    ('Estudios geológicos', 'Identificación de áreas de asbesto', 'Alta', NULL, 131, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 131, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 131, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 131, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 131, NULL),
-
-    ('Planificación de infraestructura', 'Diseño y preparación', 'Alta', NULL, 132, NULL),
-    ('Construcción de accesos', 'Vías de acceso a la mina', 'Media', NULL, 132, NULL),
-    ('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', NULL, 132, NULL),
-    ('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', NULL, 132, NULL),
-    ('Seguridad y señalización', 'Medidas para la operación', 'Alta', NULL, 132, NULL),
-
-    ('Excavación', 'Remoción de asbesto de la mina', 'Alta', NULL, 133, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 133, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 133, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL,133, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 133, NULL),
-
-    ('Trituración', 'Reducción del tamaño del asbesto', 'Alta', NULL, 134, NULL),
-    ('Clasificación por tamaño', 'Separación de fibras', 'Media', NULL, 134, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 134, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 134, NULL),
-    ('Almacenamiento temporal', 'Guardado del material procesado', 'Alta', NULL, 134, NULL),
-
-    ('Separación magnética', 'Extracción de fibras de asbesto mediante imanes', 'Alta', NULL, 135, NULL),
-    ('Flotación', 'Separación de asbesto de otros minerales', 'Media', NULL, 135, NULL),
-    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', NULL, 135, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 135, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 135, NULL),
-
--- feldestapo
-
-    ('Estudios geológicos', 'Identificación de áreas de feldespato', 'Alta', NULL, 136, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar presencia y calidad', 'Media', NULL, 136, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL,136, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 136, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 136, NULL),
-
-    ('Planificación de infraestructura', 'Diseño y preparación', 'Alta', NULL, 137, NULL),
-    ('Construcción de accesos', 'Vías de acceso a la mina', 'Media', NULL, 137, NULL),
-    ('Instalación de servicios', 'Agua, electricidad, u otros', 'Baja', NULL, 137, NULL),
-    ('Preparación de áreas de trabajo', 'Acondicionamiento del sitio', 'Media', NULL, 137, NULL),
-    ('Seguridad y señalización', 'Medidas para la operación', 'Alta', NULL, 137, NULL),
-
-    ('Excavación', 'Remoción de feldespato de la mina', 'Alta', NULL, 138, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 138, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 138, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 138, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 138, NULL),
-
-    ('Trituración', 'Reducción del tamaño del feldespato', 'Alta', NULL, 139, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas', 'Media', NULL, 139, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 139, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 139, NULL),
-    ('Almacenamiento temporal', 'Guardado del material procesado', 'Alta', NULL, 139, NULL),
-
-    ('Separación magnética', 'Extracción de feldespato mediante imanes', 'Alta', NULL, 140, NULL),
-    ('Flotación', 'Separación de feldespato de otros minerales', 'Media', NULL, 140, NULL),
-    ('Filtración', 'Eliminación de partículas no deseadas', 'Baja', NULL, 140, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 140, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 140, NULL),
-
---  arena
-
-    ('Estudios geológicos', 'Identificación de áreas de arena', 'Alta', NULL, 141, NULL),
-    ('Muestreo del suelo', 'Análisis para determinar calidad y cantidad', 'Media', NULL, 141, NULL),
-    ('Evaluación económica y ambiental', 'Viabilidad de la explotación', 'Baja', NULL, 141, NULL),
-    ('Investigación de permisos', 'Obtención de licencias', 'Media', NULL, 141, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de exploración', 'Alta', NULL, 141, NULL),
-
-    ('Excavación', 'Remoción de arena de la mina', 'Alta', NULL, 142, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 142, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 142, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 142, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 142, NULL),
-
-    ('Separación por tamaño', 'Clasificación de partículas de arena', 'Alta', NULL, 143, NULL),
-    ('Eliminación de impurezas', 'Limpieza y separación', 'Media', NULL, 143, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Baja', NULL, 143, NULL),
-    ('Almacenamiento temporal', 'Guardado del material clasificado', 'Media', NULL, 143, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 143, NULL),
-
-    ('Lavado de arena', 'Eliminación de impurezas mediante agua', 'Alta', NULL, 144, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas lavadas', 'Media', NULL, 144, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Baja', NULL, 144, NULL),
-    ('Almacenamiento temporal', 'Guardado del material lavado', 'Media', NULL, 144, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 144, NULL),
-
-    ('Secado de arena', 'Eliminación de humedad', 'Alta', NULL, 145, NULL),
-    ('Clasificación final', 'Última separación por tamaño', 'Media', NULL, 145, NULL),
-    ('Control de calidad', 'Verificación antes del almacenamiento', 'Baja', NULL, 145, NULL),
-    ('Almacenamiento final', 'Guardado del material seco', 'Media', NULL, 145, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 145, NULL),
-
---  cal
-
-    ('Excavación de caliza', 'Remoción de caliza de la mina', 'Alta', NULL, 146, NULL),
-    ('Transporte', 'Envío a planta de procesamiento', 'Media', NULL, 146, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 146, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación', 'Media', NULL, 146, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 146, NULL),
-
-    ('Cocción de caliza', 'Calentamiento para obtener cal viva', 'Alta', NULL, 147, NULL),
-    ('Control de temperatura', 'Ajuste para la cocción', 'Media', NULL, 147, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Baja', NULL, 147, NULL),
-    ('Almacenamiento temporal', 'Guardado del material cocido', 'Media', NULL, 147, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 147, NULL),
-
-    ('Apagado de cal viva', 'Reacción con agua para obtener cal hidratada', 'Alta', NULL, 148, NULL),
-    ('Control de pH', 'Ajuste para la reacción', 'Media', NULL, 148, NULL),
-    ('Filtración', 'Eliminación de impurezas', 'Baja', NULL,  148, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 148, NULL),
-    ('Almacenamiento temporal', 'Guardado del material apagado', 'Alta', NULL, 148, NULL),
-
-    ('Molienda de cal hidratada', 'Reducción del tamaño del material', 'Alta', NULL, 149, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas molidas', 'Media', NULL, 149, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 149, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 149, NULL),
-    ('Almacenamiento temporal', 'Guardado del material molido', 'Alta', NULL, 149, NULL),
-
-    ('Envasado de cal', 'Preparación para su comercialización', 'Alta', NULL, 150, NULL),
-    ('Etiquetado', 'Identificación de lotes de cal', 'Media', NULL, 150, NULL),
-    ('Empaque para envío', 'Listo para distribución', 'Baja', NULL, 150, NULL),
-    ('Registro de datos', 'Documentación del proceso', 'Media', NULL, 150, NULL),
-    ('Almacenamiento final', 'Guardado del material envasado', 'Alta', NULL, 150, NULL),
-
--- granito
-
-    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de granito', 'Alta', NULL, 151, NULL),
-    ('Prospectiva de recursos', 'Determinación de la cantidad y calidad del granito', 'Media', NULL, 151, NULL),
-    ('Planificación de la explotación', 'Definición de estrategias y métodos', 'Baja', NULL, 151, NULL),
-    ('Permisos y licencias', 'Trámites legales y autorizaciones', 'Media', NULL, 151, NULL),
-    ('Establecimiento de campamentos', 'Logística para el equipo de estudio', 'Alta', NULL, 151, NULL),
-
-    ('Planificación de rutas', 'Diseño de caminos y accesos', 'Alta', NULL, 152, NULL),
-    ('Infraestructura de transporte', 'Construcción de vías y puentes', 'Media', NULL, 152, NULL),
-    ('Equipamiento de transporte', 'Adquisición de maquinaria', 'Baja', NULL, 152, NULL),
-    ('Seguridad vial', 'Medidas para el transporte seguro', 'Media', NULL, 152, NULL),
-    ('Logística de carga', 'Optimización del transporte de bloques', 'Alta', NULL, 152, NULL),
-
-    ('Remoción de capa superficial', 'Eliminación de suelo y roca no mineral', 'Alta', NULL, 153, NULL),
-    ('Excavación de granito', 'Extracción de la capa de granito', 'Media', NULL, 153, NULL),
-    ('Carga y transporte', 'Envío a planta de procesamiento', 'Baja', NULL, 153, NULL),
-    ('Control de calidad', 'Verificación del material extraído', 'Media', NULL, 153, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 153, NULL),
-
-    ('División de bloques', 'Separación de grandes masas de granito', 'Alta', NULL, 154, NULL),
-    ('Corte con hilo diamantado', 'Precisión en la extracción', 'Media', NULL, 154, NULL),
-    ('Control de calidad', 'Verificación de la calidad del granito', 'Baja', NULL, 154, NULL),
-    ('Almacenamiento temporal', 'Guardado de bloques extraídos', 'Media', NULL, 154, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 154, NULL),
-
-    ('Corte de bloques', 'Precisión en la conformación', 'Alta', NULL, 155, NULL),
-    ('Elevación de bloques', 'Levantamiento y transporte vertical', 'Media', NULL, 155, NULL),
-    ('Control de calidad', 'Verificación antes del almacenamiento', 'Baja', NULL, 155, NULL),
-    ('Almacenamiento final', 'Guardado de bloques listos', 'Media', NULL, 155, NULL),
-    ('Empaque y preparación', 'Listo para su uso o envío', 'Alta', NULL, 155, NULL),
-
--- yeso
-    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de yeso', 'Alta', NULL, 156, NULL),
-    ('Prospectiva de recursos', 'Determinación de las reservas de yeso', 'Media', NULL, 156, NULL),
-    ('Planificación de la explotación', 'Definición de método y ritmo de explotación', 'Baja', NULL, 156, NULL),
-    ('Ubicación de escombreras', 'Determinación de áreas para desechos', 'Media', NULL, 156, NULL),
-    ('Instalaciones de acceso', 'Planificación de caminos y accesos', 'Alta', NULL, 156, NULL),
-
-    ('Perforación de yeso', 'Creación de perforaciones para voladuras', 'Alta', NULL, 157, NULL),
-    ('Control de calidad', 'Verificación de la calidad del material perforado', 'Media', NULL, 157, NULL),
-    ('Registro de datos', 'Documentación de la perforación', 'Baja', NULL, 157, NULL),
-    ('Seguridad en perforación', 'Medidas para la seguridad del personal', 'Media', NULL, 157, NULL),
-    ('Equipamiento de perforación', 'Selección y uso de maquinaria', 'Alta', NULL, 157, NULL),
-
-    ('Voladura de yeso', 'Uso de explosivos para fragmentar el material', 'Alta', NULL, 158, NULL),
-    ('Diseño de voladuras', 'Parámetros y planificación de explosiones', 'Media', NULL, 158, NULL),
-    ('Control de seguridad', 'Medidas para la seguridad en voladuras', 'Baja', NULL, 158, NULL),
-    ('Registro de datos', 'Documentación de las voladuras', 'Media', NULL, 158, NULL),
-    ('Seguimiento de resultados', 'Verificación de la eficacia de las voladuras', 'Alta', NULL, 158, NULL),
-
-    ('Carga de yeso', 'Transporte del material volado', 'Alta', NULL, 159, NULL),
-    ('Transporte a planta', 'Envío del yeso a la planta de procesamiento', 'Media', NULL, 159, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 159, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos', 'Media', NULL, 159, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 159, NULL),
-
-    ('Trituración de yeso', 'Reducción del tamaño del material', 'Alta', NULL, 160, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas trituradas', 'Media', NULL, 160, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 160, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 160, NULL),
-    ('Almacenamiento temporal', 'Guardado del yeso procesado', 'Alta', NULL, 160, NULL),
-
--- arcilla
-
-    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de arcilla', 'Alta', NULL, 161, NULL),
-    ('Prospectiva de recursos', 'Determinación de las reservas de arcilla', 'Media', NULL, 161, NULL),
-    ('Planificación de la explotación', 'Definición de método y ritmo de explotación', 'Baja', NULL, 161, NULL),
-    ('Ubicación de escombreras', 'Determinación de áreas para desechos', 'Media', NULL, 161, NULL),
-    ('Instalaciones de acceso', 'Planificación de caminos y accesos', 'Alta', NULL, 161, NULL),
-
-    ('Mapeo con drones', 'Captura de datos detallados del terreno', 'Alta', NULL, 162, NULL),
-    ('Exploración geoquímica local', 'Muestreo de suelos y rocas', 'Media', NULL, 162, NULL),
-    ('Mapeo geológico a detalle', 'Descripción precisa de la geología', 'Baja', NULL, 162, NULL),
-    ('Exploración geofísica local', 'Métodos geofísicos para caracterizar el subsuelo', 'Media', NULL, 162, NULL),
-    ('Perforación minera', 'Obtención de muestras del subsuelo', 'Alta', NULL, 162, NULL),
-
-    ('Perforación de arcilla', 'Creación de perforaciones para muestreo', 'Alta', NULL, 163, NULL),
-    ('Control de calidad', 'Verificación de la calidad del material perforado', 'Media', NULL, 163, NULL),
-    ('Registro de datos', 'Documentación de la perforación', 'Baja', NULL, 163, NULL),
-    ('Seguridad en perforación', 'Medidas para la seguridad del personal', 'Media', NULL, 163, NULL),
-    ('Equipamiento de perforación', 'Selección y uso de maquinaria', 'Alta', NULL, 163, NULL),
-
-    ('Carga de arcilla', 'Transporte del material extraído', 'Alta', NULL, 164, NULL),
-    ('Transporte a planta', 'Envío de arcilla a la planta de procesamiento', 'Media', NULL, 164, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 164, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos', 'Media', NULL, 164, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 164, NULL),
-
-    ('Trituración de arcilla', 'Reducción del tamaño del material', 'Alta', NULL, 165, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas trituradas', 'Media', NULL, 165, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 165, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 165, NULL),
-    ('Almacenamiento temporal', 'Guardado de arcilla procesada', 'Alta', NULL, 165, NULL),
-
--- baritina
-
-    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de baritina', 'Alta', NULL, 166, NULL),
-    ('Prospectiva de recursos', 'Determinación de las reservas de baritina', 'Media', NULL, 166, NULL),
-    ('Planificación de la explotación', 'Definición de método y ritmo de explotación', 'Baja', NULL, 166, NULL),
-    ('Ubicación de escombreras', 'Determinación de áreas para desechos', 'Media', NULL, 166, NULL),
-    ('Instalaciones de acceso', 'Planificación de caminos y accesos', 'Alta', NULL, 166, NULL),
-
-    ('Perforación de baritina', 'Creación de perforaciones para muestreo', 'Alta', NULL, 167, NULL),
-    ('Control de calidad', 'Verificación de la calidad del material perforado', 'Media', NULL, 167, NULL),
-    ('Registro de datos', 'Documentación de la perforación', 'Baja', NULL, 167, NULL),
-    ('Seguridad en perforación', 'Medidas para la seguridad del personal', 'Media', NULL, 167, NULL),
-    ('Equipamiento de perforación', 'Selección y uso de maquinaria', 'Alta', NULL, 167, NULL),
-
-    ('Voladura de baritina', 'Uso de explosivos para fragmentar el material', 'Alta', NULL, 168, NULL),
-    ('Diseño de voladuras', 'Parámetros y planificación de explosiones', 'Media', NULL, 168, NULL),
-    ('Control de seguridad', 'Medidas para la seguridad en voladuras', 'Baja', NULL, 168, NULL),
-    ('Registro de datos', 'Documentación de las voladuras', 'Media', NULL, 168, NULL),
-    ('Seguimiento de resultados', 'Verificación de la eficacia de las voladuras', 'Alta', NULL, 168, NULL),
-
-    ('Carga de baritina', 'Transporte del material extraído', 'Alta', NULL, 169, NULL),
-    ('Transporte a planta', 'Envío de baritina a la planta de procesamiento', 'Media', NULL, 169, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 169, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos', 'Media', NULL, 169, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 169, NULL),
-
-    ('Trituración de baritina', 'Reducción del tamaño del material', 'Alta', NULL, 170, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas trituradas', 'Media', NULL, 170, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 170, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 170, NULL),
-    ('Almacenamiento temporal', 'Guardado de baritina procesada', 'Alta', NULL, 170, NULL),
-
--- bentonita
-
-    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de bentonita', 'Alta', NULL, 171, NULL),
-    ('Prospectiva de recursos', 'Determinación de las reservas de bentonita', 'Media', NULL, 171, NULL),
-    ('Planificación de la explotación', 'Definición de método y ritmo de explotación', 'Baja', NULL, 171, NULL),
-    ('Ubicación de escombreras', 'Determinación de áreas para desechos', 'Media', NULL, 171, NULL),
-    ('Instalaciones de acceso', 'Planificación de caminos y accesos', 'Alta', NULL, 171, NULL),
-
-    ('Diseño de mina', 'Planificación detallada de la explotación', 'Alta', NULL, 172, NULL),
-    ('Estudio de viabilidad económica', 'Análisis de costos y beneficios', 'Media', NULL, 172, NULL),
-    ('Selección de maquinaria', 'Equipamiento necesario para la extracción', 'Baja', NULL, 172, NULL),
-    ('Seguridad en diseño', 'Medidas para la seguridad en la mina', 'Media', NULL, 172, NULL),
-    ('Planificación ambiental', 'Consideraciones ecológicas y de restauración', 'Alta', NULL, 172, NULL),
-
-    ('Preparación del terreno', 'Acondicionamiento del área de explotación', 'Alta', NULL, 173, NULL),
-    ('Infraestructura de la mina', 'Construcción de caminos, instalaciones, u otros', 'Media', NULL, 173, NULL),
-    ('Equipamiento de seguridad', 'Implementación de medidas de prevención', 'Baja', NULL, 173, NULL),
-    ('Control de calidad inicial', 'Verificación de los primeros materiales extraídos', 'Media', NULL, 173, NULL),
-    ('Capacitación del personal', 'Formación para el trabajo en la mina', 'Alta', NULL, 173, NULL),
-
-    ('Carga de bentonita', 'Transporte del material extraído', 'Alta', NULL, 174, NULL),
-    ('Transporte a planta', 'Envío de bentonita a la planta de procesamiento', 'Media', NULL, 174, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL, 174, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos', 'Media', NULL, 174, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL, 174, NULL),
-
-    ('Trituración de bentonita', 'Reducción del tamaño del material', 'Alta', NULL, 175, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas trituradas', 'Media', NULL, 175, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 175, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 175, NULL),
-    ('Almacenamiento final', 'Guardado de bentonita procesada', 'Alta', NULL, 175, NULL),
-
-	-- azufre
-    ('Estudios geológicos', 'Análisis y evaluación del yacimiento de azufre', 'Alta', NULL, 176, NULL),
-    ('Prospectiva de recursos', 'Determinación de las reservas de azufre', 'Media', NULL, 176, NULL),
-    ('Planificación de la explotación', 'Definición de método y ritmo de explotación', 'Baja', NULL, 176, NULL),
-    ('Ubicación de escombreras', 'Determinación de áreas para desechos', 'Media', NULL, 176, NULL),
-    ('Instalaciones de acceso', 'Planificación de caminos y accesos', 'Alta', NULL, 176, NULL),
-
-    ('Diseño de mina', 'Planificación detallada de la explotación', 'Alta', NULL, 177, NULL),
-    ('Estudio de viabilidad económica', 'Análisis de costos y beneficios', 'Media', NULL, 177, NULL),
-    ('Selección de maquinaria', 'Equipamiento necesario para la extracción', 'Baja', NULL, 177, NULL),
-    ('Seguridad en diseño', 'Medidas para la seguridad en la mina', 'Media', NULL, 177, NULL),
-    ('Planificación ambiental', 'Consideraciones ecológicas y de restauración', 'Alta', NULL, 177, NULL),
-
-    ('Preparación del terreno', 'Acondicionamiento del área de explotación', 'Alta', NULL, 178, NULL),
-    ('Infraestructura de la mina', 'Construcción de caminos, instalaciones, u otros', 'Media', NULL, 178, NULL),
-    ('Equipamiento de seguridad', 'Implementación de medidas de prevención', 'Baja', NULL, 178, NULL),
-    ('Control de calidad inicial', 'Verificación de los primeros materiales extraídos', 'Media', NULL, 178, NULL),
-    ('Capacitación del personal', 'Formación para el trabajo en la mina', 'Alta', NULL, 178, NULL),
-
-    ('Carga de azufre', 'Transporte del material extraído', 'Alta', NULL, 179, NULL),
-    ('Transporte a planta', 'Envío de azufre a la planta de procesamiento', 'Media', NULL,  179, NULL),
-    ('Monitoreo de calidad', 'Verificación del material extraído', 'Baja', NULL,  179, NULL),
-    ('Mantenimiento de maquinaria', 'Cuidado y reparación de equipos', 'Media', NULL,  179, NULL),
-    ('Seguridad en la mina', 'Control durante la extracción', 'Alta', NULL,  179, NULL),
-
-    ('Trituración de azufre', 'Reducción del tamaño del material', 'Alta', NULL, 180, NULL),
-    ('Clasificación por tamaño', 'Separación de partículas trituradas', 'Media', NULL, 180, NULL),
-    ('Limpieza y separación', 'Eliminación de impurezas', 'Baja', NULL, 180, NULL),
-    ('Control de calidad', 'Verificación durante el proceso', 'Media', NULL, 180, NULL),
-    ('Almacenamiento final', 'Guardado de azufre procesado', 'Alta', NULL, 180, NULL);
+('Plata Minera', 'Explotación de mineral de plata en Venezuela', '2024-04-27', '2029-12-31', 11, 31),
+('Plata Minero', 'Explotación de mineral de plata en Venezuela', '2024-04-27', '2030-01-31', 11, 32),
+('Proyecto de Plata', 'Explotación de mineral de plata en Venezuela', '2024-04-27', '2030-02-28', 11, 33),
+ ('Bario Venezuela', 'Explotación de mineral de bario', '2024-04-27', '2024-05-31', 12, 34),
+('Bario Proyecto', 'Explotación de mineral de bario en el yacimiento', '2024-04-27', '2025-04-30', 12, 35),
+('Bario Minero', 'Explotación de mineral de bario', '2024-04-27', '2034-05-31', 12, 36),
+('Calcio Venezolan', 'Extracción de calcio en el yacimiento ', '2024-04-27', '2034-06-30', 13, 37),
+('Extrayendo Calcio', 'Explotacion de calcio en Venezuela responsablemente', '2024-04-27', '2029-07-31', 13, 38),
+('Calcio Miner', 'Explotación en el yacimiento de Venezuela', '2024-04-27', '2026-08-11', 13, 39),
+('Vene Caolín', 'Extracción de mineral de caolín en el yacimiento ', '2024-04-27', '2028-05-31', 14, 40),
+('Caolín Proyecto', 'Exploracion y extracción de mineral de caolín ', '2024-04-27', '2027-06-30', 14, 41),
+('Caolín Miner', 'Explotación de mineral de caolín en yacimientos venezolanos', '2024-04-27', '2026-07-31', 14, 42),
+('Caliza Venezolana', 'Extracción de piedra caliza en el yacimiento ', '2024-02-15', '2034-06-30', 15, 43),
+
+('Extrayendo Caliza', 'Explotación de piedra caliza en Venezuela responsablemente', '2024-02-15', '2029-07-31', 15, 44),
+('Caliza Patanemo', 'Explotación de piedra caliza en el yacimiento de Patanemo', '2024-02-15', '2026-08-11', 15, 45),
+('Extrayendo Pirita', 'Extracción de mineral de pirita en el yacimiento ', '2024-02-15', '2028-05-31', 16, 46),
+('Pirita Venezolana', 'Exploración y extracción de mineral de pirita ', '2024-02-15', '2027-06-30', 16, 47),
+('Pirita Miner', 'Explotación de mineral de pirita en yacimientos venezolanos', '2024-02-15', '2026-07-31', 16, 48),
+('Talco Cabimba', 'Explotación de mineral de talco en el yacimiento Cabimba', '2024-02-15', '2025-08-31', 17, 49),
+('Talco Agua Fría', 'Explotación de mineral de talco en el yacimiento Agua Fría', '2024-02-15', '2024-09-30', 17, 50),
+('Talco Miner', 'Explotación de mineral de talco en yacimientos de Venezuela', '2024-02-15', '2028-10-31', 17, 51),
+('Zinc Perijá', 'Explotación de mineral de zinc en yacimientos de Perijá', '2024-02-15', '2028-01-20', 18, 52),
+('Zinc Los Bailadores', 'Extracción de mineral de zinc en el yacimiento Bailadores Venezuela', '2024-02-15', '2028-12-31', 18, 53),
+('Zinc MINERO', 'Explotación de mineral de zinc ', '2024-02-15', '2030-01-31', 18, 54),
+('Cianita Miner', 'Explotación de mineral de cianita ', '2024-02-15', '2029-02-28', 19,55),
+('Cianita Proyecto', 'Explotación de mineral de cianita ', '2024-02-15', '2028-03-31', 19, 56),
+('Cianita Mineral', 'Explotación de mineral de cianita', '2024-02-15', '2027-04-30', 19, 57),
+ ('Dolomita Guacuripia', 'Explotación de mineral de dolomita en el yacimiento Guacuripia', '2024-02-15', '2024-05-31', 20, 58),
+('Dolomita Mineral', 'Explotación de mineral de dolomita en el yacimiento', '2022-07-01', '2024-02-15', 20, 59),
+('Dolomita El Palmar', 'Explotación de mineral de dolomita en el yacimiento El Palmar', '2024-02-15', '2024-07-31', 20, 60),
+
+
+('Titanio San Quintín', 'Explotación de mineral de titanio en el yacimiento San Quintín', '2023-09-25', '2030-08-31', 21, 61),
+('Titanio Proyecto', 'Explotación de mineral de titanio', '2023-09-25', '2032-09-30', 21, 62),
+('Titanio Venezolano', 'Explotación de mineral de titanio ', '2023-09-25', '2025-10-15', 21, 63),
+('Tungsteno Los Pijiguaos', 'Explotación de mineral de tungsteno en el yacimiento Los Pijiguaos', '2023-09-25', '2030-11-30', 22, 64),
+('Tungsteno El Callao', 'Explotación de mineral de tungsteno en el yacimiento El callao', '2023-09-25', '2029-12-31', 22, 65),
+('Tungsteno Mina Venezolana', 'Explotación de mineral de tungsteno en Venezuela', '2023-09-25', '2028-12-31', 22, 66),
+  ('Proyecto Magnesio ', 'Explotación de mineral de magnesio en Venezuela', '2023-09-25', '2026-03-31', 23, 67),
+  ('Proyecto Mineral Magnesio', 'Explotación de mineral de magnesio', '2023-09-25', '2025-04-30', 23, 68),
+  ('Extrayendo Magnesio ', 'Explotación de mineral de magnesio', '2023-09-25', '2024-05-31', 23, 69),
+  ('Proyecto Andalucita', 'Explotación de mineral de andalucita en Venezuela', '2023-09-25', '2026-06-30', 24, 70),
+  ('Extrayendo Andalucita', 'Explotación de mineral de andalucita', '2023-09-25', '2026-07-31', 24, 71),
+  ('Miner Andalucita', 'Explotación de mineral de andalucita ', '2023-09-25', '2025-08-31', 24, 72),
+('Antimonio Mineral', 'Explotación de mineral de antimonio en Yaracuy', '2023-09-25', '2030-09-30', 25, 73),
+('Antimonio Venezolano', 'Explotación de mineral de antimonio en Venezuela', '2023-09-25', '2026-10-31', 25, 74),
+('Antimonio Proyecto', 'Explotación y exploración de mineral de antimonio de forma segura y responsable', '2023-09-25', '2028-11-30', 25, 75),
+('Cromo Proyecto', 'Explotación de mineral de cromo en Venezuela', '2023-09-25', '2026-01-31', 26, 76),
+('Cromo Urimán', 'Explotación de mineral de cromo en Urimán', '2023-09-25', '2030-08-28', 26, 77),
+('Cromo Paraytepuy', 'Explotación de mineral de cromo en Paraytepui', '2023-04-01', '2024-03-31', 26, 78),
+('Asbesto Proyecto', 'Explotacion de mineral de Asbesto en Venezuela', '2022-12-21', '2026-01-31', 27, 79),
+('Asbesto Minero', 'Extracción de mineral de Asbesto', '2024-04-09', '2024-06-25', 27, 80),
+('Asbesto Proyecto', 'Explotación de mineral de cromo en Paraytepui', '2023-09-25', '2024-03-31', 27, 81),
+('Feldespato La Quebrada', 'Explotación de mineral de feldespato en La Quebrada', '2023-09-25', '2030-04-30', 28, 82),
+('Feldespato Las Cuevas', 'Explotación de mineral de feldespato en Las Cuevas', '2023-09-25', '2025-07-31', 28, 83),
+('Feldespato Minero', 'Explotación de mineral de feldespato en Venezuela', '2023-09-25', '2026-06-30', 28, 84),
+('Arena Proyecto', 'Extracción de arena en el país ', '2023-09-25', '2030-07-31', 29, 85),
+('Arena Venezuela', 'Extracción de arena', '2023-09-25', '2029-08-31', 29, 86),
+('Arena Miner', 'Explotación de arena', '2023-09-25', '2028-09-30', 29, 87),
+
+('Cal Minera', 'Producción de cal hidratada a partir de piedra caliza', '2024-01-01', '2027-11-30', 30, 88),
+ ('Cal Proyectito', 'Producción de cal agrícola a partir de piedra caliza', '2024-01-01', '2026-10-31', 30, 89),
+ ('Cal Patanemo', 'Producción de cal industrial a partir de piedra caliza', '2024-01-01', '2025-09-30', 30, 90),
+('Granito San Carlos', 'Explotación de granito para la construcción en yacimientos de granito en San CARLOS', '2024-01-01', '2030-05-31', 31, 91),
+('Granito Proyecto en Cojedes', 'Explotación de granito', '2024-01-01', '2030-04-30', 31, 92),
+('Granito Ucab', 'Explotación de granito en Venezuela', '2024-01-01', '2024-03-31', 31, 93),
+('Yeso Venezuela', 'Explotación de yeso en toda Venezuela', '2024-01-01', '2027-01-31', 32, 94),
+('Yeso Miner Taracoa', 'Explotación de yeso en Taracoa', '2024-01-01', '2026-05-31', 32, 95),
+('Yeso Proyecto Quebrada Grande', 'Explotación de yeso en Quebrada Grande', '2024-01-01', '2025-11-30', 32, 96),
+ ('Arcilla Cubagua', 'Explotación de arcilla roja para la fabricación de ladrillos', '2024-01-01', '2024-10-31', 33, 97),
+('Arcilla Isla Coche', 'Explotación de arcilla de forma responsable', '2024-01-01', '2025-09-30', 33,98),
+('Arcilla Proyecto Venezuela', 'Explotación de arcilla en Venezuela', '2024-01-01', '2032-08-31', 33, 99),
+('Explorando Baritina ', 'Exploración y Explotación de baritina ', '2024-01-01', '2024-02-28', 34, 100),
+ ('Baritina Extracción', ' explotación de baritina de forma responsable', '2024-01-01', '2024-06-30', 34, 101),
+('Baritina Minervenezuela', 'Explotación de baritina en Venezuela', '2024-01-01', '2029-05-31', 34, 102),
+('Bentonita Matorral', 'Explotación de bentonita en el yacimiento Matorral Estado Monagas', '2024-01-01', '2028-12-31', 35, 103),
+('Bentonita Barinas', 'Explotación de bentonita en el yacimiento Barinas Estado Barinas', '2024-01-01', '2027-11-30', 35, 104),
+
+('Bentonita Zulia', 'Explotación de bentonita en el yacimiento Zulia Estado Zulia', '2024-01-01', '2026-10-31', 35, 105),
+
+('Azufre Morichal', 'Explotación de azufre en el yacimiento Morichal Estado Monagas', '2024-01-01', '2025-09-30', 36, 106),
+
+('Azufre Cerro Amarillo', 'Explotación de azufre en el yacimiento Cerro Amarillo Estado Bolívar', '2024-01-01', '2024-08-31', 36, 107),
+
+('Azufre Mérida', 'Explotación de azufre en el yacimiento Mérida Estado Mérida', '2024-01-01', '2024-02-26', 36, 108);
+
+INSERT INTO PRO_ESTATUS (proes_pro_id, proes_est_id, proes_fecha_ini, proes_fecha_fin)
+SELECT pro_id, 10, pro_fecha_ini, NULL
+FROM PROYECTO;
+
+INSERT INTO actividad_recurso (acre_act_id, acre_tire_id, acre_costo, acre_cantidad, acre_fecha_ini, acre_fecha_fin)
+VALUES
+ 
+    (1, 1, 200.00, 1, '2024-06-20', NULL),
+    (2, 2, 150.00, 1, '2024-06-20', NULL),
+    (3, 3, 300.00, 1, '2024-06-20', NULL),
+    (4, 4, 300.00, 1, '2024-06-20', NULL),
+    (5, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (6, 1, 258.00, 1, '2024-06-20', NULL),
+    (7, 2, 344.00, 1, '2024-06-20', NULL),
+    (8, 3, 655.00, 1, '2024-06-20', NULL),
+    (9, 4, 476.00, 1, '2024-06-20', NULL),
+    (10, 5, 767.00, 1, '2024-06-20', NULL),
+
+    (11, 1, 200.00, 1, '2024-06-20', NULL),
+    (12, 2, 150.00, 1, '2024-06-20', NULL),
+    (13, 3, 300.00, 1, '2024-06-20', NULL),
+    (14, 4, 300.00, 1, '2024-06-20', NULL),
+    (15, 5, 500.00, 1, '2024-06-20', NULL),
+
+	(16, 1, 200.00, 1, '2024-06-20', NULL),
+    (17, 2, 150.00, 1, '2024-06-20', NULL),
+    (18, 3, 300.00, 1, '2024-06-20', NULL),
+    (19, 4, 300.00, 1, '2024-06-20', NULL),
+    (20, 5, 500.00, 1, '2024-06-20', NULL),
+
+	(21, 1, 200.00, 1, '2024-06-20', NULL),
+    (22, 2, 150.00, 1, '2024-06-20', NULL),
+    (23, 3, 300.00, 1, '2024-06-20', NULL),
+    (24, 4, 300.00, 1, '2024-06-20', NULL),
+    (25, 5, 500.00, 1, '2024-06-20', NULL),
+	(26, 1, 200.00, 1, '2024-06-20', NULL),
+    (27, 2, 150.00, 1, '2024-06-20', NULL),
+    (28, 3, 300.00, 1, '2024-06-20', NULL),
+    (29, 4, 300.00, 1, '2024-06-20', NULL),
+    (30, 5, 500.00, 1, '2024-06-20', NULL),
+	(31, 1, 200.00, 1, '2024-06-20', NULL),
+    (32, 2, 150.00, 1, '2024-06-20', NULL),
+    (33, 3, 300.00, 1, '2024-06-20', NULL),
+    (34, 4, 300.00, 1, '2024-06-20', NULL),
+    (35, 5, 500.00, 1, '2024-06-20', NULL),
+
+(36, 1, 200.00, 1, '2024-06-20', NULL),
+    (37, 2, 150.00, 1, '2024-06-20', NULL),
+    (38, 3, 300.00, 1, '2024-06-20', NULL),
+    (39, 4, 300.00, 1, '2024-06-20', NULL),
+    (40, 5, 500.00, 1, '2024-06-20', NULL),
+
+(41, 1, 200.00, 1, '2024-06-20', NULL),
+    (42, 2, 150.00, 1, '2024-06-20', NULL),
+    (43, 3, 300.00, 1, '2024-06-20', NULL),
+    (44, 4, 300.00, 1, '2024-06-20', NULL),
+    (45, 5, 500.00, 1, '2024-06-20', NULL),
+(46, 1, 200.00, 1, '2024-06-20', NULL),
+    (47, 2, 150.00, 1, '2024-06-20', NULL),
+    (48, 3, 300.00, 1, '2024-06-20', NULL),
+    (49, 4, 300.00, 1, '2024-06-20', NULL),
+    (50, 5, 500.00, 1, '2024-06-20', NULL),
+(51, 1, 200.00, 1, '2024-06-20', NULL),
+    (52, 2, 150.00, 1, '2024-06-20', NULL),
+    (53, 3, 300.00, 1, '2024-06-20', NULL),
+    (54, 4, 300.00, 1, '2024-06-20', NULL),
+    (55, 5, 500.00, 1, '2024-06-20', NULL),
+(56, 1, 200.00, 1, '2024-06-20', NULL),
+    (57, 2, 150.00, 1, '2024-06-20', NULL),
+    (58, 3, 300.00, 1, '2024-06-20', NULL),
+    (59, 4, 300.00, 1, '2024-06-20', NULL),
+    (60, 5, 500.00, 1, '2024-06-20', NULL),
+	
+(61, 1, 200.00, 1, '2024-06-20', NULL),
+    (62, 2, 150.00, 1, '2024-06-20', NULL),
+    (63, 3, 300.00, 1, '2024-06-20', NULL),
+    (64, 4, 300.00, 1, '2024-06-20', NULL),
+    (65, 5, 500.00, 1, '2024-06-20', NULL),
+(66, 1, 200.00, 1, '2024-06-20', NULL),
+    (67, 2, 150.00, 1, '2024-06-20', NULL),
+    (68, 3, 300.00, 1, '2024-06-20', NULL),
+    (69, 4, 300.00, 1, '2024-06-20', NULL),
+    (70, 5, 500.00, 1, '2024-06-20', NULL),
+(71, 1, 200.00, 1, '2024-06-20', NULL),
+    (72, 2, 150.00, 1, '2024-06-20', NULL),
+    (73, 3, 300.00, 1, '2024-06-20', NULL),
+    (74, 4, 300.00, 1, '2024-06-20', NULL),
+    (75, 5, 500.00, 1, '2024-06-20', NULL),
+(76, 1, 200.00, 1, '2024-06-20', NULL),
+    (77, 2, 150.00, 1, '2024-06-20', NULL),
+    (78, 3, 300.00, 1, '2024-06-20', NULL),
+    (79, 4, 300.00, 1, '2024-06-20', NULL),
+    (80, 5, 500.00, 1, '2024-06-20', NULL),
+	(81, 1, 200.00, 1, '2024-06-20', NULL),
+    (82, 2, 150.00, 1, '2024-06-20', NULL),
+    (83, 3, 300.00, 1, '2024-06-20', NULL),
+    (84, 4, 300.00, 1, '2024-06-20', NULL),
+    (85, 5, 500.00, 1, '2024-06-20', NULL),
+(86, 1, 200.00, 1, '2024-06-20', NULL),
+    (87, 2, 150.00, 1, '2024-06-20', NULL),
+    (88, 3, 300.00, 1, '2024-06-20', NULL),
+    (89, 4, 300.00, 1, '2024-06-20', NULL),
+    (90, 5, 500.00, 1, '2024-06-20', NULL),
+(91, 1, 200.00, 1, '2024-06-20', NULL),
+    (92, 2, 150.00, 1, '2024-06-20', NULL),
+    (93, 3, 300.00, 1, '2024-06-20', NULL),
+    (94, 4, 300.00, 1, '2024-06-20', NULL),
+    (95, 5, 500.00, 1, '2024-06-20', NULL),
+(96, 1, 200.00, 1, '2024-06-20', NULL),
+    (97, 2, 150.00, 1, '2024-06-20', NULL),
+    (98, 3, 300.00, 1, '2024-06-20', NULL),
+    (99, 4, 300.00, 1, '2024-06-20', NULL),
+    (100, 5, 500.00, 1, '2024-06-20', NULL),
+(101, 1, 200.00, 1, '2024-06-20', NULL),
+    (102, 2, 150.00, 1, '2024-06-20', NULL),
+    (103, 3, 300.00, 1, '2024-06-20', NULL),
+    (104, 4, 300.00, 1, '2024-06-20', NULL),
+    (105, 5, 500.00, 1, '2024-06-20', NULL),
+(106, 1, 200.00, 1, '2024-06-20', NULL),
+    (107, 2, 150.00, 1, '2024-06-20', NULL),
+    (108, 3, 300.00, 1, '2024-06-20', NULL),
+    (109, 4, 300.00, 1, '2024-06-20', NULL),
+    (110, 5, 500.00, 1, '2024-06-20', NULL),
+(111, 1, 200.00, 1, '2024-06-20', NULL),
+    (112, 2, 150.00, 1, '2024-06-20', NULL),
+    (113, 3, 300.00, 1, '2024-06-20', NULL),
+    (114, 4, 300.00, 1, '2024-06-20', NULL),
+    (115, 5, 500.00, 1, '2024-06-20', NULL),
+
+ (116, 1, 200.00, 1, '2024-06-20', NULL),
+    (117, 2, 150.00, 1, '2024-06-20', NULL),
+    (118, 3, 300.00, 1, '2024-06-20', NULL),
+    (119, 4, 300.00, 1, '2024-06-20', NULL),
+    (120, 5, 500.00, 1, '2024-06-20', NULL),
+
+ (121, 1, 200.00, 1, '2024-06-20', NULL),
+    (122, 2, 150.00, 1, '2024-06-20', NULL),
+    (123, 3, 300.00, 1, '2024-06-20', NULL),
+    (124, 4, 300.00, 1, '2024-06-20', NULL),
+    (125, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (126, 1, 258.00, 1, '2024-06-20', NULL),
+    (127, 2, 344.00, 1, '2024-06-20', NULL),
+    (128, 3, 655.00, 1, '2024-06-20', NULL),
+    (129, 4, 476.00, 1, '2024-06-20', NULL),
+    (130, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (131, 1, 200.00, 1, '2024-06-20', NULL),
+    (132, 2, 150.00, 1, '2024-06-20', NULL),
+    (133, 3, 300.00, 1, '2024-06-20', NULL),
+    (134, 4, 300.00, 1, '2024-06-20', NULL),
+    (135, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (136, 1, 258.00, 1, '2024-06-20', NULL),
+    (137, 2, 344.00, 1, '2024-06-20', NULL),
+    (138, 3, 655.00, 1, '2024-06-20', NULL),
+    (139, 4, 476.00, 1, '2024-06-20', NULL),
+    (140, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (141, 1, 200.00, 1, '2024-06-20', NULL),
+    (142, 2, 150.00, 1, '2024-06-20', NULL),
+    (143, 3, 300.00, 1, '2024-06-20', NULL),
+    (144, 4, 300.00, 1, '2024-06-20', NULL),
+    (145, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (146, 1, 258.00, 1, '2024-06-20', NULL),
+    (147, 2, 344.00, 1, '2024-06-20', NULL),
+    (148, 3, 655.00, 1, '2024-06-20', NULL),
+    (149, 4, 476.00, 1, '2024-06-20', NULL),
+    (150, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (161, 1, 200.00, 1, '2024-06-20', NULL),
+    (162, 2, 150.00, 1, '2024-06-20', NULL),
+    (163, 3, 300.00, 1, '2024-06-20', NULL),
+    (164, 4, 300.00, 1, '2024-06-20', NULL),
+    (165, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (166, 1, 258.00, 1, '2024-06-20', NULL),
+    (167, 2, 344.00, 1, '2024-06-20', NULL),
+    (168, 3, 655.00, 1, '2024-06-20', NULL),
+    (169, 4, 476.00, 1, '2024-06-20', NULL),
+    (170, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (181, 1, 200.00, 1, '2024-06-20', NULL),
+    (182, 2, 150.00, 1, '2024-06-20', NULL),
+    (183, 3, 300.00, 1, '2024-06-20', NULL),
+    (184, 4, 300.00, 1, '2024-06-20', NULL),
+    (185, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (186, 1, 258.00, 1, '2024-06-20', NULL),
+    (187, 2, 344.00, 1, '2024-06-20', NULL),
+    (188, 3, 655.00, 1, '2024-06-20', NULL),
+    (189, 4, 476.00, 1, '2024-06-20', NULL),
+    (190, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (191, 1, 200.00, 1, '2024-06-20', NULL),
+    (192, 2, 150.00, 1, '2024-06-20', NULL),
+    (193, 3, 300.00, 1, '2024-06-20', NULL),
+    (194, 4, 300.00, 1, '2024-06-20', NULL),
+    (195, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (196, 1, 258.00, 1, '2024-06-20', NULL),
+    (197, 2, 344.00, 1, '2024-06-20', NULL),
+    (198, 3, 655.00, 1, '2024-06-20', NULL),
+    (199, 4, 476.00, 1, '2024-06-20', NULL),
+    (200, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (201, 1, 200.00, 1, '2024-06-20', NULL),
+    (202, 2, 150.00, 1, '2024-06-20', NULL),
+    (203, 3, 300.00, 1, '2024-06-20', NULL),
+    (204, 4, 300.00, 1, '2024-06-20', NULL),
+    (205, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (206, 1, 258.00, 1, '2024-06-20', NULL),
+    (207, 2, 344.00, 1, '2024-06-20', NULL),
+    (208, 3, 655.00, 1, '2024-06-20', NULL),
+    (209, 4, 476.00, 1, '2024-06-20', NULL),
+    (210, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (211, 1, 200.00, 1, '2024-06-20', NULL),
+    (212, 2, 150.00, 1, '2024-06-20', NULL),
+    (213, 3, 300.00, 1, '2024-06-20', NULL),
+    (214, 4, 300.00, 1, '2024-06-20', NULL),
+    (215, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (216, 1, 258.00, 1, '2024-06-20', NULL),
+    (217, 2, 344.00, 1, '2024-06-20', NULL),
+    (218, 3, 655.00, 1, '2024-06-20', NULL),
+    (219, 4, 476.00, 1, '2024-06-20', NULL),
+    (220, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (22, 1, 200.00, 1, '2024-06-20', NULL),
+    (222, 2, 150.00, 1, '2024-06-20', NULL),
+    (223, 3, 300.00, 1, '2024-06-20', NULL),
+    (224, 4, 300.00, 1, '2024-06-20', NULL),
+    (225, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (226, 1, 258.00, 1, '2024-06-20', NULL),
+    (227, 2, 344.00, 1, '2024-06-20', NULL),
+    (228, 3, 655.00, 1, '2024-06-20', NULL),
+    (229, 4, 476.00, 1, '2024-06-20', NULL),
+    (230, 5, 767.00, 1, '2024-06-20', NULL),
+
+ (231, 1, 200.00, 1, '2024-06-20', NULL),
+    (232, 2, 150.00, 1, '2024-06-20', NULL),
+    (233, 3, 300.00, 1, '2024-06-20', NULL),
+    (234, 4, 300.00, 1, '2024-06-20', NULL),
+    (235, 5, 500.00, 1, '2024-06-20', NULL),
+    -- ETAPA 2
+    (236, 1, 258.00, 1, '2024-06-20', NULL),
+    (237, 2, 344.00, 1, '2024-06-20', NULL),
+    (238, 3, 655.00, 1, '2024-06-20', NULL),
+    (239, 4, 476.00, 1, '2024-06-20', NULL),
+    (240, 5, 767.00, 1, '2024-06-20', NULL),
+
+(241, 1, 200.00, 1, '2024-06-20', NULL),
+    (242, 2, 150.00, 1, '2024-06-20', NULL),
+    (243, 3, 300.00, 1, '2024-06-20', NULL),
+    (244, 4, 300.00, 1, '2024-06-20', NULL),
+    (245, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (246, 1, 258.00, 1, '2024-06-20', NULL),
+    (247, 2, 344.00, 1, '2024-06-20', NULL),
+    (248, 3, 655.00, 1, '2024-06-20', NULL),
+    (249, 4, 476.00, 1, '2024-06-20', NULL),
+    (250, 5, 767.00, 1, '2024-06-20', NULL),
+
+(251, 1, 200.00, 1, '2024-06-20', NULL),
+    (252, 2, 150.00, 1, '2024-06-20', NULL),
+    (253, 3, 300.00, 1, '2024-06-20', NULL),
+    (254, 4, 300.00, 1, '2024-06-20', NULL),
+    (255, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (256, 1, 258.00, 1, '2024-06-20', NULL),
+    (257, 2, 344.00, 1, '2024-06-20', NULL),
+    (258, 3, 655.00, 1, '2024-06-20', NULL),
+    (259, 4, 476.00, 1, '2024-06-20', NULL),
+    (260, 5, 767.00, 1, '2024-06-20', NULL),
+(261, 1, 200.00, 1, '2024-06-20', NULL),
+    (262, 2, 150.00, 1, '2024-06-20', NULL),
+    (263, 3, 300.00, 1, '2024-06-20', NULL),
+    (264, 4, 300.00, 1, '2024-06-20', NULL),
+    (265, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (266, 1, 258.00, 1, '2024-06-20', NULL),
+    (267, 2, 344.00, 1, '2024-06-20', NULL),
+    (268, 3, 655.00, 1, '2024-06-20', NULL),
+    (269, 4, 476.00, 1, '2024-06-20', NULL),
+    (270, 5, 767.00, 1, '2024-06-20', NULL),
+(271, 1, 200.00, 1, '2024-06-20', NULL),
+    (272, 2, 150.00, 1, '2024-06-20', NULL),
+    (273, 3, 300.00, 1, '2024-06-20', NULL),
+    (274, 4, 300.00, 1, '2024-06-20', NULL),
+    (275, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (276, 1, 258.00, 1, '2024-06-20', NULL),
+    (277, 2, 344.00, 1, '2024-06-20', NULL),
+    (278, 3, 655.00, 1, '2024-06-20', NULL),
+    (279, 4, 476.00, 1, '2024-06-20', NULL),
+    (280, 5, 767.00, 1, '2024-06-20', NULL),
+(281, 1, 200.00, 1, '2024-06-20', NULL),
+    (282, 2, 150.00, 1, '2024-06-20', NULL),
+    (283, 3, 300.00, 1, '2024-06-20', NULL),
+    (284, 4, 300.00, 1, '2024-06-20', NULL),
+    (285, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (286, 1, 258.00, 1, '2024-06-20', NULL),
+    (287, 2, 344.00, 1, '2024-06-20', NULL),
+    (288, 3, 655.00, 1, '2024-06-20', NULL),
+    (289, 4, 476.00, 1, '2024-06-20', NULL),
+    (290, 5, 767.00, 1, '2024-06-20', NULL),
+(291, 1, 200.00, 1, '2024-06-20', NULL),
+    (292, 2, 150.00, 1, '2024-06-20', NULL),
+    (293, 3, 300.00, 1, '2024-06-20', NULL),
+    (294, 4, 300.00, 1, '2024-06-20', NULL),
+    (295, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (296, 1, 258.00, 1, '2024-06-20', NULL),
+    (297, 2, 344.00, 1, '2024-06-20', NULL),
+    (298, 3, 655.00, 1, '2024-06-20', NULL),
+    (299, 4, 476.00, 1, '2024-06-20', NULL),
+    (300, 5, 767.00, 1, '2024-06-20', NULL),
+(301, 1, 200.00, 1, '2024-06-20', NULL),
+    (302, 2, 150.00, 1, '2024-06-20', NULL),
+    (303, 3, 300.00, 1, '2024-06-20', NULL),
+    (304, 4, 300.00, 1, '2024-06-20', NULL),
+    (5, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (306, 1, 258.00, 1, '2024-06-20', NULL),
+    (307, 2, 344.00, 1, '2024-06-20', NULL),
+    (308, 3, 655.00, 1, '2024-06-20', NULL),
+    (309, 4, 476.00, 1, '2024-06-20', NULL),
+    (310, 5, 767.00, 1, '2024-06-20', NULL),
+(311, 1, 200.00, 1, '2024-06-20', NULL),
+    (312, 2, 150.00, 1, '2024-06-20', NULL),
+    (313, 3, 300.00, 1, '2024-06-20', NULL),
+    (314, 4, 300.00, 1, '2024-06-20', NULL),
+    (315, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (316, 1, 258.00, 1, '2024-06-20', NULL),
+    (317, 2, 344.00, 1, '2024-06-20', NULL),
+    (318, 3, 655.00, 1, '2024-06-20', NULL),
+    (319, 4, 476.00, 1, '2024-06-20', NULL),
+    (320, 5, 767.00, 1, '2024-06-20', NULL),
+(321, 1, 200.00, 1, '2024-06-20', NULL),
+    (322, 2, 150.00, 1, '2024-06-20', NULL),
+    (323, 3, 300.00, 1, '2024-06-20', NULL),
+    (324, 4, 300.00, 1, '2024-06-20', NULL),
+    (325, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (326, 1, 258.00, 1, '2024-06-20', NULL),
+    (327, 2, 344.00, 1, '2024-06-20', NULL),
+    (328, 3, 655.00, 1, '2024-06-20', NULL),
+    (329, 4, 476.00, 1, '2024-06-20', NULL),
+    (330, 5, 767.00, 1, '2024-06-20', NULL),
+(331, 1, 200.00, 1, '2024-06-20', NULL),
+    (332, 2, 150.00, 1, '2024-06-20', NULL),
+    (333, 3, 300.00, 1, '2024-06-20', NULL),
+    (334, 4, 300.00, 1, '2024-06-20', NULL),
+    (335, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (336, 1, 258.00, 1, '2024-06-20', NULL),
+    (337, 2, 344.00, 1, '2024-06-20', NULL),
+    (338, 3, 655.00, 1, '2024-06-20', NULL),
+    (339, 4, 476.00, 1, '2024-06-20', NULL),
+    (340, 5, 767.00, 1, '2024-06-20', NULL),
+(341, 1, 200.00, 1, '2024-06-20', NULL),
+    (342, 2, 150.00, 1, '2024-06-20', NULL),
+    (343, 3, 300.00, 1, '2024-06-20', NULL),
+    (344, 4, 300.00, 1, '2024-06-20', NULL),
+    (345, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (346, 1, 258.00, 1, '2024-06-20', NULL),
+    (347, 2, 344.00, 1, '2024-06-20', NULL),
+    (348, 3, 655.00, 1, '2024-06-20', NULL),
+    (349, 4, 476.00, 1, '2024-06-20', NULL),
+    (350, 5, 767.00, 1, '2024-06-20', NULL),
+
+(351, 1, 200.00, 1, '2024-06-20', NULL),
+    (352, 2, 150.00, 1, '2024-06-20', NULL),
+    (353, 3, 300.00, 1, '2024-06-20', NULL),
+    (354, 4, 300.00, 1, '2024-06-20', NULL),
+    (355, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (356, 1, 258.00, 1, '2024-06-20', NULL),
+    (357, 2, 344.00, 1, '2024-06-20', NULL),
+    (358, 3, 655.00, 1, '2024-06-20', NULL),
+    (359, 4, 476.00, 1, '2024-06-20', NULL),
+    (360, 5, 767.00, 1, '2024-06-20', NULL),
+(361, 1, 200.00, 1, '2024-06-20', NULL),
+    (362, 2, 150.00, 1, '2024-06-20', NULL),
+    (363, 3, 300.00, 1, '2024-06-20', NULL),
+    (364, 4, 300.00, 1, '2024-06-20', NULL),
+    (365, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (366, 1, 258.00, 1, '2024-06-20', NULL),
+    (367, 2, 344.00, 1, '2024-06-20', NULL),
+    (368, 3, 655.00, 1, '2024-06-20', NULL),
+    (369, 4, 476.00, 1, '2024-06-20', NULL),
+    (370, 5, 767.00, 1, '2024-06-20', NULL),
+	(371, 1, 200.00, 1, '2024-06-20', NULL),
+    (372, 2, 150.00, 1, '2024-06-20', NULL),
+    (373, 3, 300.00, 1, '2024-06-20', NULL),
+    (374, 4, 300.00, 1, '2024-06-20', NULL),
+    (375, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (376, 1, 258.00, 1, '2024-06-20', NULL),
+    (377, 2, 344.00, 1, '2024-06-20', NULL),
+    (378, 3, 655.00, 1, '2024-06-20', NULL),
+    (379, 4, 476.00, 1, '2024-06-20', NULL),
+    (380, 5, 767.00, 1, '2024-06-20', NULL),
+(381, 1, 200.00, 1, '2024-06-20', NULL),
+    (382, 2, 150.00, 1, '2024-06-20', NULL),
+    (383, 3, 300.00, 1, '2024-06-20', NULL),
+    (384, 4, 300.00, 1, '2024-06-20', NULL),
+    (385, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (386, 1, 258.00, 1, '2024-06-20', NULL),
+    (387, 2, 344.00, 1, '2024-06-20', NULL),
+    (388, 3, 655.00, 1, '2024-06-20', NULL),
+    (389, 4, 476.00, 1, '2024-06-20', NULL),
+    (390, 5, 767.00, 1, '2024-06-20', NULL),
+(391, 1, 200.00, 1, '2024-06-20', NULL),
+    (392, 2, 150.00, 1, '2024-06-20', NULL),
+    (393, 3, 300.00, 1, '2024-06-20', NULL),
+    (394, 4, 300.00, 1, '2024-06-20', NULL),
+    (395, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (396, 1, 258.00, 1, '2024-06-20', NULL),
+    (397, 2, 344.00, 1, '2024-06-20', NULL),
+    (398, 3, 655.00, 1, '2024-06-20', NULL),
+    (399, 4, 476.00, 1, '2024-06-20', NULL),
+    (400, 5, 767.00, 1, '2024-06-20', NULL),
+(401, 1, 200.00, 1, '2024-06-20', NULL),
+    (402, 2, 150.00, 1, '2024-06-20', NULL),
+    (403, 3, 300.00, 1, '2024-06-20', NULL),
+    (404, 4, 300.00, 1, '2024-06-20', NULL),
+    (405, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (406, 1, 258.00, 1, '2024-06-20', NULL),
+    (407, 2, 344.00, 1, '2024-06-20', NULL),
+    (408, 3, 655.00, 1, '2024-06-20', NULL),
+    (409, 4, 476.00, 1, '2024-06-20', NULL),
+    (410, 5, 767.00, 1, '2024-06-20', NULL),
+(411, 1, 200.00, 1, '2024-06-20', NULL),
+    (412, 2, 150.00, 1, '2024-06-20', NULL),
+    (413, 3, 300.00, 1, '2024-06-20', NULL),
+    (414, 4, 300.00, 1, '2024-06-20', NULL),
+    (415, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (416, 1, 258.00, 1, '2024-06-20', NULL),
+    (417, 2, 344.00, 1, '2024-06-20', NULL),
+    (418, 3, 655.00, 1, '2024-06-20', NULL),
+    (419, 4, 476.00, 1, '2024-06-20', NULL),
+    (420, 5, 767.00, 1, '2024-06-20', NULL),
+(421, 1, 200.00, 1, '2024-06-20', NULL),
+    (422, 2, 150.00, 1, '2024-06-20', NULL),
+    (423, 3, 300.00, 1, '2024-06-20', NULL),
+    (424, 4, 300.00, 1, '2024-06-20', NULL),
+    (425, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (426, 1, 258.00, 1, '2024-06-20', NULL),
+    (427, 2, 344.00, 1, '2024-06-20', NULL),
+    (428, 3, 655.00, 1, '2024-06-20', NULL),
+    (429, 4, 476.00, 1, '2024-06-20', NULL),
+    (430, 5, 767.00, 1, '2024-06-20', NULL),
+(431, 1, 200.00, 1, '2024-06-20', NULL),
+    (432, 2, 150.00, 1, '2024-06-20', NULL),
+    (433, 3, 300.00, 1, '2024-06-20', NULL),
+    (434, 4, 300.00, 1, '2024-06-20', NULL),
+    (435, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (436, 1, 258.00, 1, '2024-06-20', NULL),
+    (437, 2, 344.00, 1, '2024-06-20', NULL),
+    (438, 3, 655.00, 1, '2024-06-20', NULL),
+    (439, 4, 476.00, 1, '2024-06-20', NULL),
+    (440, 5, 767.00, 1, '2024-06-20', NULL),
+(441, 1, 200.00, 1, '2024-06-20', NULL),
+    (442, 2, 150.00, 1, '2024-06-20', NULL),
+    (443, 3, 300.00, 1, '2024-06-20', NULL),
+    (444, 4, 300.00, 1, '2024-06-20', NULL),
+    (445, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (446, 1, 258.00, 1, '2024-06-20', NULL),
+    (447, 2, 344.00, 1, '2024-06-20', NULL),
+    (448, 3, 655.00, 1, '2024-06-20', NULL),
+    (449, 4, 476.00, 1, '2024-06-20', NULL),
+    (450, 5, 767.00, 1, '2024-06-20', NULL),
+(451, 1, 200.00, 1, '2024-06-20', NULL),
+    (452, 2, 150.00, 1, '2024-06-20', NULL),
+    (453, 3, 300.00, 1, '2024-06-20', NULL),
+    (454, 4, 300.00, 1, '2024-06-20', NULL),
+    (455, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (456, 1, 258.00, 1, '2024-06-20', NULL),
+    (457, 2, 344.00, 1, '2024-06-20', NULL),
+    (458, 3, 655.00, 1, '2024-06-20', NULL),
+    (459, 4, 476.00, 1, '2024-06-20', NULL),
+    (460, 5, 767.00, 1, '2024-06-20', NULL),
+(461, 1, 200.00, 1, '2024-06-20', NULL),
+    (462, 2, 150.00, 1, '2024-06-20', NULL),
+    (463, 3, 300.00, 1, '2024-06-20', NULL),
+    (464, 4, 300.00, 1, '2024-06-20', NULL),
+    (465, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (466, 1, 258.00, 1, '2024-06-20', NULL),
+    (467, 2, 344.00, 1, '2024-06-20', NULL),
+    (468, 3, 655.00, 1, '2024-06-20', NULL),
+    (469, 4, 476.00, 1, '2024-06-20', NULL),
+    (470, 5, 767.00, 1, '2024-06-20', NULL),
+(471, 1, 200.00, 1, '2024-06-20', NULL),
+    (472, 2, 150.00, 1, '2024-06-20', NULL),
+    (473, 3, 300.00, 1, '2024-06-20', NULL),
+    (474, 4, 300.00, 1, '2024-06-20', NULL),
+    (475, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (476, 1, 258.00, 1, '2024-06-20', NULL),
+    (477, 2, 344.00, 1, '2024-06-20', NULL),
+    (478, 3, 655.00, 1, '2024-06-20', NULL),
+    (479, 4, 476.00, 1, '2024-06-20', NULL),
+    (480, 5, 767.00, 1, '2024-06-20', NULL),
+	(481, 1, 200.00, 1, '2024-06-20', NULL),
+    (482, 2, 150.00, 1, '2024-06-20', NULL),
+    (483, 3, 300.00, 1, '2024-06-20', NULL),
+    (484, 4, 300.00, 1, '2024-06-20', NULL),
+    (485, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (486, 1, 258.00, 1, '2024-06-20', NULL),
+    (487, 2, 344.00, 1, '2024-06-20', NULL),
+    (488, 3, 655.00, 1, '2024-06-20', NULL),
+    (489, 4, 476.00, 1, '2024-06-20', NULL),
+    (490, 5, 767.00, 1, '2024-06-20', NULL),
+(491, 1, 200.00, 1, '2024-06-20', NULL),
+    (492, 2, 150.00, 1, '2024-06-20', NULL),
+    (493, 3, 300.00, 1, '2024-06-20', NULL),
+    (494, 4, 300.00, 1, '2024-06-20', NULL),
+    (495, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (496, 1, 258.00, 1, '2024-06-20', NULL),
+    (497, 2, 344.00, 1, '2024-06-20', NULL),
+    (498, 3, 655.00, 1, '2024-06-20', NULL),
+    (499, 4, 476.00, 1, '2024-06-20', NULL),
+    (500, 5, 767.00, 1, '2024-06-20', NULL),
+(501, 1, 200.00, 1, '2024-06-20', NULL),
+    (502, 2, 150.00, 1, '2024-06-20', NULL),
+    (503, 3, 300.00, 1, '2024-06-20', NULL),
+    (504, 4, 300.00, 1, '2024-06-20', NULL),
+    (505, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (506, 1, 258.00, 1, '2024-06-20', NULL),
+    (507, 2, 344.00, 1, '2024-06-20', NULL),
+    (508, 3, 655.00, 1, '2024-06-20', NULL),
+    (509, 4, 476.00, 1, '2024-06-20', NULL),
+    (510, 5, 767.00, 1, '2024-06-20', NULL),
+(511, 1, 200.00, 1, '2024-06-20', NULL),
+    (512, 2, 150.00, 1, '2024-06-20', NULL),
+    (513, 3, 300.00, 1, '2024-06-20', NULL),
+    (514, 4, 300.00, 1, '2024-06-20', NULL),
+    (515, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (516, 1, 258.00, 1, '2024-06-20', NULL),
+    (517, 2, 344.00, 1, '2024-06-20', NULL),
+    (518, 3, 655.00, 1, '2024-06-20', NULL),
+    (519, 4, 476.00, 1, '2024-06-20', NULL),
+    (520, 5, 767.00, 1, '2024-06-20', NULL),
+(521, 1, 200.00, 1, '2024-06-20', NULL),
+    (522, 2, 150.00, 1, '2024-06-20', NULL),
+    (523, 3, 300.00, 1, '2024-06-20', NULL),
+    (524, 4, 300.00, 1, '2024-06-20', NULL),
+    (525, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (526, 1, 258.00, 1, '2024-06-20', NULL),
+    (527, 2, 344.00, 1, '2024-06-20', NULL),
+    (528, 3, 655.00, 1, '2024-06-20', NULL),
+    (529, 4, 476.00, 1, '2024-06-20', NULL),
+    (530, 5, 767.00, 1, '2024-06-20', NULL),
+(531, 1, 200.00, 1, '2024-06-20', NULL),
+    (532, 2, 150.00, 1, '2024-06-20', NULL),
+    (533, 3, 300.00, 1, '2024-06-20', NULL),
+    (534, 4, 300.00, 1, '2024-06-20', NULL),
+    (535, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (536, 1, 258.00, 1, '2024-06-20', NULL),
+    (537, 2, 344.00, 1, '2024-06-20', NULL),
+    (538, 3, 655.00, 1, '2024-06-20', NULL),
+    (539, 4, 476.00, 1, '2024-06-20', NULL),
+    (540, 5, 767.00, 1, '2024-06-20', NULL),
+(531, 1, 200.00, 1, '2024-06-20', NULL),
+    (532, 2, 150.00, 1, '2024-06-20', NULL),
+    (533, 3, 300.00, 1, '2024-06-20', NULL),
+    (534, 4, 300.00, 1, '2024-06-20', NULL),
+    (535, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (536, 1, 258.00, 1, '2024-06-20', NULL),
+    (537, 2, 344.00, 1, '2024-06-20', NULL),
+    (538, 3, 655.00, 1, '2024-06-20', NULL),
+    (539, 4, 476.00, 1, '2024-06-20', NULL),
+    (540, 5, 767.00, 1, '2024-06-20', NULL),
+(541, 1, 200.00, 1, '2024-06-20', NULL),
+    (542, 2, 150.00, 1, '2024-06-20', NULL),
+    (543, 3, 300.00, 1, '2024-06-20', NULL),
+    (544, 4, 300.00, 1, '2024-06-20', NULL),
+    (545, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (546, 1, 258.00, 1, '2024-06-20', NULL),
+    (547, 2, 344.00, 1, '2024-06-20', NULL),
+    (548, 3, 655.00, 1, '2024-06-20', NULL),
+    (549, 4, 476.00, 1, '2024-06-20', NULL),
+    (550, 5, 767.00, 1, '2024-06-20', NULL),
+	(551, 1, 200.00, 1, '2024-06-20', NULL),
+    (552, 2, 150.00, 1, '2024-06-20', NULL),
+    (553, 3, 300.00, 1, '2024-06-20', NULL),
+    (554, 4, 300.00, 1, '2024-06-20', NULL),
+    (555, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (556, 1, 258.00, 1, '2024-06-20', NULL),
+    (557, 2, 344.00, 1, '2024-06-20', NULL),
+    (558, 3, 655.00, 1, '2024-06-20', NULL),
+    (559, 4, 476.00, 1, '2024-06-20', NULL),
+    (560, 5, 767.00, 1, '2024-06-20', NULL),
+(551, 1, 200.00, 1, '2024-06-20', NULL),
+    (552, 2, 150.00, 1, '2024-06-20', NULL),
+    (553, 3, 300.00, 1, '2024-06-20', NULL),
+    (554, 4, 300.00, 1, '2024-06-20', NULL),
+    (555, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (556, 1, 258.00, 1, '2024-06-20', NULL),
+    (557, 2, 344.00, 1, '2024-06-20', NULL),
+    (558, 3, 655.00, 1, '2024-06-20', NULL),
+    (559, 4, 476.00, 1, '2024-06-20', NULL),
+    (570, 5, 767.00, 1, '2024-06-20', NULL),
+(571, 1, 200.00, 1, '2024-06-20', NULL),
+    (572, 2, 150.00, 1, '2024-06-20', NULL),
+    (573, 3, 300.00, 1, '2024-06-20', NULL),
+    (574, 4, 300.00, 1, '2024-06-20', NULL),
+    (575, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (576, 1, 258.00, 1, '2024-06-20', NULL),
+    (577, 2, 344.00, 1, '2024-06-20', NULL),
+    (578, 3, 655.00, 1, '2024-06-20', NULL),
+    (579, 4, 476.00, 1, '2024-06-20', NULL),
+    (580, 5, 767.00, 1, '2024-06-20', NULL),
+(581, 1, 200.00, 1, '2024-06-20', NULL),
+    (582, 2, 150.00, 1, '2024-06-20', NULL),
+    (583, 3, 300.00, 1, '2024-06-20', NULL),
+    (584, 4, 300.00, 1, '2024-06-20', NULL),
+    (585, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (586, 1, 258.00, 1, '2024-06-20', NULL),
+    (587, 2, 344.00, 1, '2024-06-20', NULL),
+    (588, 3, 655.00, 1, '2024-06-20', NULL),
+    (589, 4, 476.00, 1, '2024-06-20', NULL),
+    (590, 5, 767.00, 1, '2024-06-20', NULL),
+(591, 1, 200.00, 1, '2024-06-20', NULL),
+    (592, 2, 150.00, 1, '2024-06-20', NULL),
+    (593, 3, 300.00, 1, '2024-06-20', NULL),
+    (594, 4, 300.00, 1, '2024-06-20', NULL),
+    (595, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (596, 1, 258.00, 1, '2024-06-20', NULL),
+    (597, 2, 344.00, 1, '2024-06-20', NULL),
+    (598, 3, 655.00, 1, '2024-06-20', NULL),
+    (599, 4, 476.00, 1, '2024-06-20', NULL),
+    (600, 5, 767.00, 1, '2024-06-20', NULL),
+(601, 1, 200.00, 1, '2024-06-20', NULL),
+    (602, 2, 150.00, 1, '2024-06-20', NULL),
+    (603, 3, 300.00, 1, '2024-06-20', NULL),
+    (604, 4, 300.00, 1, '2024-06-20', NULL),
+    (605, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (606, 1, 258.00, 1, '2024-06-20', NULL),
+    (607, 2, 344.00, 1, '2024-06-20', NULL),
+    (608, 3, 655.00, 1, '2024-06-20', NULL),
+    (609, 4, 476.00, 1, '2024-06-20', NULL),
+    (610, 5, 767.00, 1, '2024-06-20', NULL),
+(611, 1, 200.00, 1, '2024-06-20', NULL),
+    (612, 2, 150.00, 1, '2024-06-20', NULL),
+    (613, 3, 300.00, 1, '2024-06-20', NULL),
+    (614, 4, 300.00, 1, '2024-06-20', NULL),
+    (615, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (616, 1, 258.00, 1, '2024-06-20', NULL),
+    (617, 2, 344.00, 1, '2024-06-20', NULL),
+    (618, 3, 655.00, 1, '2024-06-20', NULL),
+    (619, 4, 476.00, 1, '2024-06-20', NULL),
+    (620, 5, 767.00, 1, '2024-06-20', NULL),
+(621, 1, 200.00, 1, '2024-06-20', NULL),
+    (622, 2, 150.00, 1, '2024-06-20', NULL),
+    (623, 3, 300.00, 1, '2024-06-20', NULL),
+    (624, 4, 300.00, 1, '2024-06-20', NULL),
+    (625, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (626, 1, 258.00, 1, '2024-06-20', NULL),
+    (627, 2, 344.00, 1, '2024-06-20', NULL),
+    (628, 3, 655.00, 1, '2024-06-20', NULL),
+    (629, 4, 476.00, 1, '2024-06-20', NULL),
+    (630, 5, 767.00, 1, '2024-06-20', NULL),
+(631, 1, 200.00, 1, '2024-06-20', NULL),
+    (632, 2, 150.00, 1, '2024-06-20', NULL),
+    (633, 3, 300.00, 1, '2024-06-20', NULL),
+    (634, 4, 300.00, 1, '2024-06-20', NULL),
+    (635, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (636, 1, 258.00, 1, '2024-06-20', NULL),
+    (637, 2, 344.00, 1, '2024-06-20', NULL),
+    (638, 3, 655.00, 1, '2024-06-20', NULL),
+    (639, 4, 476.00, 1, '2024-06-20', NULL),
+    (640, 5, 767.00, 1, '2024-06-20', NULL),
+
+(641, 1, 200.00, 1, '2024-06-20', NULL),
+    (642, 2, 150.00, 1, '2024-06-20', NULL),
+    (643, 3, 300.00, 1, '2024-06-20', NULL),
+    (644, 4, 300.00, 1, '2024-06-20', NULL),
+    (645, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (646, 1, 258.00, 1, '2024-06-20', NULL),
+    (647, 2, 344.00, 1, '2024-06-20', NULL),
+    (648, 3, 655.00, 1, '2024-06-20', NULL),
+    (649, 4, 476.00, 1, '2024-06-20', NULL),
+    (650, 5, 767.00, 1, '2024-06-20', NULL),
+(651, 1, 200.00, 1, '2024-06-20', NULL),
+    (652, 2, 150.00, 1, '2024-06-20', NULL),
+    (653, 3, 300.00, 1, '2024-06-20', NULL),
+    (654, 4, 300.00, 1, '2024-06-20', NULL),
+    (655, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (656, 1, 258.00, 1, '2024-06-20', NULL),
+    (657, 2, 344.00, 1, '2024-06-20', NULL),
+    (658, 3, 655.00, 1, '2024-06-20', NULL),
+    (659, 4, 476.00, 1, '2024-06-20', NULL),
+    (670, 5, 767.00, 1, '2024-06-20', NULL),
+(671, 1, 200.00, 1, '2024-06-20', NULL),
+    (672, 2, 150.00, 1, '2024-06-20', NULL),
+    (673, 3, 300.00, 1, '2024-06-20', NULL),
+    (674, 4, 300.00, 1, '2024-06-20', NULL),
+    (675, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (676, 1, 258.00, 1, '2024-06-20', NULL),
+    (677, 2, 344.00, 1, '2024-06-20', NULL),
+    (678, 3, 655.00, 1, '2024-06-20', NULL),
+    (679, 4, 476.00, 1, '2024-06-20', NULL),
+    (680, 5, 767.00, 1, '2024-06-20', NULL),
+(681, 1, 200.00, 1, '2024-06-20', NULL),
+    (682, 2, 150.00, 1, '2024-06-20', NULL),
+    (683, 3, 300.00, 1, '2024-06-20', NULL),
+    (684, 4, 300.00, 1, '2024-06-20', NULL),
+    (685, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (686, 1, 258.00, 1, '2024-06-20', NULL),
+    (687, 2, 344.00, 1, '2024-06-20', NULL),
+    (688, 3, 655.00, 1, '2024-06-20', NULL),
+    (689, 4, 476.00, 1, '2024-06-20', NULL),
+    (690, 5, 767.00, 1, '2024-06-20', NULL),
+(691, 1, 200.00, 1, '2024-06-20', NULL),
+    (692, 2, 150.00, 1, '2024-06-20', NULL),
+    (693, 3, 300.00, 1, '2024-06-20', NULL),
+    (694, 4, 300.00, 1, '2024-06-20', NULL),
+    (695, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (696, 1, 258.00, 1, '2024-06-20', NULL),
+    (697, 2, 344.00, 1, '2024-06-20', NULL),
+    (698, 3, 655.00, 1, '2024-06-20', NULL),
+    (699, 4, 476.00, 1, '2024-06-20', NULL),
+    (700, 5, 767.00, 1, '2024-06-20', NULL),
+(701, 1, 200.00, 1, '2024-06-20', NULL),
+    (702, 2, 150.00, 1, '2024-06-20', NULL),
+    (703, 3, 300.00, 1, '2024-06-20', NULL),
+    (704, 4, 300.00, 1, '2024-06-20', NULL),
+    (705, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (706, 1, 258.00, 1, '2024-06-20', NULL),
+    (707, 2, 344.00, 1, '2024-06-20', NULL),
+    (708, 3, 655.00, 1, '2024-06-20', NULL),
+    (709, 4, 476.00, 1, '2024-06-20', NULL),
+    (710, 5, 767.00, 1, '2024-06-20', NULL),
+(711, 1, 200.00, 1, '2024-06-20', NULL),
+    (712, 2, 150.00, 1, '2024-06-20', NULL),
+    (713, 3, 300.00, 1, '2024-06-20', NULL),
+    (714, 4, 300.00, 1, '2024-06-20', NULL),
+    (715, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (716, 1, 258.00, 1, '2024-06-20', NULL),
+    (717, 2, 344.00, 1, '2024-06-20', NULL),
+    (718, 3, 655.00, 1, '2024-06-20', NULL),
+    (719, 4, 476.00, 1, '2024-06-20', NULL),
+    (720, 5, 767.00, 1, '2024-06-20', NULL),
+(721, 1, 200.00, 1, '2024-06-20', NULL),
+    (722, 2, 150.00, 1, '2024-06-20', NULL),
+    (723, 3, 300.00, 1, '2024-06-20', NULL),
+    (724, 4, 300.00, 1, '2024-06-20', NULL),
+    (72, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (726, 1, 258.00, 1, '2024-06-20', NULL),
+    (727, 2, 344.00, 1, '2024-06-20', NULL),
+    (728, 3, 655.00, 1, '2024-06-20', NULL),
+    (729, 4, 476.00, 1, '2024-06-20', NULL),
+    (730, 5, 767.00, 1, '2024-06-20', NULL),
+(731, 1, 200.00, 1, '2024-06-20', NULL),
+    (732, 2, 150.00, 1, '2024-06-20', NULL),
+    (733, 3, 300.00, 1, '2024-06-20', NULL),
+    (734, 4, 300.00, 1, '2024-06-20', NULL),
+    (735, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (736, 1, 258.00, 1, '2024-06-20', NULL),
+    (737, 2, 344.00, 1, '2024-06-20', NULL),
+    (738, 3, 655.00, 1, '2024-06-20', NULL),
+    (739, 4, 476.00, 1, '2024-06-20', NULL),
+    (740, 5, 767.00, 1, '2024-06-20', NULL),
+(741, 1, 200.00, 1, '2024-06-20', NULL),
+    (742, 2, 150.00, 1, '2024-06-20', NULL),
+    (743, 3, 300.00, 1, '2024-06-20', NULL),
+    (744, 4, 300.00, 1, '2024-06-20', NULL),
+    (745, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (746, 1, 258.00, 1, '2024-06-20', NULL),
+    (747, 2, 344.00, 1, '2024-06-20', NULL),
+    (748, 3, 655.00, 1, '2024-06-20', NULL),
+    (749, 4, 476.00, 1, '2024-06-20', NULL),
+    (750, 5, 767.00, 1, '2024-06-20', NULL),
+(751, 1, 200.00, 1, '2024-06-20', NULL),
+    (752, 2, 150.00, 1, '2024-06-20', NULL),
+    (753, 3, 300.00, 1, '2024-06-20', NULL),
+    (754, 4, 300.00, 1, '2024-06-20', NULL),
+    (755, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (756, 1, 258.00, 1, '2024-06-20', NULL),
+    (757, 2, 344.00, 1, '2024-06-20', NULL),
+    (758, 3, 655.00, 1, '2024-06-20', NULL),
+    (759, 4, 476.00, 1, '2024-06-20', NULL),
+    (760, 5, 767.00, 1, '2024-06-20', NULL),
+(761, 1, 200.00, 1, '2024-06-20', NULL),
+    (762, 2, 150.00, 1, '2024-06-20', NULL),
+    (763, 3, 300.00, 1, '2024-06-20', NULL),
+    (764, 4, 300.00, 1, '2024-06-20', NULL),
+    (765, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (766, 1, 258.00, 1, '2024-06-20', NULL),
+    (767, 2, 344.00, 1, '2024-06-20', NULL),
+    (768, 3, 655.00, 1, '2024-06-20', NULL),
+    (769, 4, 476.00, 1, '2024-06-20', NULL),
+    (770, 5, 767.00, 1, '2024-06-20', NULL),
+
+(771, 1, 200.00, 1, '2024-06-20', NULL),
+    (772, 2, 150.00, 1, '2024-06-20', NULL),
+    (773, 3, 300.00, 1, '2024-06-20', NULL),
+    (774, 4, 300.00, 1, '2024-06-20', NULL),
+    (775, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (776, 1, 258.00, 1, '2024-06-20', NULL),
+    (777, 2, 344.00, 1, '2024-06-20', NULL),
+    (778, 3, 655.00, 1, '2024-06-20', NULL),
+    (779, 4, 476.00, 1, '2024-06-20', NULL),
+    (780, 5, 767.00, 1, '2024-06-20', NULL),
+(781, 1, 200.00, 1, '2024-06-20', NULL),
+    (782, 2, 150.00, 1, '2024-06-20', NULL),
+    (783, 3, 300.00, 1, '2024-06-20', NULL),
+    (784, 4, 300.00, 1, '2024-06-20', NULL),
+    (785, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (786, 1, 258.00, 1, '2024-06-20', NULL),
+    (787, 2, 344.00, 1, '2024-06-20', NULL),
+    (788, 3, 655.00, 1, '2024-06-20', NULL),
+    (789, 4, 476.00, 1, '2024-06-20', NULL),
+    (790, 5, 767.00, 1, '2024-06-20', NULL),
+(791, 1, 200.00, 1, '2024-06-20', NULL),
+    (792, 2, 150.00, 1, '2024-06-20', NULL),
+    (793, 3, 300.00, 1, '2024-06-20', NULL),
+    (794, 4, 300.00, 1, '2024-06-20', NULL),
+    (795, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (796, 1, 258.00, 1, '2024-06-20', NULL),
+    (797, 2, 344.00, 1, '2024-06-20', NULL),
+    (798, 3, 655.00, 1, '2024-06-20', NULL),
+    (799, 4, 476.00, 1, '2024-06-20', NULL),
+    (800, 5, 767.00, 1, '2024-06-20', NULL),
+(801, 1, 200.00, 1, '2024-06-20', NULL),
+    (802, 2, 150.00, 1, '2024-06-20', NULL),
+    (803, 3, 300.00, 1, '2024-06-20', NULL),
+    (804, 4, 300.00, 1, '2024-06-20', NULL),
+    (805, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (806, 1, 258.00, 1, '2024-06-20', NULL),
+    (807, 2, 344.00, 1, '2024-06-20', NULL),
+    (808, 3, 655.00, 1, '2024-06-20', NULL),
+    (809, 4, 476.00, 1, '2024-06-20', NULL),
+    (810, 5, 767.00, 1, '2024-06-20', NULL),
+(811, 1, 200.00, 1, '2024-06-20', NULL),
+    (812, 2, 150.00, 1, '2024-06-20', NULL),
+    (813, 3, 300.00, 1, '2024-06-20', NULL),
+    (814, 4, 300.00, 1, '2024-06-20', NULL),
+    (815, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (816, 1, 258.00, 1, '2024-06-20', NULL),
+    (817, 2, 344.00, 1, '2024-06-20', NULL),
+    (818, 3, 655.00, 1, '2024-06-20', NULL),
+    (819, 4, 476.00, 1, '2024-06-20', NULL),
+    (820, 5, 767.00, 1, '2024-06-20', NULL),
+(821, 1, 200.00, 1, '2024-06-20', NULL),
+    (822, 2, 150.00, 1, '2024-06-20', NULL),
+    (823, 3, 300.00, 1, '2024-06-20', NULL),
+    (824, 4, 300.00, 1, '2024-06-20', NULL),
+    (825, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (826, 1, 258.00, 1, '2024-06-20', NULL),
+    (827, 2, 344.00, 1, '2024-06-20', NULL),
+    (828, 3, 655.00, 1, '2024-06-20', NULL),
+    (829, 4, 476.00, 1, '2024-06-20', NULL),
+    (830, 5, 767.00, 1, '2024-06-20', NULL),
+
+(831, 1, 200.00, 1, '2024-06-20', NULL),
+    (832, 2, 150.00, 1, '2024-06-20', NULL),
+    (833, 3, 300.00, 1, '2024-06-20', NULL),
+    (834, 4, 300.00, 1, '2024-06-20', NULL),
+    (835, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (836, 1, 258.00, 1, '2024-06-20', NULL),
+    (837, 2, 344.00, 1, '2024-06-20', NULL),
+    (838, 3, 655.00, 1, '2024-06-20', NULL),
+    (839, 4, 476.00, 1, '2024-06-20', NULL),
+    (840, 5, 767.00, 1, '2024-06-20', NULL),
+(841, 1, 200.00, 1, '2024-06-20', NULL),
+    (842, 2, 150.00, 1, '2024-06-20', NULL),
+    (843, 3, 300.00, 1, '2024-06-20', NULL),
+    (844, 4, 300.00, 1, '2024-06-20', NULL),
+    (845, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (846, 1, 258.00, 1, '2024-06-20', NULL),
+    (847, 2, 344.00, 1, '2024-06-20', NULL),
+    (848, 3, 655.00, 1, '2024-06-20', NULL),
+    (849, 4, 476.00, 1, '2024-06-20', NULL),
+    (850, 5, 767.00, 1, '2024-06-20', NULL),
+(851, 1, 200.00, 1, '2024-06-20', NULL),
+    (852, 2, 150.00, 1, '2024-06-20', NULL),
+    (853, 3, 300.00, 1, '2024-06-20', NULL),
+    (854, 4, 300.00, 1, '2024-06-20', NULL),
+    (855, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (856, 1, 258.00, 1, '2024-06-20', NULL),
+    (857, 2, 344.00, 1, '2024-06-20', NULL),
+    (858, 3, 655.00, 1, '2024-06-20', NULL),
+    (859, 4, 476.00, 1, '2024-06-20', NULL),
+    (860, 5, 767.00, 1, '2024-06-20', NULL),
+(861, 1, 200.00, 1, '2024-06-20', NULL),
+    (862, 2, 150.00, 1, '2024-06-20', NULL),
+    (863, 3, 300.00, 1, '2024-06-20', NULL),
+    (864, 4, 300.00, 1, '2024-06-20', NULL),
+    (865, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (866, 1, 258.00, 1, '2024-06-20', NULL),
+    (867, 2, 344.00, 1, '2024-06-20', NULL),
+    (868, 3, 655.00, 1, '2024-06-20', NULL),
+    (869, 4, 476.00, 1, '2024-06-20', NULL),
+    (870, 5, 767.00, 1, '2024-06-20', NULL),
+(871, 1, 200.00, 1, '2024-06-20', NULL),
+    (872, 2, 150.00, 1, '2024-06-20', NULL),
+    (873, 3, 300.00, 1, '2024-06-20', NULL),
+    (874, 4, 300.00, 1, '2024-06-20', NULL),
+    (875, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (876, 1, 258.00, 1, '2024-06-20', NULL),
+    (877, 2, 344.00, 1, '2024-06-20', NULL),
+    (878, 3, 655.00, 1, '2024-06-20', NULL),
+    (879, 4, 476.00, 1, '2024-06-20', NULL),
+    (880, 5, 767.00, 1, '2024-06-20', NULL),
+(881, 1, 200.00, 1, '2024-06-20', NULL),
+    (882, 2, 150.00, 1, '2024-06-20', NULL),
+    (883, 3, 300.00, 1, '2024-06-20', NULL),
+    (884, 4, 300.00, 1, '2024-06-20', NULL),
+    (885, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (886, 1, 258.00, 1, '2024-06-20', NULL),
+    (887, 2, 344.00, 1, '2024-06-20', NULL),
+    (888, 3, 655.00, 1, '2024-06-20', NULL),
+    (889, 4, 476.00, 1, '2024-06-20', NULL),
+    (890, 5, 767.00, 1, '2024-06-20', NULL),
+(891, 1, 200.00, 1, '2024-06-20', NULL),
+    (892, 2, 150.00, 1, '2024-06-20', NULL),
+    (893, 3, 300.00, 1, '2024-06-20', NULL),
+    (894, 4, 300.00, 1, '2024-06-20', NULL),
+    (895, 5, 500.00, 1, '2024-06-20', NULL),
+   
+    (896, 1, 258.00, 1, '2024-06-20', NULL),
+    (897, 2, 344.00, 1, '2024-06-20', NULL),
+    (898, 3, 655.00, 1, '2024-06-20', NULL),
+    (899, 4, 476.00, 1, '2024-06-20', NULL),
+    (900, 5, 767.00, 1, '2024-06-20', NULL);

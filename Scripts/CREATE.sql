@@ -735,17 +735,21 @@ CREATE TABLE TARJETA_CREDITO(
 -- FIN METODOS DE PAGO
 
 CREATE TABLE PAGO(
-	pago_fk_sol_cl INT NOT NULL,
+	pago_id SERIAL,
+	pago_fk_sol_cl INT,
+	pago_fk_sol_ali INT,
 	pago_fk_met_id INT NOT NULL,
 	pago_monto NUMERIC(20,2) NOT NULL,
 	pago_fecha DATE NOT NULL,
 
-	CONSTRAINT pk_pago PRIMARY KEY (pago_fk_sol_cl, pago_fk_met_id),
+	CONSTRAINT pk_pago PRIMARY KEY (pago_id),	
 
 	CONSTRAINT fk_pagan FOREIGN KEY (pago_fk_met_id) REFERENCES METODO_PAGO(met_id),
 
 	CONSTRAINT fk_paga FOREIGN KEY (pago_fk_sol_cl) REFERENCES SOLICITUD_CLIENTE(factura_cli_id),
 
+	CONSTRAINT fk_se_paga FOREIGN KEY (pago_fk_sol_ali) REFERENCES SOLICITUD_ALIADO(factura_ali_id),
+	
 	CONSTRAINT ck_pago_monto CHECK (pago_monto > 0)
 );
 
@@ -866,11 +870,14 @@ CREATE TABLE RECURSO_EJ(
 	reej_sol_id INT,
 	reej_sol_ali_id INT,
 	reej_re_id INT,
+	reej_actej_id INT NOT NULL,
 
 	CONSTRAINT fk_cede FOREIGN KEY (reej_sol_id,reej_sol_ali_id) REFERENCES DETALLE_SOL_AL(det_sol_id, det_sol_ali_id),
 
-	CONSTRAINT fk_dispensa_de FOREIGN KEY (reej_re_id) REFERENCES RECURSO_MATERIAL (re_id)
-);
+	CONSTRAINT fk_dispensa_de FOREIGN KEY (reej_re_id) REFERENCES RECURSO_MATERIAL (re_id),
+
+	CONSTRAINT fk_posee FOREIGN KEY (reej_actej_id) REFERENCES ACTIVIDAD_EJ (actej_id)
+	);
 
 CREATE TABLE CARGO_EJ(
 	caej_id SERIAL PRIMARY KEY,
