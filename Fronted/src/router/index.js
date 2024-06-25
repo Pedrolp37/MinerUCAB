@@ -6,6 +6,10 @@ import CrearProyectoView from '../views/Proyectos/CrearProyectoView.vue'
 import ProyectosDetalleView from '../views/Proyectos/ProyectosDetalleView.vue'
 import ProcesosSystemView from '../views/Procesos/ProcesosSystemView.vue'
 import ProcesosDetalleView from '../views/Procesos/ProcesosDetalleView.vue'
+import EmpleadosHomeView from '../views/Empleados/EmpleadosHomeView.vue'
+import AliadosHomeView from '../views/Aliados/AliadosHomeView.vue'
+import ClientesHomeView from '../views/Clientes/ClientesHomeView.vue'
+import InventarioHomeView from '../views/Inventario/InventarioHome.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +49,26 @@ const router = createRouter({
       path: '/procesos/detalle/:id',
       name: 'procesos_detalle',
       component: ProcesosDetalleView
+    },
+    {
+      path: '/empleados/home',
+      name: 'empleados',
+      component: EmpleadosHomeView
+    },
+    {
+      path: '/aliados/home',
+      name: 'aliados',
+      component: AliadosHomeView
+    },
+    {
+      path: '/clientes/home',
+      name: 'clientes',
+      component: ClientesHomeView
+    },
+    {
+      path: '/inventario/home',
+      name: 'inventario',
+      component: InventarioHomeView
     }
   ]
 })

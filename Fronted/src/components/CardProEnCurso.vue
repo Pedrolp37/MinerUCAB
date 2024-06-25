@@ -2,14 +2,10 @@
   <div class="proCurso card" style="width: 20rem; margin-bottom: 20px">
     <div class="proCurso card-body">
       <h5 class="card-title">{{ props.nomProyecto }}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary" style="margin-left: 20px">
-        {{ tipoProyecto }}
-      </h6>
       <hr />
       <div style="margin-top: 20px">
         <p class="contPro">Lider Proyecto: {{ props.nomLiderPro }}</p>
         <p class="contPro">Lider Mina: {{ props.nomLiderMin }}</p>
-        <p class="contPro">Explotaciones: {{ props.numExplotaciones }}</p>
         <p class="contPro">Culminación: {{ props.culminacion }}</p>
       </div>
       <hr />
@@ -86,11 +82,6 @@ const props = defineProps({
     required: true
   },
 
-  tipoProyecto: {
-    type: String,
-    required: true
-  },
-
   nomLiderPro: {
     type: String,
     required: true
@@ -98,11 +89,6 @@ const props = defineProps({
 
   nomLiderMin: {
     type: String,
-    required: true
-  },
-
-  numExplotaciones: {
-    type: Number,
     required: true
   },
 

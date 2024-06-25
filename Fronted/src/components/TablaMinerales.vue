@@ -8,9 +8,10 @@
     >
       <thead>
         <tr style="text-align: center">
-          <th>Mineral</th>
-          <th>N-Etapas</th>
-          <th>N-Actividades</th>
+          <th class="tabla Cabecera">Mineral</th>
+          <th class="tabla Cabecera">N-Etapas</th>
+          <th class="tabla Cabecera">N-Actividades</th>
+          <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
@@ -70,6 +71,11 @@ const sendResponseSDM = (id) => {
 </script>
 
 <style scope>
+.tabla.Cabecera {
+  background-color: #7a6247;
+  color: white;
+}
+
 .detalle.btn {
   background-color: #fa8f14;
   color: white;

@@ -93,6 +93,7 @@ const deleteProyecto = (id) => {
     proyectos.value.findIndex((elm) => elm.id == id),
     1
   )
+  showAllPro()
 }
 
 const modifyProyecto = (data) => {

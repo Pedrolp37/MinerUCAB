@@ -9,7 +9,7 @@
           </div>
           <div class="col-6 d-flex justify-content-end">
             <router-link :to="{ name: 'crear_proyecto' }" class="button btn"
-              >+ Crear Nuevo Proyecto</router-link
+              ><i class="bi bi-plus-circle"></i> Crear Nuevo Proyecto</router-link
             >
           </div>
         </div>
@@ -27,10 +27,8 @@
             :key="index"
             :idPro="elm.id"
             :nomProyecto="elm.name"
-            :tipoProyecto="elm.tipo"
             :nomLiderPro="elm.nameLPro"
             :nomLiderMin="elm.nameLMin"
-            :numExplotaciones="elm.Exp"
             :culminacion="elm.fC"
             @dltPro="deletePro"
           />
@@ -52,32 +50,27 @@ proyectos.value = [
   {
     id: 1,
     name: '% Andrómeda',
-    tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
     nameLMin: 'Pedro',
-    Exp: 2,
     fC: '01/02/24'
   },
 
   {
     id: 2,
     name: '% Lactea',
-    tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
     nameLMin: 'Pedro',
-    Exp: 2,
     fC: '01/02/24'
   },
 
   {
     id: 3,
     name: '% Gemini',
-    tipo: 'Gestionado con aliados',
     nameLPro: 'Arturo',
     nameLMin: 'Pedro',
-    Exp: 2,
     fC: '01/02/24'
-  }
+  },
+  
 ]
 
 const deletePro = (id) => {

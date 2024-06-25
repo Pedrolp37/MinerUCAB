@@ -60,11 +60,12 @@
         >
           <thead>
             <tr style="text-align: center">
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>DNI</th>
-              <th>Cargo</th>
-              <th>N- Actividades</th>
+              <th class="tabla Cabecera">Nombre</th>
+              <th class="tabla Cabecera">Apellido</th>
+              <th class="tabla Cabecera">DNI</th>
+              <th class="tabla Cabecera">Cargo</th>
+              <th class="tabla Cabecera">N- Actividades</th>
+              <th class="tabla Cabecera"></th>
             </tr>
           </thead>
           <tbody>
@@ -91,11 +92,12 @@
         <table v-show="empListfind != 0" class="table table-striped" id="table" style="width: 60vw">
           <thead>
             <tr style="text-align: center">
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>DNI</th>
-              <th>Cargo</th>
-              <th>N- Actividades</th>
+              <th class="tabla Cabecera">Nombre</th>
+              <th class="tabla Cabecera">Apellido</th>
+              <th class="tabla Cabecera">DNI</th>
+              <th class="tabla Cabecera">Cargo</th>
+              <th class="tabla Cabecera">N- Actividades</th>
+              <th class="tabla Cabecera"></th>
             </tr>
           </thead>
           <tbody>
@@ -194,9 +196,9 @@
 import NavBarVue from '../../components/NavBar.vue'
 import { ref } from 'vue'
 
-let empSelect = ref([])
 let typeSearch = ref('Buscar por')
 let findEmp = ref('')
+let empSelect = ref([])
 let empListfind = ref([])
 
 const props = defineProps({
@@ -254,6 +256,11 @@ const filterEmployee = () => {
 </script>
 
 <style scoped>
+.tabla.Cabecera {
+  background-color: #7a6247;
+  color: white;
+}
+
 .buscar.btn {
   background-color: #999981;
   color: white;

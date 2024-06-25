@@ -4,10 +4,6 @@
     <hr class="sNavMenu" />
     <div class="d-flex flex-row">
       <MenuOptProVue @changeView="changeView" />
-
-      <!-- Estas son las vistas que van a cambiar según lo que emita 
-      el menú de opciones al detalle del proyecto, esto lo
-      haré con el v-show -->
       <EtapasActividadesVue v-show="optionSelect == 'etapas'" @getActivity="getActivity" />
       <ActividadDetalleVue
         v-show="optionSelect == 'detalleActividad'"
@@ -33,13 +29,8 @@ import ClienteProViewVue from './ClienteProView.vue'
 let proyectos = ref([])
 let optionSelect = ref('')
 let activitySelect = ref({})
-
-/*
- * Variable que se manda como props a empleadosProView contiene:
- * nombre, apellido, dni, cargo, actividades asociadas
- * la estrutura es un array de objetos
- */
 let empAsigPro = ref([])
+
 empAsigPro.value = [
   {
     name: 'Arturo',
@@ -65,34 +56,6 @@ empAsigPro.value = [
 ]
 
 optionSelect.value = 'etapas'
-proyectos = [
-  {
-    name: '% Andrómeda',
-    tipo: 'Gestionado con aliados',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    Exp: 2,
-    fC: '01/02/24'
-  },
-
-  {
-    name: '% Lactea',
-    tipo: 'Gestionado con aliados',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    Exp: 2,
-    fC: '01/02/24'
-  },
-
-  {
-    name: '% Gemini',
-    tipo: 'Gestionado con aliados',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    Exp: 2,
-    fC: '01/02/24'
-  }
-]
 
 //methods
 

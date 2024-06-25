@@ -116,18 +116,8 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <router-link :to="{}" class="dropdown-item"
-                  ><i class="bi bi-person-add"></i> Agregar empleado</router-link
-                >
-              </li>
-              <li>
-                <router-link :to="{}" class="dropdown-item"
-                  ><i class="bi bi-search"></i> Buscar empleado</router-link
-                >
-              </li>
-              <li>
-                <router-link :to="{}" class="dropdown-item"
-                  ><i class="bi bi-inboxes"></i> Buscar empleado asignado a explotación</router-link
+                <router-link :to="{ name: 'empleados' }" class="dropdown-item"
+                  ><i class="bi bi-list-task"></i> Ver Empleados</router-link
                 >
               </li>
             </ul>
@@ -150,12 +140,12 @@
                 >
               </li>
               <li>
-                <router-link :to="{}" class="dropdown-item"
+                <router-link :to="{ name: 'clientes' }" class="dropdown-item"
                   ><i class="bi bi-person-arms-up"></i> Ver clientela</router-link
                 >
               </li>
               <li>
-                <router-link :to="{}" class="dropdown-item"
+                <router-link :to="{ name: 'aliados' }" class="dropdown-item"
                   ><i class="bi bi-card-list"></i> Ver Aliados</router-link
                 >
               </li>
@@ -165,7 +155,7 @@
                 >
               </li>
               <li>
-                <router-link :to="{}" class="dropdown-item"
+                <router-link :to="{name: 'inventario'}" class="dropdown-item"
                   ><i class="bi bi-archive"></i> Ver inventario</router-link
                 >
               </li>

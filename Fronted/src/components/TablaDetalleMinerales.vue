@@ -3,9 +3,9 @@
     <table class="table table-striped" id="table" style="width: 60vw">
       <thead>
         <tr style="text-align: center">
-          <th>Etapa</th>
-          <th>N-Actividades</th>
-          <th>Opciones</th>
+          <th class="tabla Cabecera">Etapa</th>
+          <th class="tabla Cabecera">N-Actividades</th>
+          <th class="tabla Cabecera">Opciones</th>
         </tr>
       </thead>
       <tbody>
@@ -98,6 +98,11 @@ const getDetalleEtapa = (id) => {
 </script>
 
 <style scoped>
+.tabla.Cabecera {
+  background-color: #7a6247;
+  color: white;
+}
+
 .tdContainer {
   align-content: center;
 }

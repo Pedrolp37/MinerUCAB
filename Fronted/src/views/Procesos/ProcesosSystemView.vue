@@ -17,12 +17,12 @@
             <div class="input-group">
               <input
                 type="text"
-                class="form-control"
+                class="input form-control"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 v-model="findMineral"
               />
-              <button class="buscar btn" @click="filterMineral">
+              <button class="filtrar btn" @click="filterMineral">
                 Filtrar Mineral <i class="bi bi-search"></i>
               </button>
             </div>
@@ -30,7 +30,7 @@
           <div>
             <button
               v-show="filteredMineralsList.length != 0"
-              class="buscar btn"
+              class="filtrar btn"
               @click="showAllMinerals"
               style="margin-top: 30px"
             >
@@ -105,12 +105,14 @@ const getResponseSDM = (id) => {
 </script>
 
 <style scope>
+
+
 .addMin.btn {
   background-color: #fa8f14;
   color: white;
 }
 
-.buscar.btn {
+.filtrar.btn {
   background-color: #999981;
   color: white;
 }
