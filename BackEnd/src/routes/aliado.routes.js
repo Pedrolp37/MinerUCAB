@@ -6,4 +6,4 @@ const router = Router();
 
 router.post('/aliado-nuevo',postAliado);
 
-export default router
+export default router;

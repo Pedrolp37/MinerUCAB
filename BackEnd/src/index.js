@@ -5,6 +5,7 @@ import {PORT, CorsOptions} from './config.js';
 import mineralRoutes from './routes/minerales.routes.js';
 import listaRoutes from './routes/listas.routes.js';
 import aliadoRoutes from './routes/aliado.routes.js';
+import empleadoRoutes from './routes/empleado.routes.js';
 import morgan from 'morgan'
  
 const app = express();
@@ -16,7 +17,8 @@ app.use(mineralRoutes);
 app.use(listaRoutes);
 //aliado
 app.use(aliadoRoutes);
-
+//empleado
+app.use(empleadoRoutes);
 app.use(cors(CorsOptions));
 
 app.listen(PORT, () => {
