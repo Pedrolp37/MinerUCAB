@@ -19,9 +19,23 @@ export const getEmpleado = async (req, res) => {
 };
 //CLIENTES
 
-//ALIADOS
+//############### ALIADO ############### 
+export const getAliados = async (req, res)=>{
+  try{
+    const {rows} = await pool.query(`SELECT ali_nombre,ali_direccion,ali_fecha_creacion,ali_capital,
+                                            ali_num_telefono,ali_descripcion
+                                      FROM aliado_comercial`);
 
-//PROYECTOS
+        if(!rows.length){
+          return res.status(200).json({message: 'No hay aliados en el sistema'});
+        }
+     return res.status(200).json(rows);
+  }catch(error){
+    return res.status(500).json(error);
+  }
+};
+
+//############### PROYECTOS #################
 export const getProjectsProgress = async (req, res) => {
   try {
     const { rows } = await pool.query(
