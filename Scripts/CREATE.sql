@@ -734,25 +734,6 @@ CREATE TABLE TARJETA_CREDITO(
 
 -- FIN METODOS DE PAGO
 
-CREATE TABLE PAGO(
-	pago_id SERIAL,
-	pago_fk_sol_cl INT,
-	pago_fk_sol_ali INT,
-	pago_fk_met_id INT NOT NULL,
-	pago_monto NUMERIC(20,2) NOT NULL,
-	pago_fecha DATE NOT NULL,
-
-	CONSTRAINT pk_pago PRIMARY KEY (pago_id),	
-
-	CONSTRAINT fk_pagan FOREIGN KEY (pago_fk_met_id) REFERENCES METODO_PAGO(met_id),
-
-	CONSTRAINT fk_paga FOREIGN KEY (pago_fk_sol_cl) REFERENCES SOLICITUD_CLIENTE(factura_cli_id),
-
-	CONSTRAINT fk_se_paga FOREIGN KEY (pago_fk_sol_ali) REFERENCES SOLICITUD_ALIADO(factura_ali_id),
-	
-	CONSTRAINT ck_pago_monto CHECK (pago_monto > 0)
-);
-
 
 
 DROP TABLE IF EXISTS ETAPA_EJ CASCADE;
@@ -860,6 +841,25 @@ CREATE TABLE DETALLE_SOL_AL(
 	CONSTRAINT fk_dispone FOREIGN KEY (det_sol_tire_id) REFERENCES RECURSO (tire_id),
 
 	CONSTRAINT fk_proviene FOREIGN KEY (det_sol_carg_id) REFERENCES CARGO (carg_id)
+);
+
+CREATE TABLE PAGO(
+	pago_id SERIAL,
+	pago_fk_sol_cl INT,
+	pago_fk_sol_ali INT,
+	pago_fk_met_id INT NOT NULL,
+	pago_monto NUMERIC(20,2) NOT NULL,
+	pago_fecha DATE NOT NULL,
+
+	CONSTRAINT pk_pago PRIMARY KEY (pago_id),	
+
+	CONSTRAINT fk_pagan FOREIGN KEY (pago_fk_met_id) REFERENCES METODO_PAGO(met_id),
+
+	CONSTRAINT fk_paga FOREIGN KEY (pago_fk_sol_cl) REFERENCES SOLICITUD_CLIENTE(factura_cli_id),
+
+	CONSTRAINT fk_se_paga FOREIGN KEY (pago_fk_sol_ali) REFERENCES SOLICITUD_ALIADO(factura_ali_id),
+	
+	CONSTRAINT ck_pago_monto CHECK (pago_monto > 0)
 );
 
 DROP TABLE IF EXISTS RECURSO_EJ;
