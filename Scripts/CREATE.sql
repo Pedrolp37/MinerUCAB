@@ -670,7 +670,7 @@ DROP TABLE IF EXISTS PAGO, TRANSFERENCIA, CHEQUE, TARJETA_DEBITO, TARJETA_CREDIT
 
 CREATE TABLE METODO_PAGO(
 	met_id SERIAL PRIMARY KEY,
-	met_cl_identificacion VARCHAR(11) NOT NULL,
+	met_cl_identificacion VARCHAR(11),
 
 	CONSTRAINT fk_registra FOREIGN KEY (met_cl_identificacion) REFERENCES CLIENTE (cl_identificacion)
 );
