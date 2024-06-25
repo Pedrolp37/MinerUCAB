@@ -7099,3 +7099,391 @@ VALUES
     (898, 3, 655.00, 1, '2024-06-20', NULL),
     (899, 4, 476.00, 1, '2024-06-20', NULL),
     (900, 5, 767.00, 1, '2024-06-20', NULL);
+    
+   
+   
+INSERT INTO ROL (rol_tipo)
+VALUES
+('Cliente'),
+('Empleado'),
+('AliadoComercial'),
+('RRHH'),
+('Finanza'),
+('LíderDeMina'),
+('LíderDeProyecto'),
+('Supervisor'),
+('Gerente'),
+('Administrador');
+
+
+
+INSERT INTO USUARIO (usu_usuario, usu_contraseña, usu_fk_emp_identificacion,
+usu_fk_rol_id)
+VALUES
+('JPEREZ01', 'abc123456', 'V123789875', 2),
+('MGARCIA2', 'cde45678', 'V116313035', 2),
+('PGONZA33', 'efg89012', 'V789678985', 2),
+('ALOPEZ44', 'hij34567', 'V109077735', 2),
+('JRODRIG5', 'klm89012', 'V145343567', 2),
+('CFLORES1', 'nop45678', 'V166633346', 2),
+('LMENDEZ2', 'qrs89012', 'E842565985', 2),
+('SSILVA34', 'tuv34567', 'J122785546', 2),
+('DCAMPOS4', 'abc12345', 'V120900780', 2),
+('AROMERO5', 'def67890', 'V179775356', 2),
+('FBRAVO56', 'ghi01234', 'E896674565', 2),
+('IMORALES', 'jk156789', 'V129923456', 2),
+('RSANCHEZ', 'mno23456', 'J113546789', 2),
+('GRAMIREZ', 'pqr78901', 'V111547529', 2),
+('RPEREZ67', 'stu45678', 'V122987765', 2),
+('TIERREZ6', 'vwx12345', 'V128312556', 2),
+('CMONTERO', 'yza67890', 'V199857763', 2),
+('DRIGUEZ6', 'bcd34567', 'V175823654', 2),
+('ONZALEZ6', 'efg89012', 'J159822224', 2),
+('AGARCIA6', 'hij45678', 'J120097556', 2),
+('CLOPEZ66', 'klm23456', 'V111131986', 2),
+('LROMERO6', 'nop67890', 'J154256774', 2),
+('FBRAVO26', 'qrs12345', 'V128835673', 2),
+('RMORALES', 'tuv67890', 'V116532964', 2),
+('JPEREZ56', 'wxy34567', 'V177853292', 2),
+('DSANCHEZ', 'abc89012', 'J156663778', 2),
+('MRAMIREZ', 'def45678', 'V198567754', 2),
+('TIERREZ6', 'ghi67890', 'E897265278', 2),
+('JVASQUEZ', 'jk134567', 'V109056773', 2),
+('ELOPEZ66', 'mno89012', 'V120673003', 2),
+('JGARCIA6', 'pqr45678', 'V151632304', 2),
+('LROMERO2', 'stu67890', 'V122987678', 2),
+('ABRAVO66', 'vwx34567', 'J142456789', 2),
+('AMORALES', 'yza89012', 'J121326987', 2),
+('RicPer22', 'pass12345', 'V135515250', 2),
+('AndRod21', 'pass67890', 'V129922756', 2),
+('CarGon16',  'Car20645', 'J120636905', 2),
+('MarGar18', 'mar774jh', 'J197895774', 2),
+('LuiLop04', 'pass12345', 'V146994773', 2),
+('FraRom11', 'pass67890', 'V153536077', 2);
+
+
+
+INSERT INTO USUARIO (usu_usuario, usu_contraseña, usu_fk_cl_identificacion, usu_fk_rol_id)
+VALUES
+('JuaPer01', 'per53378', 'V115345678', 1),
+('MarFer01', 'pass6770', 'V205987412', 1),
+('PedGut01', 'pedgut93', 'J119368545', 1),
+('SofRam01', 'pass67890', 'E835360447', 1),
+('CarMar02', 'passadmin', 'V123456789', 1),
+('GabSan02', 'gab11520', 'J176543210', 1),
+('JosMe023', 'jose828', 'E828765443', 1),
+('AnaFer02', 'pass12fer', 'V134567890', 1),
+('MalRod10', 'malrod235', 'V112345678', 1),
+('JosHer10', 'passjos18', 'V187654321', 1),
+('AnaMFer0', 'am801fer', 'V242680135', 1),
+('CarGon10', 'cars1986hs', 'V197531486', 1),
+('GabMed11', 'passgab1', 'V252341678', 1),
+('EmiRod34', 'eri27890', 'V278921345', 1),
+('RodPer34', 'Rp11897', 'V163789012', 1),
+('GabMar44', 'gm11237', 'E885412369', 1),
+('LucViv21', 'wrt6hd2k', 'V247859612', 1),
+('MatGuz21', 'aq5lm8nz', 'V178951236', 1),
+('SofRoj21', 'xf9kj3pt', 'V239162857', 1),
+('AndGut21', 'jh7gy4mb', 'V184612957', 1),
+('EmmRam22', '2cD5Qw9R', 'V269847125', 1),
+('BenSua22', 'pL8Ks3Tx', 'V167125896', 1),
+('ValSal22', 'nE6Mh7Zv', 'V156792851', 1),
+('MatFer22', 'gY4Bj2Wq', 'V245616258', 1),
+('IsoJim23', 'd3Fs9Pc8', 'V141258963', 1),
+('MatVas23', '5Kw2Tj6M', 'V169875412', 1),
+('ValRey23', 'rX7Hn4Gu', 'V274185296', 1),
+('EmoCor23', 'Cor1963Em', 'V196325148', 1);
+
+
+INSERT INTO USUARIO (usu_usuario, usu_contraseña, usu_fk_ali_rif,
+usu_fk_rol_id)
+VALUES
+('MinAmazo', 'amazo0213', 'J2310001238', 3),
+('Indusate', 'anzoaindus', 'J1100001240', 3);
+
+
+
+
+INSERT INTO SOLICITUD_CLIENTE (factura_cli_fecha, factura_cli_total, factura_cli_observacion, factura_fk_cl_identificacion)
+VALUES
+('2024-04-02', 12345.67, 'Factura para cliente V115345678', 'V115345678'),
+('2024-04-07', 98765.43, 'Factura para cliente V134567890', 'V134567890'),
+('2024-04-15', 54321.09, 'Factura para cliente J154321098', 'J154321098'),
+('2024-04-22', 67890.12, 'Factura para cliente J121098765', 'J121098765'),
+('2024-04-28', 32109.87, 'Factura para cliente V192203835', 'V192203835'),
+('2024-05-04', 87654.32, 'Factura para cliente J121098765', 'J121098765'),
+('2024-05-11', 21098.76, 'Factura para cliente V241789632', 'V241789632'),
+('2024-05-19', 76543.21, 'Factura para cliente V172741236', 'V172741236'),
+('2024-05-25', 43210.98, 'Factura para cliente V112345678', 'V112345678'),
+('2024-06-01', 09876.54, 'Factura para cliente J187650321', 'J187650321'),
+('2024-06-09', 65432.10, 'Factura para cliente V242680135', 'V242680135'),
+('2024-06-16', 98765.43, 'Factura para cliente V197531486', 'V197531486'),
+('2024-06-02', 54321.09, 'Factura para cliente V178965412', 'V178965412'),
+('2024-06-17', 32109.87, 'Factura para cliente V287654323', 'V287654323'),
+('2024-06-10', 87654.32, 'Factura para cliente V178965412', 'V178965412');
+
+
+
+INSERT INTO SOLICITUD_ALIADO (  factura_ali_fecha, factura_ali_total, factura_ali_observacion,  factura_fk_ali_RIF,  factura_fk_pro_id)
+VALUES
+
+('2024-04-20', 445845.67, 'Factura para aliado  J0000005897',  'J0000005897', 1),
+('2024-06-11', 545321.00, 'Factura para aliado J1000002992', 'J1000002992',2),
+('2024-05-20', 98765.43, 'Factura para aliado J2310001238', 'J2310001238',3),
+('2024-05-25', 23456.78, 'Factura para aliado COMERCIAL', 'J1590004598', 4),
+('2024-06-05', 67890.12, 'Factura para aliado Comercial', 'J1100001240', 5),
+('2024-06-10', 45678.90, 'Factura para aliado Comercial', 'J1250001241', 6),
+('2024-06-15', 32109.87, 'Factura para aliado Comercial', 'J1991001242', 7),
+('2024-06-18', 76543.21, 'Factura para aliado Comercial', 'J0000001243', 8),
+('2024-06-20', 10987.65, 'Factura para aliado Comercial', 'J0000005897', 9),
+('2024-06-14', 54321.98, 'Factura para aliado Comercial', 'J1560201244', 10);
+
+
+
+
+INSERT INTO SOLICITUD_ALIADO (factura_ali_fecha, factura_ali_total, factura_ali_observacion, factura_fk_ali_RIF, factura_fk_pro_id)
+VALUES
+
+('2024-06-07', 445845.67, 'Factura para aliado', 'J1690001215', 11),
+('2024-06-14', 545321.00, 'Factura para aliado', 'J1200002874', 12),
+('2024-06-19', 98765.43, 'Factura para aliado', 'J1580001247', 13),
+('2024-06-14', 23456.78, 'Factura para aliado COMERCIAL', 'J6980005841', 14),
+('2024-04-08', 67890.12, 'Factura para aliado Comercial', 'J0000001249', 15),
+('2024-04-15', 45678.90, 'Factura para aliado Comercial', 'J2480001250', 16),
+('2024-04-22', 32109.87, 'Factura para aliado Comercial', 'J1110005252', 17),
+('2024-04-29', 76543.21, 'Factura para aliado Comercial', 'J1587000136', 18),
+('2024-05-06', 10987.65, 'Factura para aliado Comercial', 'J0000001258', 19),
+('2024-05-13', 54321.98, 'Factura para aliado Comercial', 'J0000001259', 20),
+('2024-04-05', 445845.67, 'Factura para aliado', 'J0000001260', 21),
+('2024-04-12', 545321.00, 'Factura para aliado', 'J1500801262', 22),
+('2024-04-20', 98765.43, 'Factura para aliado', 'J1890001263', 23),
+('2024-04-27', 23456.78, 'Factura para aliado COMERCIAL', 'J1450002995', 24),
+('2024-05-03', 67890.12, 'Factura para aliado Comercial', 'J1890007895', 25),
+('2024-05-10', 45678.90, 'Factura para aliado Comercial', 'J2680001267', 26),
+('2024-05-17', 32109.87, 'Factura para aliado Comercial', 'J1320001268', 27),
+('2024-05-22', 76543.21, 'Factura para aliado Comercial', 'J1520001269', 28),
+('2024-05-28', 10987.65, 'Factura para aliado Comercial', 'J2650005870', 29),
+('2024-06-02', 54321.98, 'Factura para aliado Comercial', 'J2992001271', 30);
+
+
+
+INSERT INTO SOLICITUD_ALIADO (factura_ali_fecha, factura_ali_total, factura_ali_observacion, factura_fk_ali_RIF, factura_fk_pro_id)
+VALUES
+
+('2024-05-18', 765432.10, 'Factura para aliado', 'J1268001852', 31),
+('2024-05-23', 321098.76, 'Factura para aliado', 'J2580001274', 32),
+('2024-05-29', 654321.09, 'Factura para aliado', 'J1212001585',33),
+('2024-06-03', 987654.32, 'Factura para aliado', 'J0000001276', 34),
+('2024-06-08', 543210.87, 'Factura para aliado', 'J0000001277', 35),
+('2024-06-13', 210987.65, 'Factura para aliado', 'J0000001278', 36),
+('2024-06-18', 876543.21, 'Factura para aliado ', 'J1690001244', 37),
+('2024-06-03', 432109.87, 'Factura para aliado', 'J1350005890', 38),
+('2024-06-08', 765432.10, 'Factura para aliado', 'J1680001281', 39),
+('2024-06-03', 321098.76, 'Factura para aliado', 'J2500005841', 40),
+('2024-04-01', 743216.54, 'Factura para aliado', 'J2130005841', 41),
+('2024-04-04', 987654.32, 'Factura para aliado', 'J1585076312', 42),
+('2024-04-09', 321098.76, 'Factura para aliado', 'J2992251275', 43),
+('2024-04-14', 654321.09, 'Factura para aliado', 'J1353641286', 44),
+('2024-04-19', 098765.43, 'Factura para aliado', 'J1110007889',45),
+('2024-04-24', 543210.87, 'Factura para aliado', 'J1354871290', 46),
+('2024-04-30', 210987.65, 'Factura para aliado', 'J1163151220', 47),
+('2024-05-02', 876543.21, 'Factura para aliado', 'J5890001288', 48),
+('2024-05-07', 432109.87, 'Factura para aliado', 'J1680001281', 49),
+('2024-05-12', 098765.43, 'Factura para aliado', 'J0000001277', 50);
+
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin) 
+VALUES (1, 18, '2024-04-20', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin) 
+ VALUES (2, 17, '2024-06-11', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+ VALUES (3, 16, '2024-05-20', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin) 
+ VALUES (4, 18, '2024-05-25', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+ VALUES (5, 16, '2024-06-05', null);
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+ VALUES (6, 17, '2024-06-10', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin) 
+VALUES (7, 17, '2024-06-15', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+ VALUES (8, 16, '2024-06-18', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin) 
+ VALUES (9, 16, '2024-06-20', null);
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+ VALUES (10, 17, '2024-06-14', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+ VALUES (11, 17, '2024-06-07', null); 
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+ VALUES (12, 17, '2024-06-14', null);
+
+ INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (13, 16, '2024-06-19', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (14, 17, '2024-06-14', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (15, 18, '2024-04-08', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (16, 18, '2024-04-15', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (17, 18, '2024-04-22', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (18, 17, '2024-04-29', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (19, 18, '2024-05-06', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (20, 17, '2024-05-13', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (21, 17, '2024-04-05', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (22, 18, '2024-04-12', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (23, 18, '2024-04-20', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (24, 18, '2024-04-27', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (25, 17, '2024-05-03', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (26, 17, '2024-05-10', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (27, 18, '2024-05-17', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (28, 17, '2024-05-22', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (29, 17, '2024-05-28', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (30, 16, '2024-06-02', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (31, 17, '2024-05-18', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (32, 18, '2024-05-23', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (33, 17, '2024-05-29', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (34, 16, '2024-06-03', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (35, 16, '2024-06-08', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (36, 17, '2024-06-13', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (37, 16, '2024-06-18', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (38, 17, '2024-06-03', null);
+
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (39, 16, '2024-06-08', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (40, 16, '2024-06-03', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (41, 18, '2024-04-01', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (42, 18, '2024-04-04', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (43, 18, '2024-04-09', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (44, 18, '2024-04-14', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (45, 18, '2024-04-19', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (46, 17, '2024-04-24', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (47, 18, '2024-04-30', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (48, 17, '2024-05-02', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (49, 18, '2024-05-07', null);
+
+INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
+VALUES (50, 17, '2024-05-12', null);
+
+
+
+INSERT INTO EST_SOL_CLIENTE (escl_fk_sol_cliente, escl_fk_est_id, escl_fecha_ini, escl_fecha_fin)
+
+VALUES (1, 1, '2024-06-03', null),
+
+ (2, 2, '2024-06-05', null),
+
+(3, 3, '2024-06-07', null),
+
+ (4, 4, '2024-06-09', null),
+
+(5, 5, '2024-06-11', null),
+
+ (6, 1, '2024-06-03', null),
+
+ (7, 2, '2024-06-05', null),
+
+(8, 3, '2024-06-07', null),
+
+ (9, 4, '2024-06-09', null),
+
+ (10, 5, '2024-06-11', null),
+
+ (11, 1, '2024-06-13', null),
+
+ (12, 2, '2024-06-15', null),
+
+ (13, 3, '2024-06-03', null),
+
+(14, 4, '2024-06-05', null);
