@@ -48,7 +48,7 @@ LANGUAGE plpgsql;
 CREATE TRIGGER antes_eliminar_actividad_verRecurso
 BEFORE DELETE ON ACTIVIDAD
 FOR EACH ROW
-EXECUTE FUNCTION eliminar_recurso_config(); */
+EXECUTE FUNCTION eliminar_recurso_config();
 
 ----------------------------------
 
