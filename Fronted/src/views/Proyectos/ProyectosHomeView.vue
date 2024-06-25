@@ -69,8 +69,7 @@ proyectos.value = [
     nameLPro: 'Arturo',
     nameLMin: 'Pedro',
     fC: '01/02/24'
-  },
-  
+  }
 ]
 
 const deletePro = (id) => {

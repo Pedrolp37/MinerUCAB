@@ -4,21 +4,27 @@
       v-show="aliadosFiltered.length == 0"
       class="table table-striped"
       id="table"
-      style="width: 60vw"
+      style="width: 80vw"
     >
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Aliado</th>
-          <th class="tabla Cabecera">Concesión</th>
           <th class="tabla Cabecera">Dirección</th>
+          <th class="tabla Cabecera">Fecha Creación</th>
+          <th class="tabla Cabecera">Capital</th>
+          <th class="tabla Cabecera">Número de Teléfono</th>
+          <th class="tabla Cabecera">Descripción</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(ali, index) in aliados" :key="index" style="text-align: center">
-          <td>{{ ali.name }}</td>
-          <td>{{ ali.concession }}</td>
-          <td>{{ ali.address }}</td>
+          <td>{{ ali.nombre }}</td>
+          <td>{{ ali.direccion }}</td>
+          <td>{{ ali.fcCreacion }}</td>
+          <td>{{ ali.capital }}</td>
+          <td>{{ ali.numTelefono }}</td>
+          <td>{{ ali.descripcion }}</td>
           <td>
             <button
               class="eliminar btn"
@@ -36,21 +42,27 @@
       v-show="aliadosFiltered.length != 0"
       class="table table-striped"
       id="table"
-      style="width: 60vw"
+      style="width: 80vw"
     >
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Aliado</th>
-          <th class="tabla Cabecera">Concesión</th>
           <th class="tabla Cabecera">Dirección</th>
+          <th class="tabla Cabecera">Fecha Creación</th>
+          <th class="tabla Cabecera">Capital</th>
+          <th class="tabla Cabecera">Número de Teléfono</th>
+          <th class="tabla Cabecera">Descripción</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(aliF, index) in aliadosFiltered" :key="index" style="text-align: center">
-          <td>{{ aliF.name }}</td>
-          <td>{{ aliF.concession }}</td>
-          <td>{{ aliF.address }}</td>
+          <td>{{ aliF.nombre }}</td>
+          <td>{{ aliF.direccion }}</td>
+          <td>{{ aliF.fcCreacion }}</td>
+          <td>{{ aliF.capital }}</td>
+          <td>{{ aliF.numTelefono }}</td>
+          <td>{{ aliF.descripcion }}</td>
           <td>
             <button
               class="eliminar btn"

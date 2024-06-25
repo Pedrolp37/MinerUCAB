@@ -66,29 +66,61 @@
                       class="form-control"
                       id="nombre"
                       autocomplete="off"
-                      v-model="newAliado.name"
+                      v-model="newAliado.nombre"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="nombre" class="label form-label">Dirección:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nombre"
+                      autocomplete="off"
+                      v-model="newAliado.direccion"
                     />
                   </div>
 
                   <div class="mb-3">
-                    <label for="apellido" class="label form-label">Concesión:</label>
+                    <label for="nombre" class="label form-label">Fecha de Creación:</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="apellido"
+                      id="nombre"
                       autocomplete="off"
-                      v-model="newAliado.concession"
+                      v-model="newAliado.fcCreacion"
                     />
                   </div>
 
                   <div class="mb-3">
-                    <label for="direccion" class="label form-label">Dirección:</label>
+                    <label for="nombre" class="label form-label">Capital:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="nombre"
+                      autocomplete="off"
+                      v-model="newAliado.capital"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="nombre" class="label form-label">Número de Teléfono:</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="direccion"
+                      id="nombre"
                       autocomplete="off"
-                      v-model="newAliado.address"
+                      v-model="newAliado.numTelefono"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="nombre" class="label form-label">Descripción:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nombre"
+                      autocomplete="off"
+                      v-model="newAliado.descripcion"
                     />
                   </div>
                 </form>
@@ -123,41 +155,56 @@ let aliadosFiltered = ref([])
 let newAliado = ref({})
 
 newAliado.value = {
-  name: '',
-  concession: '',
-  address: ''
+  nombre: '',
+  direccion: '',
+  fcCreacion: '',
+  capital: 0,
+  numTelefono: '',
+  descripcion: ''
 }
 
 aliados.value = [
   {
-    id: 1,
-    name: 'Felper',
-    concession: 'Oro',
-    address: 'China'
+    rif: 'J12323556',
+    nombre: 'Felper',
+    direccion: 'China',
+    fcCreacion: '2022-12-12',
+    capital: 3400000,
+    numTelefono: '04126379153',
+    descripcion: 'Lorem ipsum'
   },
   {
-    id: 2,
-    name: 'Los Arabitos',
-    concession: 'Plata',
-    address: 'Achaguas'
+    rif: 'J12323556',
+    nombre: 'Los Arabitos',
+    direccion: 'China',
+    fcCreacion: '2022-12-12',
+    capital: 3400000,
+    numTelefono: '04126379153',
+    descripcion: 'Lorem ipsum'
   }
 ]
 
 const guardarAliado = () => {
   aliados.value.push({
-    id: 3,
-    name: newAliado.value.name,
-    concession: newAliado.value.concession,
-    address: newAliado.value.address
+    rif: 'J1250001241',
+    nombre: newAliado.value.nombre,
+    direccion: newAliado.value.direccion,
+    fcCreacion: newAliado.value.fcCreacion,
+    capital: newAliado.value.capital,
+    numTelefono: newAliado.value.numTelefono,
+    descripcion: newAliado.value.descripcion
   })
 
-  newAliado.value.name = ''
-  newAliado.value.concession = ''
-  newAliado.value.address = ''
+  newAliado.value.nombre = ''
+  newAliado.value.direccion = ''
+  newAliado.value.fcCreacion = ''
+  newAliado.value.capital = 0
+  newAliado.value.numTelefono = ''
+  newAliado.value.descripcion = ''
 }
 
 const getAliadoFiltered = () => {
-  aliadosFiltered.value = aliados.value.filter((elm) => elm.name == findAliado.value)
+  aliadosFiltered.value = aliados.value.filter((elm) => elm.nombre == findAliado.value)
   findAliado.value = ''
 }
 

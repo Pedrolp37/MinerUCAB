@@ -105,8 +105,6 @@ const getResponseSDM = (id) => {
 </script>
 
 <style scope>
-
-
 .addMin.btn {
   background-color: #fa8f14;
   color: white;

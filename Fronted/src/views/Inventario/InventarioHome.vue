@@ -7,20 +7,20 @@
           <h3 style="color: #a57844">Inventario MinerUcab</h3>
         </div>
       </div>
-      <hr>
-       <div class="row" style="margin-top: 80px">
+      <hr />
+      <div class="row" style="margin-top: 80px">
         <div class="col d-flex justify-content-center">
-          <TablaInventario :inventario="inventario"/>
-        </div> 
+          <TablaInventario :inventario="inventario" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
-import TablaInventario from  '../../components/TablaInventario.vue'
+import TablaInventario from '../../components/TablaInventario.vue'
 
 let inventario = ref([])
 
@@ -41,9 +41,6 @@ inventario.value = [
     fcAdqui: '12-12-2002'
   }
 ]
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

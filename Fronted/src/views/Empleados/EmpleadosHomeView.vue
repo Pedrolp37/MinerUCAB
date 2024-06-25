@@ -114,8 +114,38 @@
                 </div>
 
                 <div class="mb-3">
+                  <label for="direccion" class="label form-label">Numero de Teléfono:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="direccion"
+                    autocomplete="off"
+                    v-model="newEmpleado.numPhone"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="direccion" class="label form-label">Dirección:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="direccion"
+                    autocomplete="off"
+                    v-model="newEmpleado.addres"
+                  />
+                </div>
+
+                <div class="mb-3">
                   <label for="telefono" class="label form-label">Cargo:</label>
-                  <input type="tel" class="form-control" id="telefono" v-model="newEmpleado.job" autocomplete="off"/>
+                  <select
+                    class="cargo form-select"
+                    aria-label="Default select example"
+                    v-model="newEmpleado.job"
+                  >
+                    <option v-for="(option, index) in cargo" :key="index" :value="option.id">
+                      {{ option.nombre }}
+                    </option>
+                  </select>
                 </div>
               </form>
             </div>
@@ -147,18 +177,39 @@ let newEmpleado = ref({})
 let empListfind = ref([])
 let typeSearch = ref('Buscar por')
 let findEmp = ref('')
+let cargo = ref([])
 
 newEmpleado.value = {
   name: '',
   lastName: '',
+  numPhone: '',
+  addres: '',
   dni: '',
   job: ''
 }
+
+cargo.value = [
+  {
+    id: 1,
+    nombre: 'Geologo'
+  },
+  {
+    id: 2,
+    nombre: 'Perrero'
+  },
+  {
+    id: 3,
+    nombre: 'Gatologo'
+  }
+]
+
 empleados.value = [
   {
     id: 1,
     name: 'Arturo',
     lastName: 'Perez',
+    numPhone: '04126379153',
+    addres: 'Achaguas',
     dni: '28680741',
     job: 'Programador'
   },
@@ -166,24 +217,38 @@ empleados.value = [
     id: 2,
     name: 'Pedro',
     lastName: 'Leal',
+    numPhone: '04126379153',
+    addres: 'Achaguas',
     dni: '28680741',
     job: 'Médico'
   }
 ]
 
 const guardarEmpleado = () => {
+  let job = ''
+
+  cargo.value.forEach((elm) => {
+    if (elm.id == newEmpleado.value.job) {
+      job = elm.nombre
+    }
+  })
+
   empleados.value.push({
     id: 3,
     name: newEmpleado.value.name,
     lastName: newEmpleado.value.lastName,
     dni: newEmpleado.value.dni,
-    job: newEmpleado.value.job
+    numPhone: newEmpleado.value.numPhone,
+    addres: newEmpleado.value.addres,
+    job: job
   })
 
   newEmpleado.value.name = ''
   newEmpleado.value.lastName = ''
   newEmpleado.value.dni = ''
   newEmpleado.value.job = ''
+  newEmpleado.value.addres = ''
+  newEmpleado.value.numPhone = ''
 }
 
 const showAllEmp = () => {
@@ -232,6 +297,11 @@ const deleteEmpleado = (id) => {
 </script>
 
 <style scope>
+.cargo.form-select {
+  background-color: #999981;
+  color: white;
+}
+
 .label.form-label {
   color: #86822f;
   font-size: 15px;

@@ -1,10 +1,6 @@
 <template>
   <div>
-    <table
-      class="table table-striped"
-      id="table"
-      style="width: 60vw"
-    >
+    <table class="table table-striped" id="table" style="width: 60vw">
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Mineral</th>
@@ -24,14 +20,11 @@
 </template>
 
 <script setup>
-
 const props = defineProps({
   inventario: {
     required: true
-  },
+  }
 })
-
-
 </script>
 
 <style scoped>

@@ -155,7 +155,7 @@
                 >
               </li>
               <li>
-                <router-link :to="{name: 'inventario'}" class="dropdown-item"
+                <router-link :to="{ name: 'inventario' }" class="dropdown-item"
                   ><i class="bi bi-archive"></i> Ver inventario</router-link
                 >
               </li>

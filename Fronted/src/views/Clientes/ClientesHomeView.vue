@@ -31,7 +31,11 @@
       </div>
       <div class="row" style="margin-top: 80px">
         <div class="col d-flex justify-content-center">
-          <TablaClientes :clientes="clientes" :clienteFiltered="clienteFiltered" @dltCli="deleteCliente"/>
+          <TablaClientes
+            :clientes="clientes"
+            :clienteFiltered="clienteFiltered"
+            @dltCli="deleteCliente"
+          />
         </div>
       </div>
       <div

@@ -8,18 +8,22 @@
     >
       <thead>
         <tr style="text-align: center">
+          <th class="tabla Cabecera">DNI</th>
           <th class="tabla Cabecera">Nombre</th>
           <th class="tabla Cabecera">Apellido</th>
-          <th class="tabla Cabecera">DNI</th>
+          <th class="tabla Cabecera">Teléfono</th>
+          <th  class="tabla Cabecera">Dirección</th>
           <th class="tabla Cabecera">Cargo</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(emp, index) in empleados" :key="index" style="text-align: center">
+          <td>{{ emp.dni }}</td>
           <td>{{ emp.name }}</td>
           <td>{{ emp.lastName }}</td>
-          <td>{{ emp.dni }}</td>
+          <td>{{ emp.numPhone }}</td>
+          <td>{{ emp.addres }}</td>
           <td>{{ emp.job }}</td>
           <td>
             <button
@@ -37,18 +41,22 @@
     <table v-show="empListfind != 0" class="table table-striped" id="table" style="width: 60vw">
       <thead>
         <tr style="text-align: center">
+          <th class="tabla Cabecera">DNI</th>
           <th class="tabla Cabecera">Nombre</th>
           <th class="tabla Cabecera">Apellido</th>
-          <th class="tabla Cabecera">DNI</th>
+          <th class="tabla Cabecera">Teléfono</th>
+          <th class="tabla Cabecera">Dirección</th>
           <th class="tabla Cabecera">Cargo</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(empF, index) in empListfind" :key="index" style="text-align: center">
+          <td>{{ empF.dni }}</td>
           <td>{{ empF.name }}</td>
           <td>{{ empF.lastName }}</td>
-          <td>{{ empF.dni }}</td>
+          <td>{{ empF.numPhone }}</td>
+          <td>{{ empF.addres }}</td>
           <td>{{ empF.job }}</td>
           <td>
             <button
@@ -151,4 +159,6 @@ const saveIdDltPro = (id) => {
   background-color: #c3b1a300;
   color: black;
 }
+
+
 </style>
