@@ -1,51 +1,81 @@
-CREATE OR REPLACE PROCEDURE insertar_empleado(IN emp_id VARCHAR(11),IN p_nombre VARCHAR(30),IN p_apellido VARCHAR(30),
-									IN direccion VARCHAR(180),IN tlf VARCHAR(12),IN cargo_id INT,IN lugar_id INT)
-	language plpgsql
-AS $$
-	BEGIN
-	INSERT INTO empleado(emp_identificacion, emp_p_nombre,emp_p_apellido, emp_telefono,emp_direccion,emp_fk_lu_id)
-	VALUES
-		(emp_id,p_nombre,p_apellido,tlf,direccion,lugar_id);
-
-	INSERT INTO cargo_empleado (caem_fk_carg_id, caem_fk_emp_identificacion,caem_fecha_ini)
-	VALUES 
-		(cargo_id,emp_id,CURRENT_DATE);
-END $$;
-
-
-CREATE OR REPLACE PROCEDURE eliminar_mineral(IN mineral_id INT)
-	language plpgsql
-AS $$
-	DECLARE
-	 proyecto_id INT;
+/* --  eliminar actividades enn base a la etapa
+CREATE OR REPLACE FUNCTION eliminar_actividades_relacionadas()
+RETURNS TRIGGER AS
+$$
 BEGIN
-	  -- Elimina las actividades relacionadas con las etapas del mineral
-    DELETE FROM ACTIVIDAD
-    WHERE fk_et_id IN (SELECT et_id FROM ETAPA WHERE fk_min_id = mineral_id);
-    
-    -- Elimina las etapas relacionadas con el mineral
-    DELETE FROM ETAPA WHERE fk_min_id = mineral_id;
-	-- Elimina los inventarios relacionados a ese mineral
-	DELETE FROM INVENTARIO WHERE mineral_id = inv_min_id;
+    -- Verifica si hay actividades relacionadas con la etapa que se va a eliminar
+    IF EXISTS (
+        SELECT 1
+        FROM ACTIVIDAD
+        WHERE fk_et_id = OLD.et_id
+    ) THEN 
+        -- Elimina las actividades relacionadas
+        DELETE FROM ACTIVIDAD ac
+        WHERE ac.fk_et_id = OLD.et_id;
+    END IF;
 
-	for proyecto_id IN (SELECT pro_id from proyecto where pro_fk_min_id=mineral_id)
-		LOOP
-			DELETE FROM ETAPA_EJ
-			WHERE fk_pro_id = proyecto_id;
+    RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
 
-			DELETE FROM PRO_ESTATUS WHERE proyecto_id = proes_pro_id;
-			DELETE FROM SOLICITUD_ALIADO WHERE proyecto_id = factura_fk_pro_id;
-			DELETE FROM PROYECTO WHERE pro_id = proyecto_id;
-		END LOOP;
-	
-	DELETE FROM MINERAL_POZO mipo WHERE mipo.min_id = mineral_id;
-    
-	DELETE FROM CONCESION WHERE mineral_id = conce_fk_min_id;
-	-- Elimina el mineral
-    DELETE FROM MINERAL WHERE min_id = mineral_id;
-END $$;
+CREATE OR REPLACE TRIGGER antes_eliminar_actividades_relacionadas
+BEFORE DELETE ON ETAPA
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_actividades_relacionadas();
 
+-------------------------------------------------
+-- ELIMINAR ACTIVIDAD_RECURSO EN BASE A LA ACTIVIDAD
+CREATE OR REPLACE FUNCTION eliminar_recurso_config()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS(
+		SELECT 1
+		FROM ACTIVIDAD_RECURSO
+		WHERE acre_act_id = OLD.act_id
+	) THEN
+		-- Elimina los recursos asociados
+        DELETE FROM ACTIVIDAD_RECURSO
+        WHERE acre_act_id = OLD.act_id;
+	END IF;
 
+	RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER antes_eliminar_actividad_verRecurso
+BEFORE DELETE ON ACTIVIDAD
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_recurso_config();
+
+----------------------------------
+
+-- ELIMINAR ACTIVIDAD_CARGO EN BASE A LA ACTIVIDAD
+CREATE OR REPLACE FUNCTION eliminar_cargo_config()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS(
+		SELECT 1
+		FROM ACTIVIDAD_CARGO
+		WHERE acca_act_id = OLD.act_id
+	) THEN
+		-- Elimina los cargos asociados
+        DELETE FROM ACTIVIDAD_CARGO
+        WHERE acca_act_id = OLD.act_id;
+	END IF;
+
+	RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER antes_eliminar_actividad_verCargo
+BEFORE DELETE ON ACTIVIDAD
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_cargo_config(); */
 
 
 ---------------------------
@@ -256,3 +286,30 @@ CREATE OR REPLACE TRIGGER antes_eliminar_actividadEJ_verCargoEJ
 BEFORE DELETE ON ACTIVIDAD_EJ
 FOR EACH ROW
 EXECUTE FUNCTION eliminar_cargo_ej();
+
+
+/*
+-------------------------------------FUNCIONA
+-- ELIMINAR ACTIVIDADES RECURSIVAS
+CREATE OR REPLACE FUNCTION eliminar_actividad_recursiva()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS (
+		SELECT 1
+		FROM ACTIVIDAD act_recur
+		WHERE act_recur.fk_act_id = OLD.act_id
+	) THEN
+		DELETE FROM ACTIVIDAD act_recur
+		WHERE act_recur.fk_act_id = OLD.act_id;
+	END IF;
+
+	RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER eliminar_actividad_recursiva
+BEFORE DELETE ON ACTIVIDAD
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_actividad_recursiva();*/
