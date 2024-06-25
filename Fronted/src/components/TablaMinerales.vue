@@ -9,16 +9,16 @@
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Mineral</th>
-          <th class="tabla Cabecera">N-Etapas</th>
-          <th class="tabla Cabecera">N-Actividades</th>
+          <th class="tabla Cabecera">Tipo de Metal</th>
+          <th class="tabla Cabecera">Tipo de Mineral</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(elm, index) in minerals" :key="index" style="text-align: center">
-          <td>{{ elm.name }}</td>
-          <td>{{ elm.stages }}</td>
-          <td>{{ elm.activities.length }}</td>
+        <tr v-for="(elm, index) in props.minerals" :key="index" style="text-align: center">
+          <td>{{ elm.nombre }}</td>
+          <td>{{ elm.tipometal }}</td>
+          <td>{{ elm.tipomineral }}</td>
           <td>
             <button class="detalle btn" @click="sendResponseSDM(elm.id)">Detalle</button>
           </td>
@@ -33,16 +33,17 @@
     >
       <thead>
         <tr style="text-align: center">
-          <th>Mineral</th>
-          <th>N-Etapas</th>
-          <th>N-Actividades</th>
+          <th class="tabla Cabecera">Mineral</th>
+          <th class="tabla Cabecera">Tipo de Metal</th>
+          <th class="tabla Cabecera">Tipo de Mineral</th>
+          <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(elm, index) in props.filteredMinerals" :key="index" style="text-align: center">
-          <td>{{ elm.name }}</td>
-          <td>{{ elm.stages }}</td>
-          <td>{{ elm.activities.length }}</td>
+          <td>{{ elm.nombre }}</td>
+          <td>{{ elm.tipometal }}</td>
+          <td>{{ elm.tipomineral }}</td>
           <td>
             <button class="detalle btn" @click="sendResponseSDM(elm.id)">Detalle</button>
           </td>
@@ -63,6 +64,8 @@ const props = defineProps({
     required: false
   }
 })
+
+console.log(props.minerals)
 
 const emit = defineEmits(['showDetailMineral'])
 const sendResponseSDM = (id) => {

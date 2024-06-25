@@ -4,25 +4,29 @@
       v-show="clienteFiltered.length == 0"
       class="table table-striped"
       id="table"
-      style="width: 60vw"
+      style="width: 80vw"
     >
       <thead>
         <tr style="text-align: center">
+          <th class="tabla Cabecera">DNI</th>
           <th class="tabla Cabecera">Nombre</th>
           <th class="tabla Cabecera">Apellido</th>
-          <th class="tabla Cabecera">DNI</th>
+          <th class="tabla Cabecera">Teléfono</th>
+          <th class="tabla Cabecera">Dirección</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(cli, index) in clientes" :key="index" style="text-align: center">
-          <td>{{ cli.name }}</td>
-          <td>{{ cli.lastName }}</td>
           <td>{{ cli.dni }}</td>
+          <td>{{ cli.name }}</td>
+          <td>{{ cli.lastname }}</td>
+          <td>{{ cli.numphone }}</td>
+          <td>{{ cli.address }}</td>
           <td>
             <button
               class="eliminar btn"
-              @click="saveidCliD(cli.id)"
+              @click="saveidCliD(cli.dni)"
               data-bs-toggle="modal"
               data-bs-target="#ConfirmarEliminar"
             >
@@ -36,25 +40,29 @@
       v-show="clienteFiltered.length != 0"
       class="table table-striped"
       id="table"
-      style="width: 60vw"
+      style="width: 80vw"
     >
       <thead>
         <tr style="text-align: center">
+          <th class="tabla Cabecera">DNI</th>
           <th class="tabla Cabecera">Nombre</th>
           <th class="tabla Cabecera">Apellido</th>
-          <th class="tabla Cabecera">DNI</th>
+          <th class="tabla Cabecera">Teléfono</th>
+          <th class="tabla Cabecera">Dirección</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(cliF, index) in clienteFiltered" :key="index" style="text-align: center">
-          <td>{{ cliF.name }}</td>
-          <td>{{ cliF.lastName }}</td>
           <td>{{ cliF.dni }}</td>
+          <td>{{ cliF.name }}</td>
+          <td>{{ cliF.lastname }}</td>
+          <td>{{ cliF.numphone }}</td>
+          <td>{{ cliF.address }}</td>
           <td>
             <button
               class="eliminar btn"
-              @click="saveidCliD(cliF.id)"
+              @click="saveidCliD(cliF.dni)"
               data-bs-toggle="modal"
               data-bs-target="#ConfirmarEliminar"
             >

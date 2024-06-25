@@ -60,6 +60,17 @@
               <div class="container">
                 <form id="formularioEmpleados">
                   <div class="mb-3">
+                    <label for="nombre" class="label form-label">RIF:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nombre"
+                      autocomplete="off"
+                      :placeholder="'Jxxxxxxxxxxx'"
+                      v-model="newAliado.rif"
+                    />
+                  </div>
+                  <div class="mb-3">
                     <label for="nombre" class="label form-label">Nombre:</label>
                     <input
                       type="text"
@@ -145,16 +156,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaAliados from '../../components/TablaAliados.vue'
+import { getAliados } from '../../Services/Aliados/AliadosGet.services'
 
+/*
+
+* VARIABLES
+
+*/
 let findAliado = ref('')
 let aliados = ref([])
 let aliadosFiltered = ref([])
 let newAliado = ref({})
 
 newAliado.value = {
+  rif: '',
   nombre: '',
   direccion: '',
   fcCreacion: '',
@@ -163,26 +181,21 @@ newAliado.value = {
   descripcion: ''
 }
 
-aliados.value = [
-  {
-    rif: 'J12323556',
-    nombre: 'Felper',
-    direccion: 'China',
-    fcCreacion: '2022-12-12',
-    capital: 3400000,
-    numTelefono: '04126379153',
-    descripcion: 'Lorem ipsum'
-  },
-  {
-    rif: 'J12323556',
-    nombre: 'Los Arabitos',
-    direccion: 'China',
-    fcCreacion: '2022-12-12',
-    capital: 3400000,
-    numTelefono: '04126379153',
-    descripcion: 'Lorem ipsum'
-  }
-]
+/*
+
+ * CONSUMO DE LA API
+
+ */
+
+onMounted(async () => {
+  getAliados().then((Response) => (aliados.value = Response.data))
+})
+
+/*
+
+* MÉTODOS(FUNCIONES)
+
+*/
 
 const guardarAliado = () => {
   aliados.value.push({
@@ -212,9 +225,9 @@ const showAllAli = () => {
   aliadosFiltered.value = []
 }
 
-const deleteAliado = (id) => {
+const deleteAliado = (rif) => {
   aliados.value.splice(
-    aliados.value.findIndex((elm) => elm.id == id),
+    aliados.value.findIndex((elm) => elm.rif == rif),
     1
   )
   showAllEmp()

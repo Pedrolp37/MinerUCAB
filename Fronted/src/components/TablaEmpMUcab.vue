@@ -4,7 +4,7 @@
       v-show="empListfind.length == 0"
       class="table table-striped"
       id="table"
-      style="width: 60vw"
+      style="width: 80vw"
     >
       <thead>
         <tr style="text-align: center">
@@ -12,7 +12,7 @@
           <th class="tabla Cabecera">Nombre</th>
           <th class="tabla Cabecera">Apellido</th>
           <th class="tabla Cabecera">Teléfono</th>
-          <th  class="tabla Cabecera">Dirección</th>
+          <th class="tabla Cabecera">Dirección</th>
           <th class="tabla Cabecera">Cargo</th>
           <th class="tabla Cabecera"></th>
         </tr>
@@ -21,14 +21,14 @@
         <tr v-for="(emp, index) in empleados" :key="index" style="text-align: center">
           <td>{{ emp.dni }}</td>
           <td>{{ emp.name }}</td>
-          <td>{{ emp.lastName }}</td>
-          <td>{{ emp.numPhone }}</td>
-          <td>{{ emp.addres }}</td>
+          <td>{{ emp.lastname }}</td>
+          <td>{{ emp.numphone }}</td>
+          <td>{{ emp.address }}</td>
           <td>{{ emp.job }}</td>
           <td>
             <button
               class="modificar btn"
-              @click="saveIdDltPro(pro.id)"
+              @click="saveIdDltPro(emp.dni)"
               data-bs-toggle="modal"
               data-bs-target="#ConfirmarEliminar"
             >
@@ -38,7 +38,7 @@
         </tr>
       </tbody>
     </table>
-    <table v-show="empListfind != 0" class="table table-striped" id="table" style="width: 60vw">
+    <table v-show="empListfind != 0" class="table table-striped" id="table" style="width: 80vw">
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">DNI</th>
@@ -54,14 +54,14 @@
         <tr v-for="(empF, index) in empListfind" :key="index" style="text-align: center">
           <td>{{ empF.dni }}</td>
           <td>{{ empF.name }}</td>
-          <td>{{ empF.lastName }}</td>
-          <td>{{ empF.numPhone }}</td>
-          <td>{{ empF.addres }}</td>
+          <td>{{ empF.lastname }}</td>
+          <td>{{ empF.numphone }}</td>
+          <td>{{ empF.address }}</td>
           <td>{{ empF.job }}</td>
           <td>
             <button
               class="modificar btn"
-              @click="saveIdDltPro(empF.id)"
+              @click="saveIdDltPro(empF.dni)"
               data-bs-toggle="modal"
               data-bs-target="#ConfirmarEliminar"
             >
@@ -159,6 +159,4 @@ const saveIdDltPro = (id) => {
   background-color: #c3b1a300;
   color: black;
 }
-
-
 </style>

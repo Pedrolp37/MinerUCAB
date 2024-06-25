@@ -4,7 +4,7 @@
       v-show="aliadosFiltered.length == 0"
       class="table table-striped"
       id="table"
-      style="width: 80vw"
+      style="width: 90vw"
     >
       <thead>
         <tr style="text-align: center">
@@ -21,14 +21,14 @@
         <tr v-for="(ali, index) in aliados" :key="index" style="text-align: center">
           <td>{{ ali.nombre }}</td>
           <td>{{ ali.direccion }}</td>
-          <td>{{ ali.fcCreacion }}</td>
+          <td>{{ ali.fccreacion }}</td>
           <td>{{ ali.capital }}</td>
-          <td>{{ ali.numTelefono }}</td>
+          <td>{{ ali.numtelefono }}</td>
           <td>{{ ali.descripcion }}</td>
           <td>
             <button
               class="eliminar btn"
-              @click="saveIdEmp(ali.id)"
+              @click="saveIdEmp(ali.rif)"
               data-bs-toggle="modal"
               data-bs-target="#ConfirmarEliminar"
             >
@@ -42,7 +42,7 @@
       v-show="aliadosFiltered.length != 0"
       class="table table-striped"
       id="table"
-      style="width: 80vw"
+      style="width: 90vw"
     >
       <thead>
         <tr style="text-align: center">
@@ -59,14 +59,14 @@
         <tr v-for="(aliF, index) in aliadosFiltered" :key="index" style="text-align: center">
           <td>{{ aliF.nombre }}</td>
           <td>{{ aliF.direccion }}</td>
-          <td>{{ aliF.fcCreacion }}</td>
+          <td>{{ aliF.fccreacion }}</td>
           <td>{{ aliF.capital }}</td>
-          <td>{{ aliF.numTelefono }}</td>
+          <td>{{ aliF.numtelefono }}</td>
           <td>{{ aliF.descripcion }}</td>
           <td>
             <button
               class="eliminar btn"
-              @click="saveIdEmp(aliF.id)"
+              @click="saveIdEmp(aliF.rif)"
               data-bs-toggle="modal"
               data-bs-target="#ConfirmarEliminar"
             >
@@ -115,7 +115,7 @@
 <script setup>
 import { ref } from 'vue'
 
-let idEmp = ref(0)
+let idAliado = ref(0)
 
 const props = defineProps({
   aliados: {
@@ -130,11 +130,11 @@ const props = defineProps({
 const emit = defineEmits(['dltAli'])
 
 const saveIdEmp = (id) => {
-  idEmp.value = id
+  idAliado.value = id
 }
 
 const deleteEmpleado = () => {
-  emit('dltAli', idEmp.value)
+  emit('dltAli', idAliado.value)
 }
 </script>
 

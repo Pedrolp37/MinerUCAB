@@ -60,6 +60,18 @@
               <div class="container">
                 <form id="formularioEmpleados">
                   <div class="mb-3">
+                    <label for="direccion" class="label form-label">DNI:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="direccion"
+                      autocomplete="off"
+                      :placeholder="'Vxxxxxxxxxxx'"
+                      v-model="newCliente.dni"
+                    />
+                  </div>
+
+                  <div class="mb-3">
                     <label for="nombre" class="label form-label">Nombre:</label>
                     <input
                       type="text"
@@ -82,13 +94,24 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="direccion" class="label form-label">DNI:</label>
+                    <label for="direccion" class="label form-label">Teléfono:</label>
                     <input
                       type="text"
                       class="form-control"
                       id="direccion"
                       autocomplete="off"
-                      v-model="newCliente.dni"
+                      v-model="newCliente.numphone"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="direccion" class="label form-label">Dirección:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="direccion"
+                      autocomplete="off"
+                      v-model="newCliente.address"
                     />
                   </div>
                 </form>
@@ -113,9 +136,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import TablaClientes from '../../components/TablaClientes.vue'
 import NavBarVue from '../../components/NavBar.vue'
+import { getClientes } from '../../Services/Clientes/ClientesGet.services'
 
 let clienteFiltered = ref([])
 let clientes = ref([])
@@ -123,25 +147,22 @@ let newCliente = ref({})
 let findCliente = ref('')
 
 newCliente.value = {
+  dni: '',
   name: '',
-  lastName: '',
-  dni: ''
+  lastname: '',
+  numphone: '',
+  address: ''
 }
 
-clientes.value = [
-  {
-    id: 1,
-    name: 'Arturo',
-    lastName: 'Perez',
-    dni: '28680741'
-  },
-  {
-    id: 2,
-    name: 'Pedro',
-    lastName: 'Leal',
-    dni: '28680741'
-  }
-]
+/*
+
+* CONSUMO DE LA API
+
+*/
+
+onMounted(async () => {
+  getClientes().then((Response) => (clientes.value = Response.data))
+})
 
 const getClientesFiltered = () => {
   clienteFiltered.value = clientes.value.filter((elm) => elm.name == findCliente.value)
@@ -165,9 +186,9 @@ const showAllCli = () => {
   clienteFiltered.value = []
 }
 
-const deleteCliente = (id) => {
+const deleteCliente = (dni) => {
   clientes.value.splice(
-    clientes.value.findIndex((elm) => elm.id == id),
+    clientes.value.findIndex((elm) => elm.dni == dni),
     1
   )
   showAllEmp()

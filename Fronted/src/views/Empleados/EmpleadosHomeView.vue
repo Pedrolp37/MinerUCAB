@@ -168,10 +168,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaEmpMUcab from '../../components/TablaEmpMUcab.vue'
+import { getEmpleados } from '../../Services/Empleados/EmpleadosGet.services'
 
+/*
+
+* VARIABLES
+
+*/
 let empleados = ref([])
 let newEmpleado = ref({})
 let empListfind = ref([])
@@ -181,48 +187,33 @@ let cargo = ref([])
 
 newEmpleado.value = {
   name: '',
-  lastName: '',
-  numPhone: '',
-  addres: '',
+  lastname: '',
+  numphone: '',
+  address: '',
   dni: '',
   job: ''
 }
 
-cargo.value = [
-  {
-    id: 1,
-    nombre: 'Geologo'
-  },
-  {
-    id: 2,
-    nombre: 'Perrero'
-  },
-  {
-    id: 3,
-    nombre: 'Gatologo'
-  }
-]
+cargo.value = empleados.value.job
 
-empleados.value = [
-  {
-    id: 1,
-    name: 'Arturo',
-    lastName: 'Perez',
-    numPhone: '04126379153',
-    addres: 'Achaguas',
-    dni: '28680741',
-    job: 'Programador'
-  },
-  {
-    id: 2,
-    name: 'Pedro',
-    lastName: 'Leal',
-    numPhone: '04126379153',
-    addres: 'Achaguas',
-    dni: '28680741',
-    job: 'Médico'
-  }
-]
+/*
+
+* CONSUMO DE LA API
+
+*/
+
+onMounted(async () => {
+  getEmpleados().then((Response) => {
+    empleados.value = Response.data
+    console.log(empleados.value)
+  })
+})
+
+/*
+
+* MÉTODOS(FUNCIONES)
+
+*/
 
 const guardarEmpleado = () => {
   let job = ''
@@ -234,7 +225,6 @@ const guardarEmpleado = () => {
   })
 
   empleados.value.push({
-    id: 3,
     name: newEmpleado.value.name,
     lastName: newEmpleado.value.lastName,
     dni: newEmpleado.value.dni,
@@ -287,9 +277,9 @@ const filterEmployee = () => {
   }
 }
 
-const deleteEmpleado = (id) => {
+const deleteEmpleado = (dni) => {
   empleados.value.splice(
-    empleados.value.findIndex((elm) => elm.id == id),
+    empleados.value.findIndex((elm) => elm.dni == dni),
     1
   )
   showAllEmp()
