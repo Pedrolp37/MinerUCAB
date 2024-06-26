@@ -117,7 +117,7 @@ export const getMineralConfig = async (req, res) => {
   try {
     const { id } = req.params;
    
-    const {rows} = await pool.query(`SELECT min_id, min_nombre, et_nombre, et_num_etapa, act_nombre, act_prioridad
+    const {rows} = await pool.query(`SELECT m.min_id, m.min_nombre, e.et_nombre, e.et_num_etapa, a.act_nombre, a.act_prioridad
                                     FROM mineral m, etapa e, actividad a
                                     WHERE m.min_id = $1 AND m.min_id = e.fk_min_id
                                     AND e.et_id = a.fk_et_id`,[id]); 

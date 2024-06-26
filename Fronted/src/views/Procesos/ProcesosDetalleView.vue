@@ -29,14 +29,27 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaDetalleMineralesVue from '../../components/TablaDetalleMinerales.vue'
+import {getEtapa} from '../../Services/Etapas/EtapaGet.servises.js'
 
 let route = useRoute()
 let minerals = ref([])
+let etapas = ref([])
 let minName = ref('')
+
+onMounted(async () => {
+  getEtapa(route.params.id).then((Response) => {
+    etapas.value = Response.data
+    console.log(etapas.value.forEach(elm => {
+      console.log(elm.et_num_etapa)
+    }))
+  })
+})
+
+
 
 minerals.value = [
   {

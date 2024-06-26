@@ -20,7 +20,7 @@
           <td>{{ elm.tipometal }}</td>
           <td>{{ elm.tipomineral }}</td>
           <td>
-            <button class="detalle btn">Detalle</button>
+            <button class="detalle btn" @click="AlertNDisponible">Detalle</button>
             |
             <button
               class="modificar btn"
@@ -63,7 +63,7 @@
           <td>{{ elm.tipometal }}</td>
           <td>{{ elm.tipomineral }}</td>
           <td>
-            <button class="detalle btn">Detalle</button>
+            <button class="detalle btn" @click="AlertNDisponible">Detalle</button>
             |
             <button
               class="modificar btn"
@@ -382,6 +382,10 @@ const saveChangesMin = () => {
 
 const sendResponseSDM = () => {
   emit('dltMineral', idMin.value)
+}
+
+const AlertNDisponible = () => {
+  alert('Opción no disponibles aún')
 }
 
 </script>

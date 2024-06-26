@@ -57,12 +57,12 @@ let proFiltered = ref([])
 proyectos.value = [
   {
     id: 1,
-    name: 'TerraFormals',
+    name: 'ExtracAndrómeda',
     status: 'Pendiente'
   },
   {
     id: 2,
-    name: 'Konoha',
+    name: 'ExtracAlfaCentaury',
     status: 'Atrasado'
   }
 ]

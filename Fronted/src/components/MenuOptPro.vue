@@ -43,7 +43,7 @@
         <div style="text-align: start">
           <button
             class="optionMenu btn"
-            @click="handleClickOption('cliente')"
+            @click="showAlert"
             :style="{ color: optionMenu == 'cliente' ? '#fa8f14' : 'white' }"
           >
             Cliente

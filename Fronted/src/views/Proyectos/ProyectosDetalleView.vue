@@ -36,8 +36,8 @@ empAsigPro.value = [
     name: 'Arturo',
     lastName: 'perez',
     dni: '28680741',
-    job: 'Asesino',
-    activity: ['Vender Droga']
+    job: 'Programador',
+    activity: ['Diseñar Juegos']
   },
   {
     name: 'Angel',
