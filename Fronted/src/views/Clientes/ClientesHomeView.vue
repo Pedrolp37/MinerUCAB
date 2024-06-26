@@ -139,7 +139,7 @@
 import { onMounted, ref } from 'vue'
 import TablaClientes from '../../components/TablaClientes.vue'
 import NavBarVue from '../../components/NavBar.vue'
-import { getClientes } from '../../Services/Clientes/ClientesGet.services'
+import { getClientes } from '../../Services/Clientes/ClientesGet.services.js'
 
 let clienteFiltered = ref([])
 let clientes = ref([])

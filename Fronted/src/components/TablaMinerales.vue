@@ -65,8 +65,6 @@ const props = defineProps({
   }
 })
 
-console.log(props.minerals)
-
 const emit = defineEmits(['showDetailMineral'])
 const sendResponseSDM = (id) => {
   emit('showDetailMineral', id)

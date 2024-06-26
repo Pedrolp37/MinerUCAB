@@ -171,7 +171,7 @@
 import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaEmpMUcab from '../../components/TablaEmpMUcab.vue'
-import { getEmpleados } from '../../Services/Empleados/EmpleadosGet.services'
+import { getEmpleados } from '../../Services/Empleados/EmpleadosGet.services.js'
 
 /*
 

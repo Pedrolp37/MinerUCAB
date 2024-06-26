@@ -138,6 +138,7 @@
                     >
                       <option value="Metalico">Ferroso</option>
                       <option value="No Metalico">No Ferroso</option>
+                      <option value= null>Ninguno</option>
                     </select>
                   </div>
 
@@ -176,6 +177,7 @@
                     >
                       <option value="Termico">Termico</option>
                       <option value="Electrico">Electrico</option>
+                      <option value= null>Ninguno</option>
                     </select>
                   </div>
 
@@ -186,7 +188,7 @@
                 <button
                   type="button"
                   class="guardar btn"
-                  @click="guardarEmpleado"
+                  @click="guardarMineral"
                   data-bs-dismiss="modal"
                 >
                   Añadir
@@ -205,7 +207,8 @@ import { onMounted, ref } from 'vue'
 import TablaMinerales from '../../components/TablaMinerales.vue'
 import NavBarVue from '../../components/NavBar.vue'
 import { useRouter } from 'vue-router'
-import { getMinerales } from '../../Services/Procesos/MineralesGet.services'
+import { getMinerales } from '../../Services/Procesos/MineralesGet.services.js'
+import { postMineral } from '../../Services/Procesos/MineralPost.services.js'
 
 /*
 
@@ -231,6 +234,8 @@ newMineral.value = {
   aislante: ''
 }
 
+
+
 /*
 
 * CONSUMO DE LA API
@@ -240,6 +245,21 @@ newMineral.value = {
 onMounted(async () => {
   getMinerales().then((Response) => (mineralsList.value = Response.data))
 })
+
+const guardarMineral = () => {
+  postMineral({
+    nombre: newMineral.value.nombre,
+    tipometal: newMineral.value.tipometal,
+    tipomineral: newMineral.value.tipomineral,
+    medicion: newMineral.value.medicion,
+    form_quimica: newMineral.value.form_quimica,
+    pur_ideal: newMineral.value.pur_ideal,
+    maleabilidad: newMineral.value.maleabilidad,
+    dureza: newMineral.value.dureza,
+    aislante: newMineral.value.aislante
+  })
+}
+
 
 /*
 

@@ -159,7 +159,7 @@
 import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaAliados from '../../components/TablaAliados.vue'
-import { getAliados } from '../../Services/Aliados/AliadosGet.services'
+import { getAliados } from '../../Services/Aliados/AliadosGet.services.js'
 
 /*
 
