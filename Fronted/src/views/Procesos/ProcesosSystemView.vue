@@ -115,8 +115,6 @@
                     />
                   </div>
 
-                  
-
                   <div class="mb-3">
                     <label for="telefono" class="label form-label">Tipo de Mineral:</label>
                     <select
@@ -124,6 +122,7 @@
                       aria-label="Default select example"
                       v-model="newMineral.tipomineral"
                     >
+                      <option value=""></option>
                       <option value="Metalico">Metalico</option>
                       <option value="No Metalico">No Metalico</option>
                     </select>
@@ -136,9 +135,9 @@
                       aria-label="Default select example"
                       v-model="newMineral.tipometal"
                     >
-                      <option value="Metalico">Ferroso</option>
-                      <option value="No Metalico">No Ferroso</option>
-                      <option value= null>Ninguno</option>
+                      <option value=""></option>
+                      <option value="Ferroso">Ferroso</option>
+                      <option value="No Ferroso">No Ferroso</option>
                     </select>
                   </div>
 
@@ -149,7 +148,8 @@
                       aria-label="Default select example"
                       v-model="newMineral.medicion"
                     >
-                      <option value="Onzas">Onzas Troy</option>
+                      <option value=""></option>
+                      <option value="Quilates">Quilates</option>
                       <option value="Tonelada Metrica">Tonelada Metrica</option>
                       <option value="Gramos">Gramos</option>
                     </select>
@@ -162,6 +162,7 @@
                       aria-label="Default select example"
                       v-model="newMineral.maleabilidad"
                     >
+                      <option value=""></option>
                       <option value="Alta">Alta</option>
                       <option value="Media">Media</option>
                       <option value="Baja">Baja</option>
@@ -175,12 +176,11 @@
                       aria-label="Default select example"
                       v-model="newMineral.aislante"
                     >
+                      <option value=""></option>
                       <option value="Termico">Termico</option>
                       <option value="Electrico">Electrico</option>
-                      <option value= null>Ninguno</option>
                     </select>
                   </div>
-
                 </form>
               </div>
               <div class="modal-footer">
@@ -206,9 +206,9 @@
 import { onMounted, ref } from 'vue'
 import TablaMinerales from '../../components/TablaMinerales.vue'
 import NavBarVue from '../../components/NavBar.vue'
-import { useRouter } from 'vue-router'
-import { getMinerales } from '../../Services/Procesos/MineralesGet.services.js'
-import { postMineral } from '../../Services/Procesos/MineralPost.services.js'
+import { useRouter, useRoute } from 'vue-router'
+import { getMinerales } from '../../Services/Minerales/MineralesGet.services'
+import { postMineral } from '../../Services/Minerales/MineralPost.services'
 
 /*
 
@@ -217,6 +217,7 @@ import { postMineral } from '../../Services/Procesos/MineralPost.services.js'
 */
 
 let router = useRouter()
+let route = useRoute()
 let mineralsList = ref([])
 let filteredMineralsList = ref([])
 let findMineral = ref('')
@@ -234,8 +235,6 @@ newMineral.value = {
   aislante: ''
 }
 
-
-
 /*
 
 * CONSUMO DE LA API
@@ -247,19 +246,57 @@ onMounted(async () => {
 })
 
 const guardarMineral = () => {
-  postMineral({
-    nombre: newMineral.value.nombre,
-    tipometal: newMineral.value.tipometal,
-    tipomineral: newMineral.value.tipomineral,
-    medicion: newMineral.value.medicion,
-    form_quimica: newMineral.value.form_quimica,
-    pur_ideal: newMineral.value.pur_ideal,
-    maleabilidad: newMineral.value.maleabilidad,
-    dureza: newMineral.value.dureza,
-    aislante: newMineral.value.aislante
-  })
+  switch (newMineral.value.tipomineral) {
+    case 'Metalico':
+      postMineral({
+        nombre: newMineral.value.nombre,
+        medicion: newMineral.value.medicion,
+        formulaQ: newMineral.value.form_quimica,
+        pureza: newMineral.value.pur_ideal,
+        maleabilidad: newMineral.value.maleabilidad,
+        dureza: newMineral.value.dureza,
+        tipo_metal: newMineral.value.tipometal,
+        aislante: null,
+        min_tipo: newMineral.value.tipomineral
+      })
+      newMineral.value.nombre = '',
+      newMineral.value.medicion = '',
+      newMineral.value.form_quimica = '',
+      newMineral.value.pur_ideal = 0,
+      newMineral.value.maleabilidad = '',
+      newMineral.value.dureza = 0,
+      newMineral.value.tipometal = '',
+      newMineral.value.aislante = '',
+      newMineral.value.tipomineral = ''
+      router.go()
+      break
+    case 'No Metalico':
+      postMineral({
+        nombre: newMineral.value.nombre,
+        medicion: newMineral.value.medicion,
+        formulaQ: newMineral.value.form_quimica,
+        pureza: newMineral.value.pur_ideal,
+        maleabilidad: null,
+        dureza: null,
+        tipo_metal: null,
+        aislante: newMineral.value.aislantel,
+        min_tipo: newMineral.value.tipomineral
+      })
+      newMineral.value.nombre = '',
+      newMineral.value.medicion = '',
+      newMineral.value.form_quimica = '',
+      newMineral.value.pur_ideal = 0,
+      newMineral.value.maleabilidad = '',
+      newMineral.value.dureza = 0,
+      newMineral.value.tipometal = '',
+      newMineral.value.aislante = '',
+      newMineral.value.tipomineral = ''
+      router.go()
+      break
+  }
 }
 
+  
 
 /*
 

@@ -28,23 +28,6 @@ export const getMinerales = async (req, res) => {
 
 * Create: Mineral --> Actualizar Procesos
 */
-export const createMineral = async (req,res)=>{
-  try{
-    const {nombre,medicion,formulaQ,pureza,maleabilidad,dureza,tipo_metal,aislante,min_tipo} = req.body;
-
-    await pool.query(`INSERT INTO MINERAL (min_nombre,min_medicion,min_formula_quimica,min_pureza_ideal,
-                                            met_maleabilidad,met_dureza,met_tipo_metal,nmet_aislante,min_tipo)
-                      VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,[nombre,medicion,formulaQ,
-                                                          pureza,maleabilidad,dureza,tipo_metal,
-                                                          aislante,min_tipo]);
-
-      res.status(201).json({message: "mineral creado"});
-  }catch(error){
-    return res.status(500).json(error);
-  }
-
-};
-
 export const postMineral = async (req, res) => {
   try {
     const {
@@ -59,10 +42,12 @@ export const postMineral = async (req, res) => {
       min_tipo,
     } = req.body;
 
-    await pool.query(
-      `INSERT INTO MINERAL (min_nombre,min_medicion,min_formula_quimica,min_pureza_ideal,
-        met_maleabilidad,met_dureza,met_tipo_metal,nmet_aislante,min_tipo)
-        VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
+    console.log(req.body)
+
+    await pool.query(`
+      INSERT INTO MINERAL (min_nombre,min_medicion,min_formula_quimica,
+      min_pureza_ideal,met_maleabilidad,met_dureza,met_tipo_metal,nmet_aislante,min_tipo)
+      VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
       [
         nombre,
         medicion,
@@ -83,21 +68,21 @@ export const postMineral = async (req, res) => {
 };
 
 export const eliminarMineral = async (req, res) => {
-    try{
-      const {id} = req.params;
+  try {
+    const { id } = req.params;
 
-        await pool.query('CALL eliminar_mineral($1)',[id]);
+    await pool.query("CALL eliminar_mineral($1)", [id]);
 
-        return res.status(200).json({ message: 'Mineral eliminado correctamente' });
-    }catch(error){
-       // Verifica si el error es específico del procedimiento almacenado
-       if (error.code === 'P0001') {
-        // Captura el mensaje de error y envía una respuesta personalizada
-        const errorMessage = error.message; // Puedes ajustar esto según el formato que desees
-        return res.status(404).json({ error: errorMessage });
+    return res.status(200).json({ message: "Mineral eliminado correctamente" });
+  } catch (error) {
+    // Verifica si el error es específico del procedimiento almacenado
+    if (error.code === "P0001") {
+      // Captura el mensaje de error y envía una respuesta personalizada
+      const errorMessage = error.message; // Puedes ajustar esto según el formato que desees
+      return res.status(404).json({ error: errorMessage });
     } else {
-        // Otra excepción no relacionada con el procedimiento almacenado
-        return res.status(500).json({ error: 'Error al eliminar el mineral' });
+      // Otra excepción no relacionada con el procedimiento almacenado
+      return res.status(500).json({ error: "Error al eliminar el mineral" });
     }
-    }
-};  
+  }
+};
