@@ -17,6 +17,10 @@ CREATE OR REPLACE PROCEDURE eliminar_etapa(IN etapa_id INT)
   language plpgsql
 AS $$
 BEGIN
+	-- Verificar si la etapa existe
+    IF NOT EXISTS (SELECT 1 FROM ETAPA WHERE et_id = etapa_id) THEN
+        RAISE EXCEPTION 'La etapa con ID % no existe', etapa_id;
+    END IF;
 	-- Elimina las actividades relacionadas con las etapas del mineral
     DELETE FROM ACTIVIDAD
     WHERE fk_et_id = etapa_id;
