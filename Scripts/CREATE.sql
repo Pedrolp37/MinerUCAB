@@ -824,9 +824,9 @@ CREATE TABLE DETALLE_SOL_AL(
 	det_sol_ali_id INT NOT NULL,
 	det_sol_cantidad INT NOT NULL,
 	det_sol_precio_unitario NUMERIC(10,2) NOT NULL,
-	det_sol_min_id INT NOT NULL,
-	det_sol_carg_id INT NOT NULL,
-	det_sol_tire_id INT NOT NULL,
+	det_sol_min_id INT,
+	det_sol_carg_id INT,
+	det_sol_tire_id INT,
 
 	CONSTRAINT pk_det_factura PRIMARY KEY (det_sol_id, det_sol_ali_id),
 
