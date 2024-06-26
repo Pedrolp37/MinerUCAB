@@ -116,23 +116,11 @@ export const getMineralsConfiguration = async (req, res) => {
 export const getMineralConfig = async (req, res) => {
   try {
     const { id } = req.params;
-    //revisar consulta
-    /* const {rows} = await pool.query(`SELECT min_id, min_nombre, et_nombre, et_num_etapa, act_nombre, act_prioridad
-                                    FROM mineral, etapa, actividad
-                                    WHERE min_id = $1 AND min_id = fk_min_id
-                                      AND et_id = fk_et_id`,[id]); */
-    //Ambas consultas hacen lo mismo, sin embargo no se si la forma en que trae
-    //la infomacion es la que se quiere
-    const { rows } = await pool.query(
-      `select min_id, min_nombre, et_nombre, et_num_etapa, act.act_nombre, act.act_prioridad
-                FROM mineral, etapa, (select fk_et_id, act_nombre, act_prioridad
-					                     from actividad) as act
-                      WHERE min_id = $1
-                      AND min_id = fk_min_id
-                      AND et_id = act.fk_et_id`,
-      [id]
-    );
-    //falta traer la informacion de carrgos y rrecursos asociados
+   
+    const {rows} = await pool.query(`SELECT min_id, min_nombre, et_nombre, et_num_etapa, act_nombre, act_prioridad
+                                    FROM mineral m, etapa e, actividad a
+                                    WHERE m.min_id = $1 AND m.min_id = e.fk_min_id
+                                    AND e.et_id = a.fk_et_id`,[id]); 
     if (!rows.length) {
       return res
         .status(200)

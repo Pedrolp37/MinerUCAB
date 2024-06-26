@@ -20,7 +20,7 @@
           <td>{{ elm.tipometal }}</td>
           <td>{{ elm.tipomineral }}</td>
           <td>
-            <button class="detalle btn" @click="sendResponseSDM(elm.id)">Detalle</button>
+            <button class="detalle btn" @click="sendResponseSDM(elm.id)">Eliminar</button>
           </td>
         </tr>
       </tbody>
@@ -45,7 +45,7 @@
           <td>{{ elm.tipometal }}</td>
           <td>{{ elm.tipomineral }}</td>
           <td>
-            <button class="detalle btn" @click="sendResponseSDM(elm.id)">Detalle</button>
+            <button class="detalle btn" @click="sendResponseSDM(elm.id)">Eliminar</button>
           </td>
         </tr>
       </tbody>
@@ -65,9 +65,9 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['showDetailMineral'])
+const emit = defineEmits(['dltMineral'])
 const sendResponseSDM = (id) => {
-  emit('showDetailMineral', id)
+  emit('dltMineral', id)
 }
 </script>
 

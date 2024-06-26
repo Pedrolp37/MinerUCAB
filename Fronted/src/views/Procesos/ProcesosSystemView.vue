@@ -46,7 +46,7 @@
           <TablaMinerales
             :minerals="mineralsList"
             :filteredMinerals="filteredMineralsList"
-            @showDetailMineral="getResponseSDM"
+            @dltMineral="getidDeleteMin"
           />
         </div>
       </div>
@@ -209,7 +209,7 @@ import NavBarVue from '../../components/NavBar.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { getMinerales } from '../../Services/Minerales/MineralesGet.services'
 import { postMineral } from '../../Services/Minerales/MineralPost.services'
-
+import { deleteMineral } from '../../Services/Minerales/MineralesDelete.services'
 /*
 
 * VARIABLES
@@ -313,8 +313,9 @@ const showAllMinerals = () => {
   filteredMineralsList.value = []
 }
 
-const getResponseSDM = (id) => {
-  router.push({ name: 'procesos_detalle', params: { id: id } })
+const getidDeleteMin = (id) => {
+  deleteMineral(id)
+  router.go()
 }
 </script>
 
