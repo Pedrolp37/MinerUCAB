@@ -12,13 +12,34 @@ AS $$
 		(cargo_id,emp_id,CURRENT_DATE);
 END $$;
 
+-- ELIMINAR ETAPA DE CONFIGURACION
+CREATE OR REPLACE PROCEDURE eliminar_etapa(IN etapa_id INT)
+  language plpgsql
+AS $$
+BEGIN
+	-- Verificar si la etapa existe
+    IF NOT EXISTS (SELECT 1 FROM ETAPA WHERE et_id = etapa_id) THEN
+        RAISE EXCEPTION 'La etapa con ID % no existe', etapa_id;
+    END IF;
+	-- Elimina las actividades relacionadas con las etapas del mineral
+    DELETE FROM ACTIVIDAD
+    WHERE fk_et_id = etapa_id;
 
+	DELETE FROM ETAPA WHERE et_id = etapa_id;
+END $$;
+
+--ELIMINAR MINERAL
 CREATE OR REPLACE PROCEDURE eliminar_mineral(IN mineral_id INT)
 	language plpgsql
 AS $$
 	DECLARE
 	 proyecto_id INT;
 BEGIN
+
+	-- Verificar si el mineral existe
+    IF NOT EXISTS (SELECT 1 FROM MINERAL WHERE min_id = mineral_id) THEN
+        RAISE EXCEPTION 'El mineral con ID % no existe', mineral_id;
+    END IF;
 	  -- Elimina las actividades relacionadas con las etapas del mineral
     DELETE FROM ACTIVIDAD
     WHERE fk_et_id IN (SELECT et_id FROM ETAPA WHERE fk_min_id = mineral_id);
@@ -46,8 +67,8 @@ BEGIN
 END $$;
 
 
-
-
+/*
+--     TRIGGER
 ---------------------------
 --SOLICITUD ALIADO
 CREATE OR REPLACE FUNCTION eliminar_estatus_solicictud_AL()
@@ -255,4 +276,4 @@ LANGUAGE plpgsql;
 CREATE OR REPLACE TRIGGER antes_eliminar_actividadEJ_verCargoEJ
 BEFORE DELETE ON ACTIVIDAD_EJ
 FOR EACH ROW
-EXECUTE FUNCTION eliminar_cargo_ej();
+EXECUTE FUNCTION eliminar_cargo_ej(); */

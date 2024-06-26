@@ -273,7 +273,7 @@ BEGIN
 		WHERE caej_actej_id = OLD.actej_id
 	) THEN
 		-- Elimina los cargos asociados
-        DELETE FROM ACTIVIDAD_CARGO
+        DELETE FROM CARGO_EJ
         WHERE caej_actej_id = OLD.actej_id;
 	END IF;
 

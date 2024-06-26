@@ -34,7 +34,7 @@ CREATE TABLE MINERAL (
 	-- expresion regular para el nombre del mineral
 	CONSTRAINT ck_min_nombre CHECK (min_nombre ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
 	-- formas en que se mide el mineral
-	CONSTRAINT ck_min_medicion CHECK (min_medicion IN ('Tonelada Metrica','Gramos','Quilates')),
+	CONSTRAINT ck_min_medicion CHECK (min_medicion IN ('Tonelada Metrica','Gramos','Quilates','Onzas')),
 	-- expresion regular para la formula quimica del mineral
 	CONSTRAINT ck_min_formula_quimica CHECK (min_formula_quimica ~ '[a-zA-Z0-9]+$'),
 	-- rango en que se mide la pureza del mineral
@@ -824,9 +824,9 @@ CREATE TABLE DETALLE_SOL_AL(
 	det_sol_ali_id INT NOT NULL,
 	det_sol_cantidad INT NOT NULL,
 	det_sol_precio_unitario NUMERIC(10,2) NOT NULL,
-	det_sol_min_id INT NOT NULL,
-	det_sol_carg_id INT NOT NULL,
-	det_sol_tire_id INT NOT NULL,
+	det_sol_min_id INT,
+	det_sol_carg_id INT,
+	det_sol_tire_id INT,
 
 	CONSTRAINT pk_det_factura PRIMARY KEY (det_sol_id, det_sol_ali_id),
 
