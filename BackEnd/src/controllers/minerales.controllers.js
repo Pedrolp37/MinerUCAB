@@ -67,6 +67,43 @@ export const postMineral = async (req, res) => {
   }
 };
 
+export const putMineral = async (req,res) =>{
+  try{
+    const {
+      mineral_id,
+      nombre,
+      medicion,
+      formulaQ,
+      pureza,
+      maleabilidad,
+      dureza,
+      tipo_metal,
+      aislante,
+      min_tipo,
+    } = req.body;
+
+    await pool.query(`UPDATE MINERAL SET min_nombre=$2, min_medicion=$3, min_formula_quimica=$4,
+                    min_pureza_ideal=$5, met_maleabilidad=$6, met_dureza=$7,
+                    met_tipo_metal=$8, nmet_aislante=$9, min_tipo=$10
+                    WHERE min_id=$1`,
+      [ mineral_id,
+        nombre,
+        medicion,
+        formulaQ,
+        pureza,
+        maleabilidad,
+        dureza,
+        tipo_metal,
+        aislante,
+        min_tipo,]);
+
+
+        return res.status(200).json({message:"mineral actualizado"});
+  }catch(error){
+    return res.status(500).json(error);
+  }
+};
+
 export const eliminarMineral = async (req, res) => {
   try {
     const { id } = req.params;
