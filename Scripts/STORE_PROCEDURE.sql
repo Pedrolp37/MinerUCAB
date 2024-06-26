@@ -31,6 +31,11 @@ AS $$
 	DECLARE
 	 proyecto_id INT;
 BEGIN
+
+	-- Verificar si el mineral existe
+    IF NOT EXISTS (SELECT 1 FROM MINERAL WHERE min_id = mineral_id) THEN
+        RAISE EXCEPTION 'El mineral con ID % no existe', mineral_id;
+    END IF;
 	  -- Elimina las actividades relacionadas con las etapas del mineral
     DELETE FROM ACTIVIDAD
     WHERE fk_et_id IN (SELECT et_id FROM ETAPA WHERE fk_min_id = mineral_id);
