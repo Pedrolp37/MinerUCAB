@@ -28,6 +28,18 @@ BEGIN
 	DELETE FROM ETAPA WHERE et_id = etapa_id;
 END $$;
 
+--ELIMINA ACTIVIDAD CONFIGURACION
+CREATE OR REPLACE PROCEDURE eliminar_actividad(IN actividad_id INT)
+	language plpgsql
+AS $$
+BEGIN
+	DELETE FROM ACTIVIDAD
+	WHERE fk_act_id = actividad_id;
+
+	DELETE FROM ACTIVIDAD
+	WHERE act_id = actividad_id;
+END $$;
+
 --ELIMINAR MINERAL
 CREATE OR REPLACE PROCEDURE eliminar_mineral(IN mineral_id INT)
 	language plpgsql
