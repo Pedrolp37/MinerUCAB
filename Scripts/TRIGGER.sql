@@ -208,3 +208,25 @@ BEFORE DELETE ON ACTIVIDAD_EJ
 FOR EACH ROW
 EXECUTE FUNCTION eliminar_cargo_ej();
 
+-- TRIGGER PARA VERIFICAR EL NUMERO DE ETAPA
+CREATE OR REPLACE FUNCTION verificar_num_etapa()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS(
+		SELECT 1
+		FROM etapa
+		WHERE et_num_etapa = NEW.et_num_etapa
+		AND fk_min_id = NEW.fk_min_id
+	)THEN
+	 RAISE EXCEPTION 'El número de etapa ya existe para este mineral.';
+	END IF;
+	RETURN NEW;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER antes_insertar_etapa
+BEFORE INSERT ON ETAPA
+FOR EACH ROW
+EXECUTE FUNCTION verificar_num_etapa();
