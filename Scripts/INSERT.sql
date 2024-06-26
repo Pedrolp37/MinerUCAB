@@ -7487,3 +7487,207 @@ VALUES (1, 1, '2024-06-03', null),
  (13, 3, '2024-06-03', null),
 
 (14, 4, '2024-06-05', null);
+
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+ VALUES (1, 20, 25.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+ VALUES ( 2, 20, 18.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+ VALUES ( 3, 20, 32.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES ( 4, 20, 40.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (5, 20, 22.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (6, 20, 28.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (7, 20, 35.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (8, 20, 20.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (9, 20, 45.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (10, 20, 25.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (11, 20, 18.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (12, 20, 32.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (13, 20, 40.75, 1);
+ INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+ VALUES (14, 20, 18.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (15, 20, 24.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (16, 20, 30.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (17, 20, 37.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (18, 20, 22.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (19, 20, 47.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (20, 20, 60.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (21, 20, 98.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (22, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (23, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (24, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (25, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (26, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (27, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (28, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (29, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (30, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (31, 20, 54.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (32, 20, 54.00, 1);
+
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (33, 20, 55.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (34, 20, 57.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (35, 20, 50.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (36, 20, 52.25, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (37, 20, 54.75, 1);
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (38, 20, 54.25, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (39, 20, 49.00, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (40, 20, 51.75, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (41, 20, 43.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (42, 20, 43.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (43, 20, 43.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (44, 20, 52.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (45, 20, 69.50, 1);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario,  det_sol_tire_id)
+ VALUES (46, 20, 43.50, 1);
+ INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+ VALUES (47, 20, 43.50, 1);
+
+
+
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (1, 40, 25.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (2, 40, 18.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (3, 40, 32.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (4, 40, 40.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (5, 40, 22.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (6, 40, 28.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (7, 40, 35.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (8, 40, 20.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (9, 40, 45.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (10, 40, 25.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (11, 40, 18.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (12, 40, 32.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (13, 40, 40.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (14, 40, 18.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (15, 40, 24.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (16, 40, 30.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (17, 40, 37.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (18, 40, 22.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (19, 40, 47.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (20, 40, 60.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (21, 40, 98.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (22, 40, 54.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (23, 40, 54.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (24, 40, 54.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (25, 40, 54.00, 5);
+
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (26, 40, 54.00, 5);
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (27, 40, 54.00, 5);
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (28, 40, 104.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (29, 40, 94.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (30, 40, 566.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (31, 40, 105.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (32, 40, 565.00, 5);
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (33, 40, 555.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (34, 40, 57.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (35, 40, 50.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (36, 40, 52.25, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (37, 40, 54.75, 5);
+
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (38, 40, 54.25, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (39, 40, 49.00, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (40, 40, 51.75, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (41, 40, 43.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (42, 40, 43.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (43, 40, 156.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (44, 40, 52.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (45, 40, 69.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (46, 40, 133.50, 5);
+INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
+VALUES (47, 40, 43.50, 5);
+
