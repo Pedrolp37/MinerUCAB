@@ -47,6 +47,7 @@
             :minerals="mineralsList"
             :filteredMinerals="filteredMineralsList"
             @dltMineral="getidDeleteMin"
+            @modMineral="getMinPut"
           />
         </div>
       </div>
@@ -210,6 +211,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { getMinerales } from '../../Services/Minerales/MineralesGet.services'
 import { postMineral } from '../../Services/Minerales/MineralPost.services'
 import { deleteMineral } from '../../Services/Minerales/MineralesDelete.services'
+import { putMineral } from '../../Services/Minerales/MineralesPut.services'
 /*
 
 * VARIABLES
@@ -245,6 +247,13 @@ onMounted(async () => {
   getMinerales().then((Response) => (mineralsList.value = Response.data))
 })
 
+
+
+/*
+
+* MÉTODOS(FUNCIONES)
+
+*/
 const guardarMineral = () => {
   switch (newMineral.value.tipomineral) {
     case 'Metalico':
@@ -259,15 +268,15 @@ const guardarMineral = () => {
         aislante: null,
         min_tipo: newMineral.value.tipomineral
       })
-      newMineral.value.nombre = '',
-      newMineral.value.medicion = '',
-      newMineral.value.form_quimica = '',
-      newMineral.value.pur_ideal = 0,
-      newMineral.value.maleabilidad = '',
-      newMineral.value.dureza = 0,
-      newMineral.value.tipometal = '',
-      newMineral.value.aislante = '',
-      newMineral.value.tipomineral = ''
+      ;(newMineral.value.nombre = ''),
+        (newMineral.value.medicion = ''),
+        (newMineral.value.form_quimica = ''),
+        (newMineral.value.pur_ideal = 0),
+        (newMineral.value.maleabilidad = ''),
+        (newMineral.value.dureza = 0),
+        (newMineral.value.tipometal = ''),
+        (newMineral.value.aislante = ''),
+        (newMineral.value.tipomineral = '')
       router.go()
       break
     case 'No Metalico':
@@ -282,27 +291,24 @@ const guardarMineral = () => {
         aislante: newMineral.value.aislantel,
         min_tipo: newMineral.value.tipomineral
       })
-      newMineral.value.nombre = '',
-      newMineral.value.medicion = '',
-      newMineral.value.form_quimica = '',
-      newMineral.value.pur_ideal = 0,
-      newMineral.value.maleabilidad = '',
-      newMineral.value.dureza = 0,
-      newMineral.value.tipometal = '',
-      newMineral.value.aislante = '',
-      newMineral.value.tipomineral = ''
+      ;(newMineral.value.nombre = ''),
+        (newMineral.value.medicion = ''),
+        (newMineral.value.form_quimica = ''),
+        (newMineral.value.pur_ideal = 0),
+        (newMineral.value.maleabilidad = ''),
+        (newMineral.value.dureza = 0),
+        (newMineral.value.tipometal = ''),
+        (newMineral.value.aislante = ''),
+        (newMineral.value.tipomineral = '')
       router.go()
       break
   }
 }
 
-  
-
-/*
-
-* MÉTODOS(FUNCIONES)
-
-*/
+const getMinPut = (mineral) => {
+  putMineral(mineral)
+  router.go()
+}
 
 const filterMineral = () => {
   filteredMineralsList.value = mineralsList.value.filter((elm) => elm.nombre === findMineral.value)

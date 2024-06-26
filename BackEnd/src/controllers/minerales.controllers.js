@@ -14,6 +14,7 @@ export const getMinerales = async (req, res) => {
         min_pureza_ideal as pur_ideal, met_maleabilidad as maleabilidad,
         met_dureza as dureza, nmet_aislante as aislante
         from mineral
+        order by min_id asc
       `);
 
     return !rows.length
@@ -42,9 +43,10 @@ export const postMineral = async (req, res) => {
       min_tipo,
     } = req.body;
 
-    console.log(req.body)
+    console.log(req.body);
 
-    await pool.query(`
+    await pool.query(
+      `
       INSERT INTO MINERAL (min_nombre,min_medicion,min_formula_quimica,
       min_pureza_ideal,met_maleabilidad,met_dureza,met_tipo_metal,nmet_aislante,min_tipo)
       VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
@@ -67,8 +69,8 @@ export const postMineral = async (req, res) => {
   }
 };
 
-export const putMineral = async (req,res) =>{
-  try{
+export const putMineral = async (req, res) => {
+  try {
     const {
       mineral_id,
       nombre,
@@ -82,11 +84,13 @@ export const putMineral = async (req,res) =>{
       min_tipo,
     } = req.body;
 
-    await pool.query(`UPDATE MINERAL SET min_nombre=$2, min_medicion=$3, min_formula_quimica=$4,
+    await pool.query(
+      `UPDATE MINERAL SET min_nombre=$2, min_medicion=$3, min_formula_quimica=$4,
                     min_pureza_ideal=$5, met_maleabilidad=$6, met_dureza=$7,
                     met_tipo_metal=$8, nmet_aislante=$9, min_tipo=$10
                     WHERE min_id=$1`,
-      [ mineral_id,
+      [
+        mineral_id,
         nombre,
         medicion,
         formulaQ,
@@ -95,11 +99,12 @@ export const putMineral = async (req,res) =>{
         dureza,
         tipo_metal,
         aislante,
-        min_tipo,]);
+        min_tipo,
+      ]
+    );
 
-
-        return res.status(200).json({message:"mineral actualizado"});
-  }catch(error){
+    return res.status(200).json({ message: "mineral actualizado" });
+  } catch (error) {
     return res.status(500).json(error);
   }
 };
@@ -112,13 +117,10 @@ export const eliminarMineral = async (req, res) => {
 
     return res.status(200).json({ message: "Mineral eliminado correctamente" });
   } catch (error) {
-    // Verifica si el error es específico del procedimiento almacenado
     if (error.code === "P0001") {
-      // Captura el mensaje de error y envía una respuesta personalizada
-      const errorMessage = error.message; // Puedes ajustar esto según el formato que desees
+      const errorMessage = error.message;
       return res.status(404).json({ error: errorMessage });
     } else {
-      // Otra excepción no relacionada con el procedimiento almacenado
       return res.status(500).json({ error: "Error al eliminar el mineral" });
     }
   }
