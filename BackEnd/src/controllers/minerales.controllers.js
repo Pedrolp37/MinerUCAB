@@ -28,8 +28,23 @@ export const getMinerales = async (req, res) => {
 /*
 
 * Create: Mineral --> Actualizar Procesos
-
 */
+export const createMineral = async (req,res)=>{
+  try{
+    const {nombre,medicion,formulaQ,pureza,maleabilidad,dureza,tipo_metal,aislante,min_tipo} = req.body;
+
+    await pool.query(`INSERT INTO MINERAL (min_nombre,min_medicion,min_formula_quimica,min_pureza_ideal,
+                                            met_maleabilidad,met_dureza,met_tipo_metal,nmet_aislante,min_tipo)
+                      VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,[nombre,medicion,formulaQ,
+                                                          pureza,maleabilidad,dureza,tipo_metal,
+                                                          aislante,min_tipo]);
+
+      res.status(201).json({message: "mineral creado"});
+  }catch(error){
+    return res.status(500).json(error);
+  }
+
+};
 
 export const eliminarMineral = async (req, res) => {
     try{
