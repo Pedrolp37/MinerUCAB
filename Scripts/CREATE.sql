@@ -612,10 +612,14 @@ CREATE TABLE SOLICITUD_CLIENTE(
 	factura_cli_id SERIAL PRIMARY KEY,
 	factura_cli_fecha DATE NOT NULL,
 	factura_cli_total NUMERIC(20,2) NOT NULL,
+	factura_cli_cantidad NUMERIC(20,2) NOT NULL,
 	factura_cli_observacion VARCHAR(200),
 	factura_fk_cl_identificacion VARCHAR(11),
+	factura_min_id INT NOT NULL,
 
 	CONSTRAINT fk_solicita FOREIGN KEY (factura_fk_cl_identificacion) REFERENCES CLIENTE(cl_identificacion),
+
+	CONSTRAINT fk_contener FOREIGN KEY (factura_min_id) REFERENCES MINERAL (min_id),
 
 	CONSTRAINT ck_factura_cli_fecha CHECK (factura_cli_fecha <= CURRENT_DATE),
 
@@ -644,24 +648,6 @@ CREATE TABLE EST_SOL_CLIENTE(
 	CONSTRAINT ck_escl_fecha_fin CHECK (escl_fecha_fin <= CURRENT_DATE),
 
 	CONSTRAINT ck_escl_fecha_diff CHECK (escl_fecha_fin > escl_fecha_ini)
-);
-
-CREATE TABLE DETALLE_FACTURA(
-	detalle_id SERIAL NOT NULL,
-	detalle_fk_sol_cli INT NOT NULL,
-	detalle_cantidad INT NOT NULL,
-	detalle_precio_unitario NUMERIC(10,2) NOT NULL,
-	detalle_min_id INT NOT NULL,
-
-	CONSTRAINT pk_detalle_factura PRIMARY KEY (detalle_id, detalle_fk_sol_cli),
-
-	CONSTRAINT fk_implica FOREIGN KEY (detalle_fk_sol_cli) REFERENCES SOLICITUD_CLIENTE (factura_cli_id),
-
-	CONSTRAINT ck_detalle_cantidad CHECK (detalle_cantidad > 0),
-
-	CONSTRAINT ck_detalle_precio_unitario CHECK (detalle_precio_unitario > 0),
-
-	CONSTRAINT fk_detalle_min_id FOREIGN KEY (detalle_min_id) REFERENCES MINERAL (min_id)
 );
 
 -- CREATE CORRESPONDIENTES A METODOS DE PAGO
@@ -782,14 +768,22 @@ CREATE TABLE SOLICITUD_ALIADO(
 	factura_ali_id SERIAL PRIMARY KEY,
 	factura_ali_fecha DATE NOT NULL,
 	factura_ali_total NUMERIC(20,2) NOT NULL,
+	factura_ali_cantidad NUMERIC(20,2) NOT NULL, -- cantidad de lo que se pide
 	factura_ali_observacion VARCHAR(200),
 	factura_fk_ali_RIF VARCHAR(11),
 	factura_fk_pro_id INT NOT NULL,
-
+	factura_ali_min_id INT,  -- FK MOVIDAS DE DETALLE 
+	factura_ali_tire_id INT,
+	factura_ali_carg_id INT,
+	
 	CONSTRAINT fk_ofrece FOREIGN KEY (factura_fk_ali_RIF) REFERENCES ALIADO_COMERCIAL(ali_RIF),
 
 	CONSTRAINT fk_pide FOREIGN KEY (factura_fk_pro_id) REFERENCES PROYECTO(pro_id),
-
+	-- FK MOVIDAS DE DETALLE
+	CONSTRAINT fk_abarcar FOREIGN KEY (factura_ali_min_id) REFERENCES MINERAL (min_id),
+	CONSTRAINT fk_dispone FOREIGN KEY (factura_ali_tire_id) REFERENCES RECURSO (tire_id),
+	CONSTRAINT fk_proviene FOREIGN KEY (factura_ali_carg_id) REFERENCES CARGO (carg_id),
+	--- #####
 	CONSTRAINT ck_factura_ali_fecha CHECK (factura_ali_fecha <= CURRENT_DATE),
 
 	CONSTRAINT ck_factura_ali_total CHECK (factura_ali_total > 0),
@@ -817,31 +811,6 @@ CREATE TABLE EST_SOLICITUD(
 	CONSTRAINT ck_est_sol_fecha_diff CHECK (est_sol_fecha_fin > est_sol_fecha_ini)
 );
 
-DROP TABLE IF EXISTS DETALLE_SOL_AL CASCADE;
-
-CREATE TABLE DETALLE_SOL_AL(
-	det_sol_id SERIAL NOT NULL,
-	det_sol_ali_id INT NOT NULL,
-	det_sol_cantidad INT NOT NULL,
-	det_sol_precio_unitario NUMERIC(10,2) NOT NULL,
-	det_sol_min_id INT,
-	det_sol_carg_id INT,
-	det_sol_tire_id INT,
-
-	CONSTRAINT pk_det_factura PRIMARY KEY (det_sol_id, det_sol_ali_id),
-
-	CONSTRAINT fk_concerta FOREIGN KEY (det_sol_ali_id) REFERENCES SOLICITUD_ALIADO (factura_ali_id),
-
-	CONSTRAINT ck_det_sol_cantidad CHECK (det_sol_cantidad > 0),
-
-	CONSTRAINT ck_det_sol_precio_unitario CHECK (det_sol_precio_unitario > 0),
-
-	CONSTRAINT fk_abarcar FOREIGN KEY (det_sol_min_id) REFERENCES MINERAL (min_id),
-
-	CONSTRAINT fk_dispone FOREIGN KEY (det_sol_tire_id) REFERENCES RECURSO (tire_id),
-
-	CONSTRAINT fk_proviene FOREIGN KEY (det_sol_carg_id) REFERENCES CARGO (carg_id)
-);
 
 CREATE TABLE PAGO(
 	pago_id SERIAL,
@@ -862,34 +831,71 @@ CREATE TABLE PAGO(
 	CONSTRAINT ck_pago_monto CHECK (pago_monto > 0)
 );
 
-DROP TABLE IF EXISTS RECURSO_EJ;
+DROP TABLE IF EXISTS RECURSO_EJ, ETAPA_ESTATUS;
 
 CREATE TABLE RECURSO_EJ(
 	reej_id SERIAL PRIMARY KEY,
 	reej_costo NUMERIC(20,2) NOT NULL,
-	reej_sol_id INT,
-	reej_sol_ali_id INT,
+	reej_sol_ali_id INT, -- fk solicitud aliado
 	reej_re_id INT,
 	reej_actej_id INT NOT NULL,
 
-	CONSTRAINT fk_cede FOREIGN KEY (reej_sol_id,reej_sol_ali_id) REFERENCES DETALLE_SOL_AL(det_sol_id, det_sol_ali_id),
+	CONSTRAINT fk_cede FOREIGN KEY (reej_sol_ali_id) REFERENCES SOLICITUD_ALIADO (factura_ali_id),
 
 	CONSTRAINT fk_dispensa_de FOREIGN KEY (reej_re_id) REFERENCES RECURSO_MATERIAL (re_id),
 
 	CONSTRAINT fk_posee FOREIGN KEY (reej_actej_id) REFERENCES ACTIVIDAD_EJ (actej_id)
 	);
 
+CREATE TABLE ETAPA_ESTATUS(
+	etes_id SERIAL NOT NULL,
+	etes_etej_id INT NOT NULL,
+	etes_est_id INT NOT NULL,
+	etes_fecha_ini DATE NOT NULL,
+	etes_fecha_fin DATE,
+
+	-- Llave compuesta
+	CONSTRAINT pk_etapa_estatus PRIMARY KEY (etes_id, etes_etej_id , etes_est_id),
+	-- Llave foranea con respecto a etapa
+	CONSTRAINT fk_fase FOREIGN KEY (etes_etej_id) REFERENCES ETAPA_EJ(etej_id),
+	-- Llave foranea con respecto a estatus
+	CONSTRAINT fk_tramo FOREIGN KEY (etes_est_id) REFERENCES ESTATUS (est_id),
+	-- check de fecha tiene que ser menor o igual que la fecha actual
+	CONSTRAINT ck_etes_fecha_ini CHECK (etes_fecha_ini <= CURRENT_DATE),
+	-- check de que fecha final tiene que ser mayor a la inicial
+	CONSTRAINT ck_etes_fecha_fin CHECK (etes_fecha_fin > etes_fecha_ini)
+);
+
+DROP TABLE IF EXISTS ACTIVIDAD_ESTATUS;
+CREATE TABLE ACTIVIDAD_ESTATUS(
+	actes_id SERIAL NOT NULL,
+	actes_actej_id INT NOT NULL,
+	actes_est_id INT NOT NULL,
+	actes_fecha_ini DATE NOT NULL,
+	actes_fecha_fin DATE,
+
+	-- Llave compuesta
+	CONSTRAINT pk_actividad_estatus PRIMARY KEY (actes_id, actes_actej_id , actes_est_id),
+	-- Llave foranea con respecto a etapa
+	CONSTRAINT fk_ocupa FOREIGN KEY (actes_actej_id) REFERENCES ACTIVIDAD_EJ(actej_id),
+	-- Llave foranea con respecto a estatus
+	CONSTRAINT fk_ocupan FOREIGN KEY (actes_est_id) REFERENCES ESTATUS (est_id),
+	-- check de fecha tiene que ser menor o igual que la fecha actual
+	CONSTRAINT ck_actes_fecha_ini CHECK (actes_fecha_ini <= CURRENT_DATE),
+	-- check de que fecha final tiene que ser mayor a la inicial
+	CONSTRAINT ck_actes_fecha_fin CHECK (actes_fecha_fin > actes_fecha_ini)
+);
+
 CREATE TABLE CARGO_EJ(
 	caej_id SERIAL PRIMARY KEY,
 	caej_costo NUMERIC(20,2) NOT NULL,
-	caej_sol_id INT,
-	caej_sol_ali_id INT,
+	caej_sol_ali_id INT, -- fk solicitud aliado
 	caej_caem_id INT,
 	caej_caem_carg_id INT,
 	caej_caem_emp_identificacion VARCHAR(11),
 	caej_actej_id INT NOT NULL,
 
-	CONSTRAINT fk_se_establece FOREIGN KEY (caej_sol_id,caej_sol_ali_id) REFERENCES DETALLE_SOL_AL (det_sol_id, det_sol_ali_id),
+	CONSTRAINT fk_se_establece FOREIGN KEY (caej_sol_ali_id) REFERENCES SOLICITUD_ALIADO (factura_ali_id),
 
 	CONSTRAINT fk_trabaja FOREIGN KEY (caej_caem_id,caej_caem_carg_id,caej_caem_emp_identificacion) REFERENCES CARGO_EMPLEADO (caem_id, caem_fk_carg_id,caem_fk_emp_identificacion),
 
