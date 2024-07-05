@@ -771,7 +771,7 @@ CREATE TABLE SOLICITUD_ALIADO(
 	factura_ali_cantidad NUMERIC(20,2) NOT NULL, -- cantidad de lo que se pide
 	factura_ali_observacion VARCHAR(200),
 	factura_fk_ali_RIF VARCHAR(11),
-	factura_fk_pro_id INT NOT NULL,
+	factura_fk_pro_id INT,
 	factura_ali_min_id INT,  -- FK MOVIDAS DE DETALLE 
 	factura_ali_tire_id INT,
 	factura_ali_carg_id INT,
