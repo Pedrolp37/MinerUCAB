@@ -5915,7 +5915,7 @@ INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, 
 INSERT INTO CONCESION (conce_fk_ali_RIF, conce_fk_min_id, conce_cap_productiva, conce_fecha_ini, conce_fecha_fin) VALUES ('J1690001244', 24, 660000, '2021-03-01', '2035-03-01');
 
 --SOLICITUDES
-
+/*
 INSERT INTO SOLICITUD_CLIENTE (factura_cli_fecha, factura_cli_total, factura_cli_observacion, factura_fk_cl_identificacion)
 VALUES
 ('2024-04-02', 12345.67, 'Factura para cliente V115345678', 'V115345678'),
@@ -5932,7 +5932,7 @@ VALUES
 ('2024-06-16', 98765.43, 'Factura para cliente V197531486', 'V197531486'),
 ('2024-06-02', 54321.09, 'Factura para cliente V178965412', 'V178965412'),
 ('2024-06-17', 32109.87, 'Factura para cliente V287654323', 'V287654323'),
-('2024-06-10', 87654.32, 'Factura para cliente V178965412', 'V178965412');
+('2024-06-10', 87654.32, 'Factura para cliente V178965412', 'V178965412'); */
 
 INSERT INTO METODO_PAGO (met_cl_identificacion)
 VALUES ('V187654321'), ('V145632187'), ('V242680135'), ('V197531486'), ('J154321098'),
@@ -7203,7 +7203,7 @@ VALUES
 
 
 
-
+/*
 INSERT INTO SOLICITUD_CLIENTE (factura_cli_fecha, factura_cli_total, factura_cli_observacion, factura_fk_cl_identificacion)
 VALUES
 ('2024-04-02', 12345.67, 'Factura para cliente V115345678', 'V115345678'),
@@ -7220,10 +7220,10 @@ VALUES
 ('2024-06-16', 98765.43, 'Factura para cliente V197531486', 'V197531486'),
 ('2024-06-02', 54321.09, 'Factura para cliente V178965412', 'V178965412'),
 ('2024-06-17', 32109.87, 'Factura para cliente V287654323', 'V287654323'),
-('2024-06-10', 87654.32, 'Factura para cliente V178965412', 'V178965412');
+('2024-06-10', 87654.32, 'Factura para cliente V178965412', 'V178965412');*/
 
 
-
+/*
 INSERT INTO SOLICITUD_ALIADO (  factura_ali_fecha, factura_ali_total, factura_ali_observacion,  factura_fk_ali_RIF,  factura_fk_pro_id)
 VALUES
 
@@ -7455,9 +7455,9 @@ VALUES (49, 18, '2024-05-07', null);
 
 INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id, est_sol_fecha_ini, est_sol_fecha_fin)
 VALUES (50, 17, '2024-05-12', null);
+*/
 
-
-
+/*
 INSERT INTO EST_SOL_CLIENTE (escl_fk_sol_cliente, escl_fk_est_id, escl_fecha_ini, escl_fecha_fin)
 
 VALUES (1, 1, '2024-06-03', null),
@@ -7487,8 +7487,8 @@ VALUES (1, 1, '2024-06-03', null),
  (13, 3, '2024-06-03', null),
 
 (14, 4, '2024-06-05', null);
-
-
+*/
+/*
 INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
  VALUES (1, 20, 25.50, 1);
 INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
@@ -7690,7 +7690,7 @@ INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_uni
 VALUES (46, 40, 133.50, 5);
 INSERT INTO DETALLE_SOL_AL (det_sol_ali_id, det_sol_cantidad, det_sol_precio_unitario, det_sol_tire_id)
 VALUES (47, 40, 43.50, 5);
-
+*/
 INSERT INTO ACTIVIDAD_CARGO (acca_act_id, acca_carg_id, acca_costo, acca_cantidad, acca_fecha_ini)
 VALUES
     (1, 1, 10000, 3, DATE '2024-06-25'),
@@ -8755,7 +8755,7 @@ VALUES
     (898, 8, 6000, 3, DATE '2024-06-25'),
     (899, 9, 10000, 3, DATE '2024-06-25'),
     (900, 10, 7000, 3, DATE '2024-06-25');
-    
+    /*
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
     VALUES (1, NULL, 1, NULL, 100.50, 150.75, 'ING', '2024-04-15');
 
@@ -8814,4 +8814,4 @@ VALUES
     VALUES (18, NULL, 19, NULL, 30.00, 45.00, 'ING', '2024-06-01');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (19, NULL, 20, NULL, 45.00, 30.00, 'ING', '2024-06-15');
+    VALUES (19, NULL, 20, NULL, 45.00, 30.00, 'ING', '2024-06-15');*/
