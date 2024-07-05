@@ -647,7 +647,7 @@ CREATE TABLE EST_SOL_CLIENTE(
 
 	CONSTRAINT ck_escl_fecha_fin CHECK (escl_fecha_fin <= CURRENT_DATE),
 
-	CONSTRAINT ck_escl_fecha_diff CHECK (escl_fecha_fin > escl_fecha_ini)
+	CONSTRAINT ck_escl_fecha_diff CHECK (escl_fecha_fin >= escl_fecha_ini)
 );
 
 -- CREATE CORRESPONDIENTES A METODOS DE PAGO
@@ -913,7 +913,7 @@ CREATE TABLE INVENTARIO(
 	inv_cantidad_anterior NUMERIC(20,2) NOT NULL,
 	inv_cantidad_actual NUMERIC(20,2) NOT NULL,
 	inv_tipo CHAR(3) NOT NULL,
-	inv_fecha_mov DATE NOT NULL,
+	inv_fecha_mov TIMESTAMP NOT NULL,
 
 	CONSTRAINT fk_se_almacena FOREIGN KEY (inv_min_id) REFERENCES MINERAL(min_id),
 
@@ -923,9 +923,9 @@ CREATE TABLE INVENTARIO(
 
 	CONSTRAINT fk_disminuir FOREIGN KEY (inv_factura_cli_id) REFERENCES SOLICITUD_CLIENTE (factura_cli_id),
 
-	CONSTRAINT ck_cantidad_anterior CHECK (inv_cantidad_anterior > 0),
+	CONSTRAINT ck_cantidad_anterior CHECK (inv_cantidad_anterior >= 0),
 
-	CONSTRAINT ck_cantidad_actual CHECK (inv_cantidad_actual > 0),
+	CONSTRAINT ck_cantidad_actual CHECK (inv_cantidad_actual >= 0),
 
 	CONSTRAINT ck_inv_tipo CHECK (inv_tipo IN('ING','EGR'))
 );
