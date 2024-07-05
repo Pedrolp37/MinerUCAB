@@ -1,4 +1,20 @@
+	-- TRIGGER PARA INSERTAR ESTATUS DE SOLICITUD DEL CLIENTE
+CREATE OR REPLACE FUNCTION estatus_sol_cliente()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO EST_SOL_CLIENTE (escl_fk_sol_cliente, escl_fk_est_id,escl_fecha_ini) 
+	VALUES (NEW.factura_cli_id, 16, CURRENT_DATE);
+	RETURN NEW;
+END;
+$$
+language plpgsql;
 
+CREATE OR REPLACE TRIGGER stus_sol_cliente
+AFTER INSERT ON SOLICITUD_CLIENTE
+FOR EACH ROW
+EXECUTE FUNCTION estatus_sol_cliente();
+-- FN DE TRIGGER PARA INSERTAR ESTATUS DE SOLICITUD DEL CLIENTE
 ---------------------------
 --SOLICITUD ALIADO
 CREATE OR REPLACE FUNCTION eliminar_estatus_solicictud_AL()
