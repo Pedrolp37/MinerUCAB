@@ -264,8 +264,12 @@ CREATE TABLE PROYECTO(
 	pro_fecha_fin DATE,
 	pro_fk_po_id INT NOT NULL,
 	pro_fk_min_id INT NOT NULL,
+	pro_fk_sol_id INT,
 
 	CONSTRAINT fk_explora FOREIGN KEY (pro_fk_po_id, pro_fk_min_id) REFERENCES MINERAL_POZO(po_id,min_id),
+
+	CONSTRAINT fk_genera FOREIGN KEY (pro_fk_sol_id) REFERENCES SOLICITUD_CLIENTE(factura_cli_id),
+
 
 	CONSTRAINT ck_pro_fecha_fin CHECK (pro_fecha_fin > pro_fecha_ini),
 
@@ -273,7 +277,7 @@ CREATE TABLE PROYECTO(
 
 	CONSTRAINT ck_pro_nombre CHECK (pro_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
 
-	CONSTRAINT ck_pro_descripcion CHECK (pro_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ. ]+$')
+	CONSTRAINT ck_pro_descripcion CHECK (pro_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$')
 );
 
 CREATE TABLE PRO_ESTATUS(
@@ -733,7 +737,7 @@ CREATE TABLE ETAPA_EJ(
 	fk_pro_id INT NOT NULL,
 
 	CONSTRAINT fk_se_estructura FOREIGN KEY (fk_pro_id) REFERENCES PROYECTO (pro_id),
-	CONSTRAINT ck_etej_nombre CHECK (etej_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$)'),
+	CONSTRAINT ck_etej_nombre CHECK (etej_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
 	CONSTRAINT ck_etej_fecha_ini CHECK (etej_fecha_ini <= CURRENT_DATE),
 	CONSTRAINT ck_etej_fecha_fin CHECK (etej_fecha_fin <= CURRENT_DATE),
 	CONSTRAINT ck_etej_fecha_diff CHECK (etej_fecha_fin > etej_fecha_ini)
