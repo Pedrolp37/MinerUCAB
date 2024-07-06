@@ -1,4 +1,68 @@
+-- manejo de inventario cuando se genera una solicitud de un cliente
+CREATE OR REPLACE FUNCTION manejo_inventario_sol_cliente()
+RETURNS TRIGGER AS
+$$
+DECLARE
+	cantidad_actual NUMERIC(20,2);
+	solicitud_id_est INT;
+BEGIN
+	SELECT inv_cantidad_actual INTO cantidad_actual
+FROM inventario
+WHERE inv_min_id = NEW.factura_min_id
+ORDER BY inv_fecha_mov DESC
+LIMIT 1;
 
+	IF(cantidad_actual >= NEW.factura_cli_cantidad) THEN
+		-- REALIZO la nueva actualizacion del inventario con respecto al mineral
+		INSERT INTO INVENTARIO (inv_min_id,inv_factura_cli_id,inv_cantidad_anterior,inv_cantidad_actual,inv_tipo,inv_fecha_mov)
+		VALUES
+			(NEW.factura_min_id,NEW.factura_cli_id,cantidad_actual,cantidad_actual - NEW.factura_cli_cantidad,'EGR',CURRENT_TIMESTAMP);
+		-- ACTUALIZAMOS EL ULTIMO REGISTRO DE LA SOLICTUD CLIENTE EN ESTATUS DE SOLICITUD
+		-- PARA POSTERIORMENTE HACER EL NUEVO INSERT CON EL NUEVO ESTADO
+			SELECT escl_fk_sol_cliente INTO solicitud_id_est -- id relacionada en la solicitud cliente
+				FROM est_sol_cliente
+				WHERE escl_fk_sol_cliente = 2
+				ORDER BY escl_fecha_ini DESC
+				LIMIT 1;
+
+			UPDATE est_sol_cliente
+			SET escl_fecha_fin = CURRENT_DATE
+			WHERE escl_fk_sol_cliente = solicitud_id_est;
+		-- CREO UN REGISTRO EN EL ESTATUS DE LA SOLICITUD, ACTUALIZANDO EL REGISTRO
+		INSERT INTO EST_SOL_CLIENTE(escl_fk_sol_cliente,escl_fk_est_id,escl_fecha_ini,escl_fecha_fin)
+		VALUES
+			(NEW.factura_cli_id,18,CURRENT_DATE,CURRENT_DATE);
+	END IF;
+
+	RETURN NEW;
+END;
+$$
+language plpgsql;
+
+CREATE OR REPLACE TRIGGER despues_generar_sol_cliente
+AFTER INSERT ON SOLICITUD_CLIENTE
+FOR EACH ROW
+EXECUTE FUNCTION manejo_inventario_sol_cliente();
+-- #####
+
+
+-- TRIGGER PARA INSERTAR ESTATUS DE SOLICITUD DEL CLIENTE
+CREATE OR REPLACE FUNCTION estatus_sol_cliente()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO EST_SOL_CLIENTE (escl_fk_sol_cliente, escl_fk_est_id,escl_fecha_ini) 
+	VALUES (NEW.factura_cli_id, 16, CURRENT_DATE);
+	RETURN NEW;
+END;
+$$
+language plpgsql;
+
+CREATE OR REPLACE TRIGGER stus_sol_cliente
+AFTER INSERT ON SOLICITUD_CLIENTE
+FOR EACH ROW
+EXECUTE FUNCTION estatus_sol_cliente();
+-- FN DE TRIGGER PARA INSERTAR ESTATUS DE SOLICITUD DEL CLIENTE
 ---------------------------
 --SOLICITUD ALIADO
 CREATE OR REPLACE FUNCTION eliminar_estatus_solicictud_AL()

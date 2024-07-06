@@ -1,3 +1,38 @@
+-- PROCEDIMIENTO PARA INSERTAR UNA SOLICITUD DE CLIENTE
+CREATE OR REPLACE PROCEDURE insertar_sol_cliente(IN id_cliente VARCHAR(11),IN mineral_id INT,
+												IN cantidad NUMERIC(20,2),IN obs VARCHAR(200),
+												IN metodosP INT[], IN montoP INT[])
+ language plpgsql
+AS $$
+	DECLARE
+	costo_total INT;
+	i INT;
+	solicitud_id INT;
+BEGIN
+
+	--costo del mineral
+	SELECT SUM (ar.acre_costo + ac.acca_costo) INTO costo_total
+	FROM etapa e, actividad a, actividad_cargo ac, actividad_recurso ar
+	WHERE e.fk_min_id = mineral_id --Asocio a partir del id del mineral
+	AND e.et_id = a.fk_et_id
+	AND a.act_id = ac.acca_act_id
+	AND a.act_id = ar.acre_act_id;
+	----
+	INSERT INTO solicitud_cliente (factura_cli_fecha,factura_cli_total,factura_cli_cantidad,factura_cli_observacion,
+									factura_fk_cl_identificacion,factura_min_id)
+	VALUES(CURRENT_DATE, costo_total,cantidad,obs,id_cliente,mineral_id)
+		RETURNING factura_cli_id INTO solicitud_id; -- obtengo el id del insert
+
+
+  -- Insertar en la tabla pago
+    FOR i IN 1..array_length(metodosP, 1)
+    LOOP
+        INSERT INTO pago (pago_fk_sol_cl,pago_fk_met_id, pago_monto,pago_fecha)
+        VALUES (solicitud_id, metodosP[i], montoP[i], CURRENT_DATE);
+    END LOOP;
+END $$;
+-- FIN DE PROCEDIMIENTO PARA INSERTAR UNA SOLICITUD DE CLIENTE
+
 CREATE OR REPLACE PROCEDURE insertar_empleado(IN emp_id VARCHAR(11),IN p_nombre VARCHAR(30),IN p_apellido VARCHAR(30),
 									IN direccion VARCHAR(180),IN tlf VARCHAR(12),IN cargo_id INT,IN lugar_id INT)
 	language plpgsql
