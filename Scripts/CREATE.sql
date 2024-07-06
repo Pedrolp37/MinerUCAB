@@ -261,7 +261,7 @@ CREATE TABLE PROYECTO(
 	pro_nombre VARCHAR(30) NOT NULL,
 	pro_descripcion VARCHAR(200),
 	pro_fecha_ini DATE NOT NULL,
-	pro_fecha_fin DATE NOT NULL,
+	pro_fecha_fin DATE,
 	pro_fk_po_id INT NOT NULL,
 	pro_fk_min_id INT NOT NULL,
 
@@ -726,6 +726,7 @@ DROP TABLE IF EXISTS ETAPA_EJ CASCADE;
 
 CREATE TABLE ETAPA_EJ(
 	etej_id SERIAL PRIMARY KEY,
+	etej_num_etapa INT NOT NULL,
 	etej_nombre VARCHAR(40) NOT NULL,
 	etej_fecha_ini DATE NOT NULL,
 	etej_fecha_fin DATE,
