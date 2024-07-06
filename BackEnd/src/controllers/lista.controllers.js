@@ -20,13 +20,34 @@ export const getEmpleado = async (req, res) => {
 };
 //CLIENTES
 
-export const getCliente = async (req, res) => {
+export const getClientes = async (req, res) => {
   try {
+    const {offset} = req.params;
+    console.log(offset)
     const { rows } = await pool.query(`
       select cl_identificacion as dni, cl_p_nombre as name, 
       cl_p_apellido as lastname, cl_telefono as numphone, cl_direccion as address
       from cliente
-    `);
+      limit 5 offset $1
+    `, [offset]);
+    
+    return !rows.length ? res.status(200).json({ message: "No hay Clientes" }) : res.status(200).json(rows);
+  
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+}
+
+export const getCliente = async (req, res) => {
+  try {
+    const {dni} = req.params;
+    const { rows } = await pool.query(`
+      select cl_identificacion as dni, cl_p_nombre as name, 
+      cl_p_apellido as lastname, cl_telefono as numphone, cl_direccion as address
+      from cliente
+      where cl_identificacion = $1
+    `, [dni]);
+    
     return !rows.length ? res.status(200).json({ message: "No hay Clientes" }) : res.status(200).json(rows);
   
   } catch (error) {

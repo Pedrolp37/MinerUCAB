@@ -92,7 +92,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <router-link :to="{}" class="dropdown-item"
+                <router-link :to="{ name: 'solicitud_cliente' }" class="dropdown-item"
                   ><i class="bi bi-plus"></i> Crear solicitud cliente</router-link
                 >
               </li>

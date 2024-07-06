@@ -8,6 +8,8 @@ import { pool } from "../databases/BD_Connection.js";
 
 export const getMinerales = async (req, res) => {
   try {
+    const {offset} = req.params
+
     const { rows } = await pool.query(`
         select min_id as id, min_nombre as nombre, met_tipo_metal as  tipometal, 
         min_tipo as tipomineral, min_medicion as medicion, min_formula_quimica as form_quimica, 
@@ -15,7 +17,8 @@ export const getMinerales = async (req, res) => {
         met_dureza as dureza, nmet_aislante as aislante
         from mineral
         order by min_id asc
-      `);
+        limit 5 offset $1
+      `,[offset]);
 
     return !rows.length
       ? res.status(200).json({ message: "No hay Minerales" })

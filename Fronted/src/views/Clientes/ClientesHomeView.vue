@@ -34,6 +34,7 @@
           <TablaClientes
             :clientes="clientes"
             :clienteFiltered="clienteFiltered"
+            :soliCliente="false"
             @dltCli="deleteCliente"
           />
         </div>

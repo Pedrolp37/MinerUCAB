@@ -44,6 +44,7 @@
       <div class="row" style="margin-top: 80px">
         <div class="col d-flex justify-content-center">
           <TablaMinerales
+            :solicitud="false"
             :minerals="mineralsList"
             :filteredMinerals="filteredMineralsList"
             @dltMineral="getidDeleteMin"
@@ -246,8 +247,6 @@ newMineral.value = {
 onMounted(async () => {
   getMinerales().then((Response) => (mineralsList.value = Response.data))
 })
-
-
 
 /*
 

@@ -1,7 +1,32 @@
 <template>
   <div>
     <table
-      v-if="props.filteredMinerals.length == 0"
+      v-if="props.solicitud == true"
+      class="table table-striped"
+      id="table"
+    >
+      <thead>
+        <tr style="text-align: center">
+          <th class="tabla Cabecera">Mineral</th>
+          <th class="tabla Cabecera"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(elm, index) in props.minerals" :key="index" style="text-align: center">
+          <td>{{ elm.nombre }}</td>
+          <td>
+            <button
+              class="seleccionar btn"
+              @click="getIdMinS(elm.id)"
+            >
+              Seleccionar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table
+      v-if="props.filteredMinerals.length == 0 && props.Solicitud == false"
       class="table table-striped"
       id="table"
       style="width: 60vw"
@@ -44,7 +69,7 @@
       </tbody>
     </table>
     <table
-      v-if="props.filteredMinerals.length != 0"
+      v-if="props.filteredMinerals.length != 0 && props.Solicitud == false"
       class="table table-striped"
       id="table"
       style="width: 60vw"
@@ -307,12 +332,14 @@ const props = defineProps({
 
   filteredMinerals: {
     required: false
+  },
+
+  solicitud: {
+    required: false
   }
 })
 
-const emit = defineEmits(['dltMineral','modMineral'])
-
-
+const emit = defineEmits(['dltMineral', 'modMineral', 'getIdMin'])
 
 /*
 
@@ -326,56 +353,59 @@ const saveIdMin = (id) => {
   idMin.value = id
 }
 
+const getIdMinS = (id) => {
+  idMin.value = id
+  emit('getIdMin', idMin.value)
+}
+
 const saveChangesMin = () => {
   switch (mineralMod.value.tipomineral) {
     case 'Metalico':
-      emit('modMineral',{
-          mineral_id : idMin.value,
-          nombre: mineralMod.value.nombre,
-          medicion: mineralMod.value.medicion,
-          formulaQ: mineralMod.value.form_quimica,
-          pureza: mineralMod.value.pur_ideal,
-          maleabilidad: mineralMod.value.maleabilidad,
-          dureza: mineralMod.value.dureza,
-          tipo_metal: mineralMod.value.tipometal,
-          aislante: null,
-          min_tipo: mineralMod.value.tipomineral
-        }
-      )
+      emit('modMineral', {
+        mineral_id: idMin.value,
+        nombre: mineralMod.value.nombre,
+        medicion: mineralMod.value.medicion,
+        formulaQ: mineralMod.value.form_quimica,
+        pureza: mineralMod.value.pur_ideal,
+        maleabilidad: mineralMod.value.maleabilidad,
+        dureza: mineralMod.value.dureza,
+        tipo_metal: mineralMod.value.tipometal,
+        aislante: null,
+        min_tipo: mineralMod.value.tipomineral
+      })
 
-      mineralMod.value.nombre = '',
-      mineralMod.value.medicion = '',
-      mineralMod.value.form_quimica = '',
-      mineralMod.value.pur_ideal = 0,
-      mineralMod.value.maleabilidad = '',
-      mineralMod.value.dureza = 0,
-      mineralMod.value.tipometal = '',
-      mineralMod.value.aislante = '',
-      mineralMod.value.tipomineral = ''
+      ;(mineralMod.value.nombre = ''),
+        (mineralMod.value.medicion = ''),
+        (mineralMod.value.form_quimica = ''),
+        (mineralMod.value.pur_ideal = 0),
+        (mineralMod.value.maleabilidad = ''),
+        (mineralMod.value.dureza = 0),
+        (mineralMod.value.tipometal = ''),
+        (mineralMod.value.aislante = ''),
+        (mineralMod.value.tipomineral = '')
       break
     case 'No Metalico':
-      emit('modMineral',{
-          mineral_id : idMin.value,
-          nombre: mineralMod.value.nombre,
-          medicion: mineralMod.value.medicion,
-          formulaQ: mineralMod.value.form_quimica,
-          pureza: mineralMod.value.pur_ideal,
-          maleabilidad: null,
-          dureza: null,
-          tipo_metal: null,
-          aislante: mineralMod.value.aislantel,
-          min_tipo: mineralMod.value.tipomineral
-        }
-      )
-      mineralMod.value.nombre = '',
-      mineralMod.value.medicion = '',
-      mineralMod.value.form_quimica = '',
-      mineralMod.value.pur_ideal = 0,
-      mineralMod.value.maleabilidad = '',
-      mineralMod.value.dureza = 0,
-      mineralMod.value.tipometal = '',
-      mineralMod.value.aislante = '',
-      mineralMod.value.tipomineral = ''
+      emit('modMineral', {
+        mineral_id: idMin.value,
+        nombre: mineralMod.value.nombre,
+        medicion: mineralMod.value.medicion,
+        formulaQ: mineralMod.value.form_quimica,
+        pureza: mineralMod.value.pur_ideal,
+        maleabilidad: null,
+        dureza: null,
+        tipo_metal: null,
+        aislante: mineralMod.value.aislantel,
+        min_tipo: mineralMod.value.tipomineral
+      })
+      ;(mineralMod.value.nombre = ''),
+        (mineralMod.value.medicion = ''),
+        (mineralMod.value.form_quimica = ''),
+        (mineralMod.value.pur_ideal = 0),
+        (mineralMod.value.maleabilidad = ''),
+        (mineralMod.value.dureza = 0),
+        (mineralMod.value.tipometal = ''),
+        (mineralMod.value.aislante = ''),
+        (mineralMod.value.tipomineral = '')
       break
   }
 }
@@ -387,7 +417,6 @@ const sendResponseSDM = () => {
 const AlertNDisponible = () => {
   alert('Opción no disponibles aún')
 }
-
 </script>
 
 <style scope>
@@ -453,6 +482,18 @@ const AlertNDisponible = () => {
 
 .guardar.btn:hover {
   background-color: #fa8f1400;
+  color: black;
+}
+
+.seleccionar.btn {
+  margin-right: 10px;
+  font-size: 10px;
+  background-color: #d06d17;
+  color: white;
+}
+
+.seleccionar.btn:hover {
+  background-color: #c3b1a300;
   color: black;
 }
 </style>

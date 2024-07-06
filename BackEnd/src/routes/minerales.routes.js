@@ -3,7 +3,7 @@ import {getMinerales, postMineral, eliminarMineral,putMineral} from '../controll
 
 const router = Router();
 //Rutas
-router.get('/minerales', getMinerales);
+router.get('/minerales/:offset', getMinerales);
 
 router.post('/minerales/post', postMineral)
 

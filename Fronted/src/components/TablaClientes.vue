@@ -1,7 +1,36 @@
 <template>
   <div>
     <table
-      v-show="clienteFiltered.length == 0"
+      v-show="props.soliCliente == true"
+      class="table table-striped"
+      id="table"
+      style="width: 80vw"
+    >
+      <thead>
+        <tr style="text-align: center">
+          <th class="tabla Cabecera">DNI</th>
+          <th class="tabla Cabecera">Nombre</th>
+          <th class="tabla Cabecera">Apellido</th>
+          <th class="tabla Cabecera">Teléfono</th>
+          <th class="tabla Cabecera">Dirección</th>
+          <th class="tabla Cabecera"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(cli, index) in clientes" :key="index" style="text-align: center">
+          <td>{{ cli.dni }}</td>
+          <td>{{ cli.name }}</td>
+          <td>{{ cli.lastname }}</td>
+          <td>{{ cli.numphone }}</td>
+          <td>{{ cli.address }}</td>
+          <td>
+            <button class="seleccionar btn" @click="saveidCliS(cli.dni)">Seleccionar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table
+      v-show="clienteFiltered.length == 0 && soliCliente == false"
       class="table table-striped"
       id="table"
       style="width: 80vw"
@@ -37,7 +66,7 @@
       </tbody>
     </table>
     <table
-      v-show="clienteFiltered.length != 0"
+      v-show="clienteFiltered.length != 0 && soliCliente == false"
       class="table table-striped"
       id="table"
       style="width: 80vw"
@@ -112,6 +141,7 @@
 import { ref } from 'vue'
 
 let idCliD = ref(0)
+let idCliS = ref(0)
 
 const props = defineProps({
   clientes: {
@@ -119,14 +149,23 @@ const props = defineProps({
   },
 
   clienteFiltered: {
-    required: true
+    required: false
+  },
+
+  soliCliente: {
+    required: false
   }
 })
 
-const emit = defineEmits(['dltCli'])
+const emit = defineEmits(['dltCli', 'getId'])
 
 const saveidCliD = (id) => {
   idCliD.value = id
+}
+
+const saveidCliS = (id) => {
+  idCliS.value = id
+  emit('getId', idCliS.value)
 }
 
 const deleteCliente = () => {
@@ -159,6 +198,18 @@ const deleteCliente = () => {
 }
 
 .cancelar.btn:hover {
+  background-color: #c3b1a300;
+  color: black;
+}
+
+.seleccionar.btn {
+  margin-right: 10px;
+  font-size: 10px;
+  background-color: #d06d17;
+  color: white;
+}
+
+.seleccionar.btn:hover {
   background-color: #c3b1a300;
   color: black;
 }

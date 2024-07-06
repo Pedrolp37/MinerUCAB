@@ -10,6 +10,7 @@ import EmpleadosHomeView from '../views/Empleados/EmpleadosHomeView.vue'
 import AliadosHomeView from '../views/Aliados/AliadosHomeView.vue'
 import ClientesHomeView from '../views/Clientes/ClientesHomeView.vue'
 import InventarioHomeView from '../views/Inventario/InventarioHome.vue'
+import SolicitudesCliente from '../views/Solicitudes/Clientes.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -69,6 +70,11 @@ const router = createRouter({
       path: '/inventario/home',
       name: 'inventario',
       component: InventarioHomeView
+    },
+    {
+      path: '/solicitudes/cliente',
+      name: 'solicitud_cliente',
+      component: SolicitudesCliente
     }
   ]
 })
