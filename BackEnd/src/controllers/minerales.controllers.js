@@ -5,6 +5,26 @@ import { pool } from "../databases/BD_Connection.js";
 * GET: Mineral --> Actualizar Procesos
 
 */
+export const getMineral = async (req, res) => {
+  try {
+    const {id} = req.params
+
+    const { rows } = await pool.query(`
+        select min_id as id, min_nombre as nombre, met_tipo_metal as  tipometal, 
+        min_tipo as tipomineral, min_medicion as medicion, min_formula_quimica as form_quimica, 
+        min_pureza_ideal as pur_ideal, met_maleabilidad as maleabilidad,
+        met_dureza as dureza, nmet_aislante as aislante
+        from mineral
+        where min_id = $1
+      `,[id]);
+
+    return !rows.length
+      ? res.status(200).json({ message: "No hay Minerales" })
+      : res.status(200).json(rows);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
 
 export const getMinerales = async (req, res) => {
   try {

@@ -36,13 +36,71 @@
       </div>
       <div class="row" style="margin-top: 30px">
         <div class="col">
-          <TablaMinerales :solicitud="true" :minerals="mineralsList" :filteredMinerals="[]" @getIdMin='getMineralSelected'/>
+          <TablaMinerales
+            :minSelected="[]"
+            :solicitud="true"
+            :minerals="mineralsList"
+            :filteredMinerals="[]"
+            @getIdMin="getMineralSelected"
+          />
           <div class="d-flex justify-content-center">
             <Pagination @backPag="backPagMinerals" @nextPag="nextPagMinerals" />
           </div>
         </div>
         <div class="col">
-          
+          <div class="d-flex justify-content-start">
+            <select
+              class="metodo form-select"
+              aria-label="Default select example"
+              v-model="metodoP"
+            >
+              <option selected>Seleccionar Método De Pago</option>
+              <option value="1">Efectivo</option>
+              <option value="2">Transferencia</option>
+              <option value="3">Cheque</option>
+              <option value="4">Tarjeta De Débito</option>
+              <option value="5">Tarjeta De Crédito</option>
+            </select>
+          </div>
+          <div class="d-flex justify-content-start" style="margin-top: 20px">
+            <MetodoDePago :metodo="metodoP" @metodoInf="getMeotodoPagoInf" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" style="margin-top: 60px">
+        <div v-if="mineral.length != 0" class="col-6">
+          <h5 style="color: #a57844">Mineral Seleccionado</h5>
+          <TablaMinerales
+            :minSelected="mineral"
+            :solicitud="false"
+            :minerals="mineral"
+            :filteredMinerals="[]"
+            @deleteMinSS="deleteMinS"
+          />
+          <div v-if="mineral.length != 0" style="margin-bottom: 20px">
+            <div class="dolar input-group">
+              <span class="dolar input-group-text">#</span>
+              <input
+                type="number"
+                class="form-control"
+                aria-label="Amount (to the nearest dollar) "
+                :placeholder="'Introducir Cantidad'"
+                v-model="cantMineral"
+              />
+            </div>
+          </div>
+        </div>
+        <div v-if="metodoPList.length != 0" class="col-6">
+          <h5 style="color: #a57844">Métodos Seleccionados</h5>
+          <TablaMetodos :metodosInf="metodoPList" @deleteMetdSS="deleteMetdS" />
+        </div>
+      </div>
+      <hr>
+      <div v-if="metodoPList.length != 0 && mineral.length != 0 && cantMineral > 0" class="row" style="margin-top: 30px; margin-bottom: 30px">
+        <div class="col d-flex justify-content-end">
+          <button class="guardarS btn" @click="CrearSolicitudCliente">Crear Solicitud</button>
         </div>
       </div>
     </div>
@@ -54,17 +112,24 @@ import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaCliente from '../../components/TablaClientes.vue'
 import TablaMinerales from '../../components/TablaMinerales.vue'
+import MetodoDePago from '../../components/MetodosDePago.vue'
+import TablaMetodos from '../../components/TablaMetodos.vue'
 import Pagination from '../../components/Pagination.vue'
 import { getClientes } from '../../Services/Clientes/ClientesGet.services.js'
 import { getCliente } from '../../Services/Clientes/ClienteGet.services.js'
 import { getMinerales } from '../../Services/Minerales/MineralesGet.services'
+import { getMineral } from '../../Services/Minerales/MineralGet.services'
 
 /*
 
 * VARIABLES
 
 */
+let cantMineral = ref(0)
+let metodoP = ref('Seleccionar Método De Pago')
+let metodoPList = ref([])
 let mineralsList = ref([])
+let mineral = ref([])
 let clientes = ref([])
 let cliente = ref([])
 let changePageCliente = ref(0)
@@ -82,7 +147,6 @@ onMounted(async () => {
 onMounted(async () => {
   getMinerales(changePageMinerals.value).then((Response) => (mineralsList.value = Response.data))
 })
-
 
 /*
 
@@ -131,8 +195,95 @@ const getClienteSelected = async (dni) => {
 }
 
 const getMineralSelected = async (id) => {
-  alert(id)
+  getMineral(id).then((Response) => (mineral.value = Response.data))
 }
+
+const deleteMinS = (id) => {
+  cantMineral.value = 0
+  mineral.value.splice(
+    mineral.value.findIndex((elm) => elm.id == id),
+    1
+  )
+}
+
+const deleteMetdS = (metodo) => {
+  metodoPList.value.splice(
+    metodoPList.value.findIndex((elm) => elm.metodo == metodo),
+    1
+  )
+}
+
+const getMeotodoPagoInf = (metodo, monto, numInf, fechaV) => {
+  switch (metodo) {
+    case 1:
+      metodoPList.value.push({
+        metodo: metodo,
+        monto: monto
+      })
+      break
+    case 2:
+      metodoPList.value.push({
+        metodo: metodo,
+        monto: monto,
+        numInf: numInf
+      })
+      break
+    case 3:
+      metodoPList.value.push({
+        metodo: metodo,
+        monto: monto,
+        numInf: numInf
+      })
+      break
+    case 4:
+      metodoPList.value.push({
+        metodo: metodo,
+        monto: monto,
+        numInf: numInf,
+        fechaV: fechaV
+      })
+      break
+    case 5:
+      metodoPList.value.push({
+        metodo: metodo,
+        monto: monto,
+        numInf: numInf,
+        fechaV: fechaV
+      })
+      break
+  }
+}
+
+const CrearSolicitudCliente = () => {
+  //Hablar Con pegrito
+  metodoPList.value = []
+  mineral.value = []
+  cliente.value = []
+  cantMineral.value = 0
+}
+
 </script>
 
-<style scoped></style>
+<style scoped>
+.metodo.form-select {
+  background-color: #999981;
+  color: white;
+  border-radius: 10px;
+  width: 80vh;
+}
+.dolar.input-group-text {
+  background-color: #7a6d5d;
+  color: white;
+}
+
+.guardarS.btn {
+  background-color: #44694a;
+  color: white;
+  width: 30vw;
+}
+
+.guardarS.btn:hover {
+  background-color: #fa8f1400;
+  color: black;
+}
+</style>

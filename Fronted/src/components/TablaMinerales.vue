@@ -1,10 +1,6 @@
 <template>
   <div>
-    <table
-      v-if="props.solicitud == true"
-      class="table table-striped"
-      id="table"
-    >
+    <table v-if="props.minSelected.length != 0" class="table table-striped" id="table">
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Mineral</th>
@@ -15,12 +11,23 @@
         <tr v-for="(elm, index) in props.minerals" :key="index" style="text-align: center">
           <td>{{ elm.nombre }}</td>
           <td>
-            <button
-              class="seleccionar btn"
-              @click="getIdMinS(elm.id)"
-            >
-              Seleccionar
-            </button>
+            <button class="seleccionar btn" @click="deleteMinSS(elm.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table v-if="props.solicitud == true" class="table table-striped" id="table">
+      <thead>
+        <tr style="text-align: center">
+          <th class="tabla Cabecera">Mineral</th>
+          <th class="tabla Cabecera"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(elm, index) in props.minerals" :key="index" style="text-align: center">
+          <td>{{ elm.nombre }}</td>
+          <td>
+            <button class="seleccionar btn" @click="getIdMinS(elm.id)">Seleccionar</button>
           </td>
         </tr>
       </tbody>
@@ -336,10 +343,14 @@ const props = defineProps({
 
   solicitud: {
     required: false
+  },
+
+  minSelected: {
+    required: false
   }
 })
 
-const emit = defineEmits(['dltMineral', 'modMineral', 'getIdMin'])
+const emit = defineEmits(['dltMineral', 'modMineral', 'getIdMin', 'deleteMinSS'])
 
 /*
 
@@ -373,7 +384,6 @@ const saveChangesMin = () => {
         aislante: null,
         min_tipo: mineralMod.value.tipomineral
       })
-
       ;(mineralMod.value.nombre = ''),
         (mineralMod.value.medicion = ''),
         (mineralMod.value.form_quimica = ''),
@@ -412,6 +422,10 @@ const saveChangesMin = () => {
 
 const sendResponseSDM = () => {
   emit('dltMineral', idMin.value)
+}
+
+const deleteMinSS = (id) => {
+  emit('deleteMinSS', id)
 }
 
 const AlertNDisponible = () => {
@@ -488,7 +502,7 @@ const AlertNDisponible = () => {
 .seleccionar.btn {
   margin-right: 10px;
   font-size: 10px;
-  background-color: #d06d17;
+  background-color: #44694a;
   color: white;
 }
 
