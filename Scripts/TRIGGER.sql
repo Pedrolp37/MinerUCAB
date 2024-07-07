@@ -1,3 +1,86 @@
+-- TRIGGER QUE CAMBIA EL ESTATUS DEL POZO QUE SE VA A USAR
+CREATE OR REPLACE FUNCTION cambiar_estatus_pozo_proyecto()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	UPDATE pozo_estatus
+	SET poes_fecha_fin = CURRENT_DATE
+	WHERE poes_po_id = NEW.pro_fk_po_id;
+	
+	INSERT INTO pozo_estatus (poes_po_id, poes_est_id, poes_fecha_ini, poes_fecha_fin)
+	VALUES
+		(NEW.pro_fk_po_id, 15, CURRENT_DATE, CURRENT_DATE);
+
+	RETURN NEW;
+END;
+$$
+	language plpgsql;
+
+
+-----
+CREATE OR REPLACE FUNCTION estatus_crear_proyecto()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO PRO_ESTATUS (proes_pro_id,proes_est_id,proes_fecha_ini,proes_fecha_fin)
+	VALUES
+		(NEW.pro_id,1,CURRENT_DATE,NULL);
+
+	RETURN NEW;
+END;
+$$
+ language plpgsql;
+
+CREATE OR REPLACE TRIGGER estatus_despues_crear_proyecto
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_crear_proyecto();
+--------
+-- TRIGGER DE INSERTAR ESTATUS A ETAPA_EJ LUEGO DE QUE SE CREA EL PROYECTO
+CREATE OR REPLACE FUNCTION estatus_crear_etapa_ej()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO ETAPA_ESTATUS (etes_etej_id,etes_est_id,etes_fecha_ini,etes_fecha_fin)
+	VALUES
+		(NEW.etej_id,1,CURRENT_DATE,NULL);
+
+	RETURN NEW;
+END;
+$$
+ language plpgsql;
+
+CREATE OR REPLACE TRIGGER estatus_despues_crear_etapaEJ
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_crear_etapa_ej();
+--
+
+-- TRIGGER DE INSERTAR ESTATUS A ACTIVIDAD_EJ LUEGO DE QUE SE CREA EL PROYECTO
+CREATE OR REPLACE FUNCTION estatus_crear_actividad_ej()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO ACTIVIDAD_ESTATUS (actes_actej_id,actes_est_id,actes_fecha_ini,actes_fecha_fin)
+	VALUES
+		(NEW.actej_id,1,CURRENT_DATE,NULL);
+
+	RETURN NEW;
+END;
+$$
+ language plpgsql;
+
+CREATE OR REPLACE TRIGGER estatus_despues_crear_etapaEJ
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_crear_etapa_ej();
+-- #########
+
+CREATE OR REPLACE TRIGGER despues_crear_proyecto
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION cambiar_estatus_pozo_proyecto();
+
 -- manejo de inventario cuando se genera una solicitud de un cliente
 CREATE OR REPLACE FUNCTION manejo_inventario_sol_cliente()
 RETURNS TRIGGER AS
