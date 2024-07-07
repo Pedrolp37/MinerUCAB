@@ -1,3 +1,51 @@
+-- PROCEDIMIENTO PARA SOLICITAR ALGO AL ALIADO
+CREATE OR REPLACE PROCEDURE insertar_sol_aliado(IN rif VARCHAR(11),IN proyecto_id INT,IN mineral_id INT,
+    										IN recurso_id INT,IN cargo_id INT,IN cantidad NUMERIC(20,2),IN obs VARCHAR(200),
+    										IN metodoP INT) 
+	LANGUAGE plpgsql
+AS $$
+DECLARE
+    costo NUMERIC(20,2);
+    solicitud_id INT;
+BEGIN
+    CASE
+        WHEN recurso_id IS NULL AND cargo_id IS NULL THEN
+            SELECT SUM(ar.acre_costo + ac.acca_costo) INTO costo
+            FROM etapa e
+            JOIN actividad a ON e.et_id = a.fk_et_id
+            JOIN actividad_cargo ac ON a.act_id = ac.acca_act_id
+            JOIN actividad_recurso ar ON a.act_id = ar.acre_act_id
+            WHERE e.fk_min_id = mineral_id;
+        WHEN recurso_id IS NOT NULL THEN
+            SELECT MIN(ar.acre_costo) INTO costo
+            FROM etapa e
+            JOIN actividad a ON e.et_id = a.fk_et_id
+            JOIN actividad_recurso ar ON a.act_id = ar.acre_act_id
+            WHERE e.fk_min_id = mineral_id
+            AND ar.acre_tire_id = recurso_id;
+        WHEN cargo_id IS NOT NULL THEN
+            SELECT MIN(ac.acca_costo) INTO costo
+            FROM etapa e
+            JOIN actividad a ON e.et_id = a.fk_et_id
+            JOIN actividad_cargo ac ON a.act_id = ac.acca_act_id
+            WHERE e.fk_min_id = mineral_id
+            AND ac.acca_carg_id = cargo_id;
+        ELSE
+            -- Lógica para otro caso (si es necesario)
+    END CASE;
+
+    INSERT INTO solicitud_aliado (factura_ali_fecha, factura_ali_total,factura_ali_cantidad,factura_ali_observacion,
+        						factura_fk_ali_rif,factura_fk_pro_id,factura_ali_min_id,factura_ali_tire_id,factura_ali_carg_id)
+    VALUES (
+        CURRENT_DATE,costo,cantidad,obs,rif,proyecto_id,mineral_id,recurso_id,cargo_id)
+    RETURNING factura_ali_id INTO solicitud_id;
+
+    INSERT INTO pago (pago_fk_sol_ali,pago_fk_met_id,pago_monto,pago_fecha)
+    VALUES 
+		(solicitud_id,metodoP,costo,CURRENT_DATE);
+END $$;
+
+
 CREATE OR REPLACE FUNCTION agregar_metodo(IN id_cliente VARCHAR(11), IN denominacion VARCHAR(20), IN num_transferencia VARCHAR(18),
                                             IN num_cheque VARCHAR(7), IN num_tarjetaTDD VARCHAR(16), IN tdd_vencimiento DATE,
                                             IN num_tarjetaTDC VARCHAR(16), IN tdc_vencimiento DATE, IN tipo_metodoP VARCHAR(60))

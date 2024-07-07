@@ -772,7 +772,7 @@ CREATE TABLE EST_SOLICITUD(
 
 	CONSTRAINT ck_est_sol_fecha_fin CHECK (est_sol_fecha_fin <= CURRENT_DATE),
 
-	CONSTRAINT ck_est_sol_fecha_diff CHECK (est_sol_fecha_fin > est_sol_fecha_ini)
+	CONSTRAINT ck_est_sol_fecha_diff CHECK (est_sol_fecha_fin >= est_sol_fecha_ini)
 );
 
 

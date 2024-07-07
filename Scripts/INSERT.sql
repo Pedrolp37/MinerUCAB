@@ -8812,3 +8812,8 @@ VALUES
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
     VALUES (19, NULL, 20, NULL, 45.00, 30.00, 'ING', '2024-06-15');*/
+
+INSERT INTO METODO_PAGO
+        (met_cl_identificacion, efectivo_denominacion, trans_num_transferencia, cheque_num_cheque, tdd_numero_tarjeta,
+        tdd_vencimiento, tdc_numero_tarjeta, tdc_vencimiento, tipo_metodo)
+    VALUES(NULL,'dolar',NULL,NULL,NULL,NULL,NULL,NULL,'Efectivo');

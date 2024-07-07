@@ -1,3 +1,71 @@
+--
+CREATE OR REPLACE FUNCTION ingresarINV_sol_aliado()
+RETURNS TRIGGER AS
+$$
+	DECLARE
+	solicitud_id_est INT;
+	cantidad_actual NUMERIC(20,2);
+BEGIN
+	SELECT inv_cantidad_actual INTO cantidad_actual
+	FROM inventario
+	WHERE inv_min_id = NEW.factura_ali_min_id
+	ORDER BY inv_fecha_mov DESC
+	LIMIT 1;
+
+	
+	IF (NEW.factura_ali_tire_id IS NULL AND NEW.factura_ali_carg_id IS NULL)THEN
+		IF(cantidad_actual >= NEW.factura_ali_cantidad)THEN
+
+			-- REALIZO la nueva actualizacion del inventario con respecto al mineral
+		INSERT INTO INVENTARIO (inv_min_id,inv_factura_ali_id,inv_cantidad_anterior,inv_cantidad_actual,inv_tipo,inv_fecha_mov)
+		VALUES
+			(NEW.factura_ali_min_id,NEW.factura_ali_id,cantidad_actual,cantidad_actual + NEW.factura_ali_cantidad,'ING',CURRENT_TIMESTAMP);
+		-- ACTUALIZAMOS EL ULTIMO REGISTRO DE LA SOLICTUD CLIENTE EN ESTATUS DE SOLICITUD
+		-- PARA POSTERIORMENTE HACER EL NUEVO INSERT CON EL NUEVO ESTADO
+			SELECT est_sol_fk_sol_ali INTO solicitud_id_est -- id relacionada en la solicitud cliente
+				FROM est_solicitud
+				WHERE est_sol_fk_sol_ali = NEW.factura_ali_id
+				ORDER BY est_sol_fecha_ini DESC
+				LIMIT 1;
+
+			UPDATE est_solicitud
+			SET est_sol_fecha_fin = CURRENT_DATE
+			WHERE est_sol_fk_sol_ali = solicitud_id_est;
+		-- CREO UN REGISTRO EN EL ESTATUS DE LA SOLICITUD, ACTUALIZANDO EL REGISTRO
+		INSERT INTO EST_SOLICITUD(est_sol_fk_sol_ali,est_sol_fk_est_id,est_sol_fecha_ini,est_sol_fecha_fin)
+		VALUES
+			(NEW.factura_ali_id,18,CURRENT_DATE,CURRENT_DATE);
+		END IF;
+	END IF;
+	RETURN NEW;
+END;
+$$
+language plpgsql;
+
+CREATE OR REPLACE TRIGGER stus_sol_aliado
+AFTER INSERT ON SOLICITUD_ALIADO
+FOR EACH ROW
+EXECUTE FUNCTION ingresarINV_sol_aliado();
+--
+
+-- TRIGGER de colocar estatus luego de ingresar solicitud aliado
+CREATE OR REPLACE FUNCTION estatus_sol_aliado()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id,est_sol_fecha_ini) 
+	VALUES (NEW.factura_ali_id, 16, CURRENT_DATE);
+	RETURN NEW;
+END;
+$$
+language plpgsql;
+
+CREATE OR REPLACE TRIGGER stus_sol_aliado
+AFTER INSERT ON SOLICITUD_ALIADO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_sol_aliado();
+-- FIN TRIGGER de colocar estatus luego de ingresar solicitud aliado
+
 -- TRIGGER QUE CAMBIA EL ESTATUS DEL POZO QUE SE VA A USAR
 CREATE OR REPLACE FUNCTION cambiar_estatus_pozo_proyecto()
 RETURNS TRIGGER AS
