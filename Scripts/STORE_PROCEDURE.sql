@@ -146,7 +146,6 @@ DECLARE
 	act_ej_id INT;
     fecha DATE;
 	registro RECORD;
-	registro_act RECORD;
 BEGIN
     fecha := CURRENT_DATE;
     INSERT INTO PROYECTO (pro_nombre, pro_descripcion, pro_fecha_ini,pro_fecha_fin, pro_fk_po_id, pro_fk_min_id,pro_fk_sol_id)

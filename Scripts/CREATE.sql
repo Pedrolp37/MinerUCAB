@@ -250,7 +250,7 @@ CREATE TABLE POZO_ESTATUS (
 	-- check de fecha tiene que ser menor o igual que la fecha actual
 	CONSTRAINT ck_poes_fecha_ini CHECK (poes_fecha_ini <= CURRENT_DATE),
 	-- check de que fecha final tiene que ser mayor a la inicial
-	CONSTRAINT ck_poes_fecha_fin CHECK (poes_fecha_fin > poes_fecha_ini)
+	CONSTRAINT ck_poes_fecha_fin CHECK (poes_fecha_fin >= poes_fecha_ini)
 );
 
 

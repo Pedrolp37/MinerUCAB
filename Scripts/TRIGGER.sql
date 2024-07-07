@@ -35,7 +35,10 @@ END;
 $$
 	language plpgsql;
 
-
+CREATE OR REPLACE TRIGGER despues_crear_proyecto
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION cambiar_estatus_pozo_proyecto();
 -----
 CREATE OR REPLACE FUNCTION estatus_crear_proyecto()
 RETURNS TRIGGER AS
@@ -70,7 +73,7 @@ $$
  language plpgsql;
 
 CREATE OR REPLACE TRIGGER estatus_despues_crear_etapaEJ
-AFTER INSERT ON PROYECTO
+AFTER INSERT ON ETAPA_EJ
 FOR EACH ROW
 EXECUTE FUNCTION estatus_crear_etapa_ej();
 --
@@ -89,16 +92,11 @@ END;
 $$
  language plpgsql;
 
-CREATE OR REPLACE TRIGGER estatus_despues_crear_etapaEJ
-AFTER INSERT ON PROYECTO
+CREATE OR REPLACE TRIGGER estatus_despues_crear_actividadEJ
+AFTER INSERT ON ACTIVIDAD_EJ
 FOR EACH ROW
-EXECUTE FUNCTION estatus_crear_etapa_ej();
+EXECUTE FUNCTION estatus_crear_actividad_ej();
 -- #########
-
-CREATE OR REPLACE TRIGGER despues_crear_proyecto
-AFTER INSERT ON PROYECTO
-FOR EACH ROW
-EXECUTE FUNCTION cambiar_estatus_pozo_proyecto();
 
 -- manejo de inventario cuando se genera una solicitud de un cliente
 CREATE OR REPLACE FUNCTION manejo_inventario_sol_cliente()
