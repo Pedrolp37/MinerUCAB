@@ -22,7 +22,6 @@
 </template>
 
 <script setup>
-
 const emit = defineEmits(['deleteMetdSS'])
 
 const props = defineProps({
@@ -53,5 +52,4 @@ const deleteMetdSS = (metodo) => {
   background-color: #c3b1a300;
   color: black;
 }
-
 </style>

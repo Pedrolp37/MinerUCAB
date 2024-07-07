@@ -63,7 +63,11 @@
             </select>
           </div>
           <div class="d-flex justify-content-start" style="margin-top: 20px">
-            <MetodoDePago :metodo="metodoP" @metodoInf="getMeotodoPagoInf" />
+            <MetodoDePago
+              v-if="metodoPList.length == 0"
+              :metodo="metodoP"
+              @metodoInf="getMeotodoPagoInf"
+            />
           </div>
         </div>
       </div>
@@ -97,8 +101,12 @@
           <TablaMetodos :metodosInf="metodoPList" @deleteMetdSS="deleteMetdS" />
         </div>
       </div>
-      <hr>
-      <div v-if="metodoPList.length != 0 && mineral.length != 0 && cantMineral > 0" class="row" style="margin-top: 30px; margin-bottom: 30px">
+      <hr />
+      <div
+        v-if="metodoPList.length != 0 && mineral.length != 0 && cantMineral > 0"
+        class="row"
+        style="margin-top: 30px; margin-bottom: 30px"
+      >
         <div class="col d-flex justify-content-end">
           <button class="guardarS btn" @click="CrearSolicitudCliente">Crear Solicitud</button>
         </div>
@@ -117,8 +125,9 @@ import TablaMetodos from '../../components/TablaMetodos.vue'
 import Pagination from '../../components/Pagination.vue'
 import { getClientes } from '../../Services/Clientes/ClientesGet.services.js'
 import { getCliente } from '../../Services/Clientes/ClienteGet.services.js'
-import { getMinerales } from '../../Services/Minerales/MineralesGet.services'
-import { getMineral } from '../../Services/Minerales/MineralGet.services'
+import { getMinerales } from '../../Services/Minerales/MineralesGet.services.js'
+import { getMineral } from '../../Services/Minerales/MineralGet.services.js'
+import { postMetodo } from '../../Services/Solicitudes/PostSoliCliente.services.js'
 
 /*
 
@@ -255,13 +264,81 @@ const getMeotodoPagoInf = (metodo, monto, numInf, fechaV) => {
 }
 
 const CrearSolicitudCliente = () => {
+  switch (metodoPList.value[0].metodo) {
+    case 1:
+      postMetodo({
+        id_cliente: cliente.value[0].dni,
+        denominacion: 'dolar',
+        num_transferencia: null,
+        num_cheque: null,
+        num_tarjetaTDD: null,
+        tdd_vencimiento: null,
+        num_tarjetaTDC: null,
+        tdc_vencimiento: null,
+        tipo_metodoP: 'Efectivo'
+      })
+      break
+    case 2:
+      postMetodo({
+        id_cliente: cliente.value[0].dni,
+        denominacion: null,
+        num_transferencia: metodoPList.value[0].numInf,
+        num_cheque: null,
+        num_tarjetaTDD: null,
+        tdd_vencimiento: null,
+        num_tarjetaTDC: null,
+        tdc_vencimiento: null,
+        tipo_metodoP: 'Transferencia'
+      })
+      break
+    case 3:
+      postMetodo({
+        id_cliente: cliente.value[0].dni,
+        denominacion: null,
+        num_transferencia: null,
+        num_cheque: metodoPList.value[0].numInf,
+        num_tarjetaTDD: null,
+        tdd_vencimiento: null,
+        num_tarjetaTDC: null,
+        tdc_vencimiento: null,
+        tipo_metodoP: 'Cheque'
+      })
+      break
+    case 4:
+      postMetodo({
+        id_cliente: cliente.value[0].dni,
+        denominacion: null,
+        num_transferencia: null,
+        num_cheque: null,
+        num_tarjetaTDD: metodoPList.value[0].numInf,
+        tdd_vencimiento: metodoPList.value[0].fechaV,
+        num_tarjetaTDC: null,
+        tdc_vencimiento: null,
+        tipo_metodoP: 'TDD'
+      })
+      break
+    case 5:
+      postMetodo({
+        id_cliente: cliente.value[0].dni,
+        denominacion: null,
+        num_transferencia: null,
+        num_cheque: null,
+        num_tarjetaTDD: null,
+        tdd_vencimiento: null,
+        num_tarjetaTDC: metodoPList.value[0].numInf,
+        tdc_vencimiento: metodoPList.value[0].fechaV,
+        tipo_metodoP: 'TDC'
+      })
+      break
+  }
+
+
   //Hablar Con pegrito
   metodoPList.value = []
   mineral.value = []
   cliente.value = []
   cantMineral.value = 0
 }
-
 </script>
 
 <style scoped>
