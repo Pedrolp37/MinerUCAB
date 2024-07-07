@@ -1,17 +1,24 @@
-CREATE OR REPLACE PROCEDURE agregar_metodo(IN id_cliente VARCHAR(11),IN denominacion VARCHAR(20),IN num_transferencia VARCHAR(18),
-											IN num_cheque VARCHAR(7),IN num_tarjetaTDD varchar(16),IN tdd_vencimiento DATE,
-											IN num_tarjetaTDC VARCHAR(16),IN tdc_vencimiento DATE,IN tipo_metodoP VARCHAR(60))
+CREATE OR REPLACE FUNCTION agregar_metodo(IN id_cliente VARCHAR(11), IN denominacion VARCHAR(20), IN num_transferencia VARCHAR(18),
+                                            IN num_cheque VARCHAR(7), IN num_tarjetaTDD VARCHAR(16), IN tdd_vencimiento DATE,
+                                            IN num_tarjetaTDC VARCHAR(16), IN tdc_vencimiento DATE, IN tipo_metodoP VARCHAR(60))
+RETURNS INT
 LANGUAGE plpgsql
 AS $$
+DECLARE
+    metodo_id INT;
 BEGIN
-	INSERT INTO METODO_PAGO
-		(met_cl_identificacion,efectivo_denominacion,trans_num_transferencia,cheque_num_cheque,tdd_numero_tarjeta,
-		tdd_vencimiento,tdc_numero_tarjeta,tdc_vencimiento,tipo_metodo)
-	VALUES
-		(id_cliente,denominacion,num_transferencia,num_cheque,num_tarjetaTDD,tdd_vencimiento,num_tarjetaTDC,
-		tdc_vencimiento,tipo_metodoP);
-	
-END $$;
+    INSERT INTO METODO_PAGO
+        (met_cl_identificacion, efectivo_denominacion, trans_num_transferencia, cheque_num_cheque, tdd_numero_tarjeta,
+        tdd_vencimiento, tdc_numero_tarjeta, tdc_vencimiento, tipo_metodo)
+    VALUES
+        (id_cliente, denominacion, num_transferencia, num_cheque, num_tarjetaTDD, tdd_vencimiento, num_tarjetaTDC,
+        tdc_vencimiento, tipo_metodoP)
+    RETURNING met_id INTO metodo_id; -- Obtiene el ID generado
+
+    -- Abre el cursor y devuelve la fila con el método ID
+   RETURN metodo_id;
+END;
+$$;
 
 
 -- Obtener las etapas del proyecto

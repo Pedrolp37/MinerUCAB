@@ -7,6 +7,7 @@ import aliadoRoutes from './routes/aliado.routes.js';
 import empleadoRoutes from './routes/empleado.routes.js';
 import etapaRoutes from './routes/etapas.routes.js';
 import actividadRoutes from './routes/actividades.routes.js';
+import solicitudesRoutes from './routes/solicitudes.routes.js';
 import morgan from 'morgan'
  
 const app = express();
@@ -24,6 +25,7 @@ app.use(empleadoRoutes);
 
 app.use(etapaRoutes);
 app.use(actividadRoutes);
+app.use(solicitudesRoutes);
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 });
