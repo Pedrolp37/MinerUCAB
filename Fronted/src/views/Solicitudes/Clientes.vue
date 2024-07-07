@@ -128,12 +128,14 @@ import { getCliente } from '../../Services/Clientes/ClienteGet.services.js'
 import { getMinerales } from '../../Services/Minerales/MineralesGet.services.js'
 import { getMineral } from '../../Services/Minerales/MineralGet.services.js'
 import { postMetodo } from '../../Services/Solicitudes/PostSoliCliente.services.js'
+import { useRoute, useRouter } from 'vue-router'
 
 /*
 
 * VARIABLES
 
 */
+const router = useRouter()
 let cantMineral = ref(0)
 let metodoP = ref('Seleccionar Método De Pago')
 let metodoPList = ref([])
@@ -280,11 +282,7 @@ const CrearSolicitudCliente = () => {
         cantidad : cantMineral.value,
         obs: null
       })
-        metodoP = 'Seleccionar Método De Pago'
-        metodoPList.value = []
-        mineral.value = []
-        cliente.value = []
-        cantMineral.value = 0
+        router.go()
       break
     case 2:
       postMetodo({
@@ -301,11 +299,7 @@ const CrearSolicitudCliente = () => {
         cantidad : cantMineral.value,
         obs: null
       })
-        metodoP = 'Seleccionar Método De Pago'
-        metodoPList.value = []
-        mineral.value = []
-        cliente.value = []
-        cantMineral.value = 0
+        router.go()
       break
     case 3:
       postMetodo({
@@ -322,11 +316,7 @@ const CrearSolicitudCliente = () => {
         cantidad : cantMineral.value,
         obs: null
       })
-        metodoP = 'Seleccionar Método De Pago'
-        metodoPList.value = []
-        mineral.value = []
-        cliente.value = []
-        cantMineral.value = 0
+        router.go()
       break
     case 4:
       postMetodo({
@@ -343,11 +333,7 @@ const CrearSolicitudCliente = () => {
         cantidad : cantMineral.value,
         obs: null
       })
-        metodoP = 'Seleccionar Método De Pago'
-        metodoPList.value = []
-        mineral.value = []
-        cliente.value = []
-        cantMineral.value = 0
+        router.go()
       break
     case 5:
       postMetodo({
@@ -364,11 +350,7 @@ const CrearSolicitudCliente = () => {
         cantidad : cantMineral.value,
         obs: null
       })
-        metodoP = 'Seleccionar Método De Pago'
-        metodoPList.value = []
-        mineral.value = []
-        cliente.value = []
-        cantMineral.value = 0
+        router.go()
       break
   }
 

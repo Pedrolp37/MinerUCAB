@@ -9,8 +9,13 @@
       </div>
       <hr />
       <div class="row" style="margin-top: 80px">
-        <div class="col d-flex justify-content-center">
-          <TablaInventario :inventario="inventario" />
+        <div class="col ">
+          <div class="d-flex justify-content-center">
+            <TablaInventario :inventario="inventario" />
+          </div>
+          <div class="d-flex justify-content-center">
+            <Pagination @backPag="backPagMinerals" @nextPag="nextPagMinerals" />
+          </div>
         </div>
       </div>
     </div>
@@ -18,11 +23,30 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaInventario from '../../components/TablaInventario.vue'
+import Pagination from '../../components/Pagination.vue'
+import {getInventario} from '../../Services/Inventario/InventarioGet.services.js'
 
+
+/*
+
+* VARIABLES
+
+*/
 let inventario = ref([])
+
+
+/*
+
+* CONSUMO DE LA API
+
+*/
+
+onMounted(async () => {
+  getInventario().then((Response) => (inventario.value = Response.data))
+})
 
 inventario.value = [
   {
