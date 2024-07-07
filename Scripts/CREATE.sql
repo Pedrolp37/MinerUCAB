@@ -250,7 +250,7 @@ CREATE TABLE POZO_ESTATUS (
 	-- check de fecha tiene que ser menor o igual que la fecha actual
 	CONSTRAINT ck_poes_fecha_ini CHECK (poes_fecha_ini <= CURRENT_DATE),
 	-- check de que fecha final tiene que ser mayor a la inicial
-	CONSTRAINT ck_poes_fecha_fin CHECK (poes_fecha_fin > poes_fecha_ini)
+	CONSTRAINT ck_poes_fecha_fin CHECK (poes_fecha_fin >= poes_fecha_ini)
 );
 
 
@@ -603,7 +603,6 @@ CREATE TABLE PROYECTO(
 
 	CONSTRAINT fk_genera FOREIGN KEY (pro_fk_sol_id) REFERENCES SOLICITUD_CLIENTE(factura_cli_id),
 
-
 	CONSTRAINT ck_pro_fecha_fin CHECK (pro_fecha_fin > pro_fecha_ini),
 
 	CONSTRAINT ck_pro_fecha_diff CHECK (pro_fecha_fin > pro_fecha_ini),
@@ -847,7 +846,7 @@ CREATE TABLE ACTIVIDAD_ESTATUS(
 	-- check de fecha tiene que ser menor o igual que la fecha actual
 	CONSTRAINT ck_actes_fecha_ini CHECK (actes_fecha_ini <= CURRENT_DATE),
 	-- check de que fecha final tiene que ser mayor a la inicial
-	CONSTRAINT ck_actes_fecha_fin CHECK (actes_fecha_fin > actes_fecha_ini)
+	CONSTRAINT ck_actes_fecha_fin CHECK (actes_fecha_fin >= actes_fecha_ini)
 );
 
 CREATE TABLE CARGO_EJ(
