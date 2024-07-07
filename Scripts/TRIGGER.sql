@@ -16,6 +16,66 @@ END;
 $$
 	language plpgsql;
 
+
+-----
+CREATE OR REPLACE FUNCTION estatus_crear_proyecto()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO PRO_ESTATUS (proes_pro_id,proes_est_id,proes_fecha_ini,proes_fecha_fin)
+	VALUES
+		(NEW.pro_id,1,CURRENT_DATE,NULL);
+
+	RETURN NEW;
+END;
+$$
+ language plpgsql;
+
+CREATE OR REPLACE TRIGGER estatus_despues_crear_proyecto
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_crear_proyecto();
+--------
+-- TRIGGER DE INSERTAR ESTATUS A ETAPA_EJ LUEGO DE QUE SE CREA EL PROYECTO
+CREATE OR REPLACE FUNCTION estatus_crear_etapa_ej()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO ETAPA_ESTATUS (etes_etej_id,etes_est_id,etes_fecha_ini,etes_fecha_fin)
+	VALUES
+		(NEW.etej_id,1,CURRENT_DATE,NULL);
+
+	RETURN NEW;
+END;
+$$
+ language plpgsql;
+
+CREATE OR REPLACE TRIGGER estatus_despues_crear_etapaEJ
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_crear_etapa_ej();
+--
+
+-- TRIGGER DE INSERTAR ESTATUS A ACTIVIDAD_EJ LUEGO DE QUE SE CREA EL PROYECTO
+CREATE OR REPLACE FUNCTION estatus_crear_actividad_ej()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO ACTIVIDAD_ESTATUS (actes_actej_id,actes_est_id,actes_fecha_ini,actes_fecha_fin)
+	VALUES
+		(NEW.actej_id,1,CURRENT_DATE,NULL);
+
+	RETURN NEW;
+END;
+$$
+ language plpgsql;
+
+CREATE OR REPLACE TRIGGER estatus_despues_crear_etapaEJ
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_crear_etapa_ej();
+-- #########
+
 CREATE OR REPLACE TRIGGER despues_crear_proyecto
 AFTER INSERT ON PROYECTO
 FOR EACH ROW
