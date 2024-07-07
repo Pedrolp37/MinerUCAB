@@ -8815,3 +8815,4 @@ VALUES
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
     VALUES (19, NULL, 20, NULL, 45.00, 30.00, 'ING', '2024-06-15');*/
+    

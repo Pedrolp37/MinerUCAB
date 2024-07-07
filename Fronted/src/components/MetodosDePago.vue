@@ -2,30 +2,10 @@
   <div>
     <!-- Efectivo -->
     <div v-if="props.metodo == 1" class="container">
-      <div class="dolar input-group">
-        <span class="dolar input-group-text">$</span>
-        <input
-          type="number"
-          class="form-control"
-          aria-label="Amount (to the nearest dollar) "
-          :placeholder="'Introducir Monto'"
-          v-model="monto"
-        />
-      </div>
       <button class="guardar btn" @click="guardarMetodoEmit">Guardar Método</button>
     </div>
     <!-- Transferencia -->
     <div v-if="props.metodo == 2" class="container">
-      <div class="dolar input-group">
-        <span class="dolar input-group-text">$</span>
-        <input
-          type="number"
-          class="form-control"
-          aria-label="Amount (to the nearest dollar) "
-          :placeholder="'Introducir Monto'"
-          v-model="monto"
-        />
-      </div>
       <div class="num input-group">
         <span class="dolar input-group-text">#</span>
         <input
@@ -40,16 +20,6 @@
     </div>
     <!-- Cheque -->
     <div v-if="props.metodo == 3" class="container">
-      <div class="dolar input-group">
-        <span class="dolar input-group-text">$</span>
-        <input
-          type="number"
-          class="form-control"
-          aria-label="Amount (to the nearest dollar) "
-          :placeholder="'Introducir Monto'"
-          v-model="monto"
-        />
-      </div>
       <div class="num input-group">
         <span class="dolar input-group-text">#</span>
         <input
@@ -64,16 +34,6 @@
     </div>
     <!-- Tarjeta Debito -->
     <div v-if="props.metodo == 4" class="container">
-      <div class="dolar input-group">
-        <span class="dolar input-group-text">$</span>
-        <input
-          type="number"
-          class="form-control"
-          aria-label="Amount (to the nearest dollar) "
-          :placeholder="'Introducir Monto'"
-          v-model="monto"
-        />
-      </div>
       <div class="num input-group">
         <span class="dolar input-group-text">#</span>
         <input
@@ -92,16 +52,6 @@
     </div>
     <!-- Tarjeta Credito -->
     <div v-if="props.metodo == 5" class="container">
-      <div class="dolar input-group">
-        <span class="dolar input-group-text">$</span>
-        <input
-          type="number"
-          class="form-control"
-          aria-label="Amount (to the nearest dollar) "
-          :placeholder="'Introducir Monto'"
-          v-model="monto"
-        />
-      </div>
       <div class="num input-group">
         <span class="dolar input-group-text">#</span>
         <input

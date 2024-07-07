@@ -265,7 +265,7 @@ const getMeotodoPagoInf = (metodo, monto, numInf, fechaV) => {
 
 const CrearSolicitudCliente = () => {
   switch (metodoPList.value[0].metodo) {
-    case 1:
+    case 1:     
       postMetodo({
         id_cliente: cliente.value[0].dni,
         denominacion: 'dolar',
@@ -275,8 +275,16 @@ const CrearSolicitudCliente = () => {
         tdd_vencimiento: null,
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
-        tipo_metodoP: 'Efectivo'
+        tipo_metodoP: 'Efectivo',
+        mineral_id : mineral.value[0].id, 
+        cantidad : cantMineral.value,
+        obs: null
       })
+        metodoP = 'Seleccionar Método De Pago'
+        metodoPList.value = []
+        mineral.value = []
+        cliente.value = []
+        cantMineral.value = 0
       break
     case 2:
       postMetodo({
@@ -288,8 +296,16 @@ const CrearSolicitudCliente = () => {
         tdd_vencimiento: null,
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
-        tipo_metodoP: 'Transferencia'
+        tipo_metodoP: 'Transferencia',
+        mineral_id : mineral.value[0].id, 
+        cantidad : cantMineral.value,
+        obs: null
       })
+        metodoP = 'Seleccionar Método De Pago'
+        metodoPList.value = []
+        mineral.value = []
+        cliente.value = []
+        cantMineral.value = 0
       break
     case 3:
       postMetodo({
@@ -301,8 +317,16 @@ const CrearSolicitudCliente = () => {
         tdd_vencimiento: null,
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
-        tipo_metodoP: 'Cheque'
+        tipo_metodoP: 'Cheque',
+        mineral_id : mineral.value[0].id, 
+        cantidad : cantMineral.value,
+        obs: null
       })
+        metodoP = 'Seleccionar Método De Pago'
+        metodoPList.value = []
+        mineral.value = []
+        cliente.value = []
+        cantMineral.value = 0
       break
     case 4:
       postMetodo({
@@ -314,8 +338,16 @@ const CrearSolicitudCliente = () => {
         tdd_vencimiento: metodoPList.value[0].fechaV,
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
-        tipo_metodoP: 'TDD'
+        tipo_metodoP: 'TDD',
+        mineral_id : mineral.value[0].id, 
+        cantidad : cantMineral.value,
+        obs: null
       })
+        metodoP = 'Seleccionar Método De Pago'
+        metodoPList.value = []
+        mineral.value = []
+        cliente.value = []
+        cantMineral.value = 0
       break
     case 5:
       postMetodo({
@@ -327,17 +359,19 @@ const CrearSolicitudCliente = () => {
         tdd_vencimiento: null,
         num_tarjetaTDC: metodoPList.value[0].numInf,
         tdc_vencimiento: metodoPList.value[0].fechaV,
-        tipo_metodoP: 'TDC'
+        tipo_metodoP: 'TDC',
+        mineral_id : mineral.value[0].id, 
+        cantidad : cantMineral.value,
+        obs: null
       })
+        metodoP = 'Seleccionar Método De Pago'
+        metodoPList.value = []
+        mineral.value = []
+        cliente.value = []
+        cantMineral.value = 0
       break
   }
 
-
-  //Hablar Con pegrito
-  metodoPList.value = []
-  mineral.value = []
-  cliente.value = []
-  cantMineral.value = 0
 }
 </script>
 

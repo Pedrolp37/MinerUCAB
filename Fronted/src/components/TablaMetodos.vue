@@ -4,14 +4,12 @@
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Método</th>
-          <th class="tabla Cabecera">Monto</th>
           <th class="tabla Cabecera"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(elm, index) in props.metodosInf" :key="index" style="text-align: center">
           <td>{{ elm.metodo }}</td>
-          <td>{{ elm.monto }}</td>
           <td>
             <button class="seleccionar btn" @click="deleteMetdSS(elm.metodo)">Eliminar</button>
           </td>
