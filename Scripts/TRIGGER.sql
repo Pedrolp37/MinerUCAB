@@ -1,3 +1,26 @@
+-- TRIGGER QUE CAMBIA EL ESTATUS DEL POZO QUE SE VA A USAR
+CREATE OR REPLACE FUNCTION cambiar_estatus_pozo_proyecto()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	UPDATE pozo_estatus
+	SET poes_fecha_fin = CURRENT_DATE
+	WHERE poes_po_id = NEW.pro_fk_po_id;
+	
+	INSERT INTO pozo_estatus (poes_po_id, poes_est_id, poes_fecha_ini, poes_fecha_fin)
+	VALUES
+		(NEW.pro_fk_po_id, 15, CURRENT_DATE, CURRENT_DATE);
+
+	RETURN NEW;
+END;
+$$
+	language plpgsql;
+
+CREATE OR REPLACE TRIGGER despues_crear_proyecto
+AFTER INSERT ON PROYECTO
+FOR EACH ROW
+EXECUTE FUNCTION cambiar_estatus_pozo_proyecto();
+
 -- manejo de inventario cuando se genera una solicitud de un cliente
 CREATE OR REPLACE FUNCTION manejo_inventario_sol_cliente()
 RETURNS TRIGGER AS
