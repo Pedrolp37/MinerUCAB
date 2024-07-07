@@ -81,3 +81,24 @@ export const getSolicitudAliado = async(req,res)=>{
         return res.status(500).json(error);
     }
 }
+
+export const getSolicitudCliente = async(req,res)=>{
+    try{
+        const {rows} = await pool.query(`select sc.factura_fk_cl_identificacion AS identificacion, sc.factura_min_id AS mineral,
+	                                    e.est_nombre AS estatus, sc.factura_cli_cantidad AS cantidad, sc.factura_cli_total AS total,
+		                                sc.factura_cli_fecha AS fecha
+                                    FROM solicitud_cliente sc
+                                    JOIN est_sol_cliente est ON sc.factura_cli_id = est.escl_fk_sol_cliente
+                                    JOIN estatus e ON e.est_id = est.escl_fk_est_id
+                                    WHERE est.escl_fk_sol_cliente IN (
+	                                                        SELECT es.escl_fk_sol_cliente
+	                                                        FROM est_sol_cliente es
+	                                                        WHERE es.escl_fk_sol_cliente = sc.factura_cli_id
+	                                                        order by escl_id DESC
+	                                                        limit 1)`);
+
+        return res.status(200).json(rows);
+    }catch(error){
+        return res.status(500).json(error);
+    }
+}
