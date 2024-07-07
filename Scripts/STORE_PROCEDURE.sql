@@ -1,3 +1,19 @@
+CREATE OR REPLACE PROCEDURE agregar_metodo(IN id_cliente VARCHAR(11),IN denominacion VARCHAR(20),IN num_transferencia VARCHAR(18),
+											IN num_cheque VARCHAR(7),IN num_tarjetaTDD varchar(16),IN tdd_vencimiento DATE,
+											IN num_tarjetaTDC VARCHAR(16),IN tdc_vencimiento DATE,IN tipo_metodoP VARCHAR(60))
+LANGUAGE plpgsql
+AS $$
+BEGIN
+	INSERT INTO METODO_PAGO
+		(met_cl_identificacion,efectivo_denominacion,trans_num_transferencia,cheque_num_cheque,tdd_numero_tarjeta,
+		tdd_vencimiento,tdc_numero_tarjeta,tdc_vencimiento,tipo_metodo)
+	VALUES
+		(id_cliente,denominacion,num_transferencia,num_cheque,num_tarjetaTDD,tdd_vencimiento,num_tarjetaTDC,
+		tdc_vencimiento,tipo_metodoP);
+	
+END $$;
+
+
 -- Obtener las etapas del proyecto
 CREATE OR REPLACE FUNCTION etapas_proyecto(IN proyecto_id INT)
 RETURNS TABLE (numero_etapa INT, Nombre VARCHAR(40), fecha_inial DATE, fecha_final DATE)
