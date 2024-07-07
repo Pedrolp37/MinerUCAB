@@ -86,7 +86,7 @@ END $$;
 -- PROCEDIMIENTO PARA INSERTAR UNA SOLICITUD DE CLIENTE
 CREATE OR REPLACE PROCEDURE insertar_sol_cliente(IN id_cliente VARCHAR(11),IN mineral_id INT,
 												IN cantidad NUMERIC(20,2),IN obs VARCHAR(200),
-												IN metodoP INT, IN montoP  NUMERIC(20,2))
+												IN metodoP INT)
  language plpgsql
 AS $$
 	DECLARE
@@ -112,7 +112,7 @@ BEGIN
   -- Insertar en la tabla pago
    
         INSERT INTO pago (pago_fk_sol_cl,pago_fk_met_id, pago_monto,pago_fecha)
-        VALUES (solicitud_id, metodoP, montoP, CURRENT_DATE);
+        VALUES (solicitud_id, metodoP, costo_total, CURRENT_DATE);
 END $$;
 -- FIN DE PROCEDIMIENTO PARA INSERTAR UNA SOLICITUD DE CLIENTE
 
