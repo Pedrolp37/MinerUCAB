@@ -62,23 +62,25 @@ export const putSolicitudAliado = async (req,res)=>{
 
 export const getSolicitudAliado = async(req,res)=>{
     try{
-        const {offset} = req.params
-        const {rows} = await pool.query(`SELECT sa.factura_fk_ali_rif AS RIF, sa.factura_ali_min_id AS de_mineral,
-                                sa.factura_ali_tire_id AS de_recurso, sa.factura_ali_carg_id AS de_cargo,
-                                e.est_nombre AS estatus, sa.factura_ali_cantidad AS cantidad,
-                                sa.factura_ali_total AS total, sa.factura_ali_fecha
-                            FROM solicitud_aliado sa
-                            JOIN est_solicitud est ON sa.factura_ali_id = est.est_sol_fk_sol_ali
-                            JOIN estatus e ON e.est_id = est.est_sol_fk_est_id
-                            WHERE (est.est_sol_id) IN 
-                                                (SELECT est_sol_id
-                                                FROM est_solicitud es
-	                                            where es.est_sol_fk_sol_ali = sa.factura_ali_id
-	                                            order by est_sol_id DESC
-	                                            limit 1)
-                            limit 5 offset $1
-                                                `, [offset]);
-    
+        const {rows} = await pool.query(`SELECT ac.ali_nombre AS Aliado,
+                            m.min_nombre AS mineral,
+                            sa.factura_ali_tire_id AS de_recurso,
+                            sa.factura_ali_carg_id AS de_cargo,
+                            e.est_nombre AS estatus,
+                            sa.factura_ali_cantidad AS cantidad,
+                            sa.factura_ali_total AS total,
+                            sa.factura_ali_fecha
+                        FROM solicitud_aliado sa
+                        JOIN est_solicitud est ON sa.factura_ali_id = est.est_sol_fk_sol_ali
+                        JOIN estatus e ON e.est_id = est.est_sol_fk_est_id
+                        JOIN mineral m ON m.min_id = sa.factura_ali_min_id
+                        JOIN aliado_comercial ac ON ac.ali_rif = sa.factura_fk_ali_rif
+                        WHERE (est.est_sol_id) IN (
+                                        SELECT est_sol_id
+                                        FROM est_solicitud es
+	                                    where es.est_sol_fk_sol_ali = sa.factura_ali_id
+	                                    order by est_sol_id DESC
+	                                    limit 1)`);
 
         return res.status(200).json(rows);                                        
     }catch(error){
