@@ -30,12 +30,17 @@
         </div>
       </div>
       <div class="row" style="margin-top: 80px">
-        <div class="col d-flex justify-content-center">
-          <TablaAliados
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <TablaAliados
             :aliados="aliados"
             :aliadosFiltered="aliadosFiltered"
             @dltAli="deleteAliado"
           />
+          </div>
+          <div class="d-flex justify-content-center">
+            <Pagination @backPag="backPagAliado" @nextPag="nextPagAliado" />
+          </div>
         </div>
       </div>
       <div
@@ -66,7 +71,7 @@
                       class="form-control"
                       id="nombre"
                       autocomplete="off"
-                      :placeholder="'Jxxxxxxxxxxx'"
+                      :placeholder="'Jxxxxxxxxxx'"
                       v-model="newAliado.rif"
                     />
                   </div>
@@ -94,7 +99,7 @@
                   <div class="mb-3">
                     <label for="nombre" class="label form-label">Fecha de Creación:</label>
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
                       id="nombre"
                       autocomplete="off"
@@ -159,17 +164,21 @@
 import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaAliados from '../../components/TablaAliados.vue'
+import Pagination from '../../components/Pagination.vue'
 import { getAliados } from '../../Services/Aliados/AliadosGet.services.js'
-
+import { postAliado } from '../../Services/Aliados/AliadosPost.services.js'
+import { useRoute, useRouter } from 'vue-router'
 /*
 
 * VARIABLES
 
 */
+const router = useRouter()
 let findAliado = ref('')
 let aliados = ref([])
 let aliadosFiltered = ref([])
 let newAliado = ref({})
+let changePageAliados = ref(0)
 
 newAliado.value = {
   rif: '',
@@ -188,7 +197,7 @@ newAliado.value = {
  */
 
 onMounted(async () => {
-  getAliados().then((Response) => (aliados.value = Response.data))
+  getAliados(changePageAliados.value).then((Response) => (aliados.value = Response.data))
 })
 
 /*
@@ -197,23 +206,36 @@ onMounted(async () => {
 
 */
 
+const nextPagAliado = () => {
+  if (aliados.value.length == 5) {
+    changePageAliados.value += 5
+    getNewPageAliado()
+  }
+}
+
+const backPagAliado = () => {
+  if (changePageAliados.value >= 5) {
+    changePageAliados.value -= 5
+    getNewPageAliado()
+  }
+}
+
+const getNewPageAliado = async () => {
+  getAliados(changePageAliados.value).then((Response) => (aliados.value = Response.data))
+}
+
 const guardarAliado = () => {
-  aliados.value.push({
-    rif: 'J1250001241',
+  postAliado({
+    rif: newAliado.value.rif,
     nombre: newAliado.value.nombre,
     direccion: newAliado.value.direccion,
-    fcCreacion: newAliado.value.fcCreacion,
+    fecha: newAliado.value.fcCreacion,
     capital: newAliado.value.capital,
-    numTelefono: newAliado.value.numTelefono,
+    telefono: newAliado.value.numTelefono,
     descripcion: newAliado.value.descripcion
   })
-
-  newAliado.value.nombre = ''
-  newAliado.value.direccion = ''
-  newAliado.value.fcCreacion = ''
-  newAliado.value.capital = 0
-  newAliado.value.numTelefono = ''
-  newAliado.value.descripcion = ''
+  
+  router.go()
 }
 
 const getAliadoFiltered = () => {

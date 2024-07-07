@@ -4,7 +4,6 @@
       v-show="empListfind.length == 0"
       class="table table-striped"
       id="table"
-      style="width: 80vw"
     >
       <thead>
         <tr style="text-align: center">
@@ -38,7 +37,7 @@
         </tr>
       </tbody>
     </table>
-    <table v-show="empListfind != 0" class="table table-striped" id="table" style="width: 80vw">
+    <table v-show="empListfind != 0" class="table table-striped" id="table">
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">DNI</th>

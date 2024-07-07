@@ -14,7 +14,7 @@
             <TablaInventario :inventario="inventario" />
           </div>
           <div class="d-flex justify-content-center">
-            <Pagination @backPag="backPagMinerals" @nextPag="nextPagMinerals" />
+            <Pagination @backPag="backPagInventario" @nextPag="nextPagInventario" />
           </div>
         </div>
       </div>
@@ -36,6 +36,7 @@ import {getInventario} from '../../Services/Inventario/InventarioGet.services.js
 
 */
 let inventario = ref([])
+let changePageInventario = ref(0)
 
 
 /*
@@ -45,26 +46,35 @@ let inventario = ref([])
 */
 
 onMounted(async () => {
-  getInventario().then((Response) => (inventario.value = Response.data))
+  getInventario(changePageInventario.value).then((Response) => (inventario.value = Response.data))
 })
 
-inventario.value = [
-  {
-    mineral: 'Oro',
-    cantidad: 50000,
-    fcAdqui: '12-12-2002'
-  },
-  {
-    mineral: 'Plata',
-    cantidad: 50000,
-    fcAdqui: '12-12-2002'
-  },
-  {
-    mineral: 'Carbón',
-    cantidad: 50000,
-    fcAdqui: '12-12-2002'
+
+/*
+
+* METHODS
+
+*/
+
+const nextPagInventario = () => {
+  if (inventario.value.length == 5) {
+    changePageInventario.value += 5
+    getNewPageInventario()
   }
-]
+}
+
+const backPagInventario = () => {
+  if (changePageInventario.value >= 5) {
+    changePageInventario.value -= 5
+    getNewPageInventario()
+  }
+}
+
+const getNewPageInventario = async () => {
+  getInventario(changePageInventario.value).then((Response) => (inventario.value = Response.data))
+}
+
+
 </script>
 
 <style scoped></style>

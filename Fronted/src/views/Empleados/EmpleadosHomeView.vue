@@ -50,12 +50,17 @@
         </div>
       </div>
       <div class="row" style="margin-top: 40px">
-        <div class="col d-flex justify-content-center">
-          <TablaEmpMUcab
-            :empleados="empleados"
-            :empListfind="empListfind"
-            @dltEmp="deleteEmpleado"
-          />
+        <div class="col ">
+            <div class="">
+              <TablaEmpMUcab
+              :empleados="empleados"
+              :empListfind="empListfind"
+              @dltEmp="deleteEmpleado"
+            />
+            <div class="d-flex justify-content-center">
+              <Pagination @backPag="backPagEmpleado" @nextPag="nextPagEmpleado" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -171,6 +176,7 @@
 import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaEmpMUcab from '../../components/TablaEmpMUcab.vue'
+import Pagination from '../../components/Pagination.vue'
 import { getEmpleados } from '../../Services/Empleados/EmpleadosGet.services.js'
 
 /*
@@ -184,6 +190,7 @@ let empListfind = ref([])
 let typeSearch = ref('Buscar por')
 let findEmp = ref('')
 let cargo = ref([])
+let changePageEmpleado = ref(0)
 
 newEmpleado.value = {
   name: '',
@@ -203,9 +210,8 @@ cargo.value = empleados.value.job
 */
 
 onMounted(async () => {
-  getEmpleados().then((Response) => {
+  getEmpleados(changePageEmpleado.value).then((Response) => {
     empleados.value = Response.data
-    console.log(empleados.value)
   })
 })
 
@@ -214,6 +220,24 @@ onMounted(async () => {
 * MÉTODOS(FUNCIONES)
 
 */
+
+const nextPagEmpleado = () => {
+  if (empleados.value.length == 5) {
+    changePageEmpleado.value += 5
+    getNewPageEmpleado()
+  }
+}
+
+const backPagEmpleado = () => {
+  if (changePageEmpleado.value >= 5) {
+    changePageEmpleado.value -= 5
+    getNewPageEmpleado()
+  }
+}
+
+const getNewPageEmpleado = async () => {
+  getEmpleados(changePageEmpleado.value).then((Response) => (empleados.value = Response.data))
+}
 
 const guardarEmpleado = () => {
   let job = ''

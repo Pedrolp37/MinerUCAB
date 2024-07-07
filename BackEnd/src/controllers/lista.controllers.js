@@ -3,12 +3,14 @@ import { pool } from "../databases/BD_Connection.js";
 //EMPLEADOS
 export const getEmpleado = async (req, res) => {
   try {
+    const {offset} = req.params
     const { rows } = await pool.query(`
         SELECT e.emp_identificacion as dni, e.emp_p_nombre as name, e.emp_p_apellido as lastName, e.emp_telefono as numPhone, e.emp_direccion as address, c.carg_nombre as job
         FROM empleado e, cargo c, cargo_empleado ec
         WHERE e.emp_identificacion = ec.caem_fk_emp_identificacion
         AND c.carg_id = ec.caem_fk_carg_id
-    `);
+        limit 5 offset $1
+    `, [offset]);
     //el emp_identificacion es el id
     if (!rows.length) {
       return res.status(200).json({ message: "No hay empleados" });
@@ -59,11 +61,13 @@ export const getCliente = async (req, res) => {
 //############### ALIADO ###############
 export const getAliados = async (req, res) => {
   try {
+    const {offset} = req.params
     const { rows } =await pool.query(`
       SELECT ali_rif as rif,ali_nombre as nombre, ali_direccion as direccion, ali_fecha_creacion as fccreacion, 
       ali_capital as capital, ali_num_telefono as numTelefono,ali_descripcion as descripcion
       FROM aliado_comercial
-    `);
+      limit 5 offset $1
+    `,[offset]);
     if (!rows.length) {
       return res.status(200).json({ message: "No hay aliados en el sistema" });
     }
@@ -179,7 +183,9 @@ export const getMineralName = async (req, res) => {
 //INVENTARIO
 export const getInventario = async(req,res)=>{
   try{
-  const {rows} = await pool.query('SELECT * from manejo_inventario');
+  const {offset} = req.params
+  console.log(req.params)
+  const {rows} = await pool.query(`SELECT * from manejo_inventario limit 5 offset $1`, [offset]);
 
   return res.status(200).json(rows);
   }catch(error){

@@ -4,7 +4,7 @@ import {pool} from '../databases/BD_Connection.js';
 export const postAliado = async (req, res) => {
     try{
         const {rif,nombre,direccion,fecha,capital,telefono,descripcion} = req.body;
-
+        console.log(req.body)
         const {rows} = await pool.query(`INSERT INTO aliado_comercial (ali_rif,ali_nombre,ali_direccion,
                                                                         ali_fecha_creacion,ali_capital,ali_num_telefono,ali_descripcion,fk_lu_id)
                                         VALUES ($1,$2,$3,$4,$5,$6,$7,1041) RETURNING *`,[rif,nombre,direccion,fecha,capital,telefono,descripcion]);
@@ -14,3 +14,11 @@ export const postAliado = async (req, res) => {
         return res.status(500).json(error);
     }
 };
+
+export const deleteAliado = async (req, res) => {
+    try {
+        const {id} = req.params
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+}

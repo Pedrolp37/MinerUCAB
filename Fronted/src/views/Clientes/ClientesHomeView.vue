@@ -30,13 +30,18 @@
         </div>
       </div>
       <div class="row" style="margin-top: 80px">
-        <div class="col d-flex justify-content-center">
-          <TablaClientes
-            :clientes="clientes"
-            :clienteFiltered="clienteFiltered"
-            :soliCliente="false"
-            @dltCli="deleteCliente"
-          />
+        <div class="col ">
+          <div class="d-flex justify-content-center">
+            <TablaClientes
+              :clientes="clientes"
+              :clienteFiltered="clienteFiltered"
+              :soliCliente="false"
+              @dltCli="deleteCliente"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <Pagination @backPag="backPagCliente" @nextPag="nextPagCliente" />
+          </div>
         </div>
       </div>
       <div
@@ -140,12 +145,14 @@
 import { onMounted, ref } from 'vue'
 import TablaClientes from '../../components/TablaClientes.vue'
 import NavBarVue from '../../components/NavBar.vue'
+import Pagination from '../../components/Pagination.vue'
 import { getClientes } from '../../Services/Clientes/ClientesGet.services.js'
 
 let clienteFiltered = ref([])
 let clientes = ref([])
 let newCliente = ref({})
 let findCliente = ref('')
+let changePageCliente = ref(0)
 
 newCliente.value = {
   dni: '',
@@ -162,8 +169,33 @@ newCliente.value = {
 */
 
 onMounted(async () => {
-  getClientes().then((Response) => (clientes.value = Response.data))
+  getClientes(changePageCliente.value).then((Response) => (clientes.value = Response.data))
 })
+
+
+/*
+
+* METHODS
+
+*/
+
+const nextPagCliente = () => {
+  if (clientes.value.length == 5) {
+    changePageCliente.value += 5
+    getNewPageCliente()
+  }
+}
+
+const backPagCliente = () => {
+  if (changePageCliente.value >= 5) {
+    changePageCliente.value -= 5
+    getNewPageCliente()
+  }
+}
+
+const getNewPageCliente = async () => {
+  getClientes(changePageCliente.value).then((Response) => (clientes.value = Response.data))
+}
 
 const getClientesFiltered = () => {
   clienteFiltered.value = clientes.value.filter((elm) => elm.name == findCliente.value)

@@ -42,14 +42,20 @@
         </div>
       </div>
       <div class="row" style="margin-top: 80px">
-        <div class="col d-flex justify-content-center">
-          <TablaMinerales
-            :solicitud="false"
-            :minerals="mineralsList"
-            :filteredMinerals="filteredMineralsList"
-            @dltMineral="getidDeleteMin"
-            @modMineral="getMinPut"
-          />
+        <div class="col ">
+          <div class="d-flex justify-content-center">
+            <TablaMinerales
+              :minSelected="[]"
+              :solicitud="false"
+              :minerals="mineralsList"
+              :filteredMinerals="filteredMineralsList"
+              @dltMineral="getidDeleteMin"
+              @modMineral="getMinPut"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <Pagination @backPag="backPagMinerals" @nextPag="nextPagMinerals" />
+          </div>
         </div>
       </div>
       <div
@@ -207,12 +213,13 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import TablaMinerales from '../../components/TablaMinerales.vue'
+import Pagination from '../../components/Pagination.vue'
 import NavBarVue from '../../components/NavBar.vue'
 import { useRouter, useRoute } from 'vue-router'
-import { getMinerales } from '../../Services/Minerales/MineralesGet.services'
-import { postMineral } from '../../Services/Minerales/MineralPost.services'
-import { deleteMineral } from '../../Services/Minerales/MineralesDelete.services'
-import { putMineral } from '../../Services/Minerales/MineralesPut.services'
+import { getMinerales } from '../../Services/Minerales/MineralesGet.services.js'
+import { postMineral } from '../../Services/Minerales/MineralPost.services.js'
+import { deleteMineral } from '../../Services/Minerales/MineralesDelete.services.js'
+import { putMineral } from '../../Services/Minerales/MineralesPut.services.js'
 /*
 
 * VARIABLES
@@ -225,6 +232,7 @@ let mineralsList = ref([])
 let filteredMineralsList = ref([])
 let findMineral = ref('')
 let newMineral = ref({})
+let changePageMinerals = ref(0)
 
 newMineral.value = {
   nombre: '',
@@ -245,7 +253,7 @@ newMineral.value = {
 */
 
 onMounted(async () => {
-  getMinerales().then((Response) => (mineralsList.value = Response.data))
+  getMinerales(changePageMinerals.value).then((Response) => (mineralsList.value = Response.data))
 })
 
 /*
@@ -253,6 +261,27 @@ onMounted(async () => {
 * MÉTODOS(FUNCIONES)
 
 */
+
+
+const nextPagMinerals = () => {
+  if (mineralsList.value.length == 5) {
+    changePageMinerals.value += 5
+    getNewPageMinerals()
+  }
+}
+
+const backPagMinerals = () => {
+  if (changePageMinerals.value >= 5) {
+    changePageMinerals.value -= 5
+    getNewPageMinerals()
+  }
+}
+
+const getNewPageMinerals = async () => {
+  getMinerales(changePageMinerals.value).then((Response) => (mineralsList.value = Response.data))
+}
+
+
 const guardarMineral = () => {
   switch (newMineral.value.tipomineral) {
     case 'Metalico':

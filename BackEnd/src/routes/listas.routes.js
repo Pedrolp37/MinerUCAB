@@ -12,7 +12,7 @@ router.get('/projects/:status', getProjects);
 
 router.get('/configuracion-mineral',getMineralsConfiguration);
 
-router.get('/empleados', getEmpleado);
+router.get('/empleados/:offset', getEmpleado);
 
 router.get('/clientes/:offset', getClientes);
 
@@ -22,8 +22,9 @@ router.get('/mineral-name/:name',getMineralName);
 
 router.get('/mineral-config/:id',getMineralConfig);
 
-router.get('/manejo-inventario',getInventario);
+router.get('/manejo-inventario/:offset',getInventario);
 
 //ALIADOS
-router.get('/aliados',getAliados);
+router.get('/aliados/:offset',getAliados);
+
 export default router;

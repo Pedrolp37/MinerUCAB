@@ -33,7 +33,7 @@
       </tbody>
     </table>
     <table
-      v-if="props.filteredMinerals.length == 0 && props.Solicitud == false"
+      v-if="props.filteredMinerals.length == 0 && props.solicitud == false && props.minSelected.length == 0"
       class="table table-striped"
       id="table"
       style="width: 60vw"
@@ -76,7 +76,7 @@
       </tbody>
     </table>
     <table
-      v-if="props.filteredMinerals.length != 0 && props.Solicitud == false"
+      v-if="props.filteredMinerals.length != 0 && props.solicitud == false && props.minSelected.length == 0"
       class="table table-striped"
       id="table"
       style="width: 60vw"
@@ -349,6 +349,7 @@ const props = defineProps({
     required: false
   }
 })
+
 
 const emit = defineEmits(['dltMineral', 'modMineral', 'getIdMin', 'deleteMinSS'])
 
