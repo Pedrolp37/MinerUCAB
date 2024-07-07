@@ -172,30 +172,6 @@ BEFORE DELETE ON SOLICITUD_ALIADO
 FOR EACH ROW
 EXECUTE FUNCTION  eliminar_estatus_solicictud_AL();
 
-CREATE OR REPLACE FUNCTION eliminar_detalle_solicitudAli()
-RETURNS TRIGGER AS
-$$
-BEGIN
-	IF EXISTS(
-		SELECT 1
-		FROM DETALLE_SOL_AL
-		WHERE det_sol_ali_id = OLD.factura_ali_id
-	) THEN
-		-- Elimina los recursos asociados
-        DELETE FROM DETALLE_SOL_AL
-		WHERE det_sol_ali_id = OLD.factura_ali_id;
-	END IF;
-
-	RETURN OLD;
-END; 
-$$
-LANGUAGE plpgsql;
-
-CREATE OR REPLACE TRIGGER antes_eliminar_SolAli_verDetalle
-BEFORE DELETE ON SOLICITUD_ALIADO
-FOR EACH ROW
-EXECUTE FUNCTION eliminar_detalle_solicitudAli();
-
 	
 CREATE OR REPLACE FUNCTION eliminar_recurso_EJ_solicitud()
 RETURNS TRIGGER AS
@@ -204,11 +180,11 @@ BEGIN
 	IF EXISTS(
 		SELECT 1
 		FROM RECURSO_EJ
-		WHERE reej_sol_ali_id = OLD.det_sol_ali_id
+		WHERE reej_sol_ali_id = OLD.reej_sol_ali_id
 	) THEN
 		-- Elimina los recursos asociados
         DELETE FROM RECURSO_EJ
-        WHERE reej_sol_ali_id = OLD.det_sol_ali_id;
+        WHERE reej_sol_ali_id = OLD.reej_sol_ali_id;
 	END IF;
 
 	RETURN OLD;
@@ -217,7 +193,7 @@ $$
 LANGUAGE plpgsql;
 
 CREATE OR REPLACE TRIGGER antes_eliminar_detSolAli_verRecursoEJ
-BEFORE DELETE ON DETALLE_SOL_AL
+BEFORE DELETE ON SOLICITUD_ALIADO
 FOR EACH ROW
 EXECUTE FUNCTION eliminar_recurso_EJ_solicitud();
 
@@ -230,11 +206,11 @@ BEGIN
 	IF EXISTS(
 		SELECT 1
 		FROM CARGO_EJ
-		WHERE caej_sol_ali_id = OLD.det_sol_ali_id
+		WHERE caej_sol_ali_id = OLD.caej_sol_ali_id
 	) THEN
 		-- Elimina los cargos asociados
         DELETE FROM CARGO_EJ
-        WHERE caej_sol_ali_id = OLD.det_sol_ali_id;
+        WHERE caej_sol_ali_id = OLD.caej_sol_ali_id;
 	END IF;
 
 	RETURN OLD;
@@ -243,7 +219,7 @@ $$
 LANGUAGE plpgsql;
 
 CREATE OR REPLACE TRIGGER antes_eliminar_detSolAli_verCargoEJ
-BEFORE DELETE ON DETALLE_SOL_AL
+BEFORE DELETE ON SOLICITUD_ALIADO
 FOR EACH ROW
 EXECUTE FUNCTION eliminar_cargo_ej_solicitud();
 
