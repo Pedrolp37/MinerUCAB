@@ -176,6 +176,16 @@ export const getMineralName = async (req, res) => {
   }
 };
 
+//INVENTARIO
+export const getInventario = async(req,res)=>{
+  try{
+  const {rows} = await pool.query('SELECT * from manejo_inventario');
+
+  return res.status(200).json(rows);
+  }catch(error){
+    return res.status(500).json(error);
+  }
+}
 
 
 
