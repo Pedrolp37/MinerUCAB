@@ -656,71 +656,29 @@ CREATE TABLE EST_SOL_CLIENTE(
 
 -- CREATE CORRESPONDIENTES A METODOS DE PAGO
 DROP TABLE IF EXISTS METODO_PAGO CASCADE;
-DROP TABLE IF EXISTS PAGO, TRANSFERENCIA, CHEQUE, TARJETA_DEBITO, TARJETA_CREDITO, EFECTIVO;
+DROP TABLE IF EXISTS PAGO;
 
 CREATE TABLE METODO_PAGO(
 	met_id SERIAL PRIMARY KEY,
 	met_cl_identificacion VARCHAR(11),
-
-	CONSTRAINT fk_registra FOREIGN KEY (met_cl_identificacion) REFERENCES CLIENTE (cl_identificacion)
-);
-
-CREATE TABLE EFECTIVO(
-	efectivo_met_id INT NOT NULL,
 	efectivo_denominacion VARCHAR(20) NOT NULL,
-
-	CONSTRAINT pk_efectivo PRIMARY KEY (efectivo_met_id),
-
-	CONSTRAINT fk_efectivo FOREIGN KEY (efectivo_met_id) REFERENCES METODO_PAGO (met_id),
-
-	CONSTRAINT ck_denominacion CHECK (efectivo_denominacion ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$')
-);
-
-CREATE TABLE TRANSFERENCIA(
-	trans_met_id INT NOT NULL,
 	trans_num_transferencia VARCHAR(18) NOT NULL,
-
-	CONSTRAINT pk_trans PRIMARY KEY (trans_met_id),
-
-	CONSTRAINT fk_trans FOREIGN KEY (trans_met_id) REFERENCES METODO_PAGO(met_id),
-
-	CONSTRAINT ck_trans_num_transferencia CHECK (trans_num_transferencia ~ '^[0-9]{18}$')
-);
-
-CREATE TABLE CHEQUE(
-	cheque_met_id INT NOT NULL,
 	cheque_num_cheque VARCHAR(7) NOT NULL,
-
-	CONSTRAINT pk_cheque PRIMARY KEY (cheque_met_id),
-
-	CONSTRAINT fk_cheque FOREIGN KEY (cheque_met_id) REFERENCES METODO_PAGO(met_id),
-
-	CONSTRAINT ck_cheque_num_cheque CHECK (cheque_num_cheque ~ '^[0-9]{7}$')
-);
-
-CREATE TABLE TARJETA_DEBITO(
-	tdd_met_id INT NOT NULL,
 	tdd_numero_tarjeta VARCHAR(16) NOT NULL,
 	tdd_vencimiento DATE NOT NULL,
-
-	CONSTRAINT pk_tdd PRIMARY KEY (tdd_met_id),
-
-	CONSTRAINT fk_tdd FOREIGN KEY (tdd_met_id) REFERENCES METODO_PAGO(met_id),
-
-	CONSTRAINT ck_tdd_numero_tarjeta CHECK (tdd_numero_tarjeta ~ '^[0-9]{16}$')
-);
-
-CREATE TABLE TARJETA_CREDITO(
-	tdc_met_id INT NOT NULL,
 	tdc_numero_tarjeta VARCHAR(16) NOT NULL,
 	tdc_vencimiento DATE NOT NULL,
-
-	CONSTRAINT pk_tdc PRIMARY KEY (tdc_met_id),
-
-	CONSTRAINT fk_tdc FOREIGN KEY (tdc_met_id) REFERENCES METODO_PAGO(met_id),
-
+	tipo_metodo VARCHAR(60) NOT NULL,
+	
+	CONSTRAINT fk_registra FOREIGN KEY (met_cl_identificacion) REFERENCES CLIENTE (cl_identificacion),
+	CONSTRAINT ck_denominacion CHECK (efectivo_denominacion ~ '^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$'),
+	CONSTRAINT ck_trans_num_transferencia CHECK (trans_num_transferencia ~ '^[0-9]{18}$'),
+	CONSTRAINT ck_cheque_num_cheque CHECK (cheque_num_cheque ~ '^[0-9]{7}$'),
+	CONSTRAINT ck_tdd_numero_tarjeta CHECK (tdd_numero_tarjeta ~ '^[0-9]{16}$'),
 	CONSTRAINT ck_tdc_numero_tarjeta CHECK (tdc_numero_tarjeta ~ '^[0-9]{16}$')
+	
 );
+
 
 -- FIN METODOS DE PAGO
 

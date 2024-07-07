@@ -5933,7 +5933,7 @@ VALUES
 ('2024-06-02', 54321.09, 'Factura para cliente V178965412', 'V178965412'),
 ('2024-06-17', 32109.87, 'Factura para cliente V287654323', 'V287654323'),
 ('2024-06-10', 87654.32, 'Factura para cliente V178965412', 'V178965412'); */
-
+/*
 INSERT INTO METODO_PAGO (met_cl_identificacion)
 VALUES ('V187654321'), ('V145632187'), ('V242680135'), ('V197531486'), ('J154321098'),
  ('E876545321'), ('V224680136'), ('V212345680'), ('V247859612'), ('V184612957'),
@@ -5988,7 +5988,7 @@ VALUES
   (8, '4256987410236598', '2025-10-24'),
   (9, '7895412890123456', '2033-01-01'),
   (10, '0413658923012546', '2034-05-20');
-
+*/
 --############# PROYECTO Y ESTATUS PROYECTO ##############
 
 INSERT INTO PROYECTO (pro_nombre, pro_descripcion, pro_fecha_ini, pro_fecha_fin, pro_fk_min_id,pro_fk_po_id)
