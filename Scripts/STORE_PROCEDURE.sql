@@ -1,3 +1,65 @@
+-- Obtener las etapas del proyecto
+CREATE OR REPLACE FUNCTION etapas_proyecto(IN proyecto_id INT)
+RETURNS TABLE (numero_etapa INT, Nombre VARCHAR(40), fecha_inial DATE, fecha_final DATE)
+AS
+$$
+BEGIN
+    -- Lógica para llenar las columnas
+    RETURN QUERY
+   SELECT  etej_num_etapa AS numero_etapa, etej_nombre AS Nombre, etej_fecha_ini AS fecha_comienzo,
+			etej_fecha_fin AS fecha_fin
+	FROM etapa_ej
+	WHERE proyecto_id = fk_pro_id;
+
+END;
+$$
+LANGUAGE plpgsql;
+
+-- PROCEDIMIENTO PARA CREAR PROYECTO
+CREATE OR REPLACE PROCEDURE proyecto_nuevo(IN nombreP varchar(30), IN descripcion VARCHAR(200), IN mineral_id INT,
+                                            IN pozo_id INT, IN solicitud_id INT,
+											IN arreglo_cargos INT[],IN arreglo_recursos INT[])
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    proyecto_id INT;
+	etapa_ej_id INT;
+	act_ej_id INT;
+    fecha DATE;
+	registro RECORD;
+	registro_act RECORD;
+BEGIN
+    fecha := CURRENT_DATE;
+    INSERT INTO PROYECTO (pro_nombre, pro_descripcion, pro_fecha_ini,pro_fecha_fin, pro_fk_po_id, pro_fk_min_id,pro_fk_sol_id)
+    VALUES (nombreP, descripcion, fecha,NULL, pozo_id, mineral_id, solicitud_id)
+	RETURNING pro_id INTO proyecto_id;
+
+	 FOR registro IN (SELECT et_num_etapa, et_nombre, et_id FROM etapa WHERE fk_min_id = mineral_id)
+    LOOP
+        -- Lógica para insertar en la tabla etapa_ej
+        INSERT INTO etapa_ej (etej_num_etapa, etej_nombre, etej_fecha_ini,etej_fecha_fin,fk_pro_id)
+        VALUES ( registro.et_num_etapa, registro.et_nombre, fecha,NULL, proyecto_id)
+		RETURNING etej_id INTO etapa_ej_id;
+
+		
+	 -- Insertar actividades directamente desde la consulta
+   		INSERT INTO ACTIVIDAD_EJ(actej_nombre, fk_etej_id, actej_fecha_ini)
+    	SELECT act_nombre, etapa_ej_id, CURRENT_DATE
+    	FROM actividad
+    	WHERE fk_et_id = registro.et_id;
+
+	/*	INSERT INTO RECURSO_EJ (reej_costo, reej_actej_id)
+		SELECT ac.acre_costo, act_ej_id
+		FROM ACTIVIDAD_RECURSO ac, actividad a, actividad_ej aej
+		WHERE a.fk_et_id = registro.et_id
+		AND	ac.acre_act_id = a.act_id
+		AND aej.fk_etej_id = etapa_ej_id; */
+
+    END LOOP;
+
+END $$;
+-- FIN PROCEDIMIENTO CREAR PROYECTO
+
 -- PROCEDIMIENTO PARA INSERTAR UNA SOLICITUD DE CLIENTE
 CREATE OR REPLACE PROCEDURE insertar_sol_cliente(IN id_cliente VARCHAR(11),IN mineral_id INT,
 												IN cantidad NUMERIC(20,2),IN obs VARCHAR(200),
