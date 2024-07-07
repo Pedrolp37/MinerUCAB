@@ -12,7 +12,7 @@ router.post('/crear-solicitud-aliado',postSolicitudAliado);
 
 router.put('/actualizar-solicitud-aliado',putSolicitudAliado);
 
-router.get('/solicitudes-aliados',getSolicitudAliado);
+router.get('/solicitudes-aliados/:offset',getSolicitudAliado);
 
 router.get('/solicitudes-clientes',getSolicitudCliente);
 export default router;
