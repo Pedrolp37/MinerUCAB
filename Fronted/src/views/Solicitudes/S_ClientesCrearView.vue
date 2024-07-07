@@ -136,15 +136,15 @@ import { useRoute, useRouter } from 'vue-router'
 
 */
 const router = useRouter()
-let cantMineral = ref(0)
 let metodoP = ref('Seleccionar Método De Pago')
 let metodoPList = ref([])
+let cantMineral = ref(0)
 let mineralsList = ref([])
 let mineral = ref([])
 let clientes = ref([])
 let cliente = ref([])
 let changePageCliente = ref(0)
-let changePageMinerals = ref(0)
+
 /*
 
 * CONSUMO DE LA API
@@ -267,7 +267,7 @@ const getMeotodoPagoInf = (metodo, monto, numInf, fechaV) => {
 
 const CrearSolicitudCliente = () => {
   switch (metodoPList.value[0].metodo) {
-    case 1:     
+    case 1:
       postMetodo({
         id_cliente: cliente.value[0].dni,
         denominacion: 'dolar',
@@ -278,11 +278,11 @@ const CrearSolicitudCliente = () => {
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
         tipo_metodoP: 'Efectivo',
-        mineral_id : mineral.value[0].id, 
-        cantidad : cantMineral.value,
+        mineral_id: mineral.value[0].id,
+        cantidad: cantMineral.value,
         obs: null
       })
-        router.go()
+      router.go()
       break
     case 2:
       postMetodo({
@@ -295,11 +295,11 @@ const CrearSolicitudCliente = () => {
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
         tipo_metodoP: 'Transferencia',
-        mineral_id : mineral.value[0].id, 
-        cantidad : cantMineral.value,
+        mineral_id: mineral.value[0].id,
+        cantidad: cantMineral.value,
         obs: null
       })
-        router.go()
+      router.go()
       break
     case 3:
       postMetodo({
@@ -312,11 +312,11 @@ const CrearSolicitudCliente = () => {
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
         tipo_metodoP: 'Cheque',
-        mineral_id : mineral.value[0].id, 
-        cantidad : cantMineral.value,
+        mineral_id: mineral.value[0].id,
+        cantidad: cantMineral.value,
         obs: null
       })
-        router.go()
+      router.go()
       break
     case 4:
       postMetodo({
@@ -329,11 +329,11 @@ const CrearSolicitudCliente = () => {
         num_tarjetaTDC: null,
         tdc_vencimiento: null,
         tipo_metodoP: 'TDD',
-        mineral_id : mineral.value[0].id, 
-        cantidad : cantMineral.value,
+        mineral_id: mineral.value[0].id,
+        cantidad: cantMineral.value,
         obs: null
       })
-        router.go()
+      router.go()
       break
     case 5:
       postMetodo({
@@ -346,14 +346,13 @@ const CrearSolicitudCliente = () => {
         num_tarjetaTDC: metodoPList.value[0].numInf,
         tdc_vencimiento: metodoPList.value[0].fechaV,
         tipo_metodoP: 'TDC',
-        mineral_id : mineral.value[0].id, 
-        cantidad : cantMineral.value,
+        mineral_id: mineral.value[0].id,
+        cantidad: cantMineral.value,
         obs: null
       })
-        router.go()
+      router.go()
       break
   }
-
 }
 </script>
 

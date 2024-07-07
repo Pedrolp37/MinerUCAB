@@ -10,7 +10,9 @@ import EmpleadosHomeView from '../views/Empleados/EmpleadosHomeView.vue'
 import AliadosHomeView from '../views/Aliados/AliadosHomeView.vue'
 import ClientesHomeView from '../views/Clientes/ClientesHomeView.vue'
 import InventarioHomeView from '../views/Inventario/InventarioHome.vue'
-import SolicitudesCliente from '../views/Solicitudes/Clientes.vue'
+import S_ClientesCrear from '../views/Solicitudes/S_ClientesCrearView.vue'
+import S_AliadoCrear from '../views/Solicitudes/S_AliadoCrearView.vue'
+import S_AliadoLista from  '../views/Solicitudes/S_AliadoListaView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,9 +74,19 @@ const router = createRouter({
       component: InventarioHomeView
     },
     {
-      path: '/solicitudes/cliente',
-      name: 'solicitud_cliente',
-      component: SolicitudesCliente
+      path: '/solicitudes/cliente/crear',
+      name: 'solicitud_cliente_crear',
+      component: S_ClientesCrear
+    },
+    {
+      path: '/solicitudes/aliado/crear',
+      name: 'solicitud_aliado_crear',
+      component: S_AliadoCrear
+    },
+    {
+      path: '/solicitudes/aliado/lista',
+      name: 'solicitud_aliado_lista',
+      component: S_AliadoLista
     }
   ]
 })

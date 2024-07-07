@@ -92,13 +92,18 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <router-link :to="{ name: 'solicitud_cliente' }" class="dropdown-item"
-                  ><i class="bi bi-plus"></i> Crear solicitud cliente</router-link
+                <router-link :to="{ name: 'solicitud_cliente_crear' }" class="dropdown-item"
+                  ><i class="bi bi-plus-circle"></i> Crear solicitud cliente</router-link
                 >
               </li>
               <li>
-                <router-link :to="{}" class="dropdown-item"
-                  ><i class="bi bi-plus"></i> Crear solicitud aliado</router-link
+                <router-link :to="{ name: 'solicitud_aliado_crear' }" class="dropdown-item"
+                  ><i class="bi bi-plus-circle"></i> Crear solicitud aliado</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{name : 'solicitud_aliado_lista'}" class="dropdown-item"
+                  ><i class="bi bi-card-list"></i> Solicitudes Aliados</router-link
                 >
               </li>
             </ul>

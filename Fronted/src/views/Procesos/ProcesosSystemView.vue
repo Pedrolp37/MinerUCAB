@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="row" style="margin-top: 80px">
-        <div class="col ">
+        <div class="col">
           <div class="d-flex justify-content-center">
             <TablaMinerales
               :minSelected="[]"
@@ -262,7 +262,6 @@ onMounted(async () => {
 
 */
 
-
 const nextPagMinerals = () => {
   if (mineralsList.value.length == 5) {
     changePageMinerals.value += 5
@@ -280,7 +279,6 @@ const backPagMinerals = () => {
 const getNewPageMinerals = async () => {
   getMinerales(changePageMinerals.value).then((Response) => (mineralsList.value = Response.data))
 }
-
 
 const guardarMineral = () => {
   switch (newMineral.value.tipomineral) {

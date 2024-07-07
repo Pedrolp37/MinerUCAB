@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="row" style="margin-top: 80px">
-        <div class="col ">
+        <div class="col">
           <div class="d-flex justify-content-center">
             <TablaClientes
               :clientes="clientes"
@@ -171,7 +171,6 @@ newCliente.value = {
 onMounted(async () => {
   getClientes(changePageCliente.value).then((Response) => (clientes.value = Response.data))
 })
-
 
 /*
 

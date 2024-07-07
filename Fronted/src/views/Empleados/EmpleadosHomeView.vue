@@ -50,9 +50,9 @@
         </div>
       </div>
       <div class="row" style="margin-top: 40px">
-        <div class="col ">
-            <div class="">
-              <TablaEmpMUcab
+        <div class="col">
+          <div class="">
+            <TablaEmpMUcab
               :empleados="empleados"
               :empListfind="empListfind"
               @dltEmp="deleteEmpleado"

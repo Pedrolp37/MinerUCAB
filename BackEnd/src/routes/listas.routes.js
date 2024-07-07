@@ -2,7 +2,7 @@ import { Router } from "express";
 import  {getProjectsProgress, getProjects, 
         getMineralsConfiguration,getEmpleado,
         getMineralName, getMineralConfig, getAliados, getClientes, getCliente,
-        getInventario} from '../controllers/lista.controllers.js';
+        getInventario, getAliado} from '../controllers/lista.controllers.js';
 
 const router = Router();
 //Rutas
@@ -26,5 +26,7 @@ router.get('/manejo-inventario/:offset',getInventario);
 
 //ALIADOS
 router.get('/aliados/:offset',getAliados);
+
+router.get('/aliado/:id', getAliado)
 
 export default router;

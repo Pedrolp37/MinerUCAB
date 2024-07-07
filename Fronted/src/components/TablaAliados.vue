@@ -1,10 +1,35 @@
 <template>
   <div>
+    <table v-show="props.solicitud == true" class="table table-striped" id="table">
+      <thead>
+        <tr style="text-align: center">
+          <th class="tabla Cabecera">Aliado</th>
+          <th class="tabla Cabecera">Dirección</th>
+          <th class="tabla Cabecera">Fecha Creación</th>
+          <th class="tabla Cabecera">Capital</th>
+          <th class="tabla Cabecera">Número de Teléfono</th>
+          <th class="tabla Cabecera">Descripción</th>
+          <th class="tabla Cabecera"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(ali, index) in aliados" :key="index" style="text-align: center">
+          <td>{{ ali.nombre }}</td>
+          <td>{{ ali.direccion }}</td>
+          <td>{{ ali.fccreacion }}</td>
+          <td>{{ ali.capital }}</td>
+          <td>{{ ali.numtelefono }}</td>
+          <td>{{ ali.descripcion }}</td>
+          <td>
+            <button class="seleccionar btn" @click="getAlidoSelected(ali.rif)">Seleccionar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <table
-      v-show="aliadosFiltered.length == 0"
+      v-show="aliadosFiltered.length == 0 && props.solicitud == false"
       class="table table-striped"
       id="table"
-      style="width: 90vw"
     >
       <thead>
         <tr style="text-align: center">
@@ -39,10 +64,9 @@
       </tbody>
     </table>
     <table
-      v-show="aliadosFiltered.length != 0"
+      v-show="props.aliadosFiltered.length != 0 && props.solicitud == false"
       class="table table-striped"
       id="table"
-      style="width: 90vw"
     >
       <thead>
         <tr style="text-align: center">
@@ -56,7 +80,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(aliF, index) in aliadosFiltered" :key="index" style="text-align: center">
+        <tr v-for="(aliF, index) in props.aliadosFiltered" :key="index" style="text-align: center">
           <td>{{ aliF.nombre }}</td>
           <td>{{ aliF.direccion }}</td>
           <td>{{ aliF.fccreacion }}</td>
@@ -124,13 +148,21 @@ const props = defineProps({
 
   aliadosFiltered: {
     required: true
+  },
+
+  solicitud: {
+    required: true
   }
 })
 
-const emit = defineEmits(['dltAli'])
+const emit = defineEmits(['dltAli', 'aliSelected'])
 
 const saveIdEmp = (id) => {
   idAliado.value = id
+}
+
+const getAlidoSelected = (id) => {
+  emit('aliSelected', id)
 }
 
 const deleteEmpleado = () => {
@@ -163,6 +195,18 @@ const deleteEmpleado = () => {
 }
 
 .cancelar.btn:hover {
+  background-color: #c3b1a300;
+  color: black;
+}
+
+.seleccionar.btn {
+  margin-right: 10px;
+  font-size: 10px;
+  background-color: #d06d17;
+  color: white;
+}
+
+.seleccionar.btn:hover {
   background-color: #c3b1a300;
   color: black;
 }

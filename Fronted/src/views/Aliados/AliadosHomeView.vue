@@ -33,10 +33,10 @@
         <div class="col">
           <div class="d-flex justify-content-center">
             <TablaAliados
-            :aliados="aliados"
-            :aliadosFiltered="aliadosFiltered"
-            @dltAli="deleteAliado"
-          />
+              :aliados="aliados"
+              :aliadosFiltered="aliadosFiltered"
+              @dltAli="deleteAliado"
+            />
           </div>
           <div class="d-flex justify-content-center">
             <Pagination @backPag="backPagAliado" @nextPag="nextPagAliado" />
@@ -234,7 +234,7 @@ const guardarAliado = () => {
     telefono: newAliado.value.numTelefono,
     descripcion: newAliado.value.descripcion
   })
-  
+
   router.go()
 }
 

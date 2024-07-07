@@ -1,10 +1,6 @@
 <template>
   <div>
-    <table
-      v-show="empListfind.length == 0"
-      class="table table-striped"
-      id="table"
-    >
+    <table v-show="empListfind.length == 0" class="table table-striped" id="table">
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">DNI</th>

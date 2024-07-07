@@ -9,7 +9,7 @@
       </div>
       <hr />
       <div class="row" style="margin-top: 80px">
-        <div class="col ">
+        <div class="col">
           <div class="d-flex justify-content-center">
             <TablaInventario :inventario="inventario" />
           </div>
@@ -27,8 +27,7 @@ import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaInventario from '../../components/TablaInventario.vue'
 import Pagination from '../../components/Pagination.vue'
-import {getInventario} from '../../Services/Inventario/InventarioGet.services.js'
-
+import { getInventario } from '../../Services/Inventario/InventarioGet.services.js'
 
 /*
 
@@ -37,7 +36,6 @@ import {getInventario} from '../../Services/Inventario/InventarioGet.services.js
 */
 let inventario = ref([])
 let changePageInventario = ref(0)
-
 
 /*
 
@@ -48,7 +46,6 @@ let changePageInventario = ref(0)
 onMounted(async () => {
   getInventario(changePageInventario.value).then((Response) => (inventario.value = Response.data))
 })
-
 
 /*
 
@@ -73,8 +70,6 @@ const backPagInventario = () => {
 const getNewPageInventario = async () => {
   getInventario(changePageInventario.value).then((Response) => (inventario.value = Response.data))
 }
-
-
 </script>
 
 <style scoped></style>

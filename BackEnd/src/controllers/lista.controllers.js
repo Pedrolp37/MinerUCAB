@@ -77,6 +77,25 @@ export const getAliados = async (req, res) => {
   }
 };
 
+export const getAliado = async (req, res) => {
+  try {
+    const {id} = req.params
+    const { rows } =await pool.query(`
+      SELECT ali_rif as rif,ali_nombre as nombre, ali_direccion as direccion, ali_fecha_creacion as fccreacion, 
+      ali_capital as capital, ali_num_telefono as numTelefono,ali_descripcion as descripcion
+      FROM aliado_comercial
+      where ali_rif = $1
+      
+    `, [id]);
+    if (!rows.length) {
+      return res.status(200).json({ message: "No hay aliados en el sistema" });
+    }
+    return res.status(200).json(rows);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
 //############### PROYECTOS #################
 export const getProjectsProgress = async (req, res) => {
   try {
