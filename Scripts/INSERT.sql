@@ -8755,40 +8755,37 @@ VALUES
     (898, 8, 6000, 3, DATE '2024-06-25'),
     (899, 9, 10000, 3, DATE '2024-06-25'),
     (900, 10, 7000, 3, DATE '2024-06-25');
-    /*
+    
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (1, NULL, 1, NULL, 100.50, 150.75, 'ING', '2024-04-15');
+    VALUES (1, NULL, NULL, NULL, 0, 150.75, 'ING', '2024-04-15');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (2, NULL, 2, NULL, 75.25, 90.30, 'ING', '2024-05-01');
+    VALUES (2, NULL, NULL, NULL, 0, 90.30, 'ING', '2024-05-01');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (3, NULL, 3 , NULL, 125.00, 150.00, 'ING', '2024-05-20');
+    VALUES (3, NULL, NULL , NULL, 0, 150.00, 'ING', '2024-05-20');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (4, NULL, 4, NULL, 150.75, 100.50, 'ING', '2024-06-01');
+    VALUES (4, NULL, NULL, NULL, 0, 100.50, 'ING', '2024-06-01');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (5, NULL, 5,NULL, 90.30, 75.25, 'ING', '2024-06-15');
+    VALUES (5, NULL, NULL,NULL, 0, 275.25, 'ING', '2024-06-15');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (3, NULL, 6, NULL, 150.00, 125.00, 'ING', '2024-06-22');
+    VALUES (6, NULL, NULL, NULL, 0, 1000.00, 'ING', '2024-06-10');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (6, NULL, 7, NULL, 80.00, 100.00, 'ING', '2024-06-10');
+    VALUES (7, NULL, NULL, NULL, 0, 75.00, 'ING', '2024-06-20');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (7, NULL, 8, NULL, 60.00, 75.00, 'ING', '2024-06-20');
+    VALUES (8, NULL, NULL, NULL, 0, 180.00, 'ING', '2023-08-01');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (8, NULL, 9, NULL, 100.00, 80.00, 'ING', '2023-08-01');
+    VALUES (9, NULL, NULL, NULL, 0, 760.00, 'ING', '2023-08-15');
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (9, NULL, 10, NULL, 75.00, 60.00, 'ING', '2023-08-15');
-
-    INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
-    VALUES (10, NULL, 11, NULL, 90.00, 120.00, 'ING', '2023-09-01');
-
+    VALUES (10, NULL, NULL, NULL, 0, 120.00, 'ING', '2023-09-01');
+/*
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
     VALUES (11, NULL, 12, NULL, 75.00, 100.00, 'ING', '2023-09-15');
 
@@ -8815,4 +8812,3 @@ VALUES
 
     INSERT INTO INVENTARIO (inv_min_id, inv_pro_id, inv_factura_ali_id, inv_factura_cli_id, inv_cantidad_anterior, inv_cantidad_actual, inv_tipo, inv_fecha_mov)
     VALUES (19, NULL, 20, NULL, 45.00, 30.00, 'ING', '2024-06-15');*/
-    
