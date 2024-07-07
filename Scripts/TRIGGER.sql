@@ -1,3 +1,21 @@
+-- TRIGGER de colocar estatus luego de ingresar solicitud aliado
+CREATE OR REPLACE FUNCTION estatus_sol_aliado()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id,est_sol_fecha_ini) 
+	VALUES (NEW.factura_ali_id, 16, CURRENT_DATE);
+	RETURN NEW;
+END;
+$$
+language plpgsql;
+
+CREATE OR REPLACE TRIGGER stus_sol_aliado
+AFTER INSERT ON SOLICITUD_ALIADO
+FOR EACH ROW
+EXECUTE FUNCTION estatus_sol_aliado();
+-- FIN TRIGGER de colocar estatus luego de ingresar solicitud aliado
+
 --
 CREATE OR REPLACE FUNCTION ingresarINV_sol_aliado()
 RETURNS TRIGGER AS
@@ -48,23 +66,6 @@ FOR EACH ROW
 EXECUTE FUNCTION ingresarINV_sol_aliado();
 --
 
--- TRIGGER de colocar estatus luego de ingresar solicitud aliado
-CREATE OR REPLACE FUNCTION estatus_sol_aliado()
-RETURNS TRIGGER AS
-$$
-BEGIN
-	INSERT INTO EST_SOLICITUD (est_sol_fk_sol_ali, est_sol_fk_est_id,est_sol_fecha_ini) 
-	VALUES (NEW.factura_ali_id, 16, CURRENT_DATE);
-	RETURN NEW;
-END;
-$$
-language plpgsql;
-
-CREATE OR REPLACE TRIGGER stus_sol_aliado
-AFTER INSERT ON SOLICITUD_ALIADO
-FOR EACH ROW
-EXECUTE FUNCTION estatus_sol_aliado();
--- FIN TRIGGER de colocar estatus luego de ingresar solicitud aliado
 
 -- TRIGGER QUE CAMBIA EL ESTATUS DEL POZO QUE SE VA A USAR
 CREATE OR REPLACE FUNCTION cambiar_estatus_pozo_proyecto()

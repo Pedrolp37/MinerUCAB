@@ -1,3 +1,51 @@
+-- PROCEDIMIENTO PARA CUANDO SE ACTUALIZA EL ESTATUS
+--DE UNA SOLICITUD DE ALIADO CUANDO SE PIDE MINERAL (EN ESTE CASO PARA ACTUALIZAR INVENTARIO)
+CREATE OR REPLACE PROCEDURE actualizar_sol_aliado(IN solicitud_id INT,IN cantidad NUMERIC(20,2),IN mineral_id INT)
+language plpgsql
+AS $$
+	DECLARE
+	cantidad_actual INT;
+	recurso_id INT;
+	cargo_id INT;
+	solicitud_id_est INT;
+BEGIN
+SELECT inv_cantidad_actual INTO cantidad_actual
+	FROM inventario
+	WHERE inv_min_id = mineral_id
+	ORDER BY inv_fecha_mov DESC
+	LIMIT 1;
+
+SELECT factura_ali_tire_id, factura_ali_carg_id INTO recurso_id, cargo_id
+FROM solicitud_aliado
+where factura_ali_id = solicitud_id;
+
+	IF (recurso_id IS NULL AND cargo_id IS NULL)THEN
+		
+			-- REALIZO la nueva actualizacion del inventario con respecto al mineral
+		INSERT INTO INVENTARIO (inv_min_id,inv_factura_ali_id,inv_cantidad_anterior,inv_cantidad_actual,inv_tipo,inv_fecha_mov)
+		VALUES
+			(mineral_id,solicitud_id,cantidad_actual,cantidad_actual + cantidad,'ING',CURRENT_TIMESTAMP);
+		-- ACTUALIZAMOS EL ULTIMO REGISTRO DE LA SOLICTUD CLIENTE EN ESTATUS DE SOLICITUD
+		-- PARA POSTERIORMENTE HACER EL NUEVO INSERT CON EL NUEVO ESTADO
+			SELECT est_sol_fk_sol_ali INTO solicitud_id_est -- id relacionada en la solicitud cliente
+				FROM est_solicitud
+				WHERE est_sol_fk_sol_ali = solicitud_id
+				ORDER BY est_sol_fecha_ini DESC
+				LIMIT 1;
+
+			UPDATE est_solicitud
+			SET est_sol_fecha_fin = CURRENT_DATE
+			WHERE est_sol_fk_sol_ali = solicitud_id_est;
+		-- CREO UN REGISTRO EN EL ESTATUS DE LA SOLICITUD, ACTUALIZANDO EL REGISTRO
+		INSERT INTO EST_SOLICITUD(est_sol_fk_sol_ali,est_sol_fk_est_id,est_sol_fecha_ini,est_sol_fecha_fin)
+		VALUES
+			(solicitud_id,18,CURRENT_DATE,CURRENT_DATE);
+
+	END IF;
+
+END $$;
+-- ############
+
 -- PROCEDIMIENTO PARA SOLICITAR ALGO AL ALIADO
 CREATE OR REPLACE PROCEDURE insertar_sol_aliado(IN rif VARCHAR(11),IN proyecto_id INT,IN mineral_id INT,
     										IN recurso_id INT,IN cargo_id INT,IN cantidad NUMERIC(20,2),IN obs VARCHAR(200),
