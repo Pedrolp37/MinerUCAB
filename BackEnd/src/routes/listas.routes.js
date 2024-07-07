@@ -1,7 +1,8 @@
 import { Router } from "express";
 import  {getProjectsProgress, getProjects, 
         getMineralsConfiguration,getEmpleado,
-        getMineralName, getMineralConfig, getAliados, getClientes, getCliente} from '../controllers/lista.controllers.js';
+        getMineralName, getMineralConfig, getAliados, getClientes, getCliente,
+        getInventario} from '../controllers/lista.controllers.js';
 
 const router = Router();
 //Rutas
@@ -20,6 +21,8 @@ router.get('/cliente/:dni', getCliente);
 router.get('/mineral-name/:name',getMineralName);
 
 router.get('/mineral-config/:id',getMineralConfig);
+
+router.get('/manejo-inventario',getInventario);
 
 //ALIADOS
 router.get('/aliados',getAliados);

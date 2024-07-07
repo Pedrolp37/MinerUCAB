@@ -893,3 +893,9 @@ CREATE TABLE INVENTARIO(
 
 	CONSTRAINT ck_inv_tipo CHECK (inv_tipo IN('ING','EGR'))
 );
+
+CREATE VIEW manejo_inventario AS
+select m.min_nombre mineral, i.inv_cantidad_anterior cantidad_antes, i.inv_cantidad_actual cantidad_actual,
+		i.inv_tipo tipo, i.inv_fecha_mov fecha_movimiento
+	from inventario i, mineral m
+where i.inv_min_id = m.min_id;
