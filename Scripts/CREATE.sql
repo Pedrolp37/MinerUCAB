@@ -253,52 +253,6 @@ CREATE TABLE POZO_ESTATUS (
 	CONSTRAINT ck_poes_fecha_fin CHECK (poes_fecha_fin > poes_fecha_ini)
 );
 
-DROP TABLE IF EXISTS PROYECTO CASCADE;
-DROP TABLE IF EXISTS PRO_ESTATUS;
-
-CREATE TABLE PROYECTO(
-	pro_id SERIAL PRIMARY KEY,
-	pro_nombre VARCHAR(30) NOT NULL,
-	pro_descripcion VARCHAR(200),
-	pro_fecha_ini DATE NOT NULL,
-	pro_fecha_fin DATE,
-	pro_fk_po_id INT NOT NULL,
-	pro_fk_min_id INT NOT NULL,
-	pro_fk_sol_id INT,
-
-	CONSTRAINT fk_explora FOREIGN KEY (pro_fk_po_id, pro_fk_min_id) REFERENCES MINERAL_POZO(po_id,min_id),
-
-	CONSTRAINT fk_genera FOREIGN KEY (pro_fk_sol_id) REFERENCES SOLICITUD_CLIENTE(factura_cli_id),
-
-
-	CONSTRAINT ck_pro_fecha_fin CHECK (pro_fecha_fin > pro_fecha_ini),
-
-	CONSTRAINT ck_pro_fecha_diff CHECK (pro_fecha_fin > pro_fecha_ini),
-
-	CONSTRAINT ck_pro_nombre CHECK (pro_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
-
-	CONSTRAINT ck_pro_descripcion CHECK (pro_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$')
-);
-
-CREATE TABLE PRO_ESTATUS(
-	proes_id SERIAL NOT NULL,
-	proes_pro_id INT NOT NULL,
-	proes_est_id INT NOT NULL,
-	proes_fecha_ini DATE NOT NULL,
-	proes_fecha_fin DATE,
-
-	CONSTRAINT pk_pro_estatus PRIMARY KEY (proes_id, proes_pro_id, proes_est_id),
-
-	CONSTRAINT fk_se_condiciona FOREIGN KEY (proes_pro_id) REFERENCES PROYECTO(pro_id),
-
-	CONSTRAINT fk_se_desprende FOREIGN KEY (proes_est_id) REFERENCES ESTATUS(est_id),
-
-	CONSTRAINT ck_proes_fecha_ini CHECK (proes_fecha_ini <= CURRENT_DATE),
-
-	CONSTRAINT ck_proes_fecha_fin CHECK (proes_fecha_fin <= CURRENT_DATE),
-
-	CONSTRAINT ck_proes_fecha_diff CHECK (proes_fecha_fin > proes_fecha_ini)
-);
 
 -- el drop table va en lugar
 CREATE TABLE CLIENTE (
@@ -610,7 +564,7 @@ CREATE TABLE ACTIVIDAD_CARGO(
 );
 
 DROP TABLE IF EXISTS SOLICITUD_CLIENTE CASCADE;
-DROP TABLE IF EXISTS EST_SOL_CLIEMTE, DETALLE_FACTURA;
+DROP TABLE IF EXISTS EST_SOL_CLIEMTE;
 
 CREATE TABLE SOLICITUD_CLIENTE(
 	factura_cli_id SERIAL PRIMARY KEY,
@@ -630,6 +584,53 @@ CREATE TABLE SOLICITUD_CLIENTE(
 	CONSTRAINT ck_factura_cli_total CHECK (factura_cli_total > 0),
 
 	CONSTRAINT ck_factura_cli_observacion CHECK (factura_cli_observacion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ,. ]+$')
+);
+
+DROP TABLE IF EXISTS PROYECTO CASCADE;
+DROP TABLE IF EXISTS PRO_ESTATUS;
+
+CREATE TABLE PROYECTO(
+	pro_id SERIAL PRIMARY KEY,
+	pro_nombre VARCHAR(30) NOT NULL,
+	pro_descripcion VARCHAR(200),
+	pro_fecha_ini DATE NOT NULL,
+	pro_fecha_fin DATE,
+	pro_fk_po_id INT NOT NULL,
+	pro_fk_min_id INT NOT NULL,
+	pro_fk_sol_id INT,
+
+	CONSTRAINT fk_explora FOREIGN KEY (pro_fk_po_id, pro_fk_min_id) REFERENCES MINERAL_POZO(po_id,min_id),
+
+	CONSTRAINT fk_genera FOREIGN KEY (pro_fk_sol_id) REFERENCES SOLICITUD_CLIENTE(factura_cli_id),
+
+
+	CONSTRAINT ck_pro_fecha_fin CHECK (pro_fecha_fin > pro_fecha_ini),
+
+	CONSTRAINT ck_pro_fecha_diff CHECK (pro_fecha_fin > pro_fecha_ini),
+
+	CONSTRAINT ck_pro_nombre CHECK (pro_nombre ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$'),
+
+	CONSTRAINT ck_pro_descripcion CHECK (pro_descripcion ~ '^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$')
+);
+
+CREATE TABLE PRO_ESTATUS(
+	proes_id SERIAL NOT NULL,
+	proes_pro_id INT NOT NULL,
+	proes_est_id INT NOT NULL,
+	proes_fecha_ini DATE NOT NULL,
+	proes_fecha_fin DATE,
+
+	CONSTRAINT pk_pro_estatus PRIMARY KEY (proes_id, proes_pro_id, proes_est_id),
+
+	CONSTRAINT fk_se_condiciona FOREIGN KEY (proes_pro_id) REFERENCES PROYECTO(pro_id),
+
+	CONSTRAINT fk_se_desprende FOREIGN KEY (proes_est_id) REFERENCES ESTATUS(est_id),
+
+	CONSTRAINT ck_proes_fecha_ini CHECK (proes_fecha_ini <= CURRENT_DATE),
+
+	CONSTRAINT ck_proes_fecha_fin CHECK (proes_fecha_fin <= CURRENT_DATE),
+
+	CONSTRAINT ck_proes_fecha_diff CHECK (proes_fecha_fin > proes_fecha_ini)
 );
 
 DROP TABLE IF EXISTS EST_SOL_CLIENTE;
