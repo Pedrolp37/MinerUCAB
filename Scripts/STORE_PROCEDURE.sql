@@ -1,3 +1,39 @@
+--ACTUALIZAR ESTATUS DE ACTIVIDAD
+CREATE OR REPLACE PROCEDURE actualizar_estatusHecho_actividad(IN actividad_ej_id INT)
+	language plpgsql
+AS $$
+	DECLARE
+	id_update INT;
+BEGIN
+	select actes_id INTO id_update
+	from actividad_estatus
+	where actes_actej_id = actividad_ej_id
+	ORDER BY actes_id DESC
+	limit 1;
+	
+	UPDATE actividad_estatus
+	SET actes_fecha_fin = CURRENT_DATE
+	WHERE actes_id = id_update;
+	
+
+	INSERT INTO ACTIVIDAD_ESTATUS (actes_actej_id,actes_est_id,actes_fecha_ini,actes_fecha_fin)
+		VALUES(actividad_ej_id,3,CURRENT_DATE, CURRENT_DATE);
+END $$;
+
+CREATE OR REPLACE PROCEDURE actualizar_estatusProgreso_actividad(IN actividad_ej_id INT)
+	language plpgsql
+AS $$
+BEGIN
+
+	UPDATE actividad_estatus
+	SET actes_fecha_fin = CURRENT_DATE
+	WHERE actes_actej_id = actividad_ej_id;
+
+	INSERT INTO ACTIVIDAD_ESTATUS (actes_actej_id,actes_est_id,actes_fecha_ini,actes_fecha_fin)
+		VALUES(actividad_ej_id,2,CURRENT_DATE, NULL);
+END $$;
+-- ########################
+
 -- PROCEDIMIENTO PARA CUANDO SE ACTUALIZA EL ESTATUS
 --DE UNA SOLICITUD DE ALIADO CUANDO SE PIDE MINERAL (EN ESTE CASO PARA ACTUALIZAR INVENTARIO)
 CREATE OR REPLACE PROCEDURE actualizar_sol_aliado(IN solicitud_id INT,IN cantidad NUMERIC(20,2),IN mineral_id INT)
