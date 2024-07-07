@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { postSolicitudCliente, postSolicitudAliado } from '../controllers/solicitudes.controllers.js';
+import { postSolicitudCliente, postSolicitudAliado,
+    putSolicitudAliado } from '../controllers/solicitudes.controllers.js';
 
 const router = Router();
 //Rutas
@@ -7,4 +8,6 @@ const router = Router();
 router.post('/crear-solicitud-cliente', postSolicitudCliente);
 
 router.post('/crear-solicitud-aliado',postSolicitudAliado);
+
+router.put('/actualizar-solicitud-aliado',putSolicitudAliado);
 export default router;

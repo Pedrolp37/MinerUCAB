@@ -50,7 +50,11 @@ export const postSolicitudAliado = async(req,res)=>{
 
 export const putSolicitudAliado = async (req,res)=>{
     try{
-        
+        const {solicitud_id, cantidad, mineral_id} = req.body;
+       
+        await pool.query('CALL actualizar_sol_aliado($1,$2,$3)',[solicitud_id, cantidad, mineral_id])
+
+        return res.status(200).json({ message: 'Solicitud actualizada correctamente' });
     }catch(error){
         return res.status(500).json(error);
     }
