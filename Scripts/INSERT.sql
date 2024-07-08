@@ -6002,10 +6002,10 @@ VALUES
 
 INSERT INTO PRO_ESTATUS (proes_pro_id, proes_est_id, proes_fecha_ini, proes_fecha_fin)
 	VALUES (1,2,CURRENT_DATE, NULL),
-			(1,1,CURRENT_DATE, NULL),
-	(1,1,CURRENT_DATE, NULL),
-	(1,1,CURRENT_DATE, NULL),
-	(1,1,CURRENT_DATE, NULL);
+			(2,1,CURRENT_DATE, NULL),
+	(3,1,CURRENT_DATE, NULL),
+	(4,1,CURRENT_DATE, NULL),
+	(5,1,CURRENT_DATE, NULL);
 
 INSERT INTO actividad_recurso (acre_act_id, acre_tire_id, acre_costo, acre_cantidad, acre_fecha_ini, acre_fecha_fin)
 VALUES
