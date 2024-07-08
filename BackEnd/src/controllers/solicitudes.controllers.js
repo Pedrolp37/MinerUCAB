@@ -70,6 +70,7 @@ export const getSolicitudAliado = async(req,res)=>{
                             sa.factura_ali_cantidad AS cantidad,
                             sa.factura_ali_total AS total,
                             sa.factura_ali_fecha
+                            sa.factura_ali_id
                         FROM solicitud_aliado sa
                         JOIN est_solicitud est ON sa.factura_ali_id = est.est_sol_fk_sol_ali
                         JOIN estatus e ON e.est_id = est.est_sol_fk_est_id
