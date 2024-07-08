@@ -144,7 +144,7 @@ let mineral = ref([])
 let clientes = ref([])
 let cliente = ref([])
 let changePageCliente = ref(0)
-
+let changePageMinerals = ref(0)
 /*
 
 * CONSUMO DE LA API

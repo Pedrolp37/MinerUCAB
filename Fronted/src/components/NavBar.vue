@@ -106,6 +106,11 @@
                   ><i class="bi bi-card-list"></i> Solicitudes Aliados</router-link
                 >
               </li>
+              <li>
+                <router-link :to="{ name: 'solicitud_cliente_lista' }" class="dropdown-item"
+                  ><i class="bi bi-card-list"></i> Solicitudes Cliente</router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown">

@@ -13,6 +13,7 @@ import InventarioHomeView from '../views/Inventario/InventarioHome.vue'
 import S_ClientesCrear from '../views/Solicitudes/S_ClientesCrearView.vue'
 import S_AliadoCrear from '../views/Solicitudes/S_AliadoCrearView.vue'
 import S_AliadoLista from '../views/Solicitudes/S_AliadoListaView.vue'
+import S_ClienteLista from '../views/Solicitudes/S_ClienteListaView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -87,6 +88,11 @@ const router = createRouter({
       path: '/solicitudes/aliado/lista',
       name: 'solicitud_aliado_lista',
       component: S_AliadoLista
+    },
+    {
+      path: '/solicitudes/cliente/lista',
+      name: 'solicitud_cliente_lista',
+      component: S_ClienteLista
     }
   ]
 })

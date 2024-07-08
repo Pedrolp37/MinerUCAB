@@ -14,5 +14,5 @@ router.put('/actualizar-solicitud-aliado',putSolicitudAliado);
 
 router.get('/solicitudes-aliados/:offset',getSolicitudAliado);
 
-router.get('/solicitudes-clientes',getSolicitudCliente);
+router.get('/solicitudes-clientes/:offset',getSolicitudCliente);
 export default router;

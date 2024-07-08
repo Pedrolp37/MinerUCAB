@@ -35,6 +35,7 @@
             <TablaAliados
               :aliados="aliados"
               :aliadosFiltered="aliadosFiltered"
+              :solicitud="false"
               @dltAli="deleteAliado"
             />
           </div>

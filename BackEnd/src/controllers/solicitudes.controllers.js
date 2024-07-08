@@ -95,18 +95,23 @@ export const getSolicitudAliado = async(req,res)=>{
 
 export const getSolicitudCliente = async(req,res)=>{
     try{
+        const {offset}  = req.params
         const {rows} = await pool.query(`select sc.factura_fk_cl_identificacion AS identificacion, sc.factura_min_id AS mineral,
 	                                    e.est_nombre AS estatus, sc.factura_cli_cantidad AS cantidad, sc.factura_cli_total AS total,
-		                                sc.factura_cli_fecha AS fecha
+		                                sc.factura_cli_fecha AS fecha,
+		                                c.cl_p_nombre AS nombre, c.cl_p_apellido AS apellido
                                     FROM solicitud_cliente sc
                                     JOIN est_sol_cliente est ON sc.factura_cli_id = est.escl_fk_sol_cliente
                                     JOIN estatus e ON e.est_id = est.escl_fk_est_id
-                                    WHERE est.escl_fk_sol_cliente IN (
-	                                                        SELECT es.escl_fk_sol_cliente
+									JOIN cliente c ON sc.factura_fk_cl_identificacion = c.cl_identificacion
+                                    WHERE est.escl_id IN (
+	                                                        SELECT es.escl_id
 	                                                        FROM est_sol_cliente es
 	                                                        WHERE es.escl_fk_sol_cliente = sc.factura_cli_id
-	                                                        order by escl_id DESC
-	                                                        limit 1)`);
+	                                                        order by escl_id ASC
+	                                                        limit 1)
+                                    limit 5 offset $1
+                                                            `, [offset]);
 
         return res.status(200).json(rows);
     }catch(error){
