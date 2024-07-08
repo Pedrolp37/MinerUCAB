@@ -8,7 +8,6 @@
             <h3 style="color: #a57844">Creación de Proyectos</h3>
           </div>
           <div class="col-6 d-flex justify-content-end">
-            <!--Este router link te manda a crear proyecto-->
             <router-link :to="{ name: 'proyectos' }" class="btn" style="color: #fa8f14"
               >Regresar ( proyectos en curso )</router-link
             >
@@ -19,7 +18,9 @@
             class="pCrearP col-2"
             :style="{ color: componentName == 'infPro' ? '#fa8f14' : 'black' }"
           >
-            <p class="pCrearP">Información proyecto</p>
+
+
+            <p class="pCrearP">Solicitudes Clientes</p>
           </div>
           <div class="pCrearP col-1">
             <p class="pCrearP" :style="{ color: componentName == 'cliente' ? '#fa8f14' : 'black' }">
@@ -46,22 +47,36 @@
         <hr />
       </div>
     </section>
-    <section>
-      <!-- Manejo de estados -->
-      <!-- Importante: hay que crear los props y emits necesarios para comprobar 
-      que se han introducido datos en cada una de las partes -->
-      <FormInfProVue v-if="componentName == 'infPro'" />
 
-      <!--Revisar estos forms y agregar lo que haga falta-->
+
+    <section>
+      <div v-if="componentName == 'infPro'" class="container" style="margin-top: 30px">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <h2 style="color: #a57844; margin-left: 30px">Solicitudes Cliente</h2>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col">
+            <div class="d-flex justify-content-center">
+              <TablaSCliente :soliCliente="solicitudesCli" :isCProyecto="true" @getIdSoliCliente="getIdSoliCliente"/>
+            </div>
+            <div class="d-flex justify-content-center">
+              <Pagination @backPag="backPagSCliente" @nextPag="nextPagSCliente" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <FormClienteVue v-if="componentName == 'cliente'" />
       <FormPersonalVue v-if="componentName == 'personal'" />
       <FormRecursos v-if="componentName == 'recursos'" />
-      <!--  -->
     </section>
+
+
     <section>
-      <!--Esto lo puedes poner dentro de los forms-->
       <div class="d-flex flex-row justify-content-end" style="margin: 20px">
-        <!--Manejo de estados -->
         <button
           v-show="
             componentName == 'cliente' || componentName == 'personal' || componentName == 'recursos'
@@ -92,20 +107,84 @@
         >
           Crear Proyecto
         </button>
-        <!--  -->
       </div>
     </section>
+
+
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
-import FormInfProVue from '../../components/FormInfPro.vue'
 import FormClienteVue from '../../components/FormCliente.vue'
 import FormPersonalVue from '../../components/FormPersonal.vue'
 import FormRecursos from '../../components/FormRecursos.vue'
+
+//Imports que se quedan
+import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
+import TablaSCliente from '../../components/TablaSCliente.vue'
+import Pagination from '../../components/Pagination.vue'
+import { getSoliCliente} from '../../Services/Solicitudes/GetSoliCliente.services.js'
+
+
+
+/*
+ 
+ * VARIABLES 
+
+ */
+let solicitudesCli = ref([])
+let changePageSoCliente = ref(0)
+let soliClienteSelected = ref('')
+
+
+
+/*
+ 
+ * CONSUMO DE LA API  
+
+ */
+
+onMounted(async () => {
+  getSoliCliente(changePageSoCliente.value).then((Response) => (solicitudesCli.value = Response.data))
+})
+
+
+/*
+ 
+ * METHODS
+
+ */
+
+
+const getIdSoliCliente = (id_solicitud) => {
+  soliClienteSelected.value = id_solicitud
+} 
+
+const nextPagSCliente = () => {
+  if (solicitudesCli.value.length == 5) {
+    changePageSoCliente.value += 5
+    getNewPageSCliente()
+  }
+}
+
+const backPagSCliente = () => {
+  if (changePageSoCliente.value >= 5) {
+    changePageSoCliente.value -= 5
+    getNewPageSCliente()
+  }
+}
+
+const getNewPageSCliente = async () => {
+  getSoliCliente(changePageSoCliente.value).then((Response) => (solicitudesCli.value = Response.data))
+}
+
+
+
+
+
+
+
 
 //variables y constantes
 let proyectos = ref([])

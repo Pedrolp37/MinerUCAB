@@ -11,7 +11,7 @@
       <div class="row" style="margin-top: 60px">
         <div class="col">
           <div class="d-flex justify-content-center">
-            <TablaSCliente :soliCliente="solicitudesCli"/>
+            <TablaSCliente :soliCliente="solicitudesCli" :isCProyecto="false"/>
           </div>
           <div class="d-flex justify-content-center">
             <Pagination @backPag="backPagSCliente" @nextPag="nextPagSCliente" />
@@ -27,7 +27,7 @@ import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaSCliente from '../../components/TablaSCliente.vue'
 import Pagination from '../../components/Pagination.vue'
-import { getSoliCliente} from '../../Services/Solicitudes/GetSoliCliente.services'
+import { getSoliCliente} from '../../Services/Solicitudes/GetSoliCliente.services.js'
 import { useRoute, useRouter } from 'vue-router'
 
 /*
