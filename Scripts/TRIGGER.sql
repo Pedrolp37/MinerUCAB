@@ -189,7 +189,32 @@ BEFORE DELETE ON SOLICITUD_ALIADO
 FOR EACH ROW
 EXECUTE FUNCTION  eliminar_estatus_solicictud_AL();
 
-	
+
+CREATE OR REPLACE FUNCTION eliminar_pago_solicitud()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS(
+		SELECT 1
+		FROM PAGO
+		WHERE pago_fk_sol_ali = OLD.factura_ali_id
+	) THEN
+		-- Elimina los recursos asociados
+        DELETE FROM PAGO
+        WHERE pago_fk_sol_ali = OLD.factura_ali_id;
+	END IF;
+
+	RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER antes_eliminar_solali_verpago
+BEFORE DELETE ON SOLICITUD_ALIADO
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_pago_solicitud();
+
+
 CREATE OR REPLACE FUNCTION eliminar_recurso_EJ_solicitud()
 RETURNS TRIGGER AS
 $$
@@ -197,11 +222,11 @@ BEGIN
 	IF EXISTS(
 		SELECT 1
 		FROM RECURSO_EJ
-		WHERE reej_sol_ali_id = OLD.reej_sol_ali_id
+		WHERE reej_sol_ali_id = OLD.factura_ali_id
 	) THEN
 		-- Elimina los recursos asociados
         DELETE FROM RECURSO_EJ
-        WHERE reej_sol_ali_id = OLD.reej_sol_ali_id;
+        WHERE reej_sol_ali_id = OLD.factura_ali_id;
 	END IF;
 
 	RETURN OLD;
@@ -223,11 +248,11 @@ BEGIN
 	IF EXISTS(
 		SELECT 1
 		FROM CARGO_EJ
-		WHERE caej_sol_ali_id = OLD.caej_sol_ali_id
+		WHERE caej_sol_ali_id = OLD.factura_ali_id
 	) THEN
 		-- Elimina los cargos asociados
         DELETE FROM CARGO_EJ
-        WHERE caej_sol_ali_id = OLD.caej_sol_ali_id;
+        WHERE caej_sol_ali_id =OLD.factura_ali_id;
 	END IF;
 
 	RETURN OLD;
@@ -296,6 +321,79 @@ FOR EACH ROW
 EXECUTE FUNCTION eliminar_cargo_config();
 
 -- EJECUCION
+CREATE OR REPLACE FUNCTION eliminar_actividad_EJ()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS(
+		SELECT 1
+		FROM ACTIVIDAD_EJ
+		WHERE fk_etej_id = OLD.etej_id
+	) THEN
+		-- Elimina los recursos asociados
+        DELETE FROM ACTIVIDAD_EJ
+        WHERE fk_etej_id = OLD.etej_id;
+	END IF;
+
+	RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER antes_eliminar_etapaEJ_verActividadEJ
+BEFORE DELETE ON ETAPA_EJ
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_actividad_EJ();
+--
+
+CREATE OR REPLACE FUNCTION eliminar_etaEstatus_EJ()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS(
+		SELECT 1
+		FROM ETAPA_ESTATUS
+		WHERE etes_etej_id = OLD.etej_id
+	) THEN
+		-- Elimina los recursos asociados
+        DELETE FROM ETAPA_ESTATUS
+        WHERE etes_etej_id = OLD.etej_id;
+	END IF;
+
+	RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER antes_eliminar_etapaEJ_verETAESTATUSEJ
+BEFORE DELETE ON ETAPA_EJ
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_etaEstatus_EJ();
+
+
+CREATE OR REPLACE FUNCTION eliminar_actEstatus_EJ()
+RETURNS TRIGGER AS
+$$
+BEGIN
+	IF EXISTS(
+		SELECT 1
+		FROM ACTIVIDAD_ESTATUS
+		WHERE actes_actej_id = OLD.actej_id
+	) THEN
+		-- Elimina los recursos asociados
+        DELETE FROM ACTIVIDAD_ESTATUS
+        WHERE actes_actej_id = OLD.actej_id;
+	END IF;
+
+	RETURN OLD;
+END;
+$$
+LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER antes_eliminar_actividadEJ_verACTESTATUSEJ
+BEFORE DELETE ON ACTIVIDAD_EJ
+FOR EACH ROW
+EXECUTE FUNCTION eliminar_actEstatus_EJ();
 
 -- ELIMINAR RECURSO_EJ EN BASE A LA ACTIVIDAD
 CREATE OR REPLACE FUNCTION eliminar_recurso_EJ()
