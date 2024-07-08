@@ -73,15 +73,15 @@ onMounted(async () => {
 */
 
 const nextPagPro = () => {
-  if (proyectos.value.length == 5) {
-    changePageProyectos.value += 5
+  if (proyectos.value.length == 3) {
+    changePageProyectos.value += 3
     getNewPageSCliente()
   }
 }
 
 const backPagPro  = () => {
-  if (changePageProyectos.value >= 5) {
-    changePageProyectos.value -= 5
+  if (changePageProyectos.value >= 3) {
+    changePageProyectos.value -= 3
     getNewPageSCliente()
   }
 }

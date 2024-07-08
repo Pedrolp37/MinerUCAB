@@ -101,10 +101,10 @@ export const getProjectsProgress = async (req, res) => {
   try {
     const {offset} = req.params
     const { rows } = await pool.query(`
-      SELECT pro_id, pro_nombre, pro_fecha_fin
+      SELECT pro_id, pro_nombre, to_char(pro_fecha_fin, 'dd-mm-yyyy') as pro_fecha_fin
       FROM proyecto, estatus, pro_estatus
       WHERE pro_id = proes_pro_id AND est_id = proes_est_id AND est_nombre ='Proceso'
-      limit 5 offset $1
+      limit 3 offset $1
       `, [offset]
     );
     if (!rows.length) {
