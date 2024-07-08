@@ -118,3 +118,19 @@ export const getSolicitudCliente = async(req,res)=>{
         return res.status(500).json(error);
     }
 }
+
+export const getPago = async(req,res)=>{
+    try{
+       const {solicitud_id} = req.body;
+       
+      const {rows} = await pool.query(`select factura_fk_ali_rif, p.pago_monto, p.pago_fecha,
+		                        mp.tipo_metodo
+	                        from solicitud_aliado sa, pago p, metodo_pago mp
+                            where p.pago_fk_sol_ali = $1
+                            AND p.pago_fk_met_id = mp.met_id`,[solicitud_id]);
+
+      return res.status(200).json(rows);
+    }catch(error){
+        return res.status(500).json(error);
+    }
+}

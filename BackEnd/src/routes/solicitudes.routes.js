@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { postSolicitudCliente, postSolicitudAliado,
     putSolicitudAliado, getSolicitudAliado,
-    getSolicitudCliente} from '../controllers/solicitudes.controllers.js';
+    getSolicitudCliente, getPago} from '../controllers/solicitudes.controllers.js';
 
 const router = Router();
 //Rutas
@@ -15,4 +15,6 @@ router.put('/actualizar-solicitud-aliado',putSolicitudAliado);
 router.get('/solicitudes-aliados/:offset',getSolicitudAliado);
 
 router.get('/solicitudes-clientes/:offset',getSolicitudCliente);
+
+router.get('/pago',getPago);
 export default router;
