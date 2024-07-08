@@ -10,6 +10,6 @@ router.put('/cambiar-estatus',putEstatusProyecto);
 
 router.post('/crear-proyecto',postProyecto);
 
-router.get('/solicitudes-pendientes',getSolicitudesPendiente);
+router.get('/solicitudes-pendientes/:offset',getSolicitudesPendiente);
 
 export default router;

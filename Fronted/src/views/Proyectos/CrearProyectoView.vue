@@ -124,7 +124,7 @@ import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaSCliente from '../../components/TablaSCliente.vue'
 import Pagination from '../../components/Pagination.vue'
-import { getSoliCliente} from '../../Services/Solicitudes/GetSoliCliente.services.js'
+import { getSPCliente} from '../../Services/Proyectos/GetSPCliente.services'
 
 
 
@@ -146,7 +146,7 @@ let soliClienteSelected = ref('')
  */
 
 onMounted(async () => {
-  getSoliCliente(changePageSoCliente.value).then((Response) => (solicitudesCli.value = Response.data))
+  getSPCliente(changePageSoCliente.value).then((Response) => (solicitudesCli.value = Response.data))
 })
 
 
@@ -176,7 +176,7 @@ const backPagSCliente = () => {
 }
 
 const getNewPageSCliente = async () => {
-  getSoliCliente(changePageSoCliente.value).then((Response) => (solicitudesCli.value = Response.data))
+  getSPCliente(changePageSoCliente.value).then((Response) => (solicitudesCli.value = Response.data))
 }
 
 

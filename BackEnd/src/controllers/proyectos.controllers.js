@@ -46,6 +46,7 @@ export const putEstatusProyecto = async(req,res)=>{
 
 export const getSolicitudesPendiente = async(req,res)=>{
     try{
+        const {offset} = req.params
         const {rows} = await pool.query(`SELECT
                                 sc.factura_fk_cl_identificacion AS identificacion, sc.factura_min_id AS mineral,
                                 e.est_nombre AS estatus, sc.factura_cli_cantidad AS cantidad,
@@ -60,7 +61,9 @@ export const getSolicitudesPendiente = async(req,res)=>{
                                         SELECT 1
                                         FROM est_sol_cliente es
                                         WHERE es.escl_fk_sol_cliente = sc.factura_cli_id
-                        AND es.escl_fk_est_id = (SELECT est_id FROM estatus WHERE est_nombre = 'Atendida'));`);
+                        AND es.escl_fk_est_id = (SELECT est_id FROM estatus WHERE est_nombre = 'Atendida'))
+                        limit 5 offset $1
+                        `, [offset]);
 
             return res.status(200).json(rows);
     }catch(error){
