@@ -19,7 +19,14 @@ export const getProyecto = async(req,res)=>{
 
 export const postProyecto = async(req,res)=>{
     try{
+        const {nombreP, descripcion, mineral_id,
+             pozo_id,solicitud_id
+        } = req.body;
 
+                await pool.query(`CALL proyecto_nuevo($1,$2,$3,$4,$5,ARRAY[1],ARRAY[1])`,[
+                    nombreP, descripcion, mineral_id, pozo_id, solicitud_id]);
+											
+        return res.status(201).json('Se creo con exito');
     }catch(error){
         return res.status(500).json(error);
     }
