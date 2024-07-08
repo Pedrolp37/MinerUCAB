@@ -30,6 +30,15 @@
             >
               Modificar Estatus
             </button>
+            |
+            <button
+              class="seleccionar btn"
+              data-bs-toggle="modal"
+              data-bs-target="#MetodoPago"
+              @click="getPagos(soli.factura_ali_id)"
+            >
+              Ver Pago
+            </button>
           </td>
         </tr>
       </tbody>
@@ -67,15 +76,62 @@
         </div>
       </div>
     </div>
+    <div
+      class="modal fade"
+      id="MetodoPago"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="titleModal">Pagos</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div v-if="pagos.length != 0" class="container">
+              <div class="row">
+                <div class="col">
+                  <h5 class="content">Rif Aliado: <span class="pago">{{pagos[0].rif}}</span></h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h5  class="content">Metodo De Pago: <span class="pago">{{pagos[0].metodo}}</span></h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h5  class="content">Monto Pago: <span class="pago">{{pagos[0].monto}}</span></h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h5  class="content">Fecha Pago: <span class="pago">{{pagos[0].f_pago}}</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import {getSoliAliado} from '../Services/Solicitudes/GetPagoSAliado.services.js'
 
 let idSoli = ref(0)
 let cant = ref(0)
 let idMin = ref(0)
+let pagos = ref([])
 
 const props = defineProps({
   soliAliado: {
@@ -89,6 +145,10 @@ const saveInfUpdate = (id_soli, cantidad, id_min) => {
   idSoli.value = id_soli
   cant.value = cantidad
   idMin.value = id_min
+}
+
+const getPagos = async (id_soli) => {
+  getSoliAliado(id_soli).then((Response) => (pagos.value = Response.data))
 }
 
 const UpdateSoli = () => {
@@ -118,5 +178,18 @@ const UpdateSoli = () => {
 .cancelar.btn:hover {
   background-color: #c3b1a300;
   color: black;
+}
+
+.titleModal{
+  color:#b47328;
+}
+
+.content{
+  color:#7d4b12;
+}
+
+.pago{
+  color:#c3a57c;
+  font-size: 17px;
 }
 </style>

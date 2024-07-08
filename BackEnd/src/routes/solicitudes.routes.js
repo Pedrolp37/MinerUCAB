@@ -16,5 +16,6 @@ router.get('/solicitudes-aliados/:offset',getSolicitudAliado);
 
 router.get('/solicitudes-clientes/:offset',getSolicitudCliente);
 
-router.get('/pago',getPago);
+router.get('/pago/:id',getPago);
+
 export default router;
