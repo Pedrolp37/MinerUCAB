@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {getProyecto, putEstatusProyecto,
         postProyecto,getSolicitudesPendiente,
-        getPozosDisponibles } from '../controllers/proyectos.controllers.js';
+        getPozosDisponibles, deleteProyecto } from '../controllers/proyectos.controllers.js';
 
 const router = Router();
 //Rutas
@@ -14,5 +14,7 @@ router.post('/crear-proyecto',postProyecto);
 router.get('/solicitudes-pendientes/:offset',getSolicitudesPendiente);
 
 router.get('/pozos-disponibles/:offset/:id_min',getPozosDisponibles);
+
+router.delete('/eliminar-proyecto',deleteProyecto);
 
 export default router;

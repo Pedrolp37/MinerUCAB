@@ -91,3 +91,15 @@ export const getPozosDisponibles = async(req,res)=>{
         return res.status(500).json(error);
     }
 }
+
+export const deleteProyecto = async(req,res)=>{
+    try{
+        const {proyecto_id} = req.body;
+
+        await pool.query(`CALL eliminar_proyecto($1)`,[proyecto_id]);
+
+        return res.status(200).json('Proyecto eliminado con exito');
+    }catch(error){
+        return res.status(500).json(error);
+    }
+}

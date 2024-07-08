@@ -1,3 +1,29 @@
+CREATE OR REPLACE PROCEDURE eliminar_proyecto(IN proyecto_id INT)
+	language plpgsql
+AS $$
+	DECLARE
+	 cursor_eliminar CURSOR FOR
+        SELECT pro_id FROM proyecto WHERE pro_id = proyecto_id;
+BEGIN
+	 OPEN cursor_eliminar;
+
+    -- Captura los datos
+    FETCH NEXT FROM cursor_eliminar INTO proyecto_id;
+	 -- Procesa los datos
+    WHILE FOUND LOOP
+        DELETE FROM ETAPA_EJ WHERE fk_pro_id = proyecto_id;
+        DELETE FROM PRO_ESTATUS WHERE proyecto_id = proes_pro_id;
+        DELETE FROM SOLICITUD_ALIADO WHERE proyecto_id = factura_fk_pro_id;
+        DELETE FROM PROYECTO WHERE pro_id = proyecto_id;
+
+        -- Obtiene el siguiente proyecto
+        FETCH NEXT FROM cursor_eliminar INTO proyecto_id;
+    END LOOP;
+
+    -- Cierra el cursor
+    CLOSE cursor_eliminar;
+END $$;
+
 CREATE OR REPLACE PROCEDURE cambiar_estatus_proyecto(IN proyecto_id INT,IN estatusP VARCHAR(20))
 	language plpgsql
 AS $$
