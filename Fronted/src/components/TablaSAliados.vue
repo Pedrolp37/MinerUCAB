@@ -26,7 +26,7 @@
               class="seleccionar btn" 
               data-bs-toggle="modal"
               data-bs-target="#ModificarEstatus"
-              @click="saveIdSoli(soli.rif)"
+              @click="saveInfUpdate(soli.factura_ali_id,soli.cantidad , soli.factura_ali_min_id)"
             >
             Modificar Estatus
             </button>
@@ -44,7 +44,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3>Modificar Estatus Solicitud</h3>
+            <h3>¿Quieres Modificar Esta Solicitud?</h3>
             <button
               type="button"
               class="btn-close"
@@ -55,23 +55,9 @@
           <div class="modal-body">
             <div class="container">
               <div class="row">
-                <div class="col">
-                  <label for="telefono" class="label form-label">Tipo de Mineral:</label>
-                  <select
-                    class="estatus form-select"
-                    aria-label="Default select example"
-                    v-model="estatusSoli"
-                  >
-                    <option value="Metalico">Pendiente</option>
-                    <option value="No Metalico">Atendida</option>
-                  </select>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
                 <div class="col d-flex justify-content-end">
                   <button class="cancelar btn" data-bs-dismiss="modal">Cancelar</button>
-                  <button class="confirmar btn" data-bs-dismiss="modal" @click="sendNewEstatus">
+                  <button class="confirmar btn" data-bs-dismiss="modal" @click="UpdateSoli">
                     Confirmar
                   </button>
                 </div>
@@ -87,8 +73,11 @@
 <script setup>
 import { ref } from "vue"
 
-let estatusSoli = ref('')
-let idSoli = ref('')
+
+let idSoli = ref(0)
+let cant = ref(0)
+let idMin = ref(0)
+
 
 const props = defineProps({
   soliAliado : {
@@ -98,12 +87,14 @@ const props = defineProps({
 
 const emit = defineEmits(['modSoliAliado'])
 
-const saveIdSoli = (id) => {
-  idSoli.value = id
+const saveInfUpdate = (id_soli, cantidad, id_min ) => {
+  idSoli.value = id_soli
+  cant.value = cantidad
+  idMin.value = id_min
 }
 
-const sendNewEstatus = () => {
-  emit('modSoliAliado', idSoli.value, estatusSoli.value)
+const UpdateSoli = () => {
+  emit('modSoliAliado', idSoli.value,  cant.value, idMin.value)
 }
 </script>
 

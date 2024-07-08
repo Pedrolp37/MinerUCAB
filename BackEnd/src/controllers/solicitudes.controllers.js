@@ -63,15 +63,16 @@ export const putSolicitudAliado = async (req,res)=>{
 export const getSolicitudAliado = async(req,res)=>{
     try{
         const {offset} = req.params
-        const {rows} = await pool.query(`SELECT ac.ali_nombre AS aliado,
+        const {rows} = await pool.query(`SELECT ac.ali_nombre AS Aliado,
                             m.min_nombre AS mineral,
                             sa.factura_ali_tire_id AS de_recurso,
                             sa.factura_ali_carg_id AS de_cargo,
                             e.est_nombre AS estatus,
                             sa.factura_ali_cantidad AS cantidad,
                             sa.factura_ali_total AS total,
-                            sa.factura_ali_fecha
-                            sa.factura_ali_id
+                            sa.factura_ali_fecha,
+                            sa.factura_ali_id,
+							 sa.factura_ali_min_id
                         FROM solicitud_aliado sa
                         JOIN est_solicitud est ON sa.factura_ali_id = est.est_sol_fk_sol_ali
                         JOIN estatus e ON e.est_id = est.est_sol_fk_est_id
