@@ -1,3 +1,53 @@
+CREATE OR REPLACE FUNCTION inv_proyecto()
+RETURNS TRIGGER AS
+$$
+	DECLARE
+	id_update INT;
+	estado VARCHAR(20);
+	proyecto_id INT;
+	pozo_id INT;
+	solicitud_id INT;
+	capacidad NUMERIC(10,2);
+	mineral_id INT;
+	cantidad_actual NUMERIC(20,2);
+BEGIN
+	select p.proes_id,e.est_nombre, p.proes_pro_id INTO id_update, estado, proyecto_id
+	from pro_estatus p, proyecto, estatus e
+	where proes_pro_id = pro_id
+	and pro_id = NEW.proes_pro_id
+	and e.est_id = p.proes_est_id
+	ORDER BY proes_id DESC
+	limit 1;
+
+		IF(estado = 'Terminado')THEN
+			SELECT pro_fk_po_id,pro_fk_sol_id,pro_fk_min_id INTO pozo_id, solicitud_id, mineral_id
+			FROM  proyecto
+			WHERE pro_id = proyecto_id;
+
+			SELECT po_capacidad_max INTO capacidad
+			FROM pozo
+			where po_id = pozo_id;
+
+			SELECT inv_cantidad_actual INTO cantidad_actual
+			FROM inventario
+			WHERE inv_min_id = mineral_id
+			ORDER BY inv_fecha_mov DESC
+			LIMIT 1;
+
+			INSERT INTO INVENTARIO (inv_min_id,inv_pro_id,inv_cantidad_anterior,inv_cantidad_actual,inv_tipo,inv_fecha_mov)
+			VALUES
+				(mineral_id, proyecto_id,cantidad_actual,capacidad + cantidad_actual,'ING',current_timestamp);
+		END IF;
+	RETURN NEW;
+END;
+$$
+language plpgsql;
+
+CREATE OR REPLACE TRIGGER inventario_proyecto
+AFTER INSERT ON PRO_ESTATUS
+FOR EACH ROW
+EXECUTE FUNCTION inv_proyecto();
+
 -- TRIGGER de colocar estatus luego de ingresar solicitud aliado
 CREATE OR REPLACE FUNCTION estatus_sol_aliado()
 RETURNS TRIGGER AS
