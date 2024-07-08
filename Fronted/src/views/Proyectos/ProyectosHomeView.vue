@@ -41,17 +41,18 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import CardVue from '../../components/CardProEnCurso.vue'
 import NavBarVue from '../../components/NavBar.vue'
 import Pagination from '../../components/Pagination.vue'
 import {getProCurso} from '../../Services/Proyectos/GetProCurso.services'
-
+import {deleteProyecto} from '../../Services/Proyectos/DeleteProyecto.services.js'
 /*
 
 * VARIABLES
 
 */
-
+const router = useRouter()
 let proyectos = ref([])
 let changePageProyectos = ref(0)
 
@@ -91,10 +92,8 @@ const getNewPagePro  = async () => {
 }
 
 const deletePro = (id) => {
-  proyectos.value.splice(
-    proyectos.value.findIndex((elm) => elm.id == id),
-    1
-  )
+  deleteProyecto(id)
+  router.go()
 }
 </script>
 
