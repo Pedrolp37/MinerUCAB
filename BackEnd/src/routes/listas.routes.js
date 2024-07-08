@@ -2,11 +2,13 @@ import { Router } from "express";
 import  {getProjectsProgress, getProjects, 
         getMineralsConfiguration,getEmpleado,
         getMineralName, getMineralConfig, getAliados, getClientes, getCliente,
-        getInventario, getAliado} from '../controllers/lista.controllers.js';
+        getInventario, getAliado, getProyectos} from '../controllers/lista.controllers.js';
 
 const router = Router();
 //Rutas
-router.get('/projects-progress/:offset',getProjectsProgress);
+router.get('/proyectos',getProyectos);
+
+router.get('/projects-progress',getProjectsProgress);
 
 router.get('/projects/:status', getProjects);
 

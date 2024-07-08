@@ -137,6 +137,22 @@ export const getProjects = async (req, res) => {
   }
 };
 
+export const getProyectos = async (req, res) => {
+  try {
+    const { rows } = await pool.query(`
+     SELECT p.pro_id, p.pro_nombre, p.pro_fecha_ini, p.pro_fecha_fin
+      FROM proyecto p
+      `);
+
+    if (!rows.length) {
+      return res.status(200).json({ message: `No hay proyectos en ${status}` });
+    }
+    return res.status(200).json(rows);
+  } catch (error) {
+    return res.status(404).json(error);
+  }
+};
+
 // CONFIGURACION
 export const getMineralsConfiguration = async (req, res) => {
   try {
