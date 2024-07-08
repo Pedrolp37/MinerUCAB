@@ -43,7 +43,7 @@
           <td>{{ cli.fecha }}</td>
           <td>{{ cli.estatus }}</td>
           <td>
-            <button class="seleccionar btn" @click="getIdSoliC(cli.identificacion, cli.mineral)">Seleccionar</button>
+            <button class="seleccionar btn" @click="getIdSoliC(cli.id_solicitud, cli.mineral)">Seleccionar</button>
           </td>
         </tr>
       </tbody>

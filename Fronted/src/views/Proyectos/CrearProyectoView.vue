@@ -25,6 +25,18 @@
             </div>
           </div>
         </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-5">
+            <div class="">
+              <input type="text"
+                    class="nproyecto form-control"
+                    id="nombre"
+                    v-model="descripcionPro"
+                    :placeholder="'Ingresar Descripción Proyecto'"
+                    autocomplete="off">
+            </div>
+          </div>
+        </div>
         <div class="row d-flex justify-content-start" style="margin-top: 40px">
           <div
             class="pCrearP col-2"
@@ -157,6 +169,7 @@ let changePagePozo = ref(0)
 let soliClienteSelected = ref('')
 let minSoliClienteSelected = ref(0)
 let nombreProyecto = ref('')
+let descripcionPro = ref('')
 
 
 componentName.value = 'solicitudes_clientes'
@@ -254,7 +267,7 @@ const getPozoID =  (id_pozo) => {
 const crearProyecto = () => {
   postProyectoNuevo({
     nombreP : nombreProyecto.value, 
-    descripcion : null, 
+    descripcion : descripcionPro.value, 
     mineral_id : minSoliClienteSelected.value,
     pozo_id : pozoIdSelected.value,
     solicitud_id : soliClienteSelected.value

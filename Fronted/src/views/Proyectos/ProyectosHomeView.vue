@@ -25,52 +25,70 @@
           <CardVue
             v-for="(elm, index) in proyectos"
             :key="index"
-            :idPro="elm.id"
-            :nomProyecto="elm.name"
-            :nomLiderPro="elm.nameLPro"
-            :nomLiderMin="elm.nameLMin"
-            :culminacion="elm.fC"
+            :idPro="elm.pro_id"
+            :nomProyecto="elm.pro_nombre"
+            :culminacion="elm.pro_fecha_fin"
             @dltPro="deletePro"
-          />
+          /> 
         </div>
+        <div class="d-flex justify-content-center">
+            <Pagination @backPag="backPagPro" @nextPag="nextPagPro" />
+          </div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import CardVue from '../../components/CardProEnCurso.vue'
 import NavBarVue from '../../components/NavBar.vue'
+import Pagination from '../../components/Pagination.vue'
+import {getProCurso} from '../../Services/Proyectos/GetProCurso.services'
+
+/*
+
+* VARIABLES
+
+*/
 
 let proyectos = ref([])
+let changePageProyectos = ref(0)
 
-//ejemplo
-proyectos.value = [
-  {
-    id: 1,
-    name: '% Andrómeda',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    fC: '01/02/24'
-  },
 
-  {
-    id: 2,
-    name: '% Lactea',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    fC: '01/02/24'
-  },
+/*
 
-  {
-    id: 3,
-    name: '% Gemini',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    fC: '01/02/24'
+* CONSUMO DE LA API
+
+*/
+
+onMounted(async () => {
+  getProCurso(changePageProyectos.value).then((Response) => (proyectos.value = Response.data))
+})
+
+/*
+
+* METHODS
+
+*/
+
+const nextPagPro = () => {
+  if (proyectos.value.length == 5) {
+    changePageProyectos.value += 5
+    getNewPageSCliente()
   }
-]
+}
+
+const backPagPro  = () => {
+  if (changePageProyectos.value >= 5) {
+    changePageProyectos.value -= 5
+    getNewPageSCliente()
+  }
+}
+
+const getNewPagePro  = async () => {
+  getSoliCliente(changePageProyectos.value).then((Response) => (proyectos.value = Response.data))
+}
 
 const deletePro = (id) => {
   proyectos.value.splice(

@@ -99,11 +99,13 @@ export const getAliado = async (req, res) => {
 //############### PROYECTOS #################
 export const getProjectsProgress = async (req, res) => {
   try {
+    const {offset} = req.params
     const { rows } = await pool.query(`
       SELECT pro_id, pro_nombre, pro_fecha_fin
       FROM proyecto, estatus, pro_estatus
       WHERE pro_id = proes_pro_id AND est_id = proes_est_id AND est_nombre ='Proceso'
-      `
+      limit 5 offset $1
+      `, [offset]
     );
     if (!rows.length) {
       return res.status(200).json({ message: "No hay proyectos en progreso" });

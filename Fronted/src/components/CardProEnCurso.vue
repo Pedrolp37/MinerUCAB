@@ -4,8 +4,6 @@
       <h5 class="card-title">{{ props.nomProyecto }}</h5>
       <hr />
       <div style="margin-top: 20px">
-        <p class="contPro">Lider Proyecto: {{ props.nomLiderPro }}</p>
-        <p class="contPro">Lider Mina: {{ props.nomLiderMin }}</p>
         <p class="contPro">Culminación: {{ props.culminacion }}</p>
       </div>
       <hr />
@@ -78,16 +76,6 @@ const props = defineProps({
   },
 
   nomProyecto: {
-    type: String,
-    required: true
-  },
-
-  nomLiderPro: {
-    type: String,
-    required: true
-  },
-
-  nomLiderMin: {
     type: String,
     required: true
   },
