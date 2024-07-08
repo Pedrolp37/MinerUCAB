@@ -15,20 +15,20 @@
       <tbody>
         <tr v-for="(soli, index) in props.soliAliado" :key="index" style="text-align: center">
           <td>{{ soli.aliado }}</td>
-          <td>{{ soli.mineral}}</td>
+          <td>{{ soli.mineral }}</td>
           <td>{{ soli.cantidad }}</td>
           <td>{{ soli.total }}</td>
           <td>{{ soli.factura_ali_fecha }}</td>
           <td>{{ soli.estatus }}</td>
           <td>
-            <button 
-              v-if="soli.estatus == 'Pendiente'" 
-              class="seleccionar btn" 
+            <button
+              v-if="soli.estatus == 'Pendiente'"
+              class="seleccionar btn"
               data-bs-toggle="modal"
               data-bs-target="#ModificarEstatus"
-              @click="saveInfUpdate(soli.factura_ali_id,soli.cantidad , soli.factura_ali_min_id)"
+              @click="saveInfUpdate(soli.factura_ali_id, soli.cantidad, soli.factura_ali_min_id)"
             >
-            Modificar Estatus
+              Modificar Estatus
             </button>
           </td>
         </tr>
@@ -71,30 +71,28 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
-
+import { ref } from 'vue'
 
 let idSoli = ref(0)
 let cant = ref(0)
 let idMin = ref(0)
 
-
 const props = defineProps({
-  soliAliado : {
-    required : false
+  soliAliado: {
+    required: false
   }
 })
 
 const emit = defineEmits(['modSoliAliado'])
 
-const saveInfUpdate = (id_soli, cantidad, id_min ) => {
+const saveInfUpdate = (id_soli, cantidad, id_min) => {
   idSoli.value = id_soli
   cant.value = cantidad
   idMin.value = id_min
 }
 
 const UpdateSoli = () => {
-  emit('modSoliAliado', idSoli.value,  cant.value, idMin.value)
+  emit('modSoliAliado', idSoli.value, cant.value, idMin.value)
 }
 </script>
 

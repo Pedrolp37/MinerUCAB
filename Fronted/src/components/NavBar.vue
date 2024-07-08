@@ -102,7 +102,7 @@
                 >
               </li>
               <li>
-                <router-link :to="{name : 'solicitud_aliado_lista'}" class="dropdown-item"
+                <router-link :to="{ name: 'solicitud_aliado_lista' }" class="dropdown-item"
                   ><i class="bi bi-card-list"></i> Solicitudes Aliados</router-link
                 >
               </li>

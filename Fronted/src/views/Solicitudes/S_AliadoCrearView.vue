@@ -9,7 +9,6 @@
               :aliados="aliados"
               :aliadosFiltered="[]"
               :solicitud="true"
-
               @aliSelected="getAliadoSelected"
             />
           </div>
@@ -18,10 +17,10 @@
           </div>
         </div>
       </div>
-      <hr>
+      <hr />
     </div>
     <div v-if="alidoSelected.length != 0" class="container" style="margin-top: 60px">
-      <div class="row" >
+      <div class="row">
         <div class="col d-flex flex-column justify-content-start">
           <h3 style="color: #a57844; margin-left: 30px">Solicitud Del Cliente</h3>
           <h6 style="color: #58534d; margin-left: 30px">
@@ -44,7 +43,7 @@
         </div>
       </div>
     </div>
-    <div v-show="tipoSolicitud == '1' "  class="container" style="margin-top: 80px">
+    <div v-show="tipoSolicitud == '1'" class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col">
           <TablaMinerales
@@ -125,14 +124,14 @@
         </div>
       </div>
     </div>
-    <div v-show="tipoSolicitud == '2'"  class="container" style="margin-top: 80px">
+    <div v-show="tipoSolicitud == '2'" class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col">
           <h3>No disponible</h3>
         </div>
       </div>
     </div>
-    <div v-show="tipoSolicitud == '3'"  class="container" style="margin-top: 80px">
+    <div v-show="tipoSolicitud == '3'" class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col">
           <h3>No disponible</h3>
@@ -154,7 +153,7 @@ import { getAliados } from '../../Services/Aliados/AliadosGet.services.js'
 import { getAliado } from '../../Services/Aliados/AliadoGet.services.js'
 import { getMinerales } from '../../Services/Minerales/MineralesGet.services.js'
 import { getMineral } from '../../Services/Minerales/MineralGet.services.js'
-import {postAliadoMetodo} from '../../Services/Solicitudes/PostSoliAliado.services.js'
+import { postAliadoMetodo } from '../../Services/Solicitudes/PostSoliAliado.services.js'
 import { useRoute, useRouter } from 'vue-router'
 
 /*
@@ -294,7 +293,6 @@ const deleteMetdS = (metodo) => {
   )
 }
 
-
 const CrearSolicitudAliado = () => {
   switch (metodoPList.value[0].metodo) {
     case 1:
@@ -309,10 +307,10 @@ const CrearSolicitudAliado = () => {
         tdc_vencimiento: null,
         tipo_metodoP: 'Efectivo',
         rif: alidoSelected.value[0].rif,
-        proyecto_id : null,
+        proyecto_id: null,
         mineral_id: mineral.value[0].id,
-        recurso_id : null, 
-        cargo_id : null,
+        recurso_id: null,
+        cargo_id: null,
         cantidad: cantMineral.value,
         obs: null
       })
@@ -330,10 +328,10 @@ const CrearSolicitudAliado = () => {
         tdc_vencimiento: null,
         tipo_metodoP: 'Transferencia',
         rif: alidoSelected.value[0].rif,
-        proyecto_id : null,
+        proyecto_id: null,
         mineral_id: mineral.value[0].id,
-        recurso_id : null, 
-        cargo_id : null,
+        recurso_id: null,
+        cargo_id: null,
         cantidad: cantMineral.value,
         obs: null
       })
@@ -351,10 +349,10 @@ const CrearSolicitudAliado = () => {
         tdc_vencimiento: null,
         tipo_metodoP: 'Cheque',
         rif: alidoSelected.value[0].rif,
-        proyecto_id : null,
+        proyecto_id: null,
         mineral_id: mineral.value[0].id,
-        recurso_id : null, 
-        cargo_id : null,
+        recurso_id: null,
+        cargo_id: null,
         cantidad: cantMineral.value,
         obs: null
       })
@@ -372,10 +370,10 @@ const CrearSolicitudAliado = () => {
         tdc_vencimiento: null,
         tipo_metodoP: 'TDD',
         rif: alidoSelected.value[0].rif,
-        proyecto_id : null,
+        proyecto_id: null,
         mineral_id: mineral.value[0].id,
-        recurso_id : null, 
-        cargo_id : null,
+        recurso_id: null,
+        cargo_id: null,
         cantidad: cantMineral.value,
         obs: null
       })
@@ -393,10 +391,10 @@ const CrearSolicitudAliado = () => {
         tdc_vencimiento: metodoPList.value[0].fechaV,
         tipo_metodoP: 'TDC',
         rif: alidoSelected.value[0].rif,
-        proyecto_id : null,
+        proyecto_id: null,
         mineral_id: mineral.value[0].id,
-        recurso_id : null, 
-        cargo_id : null,
+        recurso_id: null,
+        cargo_id: null,
         cantidad: cantMineral.value,
         obs: null
       })

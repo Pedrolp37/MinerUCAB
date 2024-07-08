@@ -12,7 +12,7 @@ import ClientesHomeView from '../views/Clientes/ClientesHomeView.vue'
 import InventarioHomeView from '../views/Inventario/InventarioHome.vue'
 import S_ClientesCrear from '../views/Solicitudes/S_ClientesCrearView.vue'
 import S_AliadoCrear from '../views/Solicitudes/S_AliadoCrearView.vue'
-import S_AliadoLista from  '../views/Solicitudes/S_AliadoListaView.vue'
+import S_AliadoLista from '../views/Solicitudes/S_AliadoListaView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
