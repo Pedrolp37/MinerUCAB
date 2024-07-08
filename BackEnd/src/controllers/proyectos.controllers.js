@@ -43,3 +43,27 @@ export const putEstatusProyecto = async(req,res)=>{
         return res.status(500).json(error);
     }
 }
+
+export const getSolicitudesPendiente = async(req,res)=>{
+    try{
+        const {rows} = await pool.query(`SELECT
+                                sc.factura_fk_cl_identificacion AS identificacion, sc.factura_min_id AS mineral,
+                                e.est_nombre AS estatus, sc.factura_cli_cantidad AS cantidad,
+                                sc.factura_cli_total AS total, sc.factura_cli_fecha AS fecha,
+                                c.cl_p_nombre AS nombre, c.cl_p_apellido AS apellido
+                            FROM solicitud_cliente sc
+                            JOIN est_sol_cliente est ON sc.factura_cli_id = est.escl_fk_sol_cliente
+                            JOIN estatus e ON e.est_id = est.escl_fk_est_id
+                            JOIN cliente c ON sc.factura_fk_cl_identificacion = c.cl_identificacion
+                            WHERE e.est_nombre = 'Pendiente'
+                            AND NOT EXISTS (
+                                        SELECT 1
+                                        FROM est_sol_cliente es
+                                        WHERE es.escl_fk_sol_cliente = sc.factura_cli_id
+                        AND es.escl_fk_est_id = (SELECT est_id FROM estatus WHERE est_nombre = 'Atendida'));`);
+
+            return res.status(200).json(rows);
+    }catch(error){
+        return res.status(500).json(error);
+    }
+}
