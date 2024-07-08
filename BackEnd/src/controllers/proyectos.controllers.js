@@ -22,7 +22,7 @@ export const postProyecto = async(req,res)=>{
         const {nombreP, descripcion, mineral_id,
              pozo_id,solicitud_id
         } = req.body;
-
+        console.log(req.body)
                 await pool.query(`CALL proyecto_nuevo($1,$2,$3,$4,$5,ARRAY[1],ARRAY[1])`,[
                     nombreP, descripcion, mineral_id, pozo_id, solicitud_id]);
 											
@@ -49,6 +49,7 @@ export const getSolicitudesPendiente = async(req,res)=>{
         const {offset} = req.params
         const {rows} = await pool.query(`SELECT
                                 sc.factura_fk_cl_identificacion AS identificacion, sc.factura_min_id AS mineral,
+								m.min_nombre as nomMineral,
                                 e.est_nombre AS estatus, sc.factura_cli_cantidad AS cantidad,
                                 sc.factura_cli_total AS total, sc.factura_cli_fecha AS fecha,
                                 c.cl_p_nombre AS nombre, c.cl_p_apellido AS apellido
@@ -56,6 +57,7 @@ export const getSolicitudesPendiente = async(req,res)=>{
                             JOIN est_sol_cliente est ON sc.factura_cli_id = est.escl_fk_sol_cliente
                             JOIN estatus e ON e.est_id = est.escl_fk_est_id
                             JOIN cliente c ON sc.factura_fk_cl_identificacion = c.cl_identificacion
+							JOIN mineral m ON m.min_id = sc.factura_min_id
                             WHERE e.est_nombre = 'Pendiente'
                             AND NOT EXISTS (
                                         SELECT 1
@@ -73,15 +75,16 @@ export const getSolicitudesPendiente = async(req,res)=>{
 
 export const getPozosDisponibles = async(req,res)=>{
     try{
-        const {mineral_id} = req.body;
-
-        const {rows} = await pool.query(`select m.min_nombre, mp.*, e.est_nombre
+        const {offset, id_min} = req.params;
+        const {rows} = await pool.query(`select m.min_nombre as mineral, mp.*, e.est_nombre as estatus
 	                                from mineral m, mineral_pozo mp, pozo p, pozo_estatus pe, estatus e
                                     where m.min_id = mp.min_id AND p.po_id = mp.po_id
                                     AND p.po_id = pe.poes_po_id
                                     AND pe.poes_est_id = e.est_id
                                     AND e.est_nombre = 'Disponible'
-                                    AND mp.min_id = $1`,[mineral_id]);
+                                    AND mp.min_id = $1
+                                    limit 5 offset $2
+                                    `,[id_min, offset]);
 
         return res.status(200).json(rows);
     }catch(error){

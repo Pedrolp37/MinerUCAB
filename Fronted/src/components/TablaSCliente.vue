@@ -37,13 +37,13 @@
       <tbody>
         <tr v-for="(cli, index) in props.soliCliente" :key="index" style="text-align: center">
           <td>{{ cli.nombre }} {{ cli.apellido }}</td>
-          <td>{{ cli.mineral }}</td>
+          <td>{{ cli.nomMineral }}</td>
           <td>{{ cli.cantidad }}</td>
           <td>{{ cli.total }}</td>
           <td>{{ cli.fecha }}</td>
           <td>{{ cli.estatus }}</td>
           <td>
-            <button class="seleccionar btn" @click="getIdSoliC(cli.identificacion)">Seleccionar</button>
+            <button class="seleccionar btn" @click="getIdSoliC(cli.identificacion, cli.mineral)">Seleccionar</button>
           </td>
         </tr>
       </tbody>
@@ -64,8 +64,8 @@ const props = defineProps({
 
 const emit = defineEmits(['getIdSoliCliente'])
 
-const getIdSoliC = (id_solicitud) => {
-    emit('getIdSoliCliente', id_solicitud)
+const getIdSoliC = (id_solicitud, id_min) => {
+    emit('getIdSoliCliente', id_solicitud, id_min)
 }
 </script>
 

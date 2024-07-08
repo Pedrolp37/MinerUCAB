@@ -13,34 +13,29 @@
             >
           </div>
         </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-5">
+            <div class="">
+              <input type="text"
+                    class="nproyecto form-control"
+                    id="nombre"
+                    v-model="nombreProyecto"
+                    :placeholder="'Ingresar Nombre Proyecto'"
+                    autocomplete="off">
+            </div>
+          </div>
+        </div>
         <div class="row d-flex justify-content-start" style="margin-top: 40px">
           <div
             class="pCrearP col-2"
-            :style="{ color: componentName == 'infPro' ? '#fa8f14' : 'black' }"
+            :style="{ color: componentName == 'solicitudes_clientes' ? '#fa8f14' : 'black' }"
           >
-
-
             <p class="pCrearP">Solicitudes Clientes</p>
           </div>
-          <div class="pCrearP col-1">
-            <p class="pCrearP" :style="{ color: componentName == 'cliente' ? '#fa8f14' : 'black' }">
-              Cliente
-            </p>
-          </div>
-          <div class="pCrearP col-1">
-            <p
-              class="pCrearP"
-              :style="{ color: componentName == 'personal' ? '#fa8f14' : 'black' }"
-            >
-              Personal
-            </p>
-          </div>
+
           <div class="pCrearP col-2">
-            <p
-              class="pCrearP"
-              :style="{ color: componentName == 'recursos' ? '#fa8f14' : 'black' }"
-            >
-              Recursos
+            <p class="pCrearP" :style="{ color: componentName == 'pozos_disponible' ? '#fa8f14' : 'black' }">
+              Pozos Disponibles
             </p>
           </div>
         </div>
@@ -50,7 +45,7 @@
 
 
     <section>
-      <div v-if="componentName == 'infPro'" class="container" style="margin-top: 30px">
+      <div v-if="componentName == 'solicitudes_clientes'" class="container" style="margin-top: 30px">
         <div class="row">
           <div class="col d-flex justify-content-center">
             <h2 style="color: #a57844; margin-left: 30px">Solicitudes Cliente</h2>
@@ -68,10 +63,24 @@
         </div>
       </div>
 
+      <div v-if="componentName == 'pozos_disponible'" class="container" style="margin-top: 30px">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <h2 style="color: #a57844; margin-left: 30px">Pozos Disponibles</h2>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col">
+            <div class="d-flex justify-content-center">
+             <TablaPozoDis :pozosDisponibles="pozosDisponibles" @getIdPozo="getPozoID"/>
+            </div>
+            <div class="d-flex justify-content-center">
+              <Pagination @backPag="backPagSCliente" @nextPag="nextPagSCliente" />
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <FormClienteVue v-if="componentName == 'cliente'" />
-      <FormPersonalVue v-if="componentName == 'personal'" />
-      <FormRecursos v-if="componentName == 'recursos'" />
     </section>
 
 
@@ -79,7 +88,7 @@
       <div class="d-flex flex-row justify-content-end" style="margin: 20px">
         <button
           v-show="
-            componentName == 'cliente' || componentName == 'personal' || componentName == 'recursos'
+            componentName == 'pozos_disponible'
           "
           @click="handleClickBack"
           class="bP btn"
@@ -87,9 +96,11 @@
         >
           Volver
         </button>
+
         <button
           v-show="
-            componentName == 'infPro' || componentName == 'cliente' || componentName == 'personal'
+            componentName == 'solicitudes_clientes' &&
+            soliClienteSelected != 0
           "
           @click="handleClickNext"
           class="bp btn"
@@ -98,8 +109,9 @@
         >
           Continuar
         </button>
+
         <button
-          v-show="componentName == 'recursos'"
+          v-show="soliClienteSelected != 0 && minSoliClienteSelected != 0 && pozoIdSelected != 0"
           @click="crearProyecto"
           class="bp btn"
           role="button"
@@ -107,6 +119,7 @@
         >
           Crear Proyecto
         </button>
+
       </div>
     </section>
 
@@ -115,17 +128,16 @@
 </template>
 
 <script setup>
-import FormClienteVue from '../../components/FormCliente.vue'
-import FormPersonalVue from '../../components/FormPersonal.vue'
-import FormRecursos from '../../components/FormRecursos.vue'
-
 //Imports que se quedan
 import { onMounted, ref } from 'vue'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaSCliente from '../../components/TablaSCliente.vue'
+import TablaPozoDis from '../../components/TablaPozoDis.vue'
 import Pagination from '../../components/Pagination.vue'
 import { getSPCliente} from '../../Services/Proyectos/GetSPCliente.services'
-
+import {getPozosDisponibles} from '../../Services/Proyectos/GetPozosDis.services'
+import {postProyectoNuevo} from '../../Services/Proyectos/PostProyecto.services'
+import { useRouter } from 'vue-router'
 
 
 /*
@@ -133,9 +145,21 @@ import { getSPCliente} from '../../Services/Proyectos/GetSPCliente.services'
  * VARIABLES 
 
  */
+
+const router = useRouter()
+let componentName = ref('')
+let style = ref('')
 let solicitudesCli = ref([])
+let pozosDisponibles = ref([])
+let pozoIdSelected = ref(0)
 let changePageSoCliente = ref(0)
+let changePagePozo = ref(0)
 let soliClienteSelected = ref('')
+let minSoliClienteSelected = ref(0)
+let nombreProyecto = ref('')
+
+
+componentName.value = 'solicitudes_clientes'
 
 
 
@@ -157,8 +181,9 @@ onMounted(async () => {
  */
 
 
-const getIdSoliCliente = (id_solicitud) => {
+const getIdSoliCliente = (id_solicitud, id_min) => {
   soliClienteSelected.value = id_solicitud
+  minSoliClienteSelected.value = id_min
 } 
 
 const nextPagSCliente = () => {
@@ -179,76 +204,68 @@ const getNewPageSCliente = async () => {
   getSPCliente(changePageSoCliente.value).then((Response) => (solicitudesCli.value = Response.data))
 }
 
+const nextPagPozo = () => {
+  if (pozosDisponibles.value.length == 5) {
+    changePagePozo.value += 5
+    getNewPagePozo()
+  }
+}
 
+const backPagPozo = () => {
+  if (changePagePozo.value >= 5) {
+    changePagePozo.value -= 5
+    getNewPagePozo()
+  }
+}
 
+const getNewPagePozo = async () => {
+  getPozosDisponibles(changePagePozo.value, minSoliClienteSelected.value).then((Response) => (pozosDisponibles.value = Response.data))
+}
 
+const getPozos = async () => {
+  getPozosDisponibles(changePagePozo.value, minSoliClienteSelected.value).then((Response) => (pozosDisponibles.value = Response.data))
+}
 
-
-
-
-//variables y constantes
-let proyectos = ref([])
-let componentName = ref('')
-let style = ref('')
-componentName.value = 'infPro'
 
 const handleClickBack = () => {
   switch (componentName.value) {
-    case 'cliente':
-      componentName.value = 'infPro'
-      break
-    case 'personal':
-      componentName.value = 'cliente'
-      break
-    case 'recursos':
-      componentName.value = 'personal'
+    case 'pozos_disponible':
+      soliClienteSelected.value = 0
+      minSoliClienteSelected.value = 0
+      pozoIdSelected.value = 0
+      componentName.value = 'solicitudes_clientes'
       break
   }
 }
 
 const handleClickNext = () => {
   switch (componentName.value) {
-    case 'infPro':
-      componentName.value = 'cliente'
-      break
-    case 'cliente':
-      componentName.value = 'personal'
-      break
-    case 'personal':
-      componentName.value = 'recursos'
+    case 'solicitudes_clientes':
+      getPozos()
+      componentName.value = 'pozos_disponible'
       break
   }
 }
 
-//ejemplo
-proyectos = [
-  {
-    name: '% Andrómeda',
-    tipo: 'Gestionado con aliados',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    Exp: 2,
-    fC: '01/02/24'
-  },
+const getPozoID =  (id_pozo) => {
+  pozoIdSelected.value = id_pozo
+}
 
-  {
-    name: '% Lactea',
-    tipo: 'Gestionado con aliados',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    Exp: 2,
-    fC: '01/02/24'
-  },
+const crearProyecto = () => {
+  postProyectoNuevo({
+    nombreP : nombreProyecto.value, 
+    descripcion : null, 
+    mineral_id : minSoliClienteSelected.value,
+    pozo_id : pozoIdSelected.value,
+    solicitud_id : soliClienteSelected.value
+  })
+  
 
-  {
-    name: '% Gemini',
-    tipo: 'Gestionado con aliados',
-    nameLPro: 'Arturo',
-    nameLMin: 'Pedro',
-    Exp: 2,
-    fC: '01/02/24'
-  }
-]
+  router.push({name: 'proyectos'})
+
+  
+}
+
 </script>
 
 <style scoped>
@@ -259,5 +276,10 @@ hr {
 .pCrearP {
   font-size: 12px;
   font-weight: bold;
+}
+
+.nproyecto.form-control{
+  border-radius: 10px ;
+  border: solid 1px #629189;
 }
 </style>

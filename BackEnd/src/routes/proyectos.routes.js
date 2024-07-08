@@ -13,6 +13,6 @@ router.post('/crear-proyecto',postProyecto);
 
 router.get('/solicitudes-pendientes/:offset',getSolicitudesPendiente);
 
-router.get('/pozos-disponibles',getPozosDisponibles);
+router.get('/pozos-disponibles/:offset/:id_min',getPozosDisponibles);
 
 export default router;
