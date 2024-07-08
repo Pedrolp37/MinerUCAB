@@ -11,7 +11,7 @@
             <div class="row" style="margin-top: 60px">
                 <div class="col">
                     <div class="d-flex justify-content-center">
-                        <TablaSAliados :soliAliado="solicitudesAli"/>
+                        <TablaSAliados :soliAliado="solicitudesAli" @modSoliAliado="putSoliAliado" />
                     </div>
                     <div class="d-flex justify-content-center">
                         <Pagination @backPag="backPagSAliado" @nextPag="nextPagSAliado" />
@@ -69,6 +69,10 @@ const backPagSAliado = () => {
 
 const getNewPageSAliado = async () => {
   getSoliAliado(changePageSoAliado.value).then((Response) => (solicitudesAli.value = Response.data))
+}
+
+const putSoliAliado  = (id, estatus) => {
+    alert('hola')
 }
 </script>
 

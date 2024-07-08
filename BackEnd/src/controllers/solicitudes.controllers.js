@@ -62,7 +62,8 @@ export const putSolicitudAliado = async (req,res)=>{
 
 export const getSolicitudAliado = async(req,res)=>{
     try{
-        const {rows} = await pool.query(`SELECT ac.ali_nombre AS Aliado,
+        const {offset} = req.params
+        const {rows} = await pool.query(`SELECT ac.ali_nombre AS aliado,
                             m.min_nombre AS mineral,
                             sa.factura_ali_tire_id AS de_recurso,
                             sa.factura_ali_carg_id AS de_cargo,
@@ -80,7 +81,9 @@ export const getSolicitudAliado = async(req,res)=>{
                                         FROM est_solicitud es
 	                                    where es.est_sol_fk_sol_ali = sa.factura_ali_id
 	                                    order by est_sol_id DESC
-	                                    limit 1)`);
+	                                    limit 1)
+                        limit 5 offset $1
+                                        `, [offset]);
 
         return res.status(200).json(rows);                                        
     }catch(error){
