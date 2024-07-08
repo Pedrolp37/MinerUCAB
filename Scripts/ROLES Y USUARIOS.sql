@@ -15,5 +15,8 @@ CREATE USER jefe WITH PASSWORD 'admin2' IN ROLE Jefe_Proyecto;
 CREATE USER coordinador WITH PASSWORD 'coordinador' IN ROLE Coordinador_General;
 
 
-
+DROP ROLE Desarrollador;
+DROP ROLE MinerUCAB;
+DROP ROLE Jefe_Proyecto;
+DROP ROLE Coordinador_General;
 
