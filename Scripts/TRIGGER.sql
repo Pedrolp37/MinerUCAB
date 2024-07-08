@@ -34,6 +34,9 @@ BEGIN
 			ORDER BY inv_fecha_mov DESC
 			LIMIT 1;
 
+			INSERT INTO est_sol_cliente(escl_fk_sol_cliente,escl_fk_est_id,escl_fecha_ini,escl_fecha_fin)
+				VALUES(solicitud_id,18,CURRENT_DATE,CURRENT_DATE);
+
 			INSERT INTO INVENTARIO (inv_min_id,inv_pro_id,inv_cantidad_anterior,inv_cantidad_actual,inv_tipo,inv_fecha_mov)
 			VALUES
 				(mineral_id, proyecto_id,cantidad_actual,capacidad + cantidad_actual,'ING',current_timestamp);
