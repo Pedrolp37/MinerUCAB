@@ -291,38 +291,52 @@ END $$;
 
 --ELIMINAR MINERAL
 CREATE OR REPLACE PROCEDURE eliminar_mineral(IN mineral_id INT)
-	language plpgsql
+    LANGUAGE plpgsql
 AS $$
-	DECLARE
-	 proyecto_id INT;
+DECLARE
+    proyecto_id INT;
+    cursor_eliminar CURSOR FOR
+        SELECT pro_id FROM proyecto WHERE pro_fk_min_id = mineral_id;
 BEGIN
-
-	-- Verificar si el mineral existe
+    -- Verificar si el mineral existe
     IF NOT EXISTS (SELECT 1 FROM MINERAL WHERE min_id = mineral_id) THEN
         RAISE EXCEPTION 'El mineral con ID % no existe', mineral_id;
     END IF;
-	  -- Elimina las actividades relacionadas con las etapas del mineral
+
+    -- Elimina las actividades relacionadas con las etapas del mineral
     DELETE FROM ACTIVIDAD
     WHERE fk_et_id IN (SELECT et_id FROM ETAPA WHERE fk_min_id = mineral_id);
-    
+
     -- Elimina las etapas relacionadas con el mineral
     DELETE FROM ETAPA WHERE fk_min_id = mineral_id;
-	-- Elimina los inventarios relacionados a ese mineral
-	DELETE FROM INVENTARIO WHERE mineral_id = inv_min_id;
 
-	for proyecto_id IN (SELECT pro_id from proyecto where pro_fk_min_id=mineral_id)
-		LOOP
-			DELETE FROM ETAPA_EJ
-			WHERE fk_pro_id = proyecto_id;
+    -- Elimina los inventarios relacionados a ese mineral
+    DELETE FROM INVENTARIO WHERE mineral_id = inv_min_id;
 
-			DELETE FROM PRO_ESTATUS WHERE proyecto_id = proes_pro_id;
-			DELETE FROM SOLICITUD_ALIADO WHERE proyecto_id = factura_fk_pro_id;
-			DELETE FROM PROYECTO WHERE pro_id = proyecto_id;
-		END LOOP;
-	
-	DELETE FROM MINERAL_POZO mipo WHERE mipo.min_id = mineral_id;
-    
-	DELETE FROM CONCESION WHERE mineral_id = conce_fk_min_id;
-	-- Elimina el mineral
+    -- Abre el cursor
+    OPEN cursor_eliminar;
+
+    -- Captura los datos
+    FETCH NEXT FROM cursor_eliminar INTO proyecto_id;
+
+    -- Procesa los datos
+    WHILE FOUND LOOP
+        DELETE FROM ETAPA_EJ WHERE fk_pro_id = proyecto_id;
+        DELETE FROM PRO_ESTATUS WHERE proyecto_id = proes_pro_id;
+        DELETE FROM SOLICITUD_ALIADO WHERE proyecto_id = factura_fk_pro_id;
+        DELETE FROM PROYECTO WHERE pro_id = proyecto_id;
+
+        -- Obtiene el siguiente proyecto
+        FETCH NEXT FROM cursor_eliminar INTO proyecto_id;
+    END LOOP;
+
+    -- Cierra el cursor
+    CLOSE cursor_eliminar;
+
+    DELETE FROM MINERAL_POZO mipo WHERE mipo.min_id = mineral_id;
+
+    DELETE FROM CONCESION WHERE mineral_id = conce_fk_min_id;
+	DELETE FROM SOLICITUD_ALIADO WHERE mineral_id = factura_ali_min_id;
+    -- Elimina el mineral
     DELETE FROM MINERAL WHERE min_id = mineral_id;
 END $$;
