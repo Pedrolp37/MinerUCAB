@@ -122,7 +122,7 @@ export const getProjects = async (req, res) => {
       SELECT p.pro_id, p.pro_nombre
       FROM proyecto p,estatus e,pro_estatus pe 
       WHERE p.pro_id = pe.proes_pro_id AND e.est_id = pe.proes_est_id
-      AND e.est_nombre = $1 AND e.est_tipo = 'Proyecto'
+      AND e.est_nombre = $1
       `, [status]
     );
 
