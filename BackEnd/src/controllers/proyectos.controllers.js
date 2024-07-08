@@ -16,3 +16,23 @@ export const getProyecto = async(req,res)=>{
         return res.status(500).json(error);
     }
 }
+
+export const postProyecto = async(req,res)=>{
+    try{
+
+    }catch(error){
+        return res.status(500).json(error);
+    }
+}
+
+export const putEstatusProyecto = async(req,res)=>{
+    try{
+    const {proyecto_id, estatusP} = req.body;
+
+    await pool.query('CALL cambiar_estatus_proyecto($1,$2)',[proyecto_id,estatusP]);
+
+    return res.status(200).json('Se ha cambiado el estatus');
+    }catch(error){
+        return res.status(500).json(error);
+    }
+}
