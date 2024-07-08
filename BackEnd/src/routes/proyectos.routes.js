@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {getProyecto, putEstatusProyecto,
-        postProyecto,getSolicitudesPendiente } from '../controllers/proyectos.controllers.js';
+        postProyecto,getSolicitudesPendiente,
+        getPozosDisponibles } from '../controllers/proyectos.controllers.js';
 
 const router = Router();
 //Rutas
@@ -11,5 +12,7 @@ router.put('/cambiar-estatus',putEstatusProyecto);
 router.post('/crear-proyecto',postProyecto);
 
 router.get('/solicitudes-pendientes/:offset',getSolicitudesPendiente);
+
+router.get('/pozos-disponibles',getPozosDisponibles);
 
 export default router;
