@@ -629,7 +629,7 @@ CREATE TABLE PRO_ESTATUS(
 
 	CONSTRAINT ck_proes_fecha_fin CHECK (proes_fecha_fin <= CURRENT_DATE),
 
-	CONSTRAINT ck_proes_fecha_diff CHECK (proes_fecha_fin > proes_fecha_ini)
+	CONSTRAINT ck_proes_fecha_diff CHECK (proes_fecha_fin >= proes_fecha_ini)
 );
 
 DROP TABLE IF EXISTS EST_SOL_CLIENTE;

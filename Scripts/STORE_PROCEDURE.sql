@@ -1,3 +1,41 @@
+CREATE OR REPLACE PROCEDURE cambiar_estatus_proyecto(IN proyecto_id INT,IN estatusP VARCHAR(20))
+	language plpgsql
+AS $$
+	DECLARE
+		id_update INT;
+BEGIN
+	select p.proes_id INTO id_update
+	from pro_estatus p, proyecto
+	where proes_pro_id = pro_id
+	and pro_id = proyecto_id
+	ORDER BY proes_id DESC
+	limit 1;
+
+	UPDATE pro_estatus
+	SET proes_fecha_fin = CURRENT_DATE
+	WHERE proes_id = id_update;
+
+	CASE 
+		WHEN estatusP = 'Proceso' THEN
+			INSERT INTO pro_estatus (proes_pro_id,proes_est_id,proes_fecha_ini,proes_fecha_fin)
+			VALUES
+				(proyecto_id,2,CURRENT_DATE,NULL);
+	
+		WHEN estatusP = 'Terminado' THEN
+			INSERT INTO pro_estatus (proes_pro_id,proes_est_id,proes_fecha_ini,proes_fecha_fin)
+			VALUES
+				(proyecto_id,12,CURRENT_DATE,CURRENT_DATE);
+		WHEN estatusP = 'Atrasado' THEN
+			INSERT INTO pro_estatus (proes_pro_id,proes_est_id,proes_fecha_ini,proes_fecha_fin)
+			VALUES
+				(proyecto_id,13,CURRENT_DATE,NULL);
+	ELSE
+
+	END CASE;
+	
+END $$;
+
+
 --ACTUALIZAR ESTATUS DE ACTIVIDAD
 CREATE OR REPLACE PROCEDURE actualizar_estatusHecho_actividad(IN actividad_ej_id INT)
 	language plpgsql
