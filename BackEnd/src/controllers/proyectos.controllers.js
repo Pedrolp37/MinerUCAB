@@ -67,3 +67,21 @@ export const getSolicitudesPendiente = async(req,res)=>{
         return res.status(500).json(error);
     }
 }
+
+export const getPozosDisponibles = async(req,res)=>{
+    try{
+        const {mineral_id} = req.body;
+
+        const {rows} = await pool.query(`select m.min_nombre, mp.*, e.est_nombre
+	                                from mineral m, mineral_pozo mp, pozo p, pozo_estatus pe, estatus e
+                                    where m.min_id = mp.min_id AND p.po_id = mp.po_id
+                                    AND p.po_id = pe.poes_po_id
+                                    AND pe.poes_est_id = e.est_id
+                                    AND e.est_nombre = 'Disponible'
+                                    AND mp.min_id = $1`,[mineral_id]);
+
+        return res.status(200).json(rows);
+    }catch(error){
+        return res.status(500).json(error);
+    }
+}
