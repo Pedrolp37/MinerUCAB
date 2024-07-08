@@ -4,14 +4,18 @@
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Proyecto</th>
+          <th class="tabla Cabecera">Fecha Inicio</th>
+          <th class="tabla Cabecera">Fecha Fin</th>
           <th class="tabla Cabecera">Estatus</th>
           <th class="tabla Cabecera">Opciones</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(pro, index) in props.proyectos" :key="index" style="text-align: center">
-          <td>{{ pro.name }}</td>
-          <td>{{ pro.status }}</td>
+          <td>{{ pro.nombre }}</td>
+          <td>{{ pro.ffini }}</td>
+          <td>{{ pro.ffin }}</td>
+          <td>{{ pro.estatus }}</td>
           <td>
             <button
               class="modificar btn"
@@ -38,18 +42,22 @@
       <thead>
         <tr style="text-align: center">
           <th class="tabla Cabecera">Proyecto</th>
+          <th class="tabla Cabecera">Fecha Inicio</th>
+          <th class="tabla Cabecera">Fecha Fin</th>
           <th class="tabla Cabecera">Estatus</th>
-          <th class="tabla Cabecera"></th>
+          <th class="tabla Cabecera">Opciones</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(proF, index) in props.proFiltered" :key="index" style="text-align: center">
-          <td>{{ proF.name }}</td>
-          <td>{{ proF.status }}</td>
+          <td>{{ proF.nombre }}</td>
+          <td>{{ proF.ffini }}</td>
+          <td>{{ proF.ffin }}</td>
+          <td>{{ proF.estatus }}</td>
           <td>
             <button
               class="modificar btn"
-              @click="saveIdDltPro(pro.id)"
+              @click="saveIdDltPro(proF.id)"
               data-bs-toggle="modal"
               data-bs-target="#ConfirmarEliminar"
             >
@@ -121,12 +129,6 @@
           </div>
           <div class="modal-body">
             <div class="container">
-              <div class="row">
-                <div class="col">
-                  <label for="nombre" class="form-label">Nombre Proyecto:</label>
-                  <input type="text" class="form-control" id="nombre" v-model="newNamePro" />
-                </div>
-              </div>
               <div class="row" style="margin-top: 20px; margin-bottom: 8rem">
                 <div class="col-8">
                   <label for="nombre" class="form-label">Estatus Proyecto:</label>
@@ -162,7 +164,6 @@
 <script setup>
 import { ref } from 'vue'
 
-let newNamePro = ref('')
 let newStatusPro = ref('Elegir Estatus:')
 let idProM = ref(0)
 let idProD = ref(0)
@@ -192,12 +193,10 @@ const saveIdProM = (id) => {
 const saveChangesPro = () => {
   emit('mDPro', {
     id: idProM.value,
-    name: newNamePro.value,
-    status: newStatusPro.value
+    estatus: newStatusPro.value
   })
 
   idProM.value = 0
-  newNamePro.value = ''
   newStatusPro.value = 'Elegir Estatus:'
 }
 </script>

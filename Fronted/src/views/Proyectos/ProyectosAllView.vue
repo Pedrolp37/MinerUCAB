@@ -33,76 +33,118 @@
         </div>
       </div>
       <div class="row" style="margin: 80px">
-        <TablaProyectos
+        <div>
+          <TablaProyectos
           :proyectos="proyectos"
           :proFiltered="proFiltered"
-          @dltPro="deleteProyecto"
+          @dltPro="deleteProyectoSelected"
           @mDPro="modifyProyecto"
         />
+        </div>
+        <div class="d-flex justify-content-center">
+            <Pagination @backPag="backPagPro" @nextPag="nextPagPro" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import NavBarVue from '../../components/NavBar.vue'
 import TablaProyectos from '../../components/TablaProyectos.vue'
+import Pagination from '../../components/Pagination.vue'
+import {getAllProyectos} from '../../Services/Proyectos/GetAllProyectos.services.js'
+import {putMineral} from '../../Services/Proyectos/PutProyecto.services.js'
+import {deleteProyecto} from '../../Services/Proyectos/DeleteProyecto.services.js'
 
+/*
+ 
+ * VARIABLES
+
+ */
+const router = useRouter()
 let statusOption = ref('Seleccionar Estatus:')
 let proyectos = ref([])
 let proFiltered = ref([])
+let changePageProyectos = ref(0)
 
-//Esto es un ejemplo
-proyectos.value = [
-  {
-    id: 1,
-    name: 'ExtracAndrómeda',
-    status: 'Pendiente'
-  },
-  {
-    id: 2,
-    name: 'ExtracAlfaCentaury',
-    status: 'Atrasado'
+
+
+/*
+ 
+ * CONSUMO DE LA API
+
+ */
+
+onMounted(async () => {
+  getAllProyectos(changePageProyectos.value).then((Response) => (proyectos.value = Response.data))
+})
+
+/*
+
+* METHODS
+
+*/
+
+const nextPagPro = () => {
+  if (proyectos.value.length == 5) {
+    changePageProyectos.value += 5
+    getNewPagePro()
   }
-]
+}
+
+const backPagPro  = () => {
+  if (changePageProyectos.value >= 5) {
+    changePageProyectos.value -= 5
+    getNewPagePro()
+  }
+}
+
+const getNewPagePro  = async () => {
+  getAllProyectos(changePageProyectos.value).then((Response) => (proyectos.value = Response.data))
+}
+
+
+
+
+
+
 
 const getProFiltered = () => {
   switch (statusOption.value) {
     case 'Pendiente':
-      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      proFiltered.value = proyectos.value.filter((elm) => elm.estatus == statusOption.value)
       statusOption.value = 'Seleccionar Estatus:'
       break
     case 'Proceso':
-      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      proFiltered.value = proyectos.value.filter((elm) => elm.estatus == statusOption.value)
       statusOption.value = 'Seleccionar Estatus:'
       break
     case 'Terminado':
-      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      proFiltered.value = proyectos.value.filter((elm) => elm.estatus == statusOption.value)
       statusOption.value = 'Seleccionar Estatus:'
       break
     case 'Atrasado':
-      proFiltered.value = proyectos.value.filter((elm) => elm.status == statusOption.value)
+      proFiltered.value = proyectos.value.filter((elm) => elm.estatus == statusOption.value)
       statusOption.value = 'Seleccionar Estatus:'
       break
   }
 }
 
-const deleteProyecto = (id) => {
-  proyectos.value.splice(
-    proyectos.value.findIndex((elm) => elm.id == id),
-    1
-  )
-  showAllPro()
+const deleteProyectoSelected = (id) => {
+  deleteProyecto(id)
+  router.go()
 }
 
-const modifyProyecto = (data) => {
-  proyectos.value.forEach((elm) => {
-    if (elm.id == data.id) {
-      elm.name = data.name
-      elm.status = data.status
-    }
+const modifyProyecto = (infProyecto) => {
+  putMineral({
+    proyecto_id : infProyecto.id, 
+    estatusP : infProyecto.estatus
   })
+
+  router.go()
 }
 
 const showAllPro = () => {

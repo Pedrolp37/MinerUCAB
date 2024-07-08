@@ -139,10 +139,21 @@ export const getProjects = async (req, res) => {
 
 export const getProyectos = async (req, res) => {
   try {
+    const {offset} = req.params
     const { rows } = await pool.query(`
-     SELECT p.pro_id, p.pro_nombre, p.pro_fecha_ini, p.pro_fecha_fin
+     SELECT p.pro_id as id, p.pro_nombre as nombre, to_char(p.pro_fecha_ini, 'dd-mm-yyyy') as ffini, to_char(p.pro_fecha_fin, 'dd-mm-yyyy') as ffin, e.est_nombre as estatus
       FROM proyecto p
-      `);
+      JOIN pro_estatus pe ON p.pro_id = pe.proes_pro_id
+      JOIN estatus e ON e.est_id = pe.proes_est_id
+      WHERE pe.proes_est_id = (
+          SELECT proes_est_id
+          FROM pro_estatus proe
+          WHERE proe.proes_pro_id = p.pro_id
+          ORDER BY proes_est_id DESC
+          LIMIT 1
+      )
+      limit 5 offset $1
+      `, [offset]);
 
     if (!rows.length) {
       return res.status(200).json({ message: `No hay proyectos en ${status}` });

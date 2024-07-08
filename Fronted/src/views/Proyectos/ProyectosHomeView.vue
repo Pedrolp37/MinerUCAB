@@ -75,19 +75,19 @@ onMounted(async () => {
 const nextPagPro = () => {
   if (proyectos.value.length == 3) {
     changePageProyectos.value += 3
-    getNewPageSCliente()
+    getNewPagePro()
   }
 }
 
 const backPagPro  = () => {
   if (changePageProyectos.value >= 3) {
     changePageProyectos.value -= 3
-    getNewPageSCliente()
+    getNewPagePro()
   }
 }
 
 const getNewPagePro  = async () => {
-  getSoliCliente(changePageProyectos.value).then((Response) => (proyectos.value = Response.data))
+  getProCurso(changePageProyectos.value).then((Response) => (proyectos.value = Response.data))
 }
 
 const deletePro = (id) => {

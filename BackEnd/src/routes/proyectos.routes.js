@@ -15,6 +15,6 @@ router.get('/solicitudes-pendientes/:offset',getSolicitudesPendiente);
 
 router.get('/pozos-disponibles/:offset/:id_min',getPozosDisponibles);
 
-router.delete('/eliminar-proyecto',deleteProyecto);
+router.delete('/eliminar-proyecto/:id',deleteProyecto);
 
 export default router;

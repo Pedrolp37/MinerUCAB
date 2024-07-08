@@ -6,7 +6,7 @@ import  {getProjectsProgress, getProjects,
 
 const router = Router();
 //Rutas
-router.get('/proyectos',getProyectos);
+router.get('/proyectos/:offset',getProyectos);
 
 router.get('/projects-progress/:offset',getProjectsProgress);
 
